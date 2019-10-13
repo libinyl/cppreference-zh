@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>独立与宿主实现</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../common/favicon.ico">
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/freestanding","wgTitle":"cpp/freestanding","wgCurRevisionId":61893,"wgArticleId":11664,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/freestanding","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_freestanding skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">独立与宿主实现</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 自立与有宿主实现</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>C++ 标准定义了两种实现：<i><b>宿主</b> (hosted) </i>与<i><b>独立</b> (freestanding) </i>实现。 C++ 标准对<i>宿主</i>实现所规定的标准库头文件集合比对<i>独立</i>实现所规定的大很多。<i>独立</i>实现中程序可能在没有操作系统的情况下运行。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<h3> <span class="mw-headline" id=".E9.92.88.E5.AF.B9.E5.A4.9A.E7.BA.BF.E7.A8.8B.E6.89.A7.E8.A1.8C.E4.B8.8E.E6.95.B0.E6.8D.AE.E7.AB.9E.E4.BA.89.E7.9A.84.E8.A7.84.E5.AE.9A"> 针对<a href="language/memory_model.html" title="cpp/language/memory model">多线程执行与数据竞争</a>的规定 </span></h3>
+<table cellpadding="8">
+<tr>
+<th> <i>独立</i> </th>
+<th> <i>宿主</i>
+</th></tr>
+<tr>
+<td> <i>独立</i>实现下，程序能否拥有多于一个<a href="thread.html" title="cpp/thread">执行线程</a>是由实现定义的。
+</td>
+<td> <i>宿主</i>实现下， C++ 程序可以拥有同时运行的多于一个<a href="thread.html" title="cpp/thread">线程</a>。
+</td></tr></table>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E9.92.88.E5.AF.B9_main_.E5.87.BD.E6.95.B0.E7.9A.84.E8.A6.81.E6.B1.82"> 针对 <a href="language/main_function.html" title="cpp/language/main function"><tt>main</tt></a> 函数的要求 </span></h3>
+<table cellpadding="8|">
+
+<tr>
+<th> <i>独立</i> </th>
+<th> <i>宿主</i>
+</th></tr>
+<tr>
+<td> <i>独立</i>实现中，是否要求程序定义 <a href="language/main_function.html" title="cpp/language/main function"><tt>main</tt></a> 函数是由实现定义的。启动与终止过程是由实现定义的；启动过程中包含执行具有静态<a href="language/storage_duration.html" title="cpp/language/storage duration">存储期</a>的<a href="language/scope.html#.E5.91.BD.E5.90.8D.E7.A9.BA.E9.97.B4.E4.BD.9C.E7.94.A8.E5.9F.9F" title="cpp/language/scope">命名空间作用域</a>对象的<a href="language/constructor.html" title="cpp/language/constructor" class="mw-redirect">构造函数</a>；终止过程中包含执行具有静态<a href="language/storage_duration.html" title="cpp/language/storage duration">存储期</a>的对象的<a href="language/destructor.html" title="cpp/language/destructor">析构函数</a>。
+</td>
+<td> <i>宿主</i>实现中，程序必须包含一个名为 <a href="language/main_function.html" title="cpp/language/main function"><tt>main</tt></a> 的全局函数。程序执行时启动一个主<a href="thread.html" title="cpp/thread">执行线程</a>，在其中调用 <code>main</code> 函数，并且具有静态<a href="language/storage_duration.html" title="cpp/language/storage duration">存储期</a>的变量将在其中被初始化和销毁。
+</td></tr></table>
+<h3><span class="mw-headline" id=".E9.92.88.E5.AF.B9.E6.A0.87.E5.87.86.E5.BA.93.E5.A4.B4.E6.96.87.E4.BB.B6.E7.9A.84.E8.A7.84.E5.AE.9A"> 针对<a href="header.html" title="cpp/header">标准库头文件</a>的规定 </span></h3>
+<p><i>独立</i>实现拥有由实现定义的头文件集合。此集合至少包含下表中的头文件：
+</p>
+<table class="wikitable">
+<caption style="padding:6px;"> <i>独立</i>实现所规定的头文件
+</caption>
+<tr>
+<td> 类型 </td>
+<td> <a href="header/cstddef.html" title="cpp/header/cstddef"><tt>&lt;cstddef&gt;</tt></a>
+</td></tr>
+<tr>
+<td> 实现的属性 </td>
+<td> <a href="header/limits.html" title="cpp/header/limits"><tt>&lt;limits&gt;</tt></a><br><a href="header/cfloat.html" title="cpp/header/cfloat"><tt>&lt;cfloat&gt;</tt></a> <a href="header/climits.html" title="cpp/header/climits"><tt>&lt;climits&gt;</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span><br><a href="header/version.html" title="cpp/header/version"><tt>&lt;version&gt;</tt></a> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td></tr>
+<tr>
+<td> 整数类型 </td>
+<td> <a href="header/cstdint.html" title="cpp/header/cstdint"><tt>&lt;cstdint&gt;</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+<tr>
+<td> 启动与终止 </td>
+<td> <a href="header/cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a> <span class="t-mark">(部分)</span><sup id="cite_ref-1" class="reference"><a href="freestanding.html#cite_note-1">[1]</a></sup>
+</td></tr>
+<tr>
+<td> 动态内存管理 </td>
+<td> <a href="header/new.html" title="cpp/header/new"><tt>&lt;new&gt;</tt></a>
+</td></tr>
+<tr>
+<td> 类型鉴别 </td>
+<td> <a href="header/typeinfo.html" title="cpp/header/typeinfo"><tt>&lt;typeinfo&gt;</tt></a>
+</td></tr>
+<tr>
+<td> 异常处理 </td>
+<td> <a href="header/exception.html" title="cpp/header/exception"><tt>&lt;exception&gt;</tt></a>
+</td></tr>
+<tr>
+<td> 初始化器列表 </td>
+<td> <a href="header/initializer_list.html" title="cpp/header/initializer list"><tt>&lt;initializer_list&gt;</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+<tr>
+<td> 其他运行时支持 </td>
+<td> <a href="header/cstdarg.html" title="cpp/header/cstdarg"><tt>&lt;cstdarg&gt;</tt></a>
+</td></tr>
+<tr>
+<td> 基础库概念 </td>
+<td> <a href="header/concepts.html" title="cpp/header/concepts"><tt>&lt;concepts&gt;</tt></a> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td></tr>
+<tr>
+<td> 类型特征 </td>
+<td> <a href="header/type_traits.html" title="cpp/header/type traits"><tt>&lt;type_traits&gt;</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+<tr>
+<td> 原子类型 </td>
+<td> <a href="header/atomic.html" title="cpp/header/atomic"><tt>&lt;atomic&gt;</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+<tr>
+<td> 位操作 </td>
+<td> <a href="header/bit.html" title="cpp/header/bit"><tt>&lt;bit&gt;</tt></a> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td></tr>
+<tr>
+<td> </td>
+<td> <a href="header/ciso646.html" title="cpp/header/ciso646"><tt>&lt;ciso646&gt;</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span><span class="t-mark-rev t-until-cxx20">(C++20 前)</span>
+</td></tr>
+<tr>
+<td> 已弃用的头文件 </td>
+<td> <a href="header/cstdalign.html" title="cpp/header/cstdalign"><tt>&lt;cstdalign&gt;</tt></a> <a href="header/cstdbool.html" title="cpp/header/cstdbool"><tt>&lt;cstdbool&gt;</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span><span class="t-mark-rev t-until-cxx20">(C++20 前)</span>
+</td></tr></table>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="freestanding.html#cite_ref-1">↑</a></span> <span class="reference-text">头文件 <code>&lt;cstdlib&gt;</code> 的受支持版本应当至少声明函数 <span class="t-lc"><a href="utility/program/abort.html" title="cpp/utility/program/abort">std::abort</a></span> 、 <span class="t-lc"><a href="utility/program/atexit.html" title="cpp/utility/program/atexit">std::atexit</a></span> 、 <span class="t-lc"><a href="utility/program/exit.html" title="cpp/utility/program/exit">std::exit</a></span><span class="t-rev-inl t-since-cxx11"><span> 、 <span class="t-lc"><a href="utility/program/at_quick_exit.html" title="cpp/utility/program/at quick exit">std::at_quick_exit</a></span> 及 <span class="t-lc"><a href="utility/program/quick_exit.html" title="cpp/utility/program/quick exit">std::quick_exit</a></span></span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span> 。</span>
+</li>
+</ol>
+<h3><span class="mw-headline" id=".E5.BC.95.E7.94.A8"> 引用 </span></h3>
+<div class="t-ref-std-c++17">
+<ul><li> C++17 standard (ISO/IEC 14882:2017): 
+</li></ul>
+<dl><dd><ul><li> 4.1 Implementation compliance (p: 5)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 4.7 Multi-threaded executions and data races (p: 15)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 6.6.1 Main function (p: 66)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 20.5.1.3 Freestanding implementations (p: 458)
+</li></ul>
+</dd></dl>
+<div class="t-ref-std-c++14">
+<ul><li> C++14 standard (ISO/IEC 14882:2014): 
+</li></ul>
+<dl><dd><ul><li> 1.4 Implementation compliance (p: 5)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 1.10 Multi-threaded executions and data races (p: 11)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 3.6.1 Main function (p: 62)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 17.6.1.3 Freestanding implementations (p: 441)
+</li></ul>
+</dd></dl>
+<div class="t-ref-std-c++11">
+<ul><li> C++11 standard (ISO/IEC 14882:2011): 
+</li></ul>
+<dl><dd><ul><li> 1.4 Implementation compliance (p: 5)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 1.10 Multi-threaded executions and data races (p: 11)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 3.6.1 Main function (p: 58)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 17.6.1.3 Freestanding implementations (p: 408)
+</li></ul>
+</dd></dl>
+<div class="t-ref-std-c++03">
+<ul><li> C++03 standard (ISO/IEC 14882:2003): 
+</li></ul>
+<dl><dd><ul><li> 1.4 Implementation compliance (p: 3)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 3.6.1 Main function (p: 43)
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> 17.4.1.3 Freestanding implementations (p: 326)
+</li></ul>
+</dd></dl>
+</div>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85"> 参阅 </span></h3>
+<table class="t-dsc-begin">
+
+</table></div>
+</div>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1983/1000000
+Preprocessor generated node count: 5169/1000000
+Post‐expand include size: 25317/2097152 bytes
+Template argument size: 5890/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:11664-0!*!0!!zh!*!zh!* and timestamp 20190822203504 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/freestanding&amp;oldid=61893">https://zh.cppreference.com/mwiki/index.php?title=cpp/freestanding&amp;oldid=61893</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/freestanding">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年7月25日 (星期四) 02:50。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过5,984次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.366 secs. -->
+	</body>
+<!-- Cached 20190822203504 -->
+</html>

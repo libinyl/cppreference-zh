@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>隐式转换</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/implicit_conversion","wgTitle":"cpp/language/implicit conversion","wgCurRevisionId":61850,"wgArticleId":2722,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/implicit_conversion","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_implicit_conversion skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">隐式转换</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="expressions.html" title="cpp/language/expressions"> 表达式</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> 概述 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="value_category.html" title="cpp/language/value category"> 值类别</a>（左值 lvalue、右值 rvalue、亡值 xvalue）</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="eval_order.html" title="cpp/language/eval order"> 求值顺序</a>（序列点）</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constant_expression.html" title="cpp/language/constant expression"> 常量表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="expressions.html#.E4.B8.8D.E6.B1.82.E5.80.BC.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/expressions"> 不求值表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="expressions.html#.E5.88.9D.E7.AD.89.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/expressions"> 初等表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lambda.html" title="cpp/language/lambda">lambda 表达式</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 字面量 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="integer_literal.html" title="cpp/language/integer literal">整数字面量</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="floating_literal.html" title="cpp/language/floating literal">浮点字面量</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bool_literal.html" title="cpp/language/bool literal">布尔字面量</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="character_literal.html" title="cpp/language/character literal">字符字面量</a>，包含<a href="escape.html" title="cpp/language/escape">转义序列</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string_literal.html" title="cpp/language/string literal">字符串字面量</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nullptr.html" title="cpp/language/nullptr">空指针字面量</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="user_literal.html" title="cpp/language/user literal">用户定义字面量</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 运算符 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_assignment.html" title="cpp/language/operator assignment"> 赋值运算符</a>:
+<code>a=b</code>, <code>a+=b</code>, <code>a-=b</code>, <code>a*=b</code>, <code>a/=b</code>, <code>a%=b</code>, <code>a&amp;=b</code>, <code>a|=b</code>, <code>a^=b</code>, <code>a&lt;&lt;=b</code>, <code>a&gt;&gt;=b</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_incdec.html" title="cpp/language/operator incdec"> 自增与自减</a>: <code>++a</code>, <code>--a</code>, <code>a++</code>, <code>a--</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_arithmetic.html" title="cpp/language/operator arithmetic"> 算术运算符</a>:
+<code>+a</code>, <code>-a</code>, <code>a+b</code>, <code>a-b</code>, <code>a*b</code>, <code>a/b</code>, <code>a%b</code>, <code>~a</code>, <code>a&amp;b</code>, <code>a|b</code>, <code>a^b</code>, <code>a&lt;&lt;b</code>, <code>a&gt;&gt;b</code> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_logical.html" title="cpp/language/operator logical"> 逻辑运算符</a>: <code>a||b</code>, <code>a&amp;&amp;b</code>, <code>!a</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_comparison.html" title="cpp/language/operator comparison"> 比较运算符</a>: <code>a==b</code>, <code>a!=b</code>, <code>a&lt;b</code>, <code>a&gt;b</code>, <code>a&lt;=b</code>, <code>a&gt;=b</code>, <code>a&lt;=&gt;b</code><span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_member_access.html" title="cpp/language/operator member access"> 成员访问运算符</a>: <code>a[b]</code>, <code>*a</code>, <code>&amp;a</code>, <code>a-&gt;b</code>, <code>a.b</code>, <code>a-&gt;*b</code>, <code>a.*b</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_other.html" title="cpp/language/operator other"> 其他运算符</a>: <code>a(...)</code>, <code>a,b</code>, <code>a?b:c</code> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_comparisons.html" title="cpp/language/default comparisons">默认比较</a><span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_alternative.html" title="cpp/language/operator alternative">运算符的代用表示</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_precedence.html" title="cpp/language/operator precedence">优先级和结合性</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fold.html" title="cpp/language/fold">折叠表达式</a><span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="new.html" title="cpp/language/new">new 表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="delete.html" title="cpp/language/delete">delete 表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="throw.html" title="cpp/language/throw">throw 表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="alignof.html" title="cpp/language/alignof">alignof</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sizeof.html" title="cpp/language/sizeof">sizeof</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sizeof....html" title="cpp/language/sizeof...">sizeof...</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeid.html" title="cpp/language/typeid">typeid</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept">noexcept</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operators.html" title="cpp/language/operators">运算符重载</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 类型转换 </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">隐式转换</strong></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="const_cast.html" title="cpp/language/const cast">const_cast</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static_cast.html" title="cpp/language/static cast">static_cast</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast">reinterpret_cast</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit_cast.html" title="cpp/language/explicit cast">显式转换</a> <code>(T)a</code>, <code>T(a)</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cast_operator.html" title="cpp/language/cast operator">用户定义转换</a></td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>凡是在语境中使用了某种表达式类型 <code>T1</code>，但语境不接受该类型，而接受另一类型 <code>T2</code> 的时候，会进行隐式转换，具体是：
+</p>
+<ul><li> 调用以 <code>T2</code> 为形参声明的函数时，以该表达式为实参；
+</li><li> 运算符期待 <code>T2</code>，而以该表达式为操作数；
+</li><li> 初始化 <code>T2</code> 类型的新对象，包括在返回 <code>T2</code> 的函数中的 <code>return</code> 语句；
+</li><li> 将表达式用于 <code>switch</code> 语句（<code>T2</code> 为整型类型）；
+</li><li> 将表达式用于 <code>if</code> 语句或循环（<code>T2</code> 为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>）。
+</li></ul>
+<p>仅当存在一个从 <code>T1</code> 到 <code>T2</code> 的无歧义<i>隐式转换序列</i>时，程序良构（能编译）。
+</p><p>如果所调用的函数或运算符存在多个重载，则将 <code>T1</code> 到每个可用的 <code>T2</code> 都构造隐式转化序列之后，以<a href="overload_resolution.html" title="cpp/language/overload resolution">重载决议</a>规则决定编译哪个重载。
+</p><p>注意：算术表达式中，针对二元运算符的操作数上的隐式转换的目标类型，是以一组单独的<a href="operator_arithmetic.html#.E8.BD.AC.E6.8D.A2" title="cpp/language/operator arithmetic"><i>通常算术转换</i></a>的规则所决定的。
+</p>
+<h3><span class="mw-headline" id=".E8.BD.AC.E6.8D.A2.E9.A1.BA.E5.BA.8F">转换顺序</span></h3>
+<p>隐式转换序列由下列内容依照这个顺序所构成：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 零或一个<i>标准转换序列</i>；</div>
+<div class="t-li1"><span class="t-li">2)</span> 零或一个<i>用户定义转换</i>；</div>
+<div class="t-li1"><span class="t-li">3)</span> 零或一个<i>标准转换序列</i>。</div>
+<p>当考虑构造函数或用户定义转换函数的实参时，只允许一个标准转换序列（否则将实际上可以将用户定义转换串连起来）。从一个内建类型转换到另一内建类型时，只允许一个标准转换序列。
+</p><p>标准转换序列由下列内容依照这个顺序所构成：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 零或一个<i><a href="value_category.html#.E5.B7.A6.E5.80.BC" title="cpp/language/value category">左值</a>变换</i>；</div>
+<div class="t-li1"><span class="t-li">2)</span> 零或一个<i>数值提升</i>或<i>数值转换</i>；</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<div class="t-li1"><span class="t-li">3)</span> 零或一个<i>函数指针转换</i>；</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<div class="t-li1"><span class="t-li">4)</span> 零或一个<i>限定调整</i>。</div>
+<p>用户定义转换由零或一个非 explicit 单实参构造函数或非 explicit <a href="cast_operator.html" title="cpp/language/cast operator">转换函数</a>的调用构成。
+</p><p>当且仅当 <code>T2</code> 能从表达式 <code>e</code> <a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a>，即对于虚设的临时对象 <code>t</code>，声明 <span class="t-c"><span class="mw-geshi cpp source-cpp">T2 t <span class="sy1">=</span> e<span class="sy4">;</span></span></span> 良构（能编译）时，称表达式 <code>e</code> <i>可隐式转换为 <code>T2</code></i>。注意这有别于<a href="direct_initialization.html" title="cpp/language/direct initialization">直接初始化</a>（<span class="t-c"><span class="mw-geshi cpp source-cpp">T2 t<span class="br0">(</span>e<span class="br0">)</span></span></span>），其中还会额外考虑 explicit 构造函数和转换函数。
+</p>
+<h4><span class="mw-headline" id=".E6.8C.89.E8.AF.AD.E5.A2.83.E8.BD.AC.E6.8D.A2">按语境转换</span></h4>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<p>下列语境中，期待类型 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>，且若声明 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> t<span class="br0">(</span>e<span class="br0">)</span><span class="sy4">;</span></span></span> 良构则进行隐式转换（即考虑如 <code>explicit T::operator bool() const;</code> 这样的隐式转换函数）。称这种表达式 <code>e</code> <i>按语境转换为 <code>bool</code></i>。
+</p>
+<dl><dd><ul><li> <code>if</code>、<code>while</code>、<code>for</code> 的控制表达式；
+</li><li> 内建逻辑运算符 <code>!</code>、<code>&amp;&amp;</code> 和 <code>||</code> 的操作数；
+</li><li> 条件运算符 <code>?:</code> 的首个操作数；
+</li><li> <a href="static_assert.html" title="cpp/language/static assert"><code>static_assert</code></a> 声明中的谓词；
+</li><li> <a href="noexcept_spec.html" title="cpp/language/noexcept spec"><code>noexcept</code></a> 说明符中的表达式；
+</li></ul>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<dl><dd><ul><li> <a href="explicit.html" title="cpp/language/explicit"><code>explicit</code></a> 说明符中的表达式。
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<p>下列语境中，期待某个语境特定的类型 <code>T</code>，而对于类类型 <code>E</code> 的表达式 <code>e</code>，仅当<span class="t-rev-inl t-until-cxx14"><span> <code>E</code> 拥有单个转换到任何可允许类型的非 explicit <a href="cast_operator.html" title="cpp/language/cast operator">用户定义转换函数</a></span> <span><span class="t-mark-rev t-until-cxx14">(C++14 前)</span></span></span><span class="t-rev-inl t-since-cxx14"><span>可允许类型中恰好有一个类型 <code>T</code>，使得 <code>E</code> 拥有非 explicit 转换函数，其返回类型为（可有 cv 限定的）<code>T</code> 或到（可有 cv 限定的）<code>T</code> 的引用的，且 <code>e</code> 可隐式转换为 <code>T</code> </span> <span><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></span></span>时，才得到允许。称这种表达式 <code>e</code> <i>按语境隐式转换</i>到指定的类型 <code>T</code>。<span class="t-rev-inl t-since-cxx11"><span>注意，其中不考虑 explicit 转换函数，虽然在按语境转换到 bool 时会考虑它们。</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>
+</p>
+<ul><li> <a href="delete.html" title="cpp/language/delete">delete 表达式</a>的实参（<code>T</code> 是任何对象指针类型）；
+</li><li> <a href="constant_expression.html#.E6.95.B4.E5.9E.8B.E5.B8.B8.E9.87.8F.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/constant expression">整型常量表达式</a>，其中使用了字面类（<code>T</code> 是任何整数或无作用域枚举类型，所选中的用户定义转换函数必须是 <a href="constexpr.html" title="cpp/language/constexpr">constexpr</a>）；
+</li><li> <a href="switch.html" title="cpp/language/switch"><code>switch</code></a> 语句的控制表达式（<code>T</code> 是整数或枚举类型）。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cassert&gt;</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw1">class</span> zero_init
+<span class="br0">{</span>
+    T val<span class="sy4">;</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    zero_init<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> val<span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span>
+    zero_init<span class="br0">(</span>T val<span class="br0">)</span> <span class="sy4">:</span> val<span class="br0">(</span>val<span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span>
+    operator T<span class="sy3">&amp;</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> val<span class="sy4">;</span> <span class="br0">}</span>
+    operator T<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="br0">{</span> <span class="kw1">return</span> val<span class="sy4">;</span> <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    zero_init<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> i<span class="sy4">;</span> <a href="../error/assert.html"><span class="kw774">assert</span></a><span class="br0">(</span>i <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+    i <span class="sy1">=</span> <span class="nu0">7</span><span class="sy4">;</span> <a href="../error/assert.html"><span class="kw774">assert</span></a><span class="br0">(</span>i <span class="sy1">==</span> <span class="nu0">7</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">switch</span><span class="br0">(</span>i<span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span>     <span class="co1">// C++14 前错误（多于一个转换函数）</span>
+                      <span class="co1">// C++14（两个函数均转换到同一类型 int）</span>
+    <span class="kw1">switch</span><span class="br0">(</span>i <span class="sy2">+</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span> <span class="co1">// 始终 OK（隐式转换）</span>
+<span class="br0">}</span></pre></div></div>
+<h3><span class="mw-headline" id=".E5.80.BC.E5.8F.98.E6.8D.A2">值变换</span></h3>
+<p>值变换是更改表达式<a href="value_category.html" title="cpp/language/value category">值类别</a>的转换。每当将表达式用作期待不同值类别的表达式的运算符的操作数时，发生值变换。
+</p>
+<h4><span class="mw-headline" id=".E5.B7.A6.E5.80.BC.E5.88.B0.E5.8F.B3.E5.80.BC.E8.BD.AC.E6.8D.A2">左值到右值转换</span></h4>
+<p>任何非函数、非数组类型 <code>T</code> 的<a href="value_category.html#.E6.B3.9B.E5.B7.A6.E5.80.BC" title="cpp/language/value category">泛左值</a>，可隐式转换成同类型的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>。若 <code>T</code> 为非类类型，则此转换亦移除 cv 限定符。
+</p><p>以下情况下并不访问该左值所指代的对象：
+</p>
+<ul><li> 转化发生在<a href="expressions.html#.E4.B8.8D.E6.B1.82.E5.80.BC.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/expressions">不求值语境</a>中<span class="t-rev-inl t-since-cxx20"><span>（且在<a href="consteval.html" title="cpp/language/consteval">立即调用</a>之外）</span> <span><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></span></span>，例如作为 <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof</span></span><span class="t-rev-inl t-since-cxx11"><span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">decltype</span></span></span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">typeid</span></span></span> 的静态形式的操作数
+</li><li> 泛左值具有 <span class="t-lc"><a href="../types/nullptr_t.html" title="cpp/types/nullptr t">std::nullptr_t</a></span> 类型：此情况下结果纯右值是空指针常量 <span class="t-c"><span class="mw-geshi cpp source-cpp">nullptr</span></span>。
+</li><li> 存储于对象的值是编译时常量，且满足某些其他条件（见 <a href="definition.html#ODR_.E5.BC.8F.E4.BD.BF.E7.94.A8" title="cpp/language/definition">ODR 式使用</a>）
+</li></ul>
+<p>若 <code>T</code> 是非类类型，则产生该对象所包含的值作为纯右值结果。对于类类型，此转换
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx17"><td>
+<p>实际上以原泛左值作为复制构造函数的实参，复制构造一个 <code>T</code> 类型的临时对象，并将该临时对象作为纯右值返回。
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx17">(C++17 前)</span></td></tr>
+<tr class="t-rev t-since-cxx17"><td>
+<p>将泛左值转换为纯右值，其结果对象由该泛左值复制初始化。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<p>这项转换所塑造的是从某个内存位置中读取值到 CPU 寄存器之中的动作。
+</p><p>若泛左值所指代的对象含有不确定值（例如由<a href="default_initialization.html" title="cpp/language/default initialization">默认初始化</a>非类类型的自动变量而得），则其行为<a href="ub.html" title="cpp/language/ub">未定义</a>
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<p>，除非该不确定值具有可有 cv 限定的无符号字符类型，且不缓存于 CPU 寄存器，或者正式而言：
+</p>
+<dl><dd><ul><li> 其<a href="storage_duration.html" title="cpp/language/storage duration">存储期</a>是静态或线程局域的；
+</li><li> 或已构造了指向它的指针；
+</li><li> 或它已绑定到引用。
+</li></ul>
+</dd></dl>
+<p>若泛左值含有已无效化的指针值，则行为亦为由实现定义（而非未定义）。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<h4><span class="mw-headline" id=".E6.95.B0.E7.BB.84.E5.88.B0.E6.8C.87.E9.92.88.E8.BD.AC.E6.8D.A2">数组到指针转换</span></h4>
+<p>“<code>T</code> 的 <code>N</code> 元素数组”或“<code>T</code> 的未知边界数组”类型的<a href="value_category.html#.E5.B7.A6.E5.80.BC" title="cpp/language/value category">左值</a>或<a href="value_category.html#.E5.8F.B3.E5.80.BC" title="cpp/language/value category">右值</a>，可隐式转换为“<code>T</code> 的指针”类型的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>。<span class="t-rev-inl t-since-cxx17"><span>若数组是纯右值，则发生<a href="implicit_cast.html#.E4.B8.B4.E6.97.B6.E9.87.8F.E5.AE.9E.E8.B4.A8.E5.8C.96">临时量实质化</a>。</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>产生的指针指向数组首元素（细节参阅<a href="array.html#.E6.95.B0.E7.BB.84.E5.88.B0.E6.8C.87.E9.92.88.E9.80.80.E5.8C.96" title="cpp/language/array">数组到指针退化</a>）。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<h4> <span class="mw-headline" id=".E4.B8.B4.E6.97.B6.E9.87.8F.E5.AE.9E.E8.B4.A8.E5.8C.96">临时量实质化</span></h4>
+<p>任何完整类型 <code>T</code> 的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>，可转换为同类型 <code>T</code> 的亡值。此转换以该纯右值初始化一个 T 类型的临时对象（以临时对象作为求值该纯右值的结果对象），并产生一个代表该临时对象的亡值。
+若 <code>T</code> 是类类型或类类型的数组，则它必须有可访问且未被弃置的析构函数
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span> <span class="kw4">int</span> m<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> k <span class="sy1">=</span> S<span class="br0">(</span><span class="br0">)</span>.<span class="me1">m</span><span class="sy4">;</span> <span class="co1">// C++17 起成员访问期待泛左值；</span>
+               <span class="co1">// S() 纯右值被转换为亡值</span></pre></div></div>
+<p>临时量实质化在下例情况下发生：
+</p>
+<ul><li> <a href="reference_initialization.html" title="cpp/language/reference initialization">绑定引用</a>到纯右值时；
+</li><li> 在类纯右值上进行<a href="operator_member_access.html" title="cpp/language/operator member access">成员访问</a>时；
+</li><li> 进行数组到指针转换（见上文）或在数组纯右值上<a href="operator_member_access.html#.E5.86.85.E5.BB.BA.E7.9A.84.E4.B8.8B.E6.A0.87.E8.BF.90.E7.AE.97.E7.AC.A6" title="cpp/language/operator member access">使用下标</a>时；
+</li><li> 以<a href="list_initialization.html" title="cpp/language/list initialization">花括号初始化器列表</a>初始化 <span class="t-lc">std::initializer_list&lt;T&gt;</span> 类型的对象时；
+</li><li> 对纯右值应用 <a href="typeid.html" title="cpp/language/typeid"><code>typeid</code></a> 时（这是不求值表达式的一部分）；
+</li><li> 对纯右值应用 <a href="sizeof.html" title="cpp/language/sizeof"><code>sizeof</code></a> 时（这是不求值表达式的一部分）；
+</li><li> 纯右值作为<a href="expressions.html#.E5.BC.83.E5.80.BC.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/expressions">弃值表达式</a>时；
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<h4><span class="mw-headline" id=".E5.87.BD.E6.95.B0.E5.88.B0.E6.8C.87.E9.92.88">函数到指针</span></h4>
+<p>函数类型 <code>T</code> 的<a href="value_category.html#.E5.B7.A6.E5.80.BC" title="cpp/language/value category">左值</a>，可隐式转换成<a href="pointer.html#.E5.87.BD.E6.95.B0.E6.8C.87.E9.92.88" title="cpp/language/pointer">指向该函数的指针</a>的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>。这不适用于非静态成员函数，因为不存在指代非静态成员函数的左值。
+</p>
+<h3><span class="mw-headline" id=".E6.95.B0.E5.80.BC.E6.8F.90.E5.8D.87">数值提升</span></h3>
+<h4><span class="mw-headline" id=".E6.95.B4.E5.9E.8B.E6.8F.90.E5.8D.87">整型提升</span></h4>
+<p>小整型类型（如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>）的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>可转换为较大整型类型（如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>）的纯右值。具体而言，<a href="operator_arithmetic.html" title="cpp/language/operator arithmetic">算术运算符</a>不接受小于 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> 的类型为其实参，而在左值到右值转换后，若适用则自动实施整型提升。此转换始终保持原值。
+</p><p>以下隐式转换被归类为整型提升：
+</p>
+<dl><dd><ul><li> <code><b>signed char</b></code> 或 <code><b>signed short</b></code> 可转换为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>；
+</li><li> 若 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> 能保有其整个值范围，则 <code><b>unsigned char</b></code><span class="t-rev-inl t-since-cxx20"><span>、<code><b>char8_t</b></code></span> <span><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></span></span> 或 <code><b>unsigned short</b></code> 可转换为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>，否则可转换为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span>；
+</li><li> <code><b>char</b></code> 可转换为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span>，取决于其底层类型为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span> 还是 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span>（见上文）；
+</li><li> <code><b>wchar_t</b></code><span class="t-rev-inl t-since-cxx11"><span>、<code><b>char16_t</b></code> 及 <code><b>char32_t</b></code></span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span> 可转换为以下列表中能保有其整个值范围的首个类型：<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span><span class="t-rev-inl t-since-cxx11"><span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span></span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>；
+</li><li> 底层类型不固定的<a href="enum.html" title="cpp/language/enum"><i>无作用域枚举</i></a>类型可转换为以下列表中能保有其整个值范围的首个类型：<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span><span class="t-rev-inl t-since-cxx11"><span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span>、扩展整数类型（以大小顺序，有符号优先于无符号）</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>。若值范围更大，则不应用整型提升；
+</li></ul>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<dl><dd><ul><li> 底层类型固定的<i>无作用域枚举</i>类型可转换为其底层类型，而当底层类型亦适用整型提升时，则亦可转换为提升后的底层类型。到未提升的底层类型的转换，对于<a href="overload_resolution.html" title="cpp/language/overload resolution">重载决议</a>而言为更优；
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<dl><dd><ul><li> 若 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> 能表示位域的整个值范围，则<a href="bit_field.html" title="cpp/language/bit field"><i>位域</i></a>类型可转换为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>，否则若 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span> 能表示位域的整个值范围，则可转换为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span>，否则不实施整型提升；
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> 类型可转换为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>，值 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> 变为 <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> 而 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> 变为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span>。
+</li></ul>
+</dd></dl>
+<p>注意，所有其他转换都不是提升；例如<a href="overload_resolution.html" title="cpp/language/overload resolution">重载决议</a>选择 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> -&gt; <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>（提升）优先于 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> -&gt; <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span></span></span>（转换）。
+</p>
+<h4><span class="mw-headline" id=".E6.B5.AE.E7.82.B9.E6.8F.90.E5.8D.87">浮点提升</span></h4>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span> 类型<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>可转换为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> 类型的纯右值。值不更改。
+</p>
+<h3><span class="mw-headline" id=".E6.95.B0.E5.80.BC.E8.BD.AC.E6.8D.A2">数值转换</span></h3>
+<p>不同于提升，数值转换可以更改值，而且有潜在的精度损失。
+</p>
+<h4><span class="mw-headline" id=".E6.95.B4.E5.9E.8B.E8.BD.AC.E6.8D.A2">整型转换</span></h4>
+<p>任何整数类型或无作用域枚举类型的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>都可隐式转换成任何其他整数类型。若其转换列出于整数类型提升之下，则它是提升而非转换。
+</p>
+<dl><dd><ul><li> 若目标类型为无符号，则结果值是等于源值<a href="https://en.wikipedia.org/wiki/Modular_arithmetic" class="extiw" title="enwiki:Modular arithmetic">模</a> <span class="texhtml" style="white-space: nowrap;">2<span class="t-su">n<br></span></span> 的最小无符号值，其中 <span class="texhtml" style="white-space: nowrap;">n</span> 是用于表示目标类型的位数。
+</li></ul>
+<dl><dd> 即取决于目标类型更宽或更窄，分别对有符号数进行符号扩展<sup id="cite_ref-1" class="reference"><a href="implicit_cast.html#cite_note-1">[脚注 1]</a></sup>或截断，而对无符号数进行零扩展或截断。
+</dd></dl>
+<ul><li> 若目标类型有符号，则当源整数能以目标类型表示时，不更改其值。否则结果是<span class="t-rev-inl t-until-cxx20"><span>实现定义的</span> <span><span class="t-mark-rev t-until-cxx20">(C++20 前)</span></span></span><span class="t-rev-inl t-since-cxx20"><span>与源值对 <span class="texhtml" style="white-space: nowrap;">2<span class="t-su">n<br></span></span> 同余的唯一目标类型值，其中 <span class="texhtml" style="white-space: nowrap;">n</span> 是用于表示目标类型的位数</span> <span><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></span></span>（注意这不同于未定义的<a href="operator_arithmetic.html#.E6.BA.A2.E5.87.BA" title="cpp/language/operator arithmetic">有符号整数算术溢出</a>）。
+</li><li> 若源类型为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>，则值 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> 转换为目标类型的零，而值 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> 转换成目标类型的一（注意若目标类型为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>，则这是整数类型提升，而非整数类型转换）。
+</li><li> 若目标类型为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>，则这是布尔转换（见下文）。
+</li></ul>
+</dd></dl>
+<h4><span class="mw-headline" id=".E6.B5.AE.E7.82.B9.E8.BD.AC.E6.8D.A2">浮点转换</span></h4>
+<p>浮点类型的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>可转换成任何其他浮点类型的纯右值。若其转换列于浮点提升之下，则它是提升而非转换。
+</p>
+<dl><dd><ul><li> 若源值能以目标类型准确表示，则不更改它。
+</li><li> 若源值处于目标类型的两个可表示值之间，则结果是两个值之一（选择哪个是实现定义的，不过若支持 IEEE，则舍入默认为<a href="../numeric/fenv/FE_round.html" title="cpp/numeric/fenv/FE round">到最接近</a>）。
+</li><li> 否则，行为未定义。
+</li></ul>
+</dd></dl>
+<h4><span class="mw-headline" id=".E6.B5.AE.E7.82.B9.E6.95.B4.E5.9E.8B.E8.BD.AC.E6.8D.A2">浮点整型转换</span></h4>
+<dl><dd><ul><li> 浮点类型的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>可隐式转换成任何整数类型的纯右值。截断小数部分，即舍弃小数部分。若结果不能适应到目标类型中，则行为未定义（即使在目标类型为无符号数时，也不实施模算术）。若目标类型为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>，则这是布尔转换（见下文）。
+</li><li> 整数或无作用域枚举类型的纯右值可转换成任何浮点类型的纯右值。若不能正确表示该值，则选择与之最接近的较高值还是最接近的较低值是实现定义的，不过若支持 IEEE，则舍入默认为<a href="../numeric/fenv/FE_round.html" title="cpp/numeric/fenv/FE round">到最接近</a>。若其值不能适应到目标类型中，则行为未定义。若源类型为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>，则值 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> 转换为零，而值 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> 转换为一。
+</li></ul>
+</dd></dl>
+<h4><span class="mw-headline" id=".E6.8C.87.E9.92.88.E8.BD.AC.E6.8D.A2">指针转换</span></h4>
+<dl><dd><ul><li> <i>空指针常量</i>（见 <span class="t-lc"><a href="../types/NULL.html" title="cpp/types/NULL">NULL</a></span>）能转换成任何指针类型，而结果是该类型的空指针值。允许这种转换（称为<i>空指针转换</i>）作为单次转换，转换到 cv 限定类型，即不认为它是数值和限定性转换的结合。
+</li><li> 指向任何（可有 cv 限定的）对象类型 <code>T</code> 的指针的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>，可转换成指向（有等同 cv 限定的）<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> 的指针的纯右值。结果指针与原指针表示内存中的同一位置。若原指针是空指针值，则结果为目标类型的空指针值。
+</li><li> 指向派生类类型的（可有 cv 限定的）空指针可转换成指向其（有等同 cv 限定的）基类的指针。若基类不可访问或有歧义，则转换非良构（不能编译）。转换结果是指向原被指向对象内的基类子对象的指针。空指针值转换成目标类型的空指针值。
+</li></ul>
+</dd></dl>
+<h4><span class="mw-headline" id=".E6.88.90.E5.91.98.E6.8C.87.E9.92.88.E8.BD.AC.E6.8D.A2">成员指针转换</span></h4>
+<dl><dd><ul><li> <i>空指针常量</i>（见 <span class="t-lc"><a href="../types/NULL.html" title="cpp/types/NULL">NULL</a></span>）可转换成任何成员指针类型，而结果是该类型的空成员指针值。允许这种转换（称为<i>空成员指针转换</i>）作为单次转换，转换到 cv 限定类型，即不认为它是数值和限定性转换的结合。
+</li><li> 指向基类 <code>B</code> 中某类型 <code>T</code> 成员的指针<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>，可转换成指向其派生类 <code>D</code> 中同一类型 <code>T</code> 成员的指针<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>。若 <code>B</code> 是 <code>D</code> 的间接、有歧义或虚基类，或是 <code>D</code> 的某个中间虚基类的基类，则转换非良构（不能编译）。能以 <code>D</code> 对象解引用结果指针，而它将访问该 <code>D</code> 对象的 <code>B</code> 基类子对象内的成员。空成员指针值转换成目标类型的空成员指针值。
+</li></ul>
+</dd></dl>
+<h4><span class="mw-headline" id=".E5.B8.83.E5.B0.94.E8.BD.AC.E6.8D.A2">布尔转换</span></h4>
+<p>整数、浮点、无作用域枚举、指针和成员指针类型的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>，可转换成 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> 类型的纯右值。
+</p><p>零值（对于整数、浮点和无作用域枚举）、空指针值和空成员指针值变为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>。所有其他值变为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<p><a href="direct_initialization.html" title="cpp/language/direct initialization">直接初始化</a>的语境中，可以 <span class="t-lc"><a href="../types/nullptr_t.html" title="cpp/types/nullptr t">std::nullptr_t</a></span> 类型纯右值（包括 <span class="t-c"><span class="mw-geshi cpp source-cpp">nullptr</span></span>）初始化 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> 对象。结果为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>。然而不认为它是隐式转换。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E9.99.90.E5.AE.9A.E6.80.A7.E8.BD.AC.E6.8D.A2">限定性转换</span></h3>
+<dl><dd><ul><li> 指向<a href="cv.html" title="cpp/language/cv">有 cv 限定</a>的类型 <code>T</code> 的指针类型的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>，可转换为指向有更多 cv 限定的同一类型 <code>T</code> 的指针纯右值（换言之，能添加常性和易变性）。
+</li><li> 指向类 <code>X</code> 中有 cv 限定的类型 <code>T</code> 的成员指针的纯右值，可转换成指向类 <code>X</code> 中有更多 cv 限定的类型 <code>T</code> 的成员指针纯右值。
+</li></ul>
+</dd></dl>
+<p>“更多” cv 限定表明
+</p>
+<dl><dd><ul><li> 指向<i>无限定</i>类型的指针能转换成指向 <code>const</code> 的指针；
+</li><li> 指向<i>无限定</i>类型的指针能转换成指向 <code>volatile</code> 的指针；
+</li><li> 指向<i>无限定</i>类型的指针能转换成指向 <code>const volatile</code> 的指针；
+</li><li> 指向 <code>const</code> 类型的指针能转换成指向 <code>const volatile</code> 的指针；
+</li><li> 指向 <code>volatile</code> 类型的指针能转换成指向 <code>const volatile</code> 的指针。
+</li></ul>
+</dd></dl>
+<p>对于多级指针，应用下列限制：身为 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">1<br>0</span></span> 限定指针，指向 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">1<br>1</span></span> 限定指针，指向…… <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">1<br>n-1</span></span> 限定指针，指向 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">1<br>n</span></span> 限定 <code>T</code> 的多级指针 <code>P1</code>，可转换成身为 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">2<br>0</span></span> 限定指针，指向 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">2<br>1</span></span> 限定指针，指向…… <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">2<br>n-1</span></span> 限定指针，指向 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">2<br>n</span></span> 限定 <code>T</code> 的多级指针 <code>P2</code>，仅当
+</p>
+<dl><dd><ul><li> 两个指针的级数 <code>n</code> 相同；
+</li><li> 若在 <code>P1</code> 的某级（除了零级）的 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">1<br>k</span></span> 中有 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span>，则在 <code>P2</code> 的同级 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">2<br>k</span></span> 中有 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span>；
+</li><li> 若在 <code>P1</code> 的某级（除了零级）的 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">1<br>k</span></span> 中有 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">volatile</span></span></span>，则在 <code>P2</code> 的同级 <span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">2<br>k</span></span> 中有 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">volatile</span></span></span>；
+</li><li> 若在某级 <code>k</code> 上，<code>P2</code> 比 <code>P1</code> 有<i>更多</i> cv 限定，则 <code>P2</code> 到 <code>k</code> 为止的每一级（除了零级）<span class="texhtml" style="white-space: nowrap;">cv<span class="t-su t-su-b">2<br>1</span>, cv<span class="t-su t-su-b">2<br>2</span> ... cv<span class="t-su t-su-b">2<br>k</span></span> 上都必须有 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span> 。
+</li><li> 同样的规则用于指向成员的多级指针及指向对象和指向成员的多级混合指针；
+</li></ul>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14"><td>
+<dl><dd><ul><li> 同样的规则适用于包含任何级为指向已知边界或未知边界数组（认为有 cv 限定元素的数组自身有等同的 cv 限定）的多级指针；
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></td></tr>
+</table>
+<dl><dd><ul><li> 零级由非多级限定性转换的规则处理。
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">char</span><span class="sy2">**</span> p <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">**</span> p1 <span class="sy1">=</span> p<span class="sy4">;</span> <span class="co1">// 错误：2 级有更多 cv 限定但 1 级非 const</span>
+<span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">const</span> <span class="sy2">*</span> p2 <span class="sy1">=</span> p<span class="sy4">;</span> <span class="co1">// OK：2 级有更多 cv 限定并在 1 级添加 const</span>
+<span class="kw4">volatile</span> <span class="kw4">char</span> <span class="sy2">*</span> <span class="kw4">const</span> <span class="sy2">*</span> p3 <span class="sy1">=</span> p<span class="sy4">;</span> <span class="co1">// OK：2 级更有 cv 限定并在 1 级添加 const</span>
+<span class="kw4">volatile</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">const</span><span class="sy2">*</span> p4 <span class="sy1">=</span> p2<span class="sy4">;</span> <span class="co1">// OK：2 级更有 cv 限定而 const 已在 1 级</span>
+ 
+<span class="kw4">double</span> <span class="sy2">*</span>a<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">double</span> <span class="kw4">const</span> <span class="sy2">*</span> <span class="kw4">const</span> <span class="br0">(</span><span class="sy2">*</span>ap<span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> a<span class="sy4">;</span> <span class="co1">// C++14 起 OK</span></pre></div></div>
+<p>注意 C 编程语言中，只能添加 const/volatile 到第一级：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">char</span><span class="sy2">**</span> p <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">char</span> <span class="sy2">*</span> <span class="kw4">const</span><span class="sy2">*</span> p1 <span class="sy1">=</span> p<span class="sy4">;</span> <span class="co1">// C 与 C++ 中 OK</span>
+<span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">const</span> <span class="sy2">*</span> p2 <span class="sy1">=</span> p<span class="sy4">;</span> <span class="co1">// C 中错误，C++ 中 OK</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<h4> <span class="mw-headline" id=".E5.87.BD.E6.95.B0.E6.8C.87.E9.92.88.E8.BD.AC.E6.8D.A2">函数指针转换</span></h4>
+<dl><dd><ul><li> 指向无抛出函数的指针类型的<a href="value_category.html#.E7.BA.AF.E5.8F.B3.E5.80.BC" title="cpp/language/value category">纯右值</a>，可转换成指向潜在抛出函数的指针纯右值。
+</li><li> 指向无抛出成员函数指针类型的纯右值，可转换成指向潜在抛出成员函数的指针纯右值。
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> <span class="br0">(</span><span class="sy2">*</span>p<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> <span class="br0">(</span><span class="sy2">**</span>pp<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span> <span class="sy1">=</span> <span class="sy3">&amp;</span>p<span class="sy4">;</span> <span class="co1">// 错误：不能转换成指向 noexcept 函数的指针</span>
+ 
+<span class="kw1">struct</span> S
+<span class="br0">{</span>
+    <span class="kw1">typedef</span> <span class="kw4">void</span> <span class="br0">(</span><span class="sy2">*</span>p<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    operator p<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> <span class="br0">(</span><span class="sy2">*</span>q<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span> <span class="sy1">=</span> S<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误：不能转换成指向 noexcept 函数的指针</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E5.AE.89.E5.85.A8_bool_.E9.97.AE.E9.A2.98">安全 bool 问题</span></h3>
+<p>在 C++11 引入显式转换函数之前，设计一个能用于布尔语境的类（比如，<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">if</span><span class="br0">(</span>obj<span class="br0">)</span> <span class="br0">{</span> ... <span class="br0">}</span></span></span>）会出现问题：给定一个用户定义转换函数，如 <span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="sy4">::</span><span class="me2">operator</span> <span class="kw4">bool</span><span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></span>，则隐式转换序列允许再多一步标准转换序列，也就是 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> 结果会转换成 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>，允许诸如 <span class="t-c"><span class="mw-geshi cpp source-cpp">obj <span class="sy1">&lt;&lt;</span> <span class="nu0">1</span><span class="sy4">;</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> i <span class="sy1">=</span> obj<span class="sy4">;</span></span></span> 这样的代码。
+</p><p>一个早期的解决方案可参见 <span class="t-lc"><a href="../io/basic_ios.html" title="cpp/io/basic ios">std::basic_ios</a></span>，它定义 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy3">!</span></span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator <span class="kw4">void</span><span class="sy2">*</span></span></span><span class="t-mark-rev t-until-cxx11">(C++11 前)</span>，使得如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">if</span><span class="br0">(</span><a href="../io/cin.html"><span class="kw1756">std::<span class="me2">cin</span></span></a><span class="br0">)</span> <span class="br0">{</span>...<span class="br0">}</span></span></span> 的代码能编译，因为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span> 能转换为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>，但<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> n <span class="sy1">=</span> <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a><span class="sy4">;</span></span></span> 不能，因为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span> 不可转换至 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>。这仍然允许无意义代码能编译，如 <span class="t-c"><span class="mw-geshi cpp source-cpp">delete <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a><span class="sy4">;</span></span></span>。许多 C++11 前的第三方库设计带有更为复杂的解决方案，称作<a rel="nofollow" class="external text" href="http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Safe_bool">安全 Bool 手法</a>。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<p><a href="explicit.html" title="cpp/language/explicit">显式 bool 转换</a>亦能用于解决安全 bool 问题
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">explicit</span> operator <span class="kw4">bool</span><span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="br0">{</span> ... <span class="br0">}</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E8.84.9A.E6.B3.A8">脚注</span></h3>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="implicit_cast.html#cite_ref-1">↑</a></span> <span class="reference-text">仅若算术为补码才使用，仅对<a href="../types/integer.html" title="cpp/types/integer">定宽整数类型</a>要求补码。然而注意目前所有拥有 C++ 编译器的平台都使用补码算术。</span>
+</li>
+</ol>
+<h3><span class="mw-headline" id=".E7.BC.BA.E9.99.B7.E6.8A.A5.E5.91.8A">缺陷报告</span></h3>
+<p>下列更改行为的缺陷报告追溯地应用于以前出版的 C++ 标准。
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tr>
+<th> DR
+</th>
+<th> 应用于
+</th>
+<th> 出版时的行为
+</th>
+<th> 正确行为
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#330">CWG 330</a>
+</td>
+<td> C++14
+</td>
+<td> 从 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span> <span class="sy2">*</span> <span class="kw4">const</span> <span class="br0">(</span><span class="sy2">*</span>p<span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span> <span class="kw4">const</span> <span class="sy2">*</span> <span class="kw4">const</span> <span class="br0">(</span><span class="sy2">*</span>p<span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span></span></span> 的转换非法
+</td>
+<td> 转换合法
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#616">CWG 616</a>
+</td>
+<td> C++11
+</td>
+<td> 任何未初始化对象的左值到右值的转换是未定义行为
+</td>
+<td> 允许不定值的 <code>unsigned char</code>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#1423">CWG 1423</a>
+</td>
+<td> C++11
+</td>
+<td> <span class="t-lc"><a href="../types/nullptr_t.html" title="cpp/types/nullptr t">std::nullptr_t</a></span> 在直接或复制初始化中可转换为 <code>bool</code>
+</td>
+<td> 只允许直接初始化
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://wg21.link/p1350r0#1781">CWG 1781</a>
+</td>
+<td> C++11
+</td>
+<td> <span class="t-lc"><a href="../types/nullptr_t.html" title="cpp/types/nullptr t">std::nullptr_t</a></span> 到 <code>bool</code> 被认为是隐式转换，尽管只对直接初始化合法
+</td>
+<td> 不再认为它是隐式转换
+</td></tr></table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<ul><li> <a href="const_cast.html" title="cpp/language/const cast"><code>const_cast</code></a>
+</li><li> <a href="static_cast.html" title="cpp/language/static cast"><code>static_cast</code></a>
+</li><li> <a href="dynamic_cast.html" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>
+</li><li> <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>
+</li><li> <a href="explicit_cast.html" title="cpp/language/explicit cast">显式转型</a>
+</li><li> <a href="cast_operator.html" title="cpp/language/cast operator">用户定义转换</a>
+</li></ul>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 6971/1000000
+Preprocessor generated node count: 13799/1000000
+Post‐expand include size: 99721/2097152 bytes
+Template argument size: 25553/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2722-0!*!0!!zh!*!zh!* and timestamp 20190822203435 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/implicit_conversion&amp;oldid=61850">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/implicit_conversion&amp;oldid=61850</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/implicit_conversion">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年7月21日 (星期日) 22:49。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过15,317次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 5.674 secs. -->
+	</body>
+<!-- Cached 20190822203435 -->
+</html>

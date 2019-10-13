@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>形参包</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/parameter_pack","wgTitle":"cpp/language/parameter pack","wgCurRevisionId":62043,"wgArticleId":7609,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/parameter_pack","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_parameter_pack skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">形参包</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="templates.html" title="cpp/language/templates">模板</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="template_parameters.html" title="cpp/language/template parameters">形参与实参</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html" title="cpp/language/class template">类模板</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function_template.html" title="cpp/language/function template">函数模板</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">类成员模板</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="variable_template.html" title="cpp/language/variable template">变量模板</a><span class="t-mark">(C++14)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_argument_deduction.html" title="cpp/language/template argument deduction">模板实参推导</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template_argument_deduction.html" title="cpp/language/class template argument deduction">类模板实参推导</a><span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_specialization.html" title="cpp/language/template specialization">显式（全）特化</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="partial_specialization.html" title="cpp/language/partial specialization">部分特化</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="dependent_name.html" title="cpp/language/dependent name">待决名</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">形参包</strong><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="sizeof....html" title="cpp/language/sizeof..."><span class="t-lines"><span>sizeof...</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fold.html" title="cpp/language/fold">折叠表达式</a><span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sfinae.html" title="cpp/language/sfinae"> SFINAE</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constraints.html" title="cpp/language/constraints">制约与概念</a><span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>模板形参包是接受零或更多模板实参（非类型、类型或模板）的模板形参。函数模板形参包是接受零或更多函数实参的函数形参。
+</p><p>至少有一个形参包的模板被称作<i>变参模板</i>。
+</p>
+<h3><span class="mw-headline" id=".E8.AF.AD.E6.B3.95">语法</span></h3>
+<p>模板形参包（出现于<a href="type_alias.html" title="cpp/language/type alias">别名模版</a>、<a href="class_template.html" title="cpp/language/class template">类模板</a>、<a href="variable_template.html" title="cpp/language/variable template">变量模板</a>及<a href="function_template.html" title="cpp/language/function template">函数模板</a>形参列表中）
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">类型</span> <code><b>...</b></code> <span class="t-spar">Args</span><span class="t-mark">(可选)</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>typename|class</b></code> <code><b>...</b></code> <span class="t-spar">Args</span><span class="t-mark">(可选)</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>template</b></code> <code><b>&lt;</b></code> <span class="t-spar">形参列表</span> <code><b>&gt;</b></code> <code><b>typename<span class="t-mark-rev t-since-cxx17">(C++17)</span>|class</b></code> <code><b>...</b></code> <span class="t-spar">Args</span><span class="t-mark">(可选)</span>
+</td>
+<td> (3)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<p>函数参数包（<a href="declarations.html" title="cpp/language/declarations">声明符</a>的一种形式，出现于变参函数模板的函数形参列表中）
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">Args</span> <code><b>...</b></code> <span class="t-spar">args</span><span class="t-mark">(可选)</span>
+</td>
+<td> (4)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<p>形参包展开（出现于变参模板体中）
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">模式</span> <code><b>...</b></code>
+</td>
+<td> (5)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<div class="t-li1"><span class="t-li">1)</span> 带可选名字的非类型模板形参包</div>
+<div class="t-li1"><span class="t-li">2)</span> 带可选名字的类型模板形参包</div>
+<div class="t-li1"><span class="t-li">3)</span> 带可选名字的模板模板形参包</div>
+<div class="t-li1"><span class="t-li">4)</span> 带可选名字的函数形参包</div>
+<div class="t-li1"><span class="t-li">5)</span> 形参包展开：展开成零或更多 <code>模式</code> 的逗号分隔列表。模式必须包含至少一个形参包。</div>
+<h3><span class="mw-headline" id=".E8.A7.A3.E9.87.8A">解释</span></h3>
+<p>变参类模板可用任意数量的模板实参实例化：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> ... <span class="me1">Types</span><span class="sy1">&gt;</span> <span class="kw1">struct</span> Tuple <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+Tuple<span class="sy1">&lt;&gt;</span> t0<span class="sy4">;</span>           <span class="co1">// Types 不包含实参</span>
+Tuple<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> t1<span class="sy4">;</span>        <span class="co1">// Types 包含一个实参：int</span>
+Tuple<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">float</span><span class="sy1">&gt;</span> t2<span class="sy4">;</span> <span class="co1">// Types 包含二个实参：int 与 float</span>
+Tuple<span class="sy1">&lt;</span><span class="nu0">0</span><span class="sy1">&gt;</span> error<span class="sy4">;</span>       <span class="co1">// 错误：0 不是类型</span></pre></div></div>
+<p>变参函数模板可用任意数量的函数实参调用（模板实参通过<a href="template_argument_deduction.html" title="cpp/language/template argument deduction">模板实参推导</a>推导）：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> ... <span class="me1">Types</span><span class="sy1">&gt;</span> <span class="kw4">void</span> f<span class="br0">(</span>Types ... <span class="me1">args</span><span class="br0">)</span><span class="sy4">;</span>
+f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// OK：args 不包含实参</span>
+f<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">// OK：args 包含一个实参：int</span>
+f<span class="br0">(</span><span class="nu0">2</span>, <span class="nu16">1.0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK：args 包含二个实参：int 与 double</span></pre></div></div>
+<p>在主类模板中，模板形参包必须是模板形参列表的最后一个形参。在函数模板中，模板参数包可以在列表中稍早出现，只要其后的所有形参均可从函数实参推导或拥有默认实参即可：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span>... <span class="me1">Ts</span>, <span class="kw1">typename</span> U<span class="sy1">&gt;</span> <span class="kw1">struct</span> Invalid<span class="sy4">;</span> <span class="co1">// 错误：Ts.. 不在结尾</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> ...<span class="me1">Ts</span>, <span class="kw1">typename</span> U, <span class="kw1">typename</span><span class="sy1">=</span><span class="kw4">void</span><span class="sy1">&gt;</span>
+<span class="kw4">void</span> valid<span class="br0">(</span>U, Ts...<span class="br0">)</span><span class="sy4">;</span>     <span class="co1">// OK：能推导 U</span>
+<span class="co1">// void valid(Ts..., U);  // 不能使用：Ts... 在此位置是非推导语境</span>
+ 
+valid<span class="br0">(</span><span class="nu16">1.0</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">// OK：推导 U 为 double，Ts 为 {int,int,int}</span></pre></div></div>
+<p><br>
+</p>
+<h3><span class="mw-headline" id=".E5.8C.85.E5.B1.95.E5.BC.80">包展开</span></h3>
+<p>模式后随省略号，其中至少有一个形参包的名字至少出现一次，其被<i>展开</i>成零或更多个逗号分隔的模式实例，其中形参包的名字按顺序被替换成包中的各个元素。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> ...<span class="me1">Us</span><span class="sy1">&gt;</span> <span class="kw4">void</span> f<span class="br0">(</span>Us... <span class="me1">pargs</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> ...<span class="me1">Ts</span><span class="sy1">&gt;</span> <span class="kw4">void</span> g<span class="br0">(</span>Ts... <span class="me1">args</span><span class="br0">)</span> <span class="br0">{</span>
+    f<span class="br0">(</span><span class="sy3">&amp;</span>args...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// “&amp;args...” 是包展开</span>
+                 <span class="co1">// “&amp;args” 是其模式</span>
+<span class="br0">}</span>
+g<span class="br0">(</span><span class="nu0">1</span>, <span class="nu16">0.2</span>, <span class="st0">"a"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Ts... args 展开成 int E1, double E2, const char* E3</span>
+                <span class="co1">// &amp;args... 展开成 &amp;E1, &amp;E2, &amp;E3</span>
+                <span class="co1">// Us... 展开成 int* E1, double* E2, const char** E3</span></pre></div></div>
+<p>若两个形参包出现于同一模式中，则它们同时展开，而且它们必须有相同长度：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span>...<span class="sy1">&gt;</span> <span class="kw1">struct</span> Tuple <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T1, <span class="kw1">typename</span> T2<span class="sy1">&gt;</span> <span class="kw1">struct</span> Pair <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> ...<span class="me1">Args1</span><span class="sy1">&gt;</span> <span class="kw1">struct</span> zip <span class="br0">{</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> ...<span class="me1">Args2</span><span class="sy1">&gt;</span> <span class="kw1">struct</span> with <span class="br0">{</span>
+        <span class="kw1">typedef</span> Tuple<span class="sy1">&lt;</span>Pair<span class="sy1">&lt;</span>Args1, Args2<span class="sy1">&gt;</span>...<span class="sy1">&gt;</span> type<span class="sy4">;</span>
+<span class="co1">//        Pair&lt;Args1, Args2&gt;... 是包展开</span>
+<span class="co1">//        Pair&lt;Args1, Args2&gt; 是模式</span>
+    <span class="br0">}</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">typedef</span> zip<span class="sy1">&lt;</span><span class="kw4">short</span>, <span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">with</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">short</span>, <span class="kw4">unsigned</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span> T1<span class="sy4">;</span>
+<span class="co1">// Pair&lt;Args1, Args2&gt;... 展开成</span>
+<span class="co1">// Pair&lt;short, unsigned short&gt;, Pair&lt;int, unsigned int&gt; </span>
+<span class="co1">// T1 是 Tuple&lt;Pair&lt;short, unsigned short&gt;, Pair&lt;int, unsigned&gt;&gt;</span>
+ 
+<span class="kw1">typedef</span> zip<span class="sy1">&lt;</span><span class="kw4">short</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">with</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">short</span>, <span class="kw4">unsigned</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span> T2<span class="sy4">;</span>
+<span class="co1">// 错误：包展开中包含不同长度的形参包</span></pre></div></div>
+<p>若包展开内嵌于另一包展开中，则其所展开的是出现于最内层包展开的形参包，并且必须在外围（而非最内层）的包展开中必须提及另一个包：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> ...<span class="me1">Args</span><span class="sy1">&gt;</span>
+    <span class="kw4">void</span> g<span class="br0">(</span>Args... <span class="me1">args</span><span class="br0">)</span> <span class="br0">{</span>
+        f<span class="br0">(</span><span class="kw1">const_cast</span><span class="sy1">&lt;</span><span class="kw4">const</span> Args<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="sy3">&amp;</span>args<span class="br0">)</span>...<span class="br0">)</span><span class="sy4">;</span> 
+ <span class="co1">// const_cast&lt;const Args*&gt;(&amp;args) 是模式，它同时展开两个包（Args 与 args）</span>
+ 
+        f<span class="br0">(</span>h<span class="br0">(</span>args...<span class="br0">)</span> <span class="sy2">+</span> args...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 嵌套包展开：</span>
+   <span class="co1">// 内层包展开是“args...”，它首先展开</span>
+   <span class="co1">// 外层包展开是 h(E1, E2, E3) + args 它被第二次展开</span>
+   <span class="co1">// （成为 h(E1,E2,E3) + E1, h(E1,E2,E3) + E2, h(E1,E2,E3) + E3）</span>
+<span class="br0">}</span></pre></div></div>
+<h3><span class="mw-headline" id=".E5.B1.95.E5.BC.80.E5.9C.BA.E6.89.80">展开场所</span></h3>
+<p>取决于发生展开的场所，其所产生的逗号分隔列表可以是不同种类的列表：函数形参列表，成员初始化器列表，属性列表，等等。以下列出了所有允许的语境。
+</p>
+<h4><span class="mw-headline" id=".E5.87.BD.E6.95.B0.E5.AE.9E.E5.8F.82.E5.88.97.E8.A1.A8">函数实参列表</span></h4>
+<p>包展开可以出现在函数调用运算符的括号内，此情况下省略号左侧的最大表达式或花括号初始化器列表是被展开的模式。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">f<span class="br0">(</span><span class="sy3">&amp;</span>args...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 展开成 f(&amp;E1, &amp;E2, &amp;E3)</span>
+f<span class="br0">(</span>n, <span class="sy2">++</span>args...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 展开成 f(n, ++E1, ++E2, ++E3);</span>
+f<span class="br0">(</span><span class="sy2">++</span>args..., n<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 展开成 f(++E1, ++E2, ++E3, n);</span>
+f<span class="br0">(</span><span class="kw1">const_cast</span><span class="sy1">&lt;</span><span class="kw4">const</span> Args<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="sy3">&amp;</span>args<span class="br0">)</span>...<span class="br0">)</span><span class="sy4">;</span>
+<span class="co1">// f(const_cast&lt;const E1*&gt;(&amp;X1), const_cast&lt;const E2*&gt;(&amp;X2), const_cast&lt;const E3*&gt;(&amp;X3))</span>
+f<span class="br0">(</span>h<span class="br0">(</span>args...<span class="br0">)</span> <span class="sy2">+</span> args...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 展开成</span>
+<span class="co1">// f(h(E1,E2,E3) + E1, h(E1,E2,E3) + E2, h(E1,E2,E3) + E3)</span></pre></div></div>
+<p>正式而言，函数调用表达式中的<i>表达式列表</i>被归类为<i>初始化器列表</i>，其模式是<i>初始化器子句</i>，它或是<i>赋值表达式</i>，或是<i>花括号初始化器列表</i>。
+</p>
+<h4><span class="mw-headline" id=".E6.9C.89.E6.8B.AC.E5.8F.B7.E5.88.9D.E5.A7.8B.E5.8C.96.E5.99.A8">有括号初始化器</span></h4>
+<p>包展开可出现于<a href="direct_initialization.html" title="cpp/language/direct initialization">直接初始化器</a>，<a href="explicit_cast.html" title="cpp/language/explicit cast">函数式转型</a>及其他语境（<a href="constructor.html" title="cpp/language/initializer list">成员初始化器</a>，<a href="new.html" title="cpp/language/new">new 表达式</a>等）的括号之内，这种情况下的规则与适用于上述函数调用表达式的规则相同：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">Class c1<span class="br0">(</span><span class="sy3">&amp;</span>args...<span class="br0">)</span><span class="sy4">;</span>             <span class="co1">// 调用 Class::Class(&amp;E1, &amp;E2, &amp;E3)</span>
+Class c2 <span class="sy1">=</span> Class<span class="br0">(</span>n, <span class="sy2">++</span>args...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 调用 Class::Class(n, ++E1, ++E2, ++E3);</span>
+<span class="sy4">::</span><span class="me2">new</span><span class="br0">(</span><span class="br0">(</span><span class="kw4">void</span> <span class="sy2">*</span><span class="br0">)</span>p<span class="br0">)</span> U<span class="br0">(</span><a href="../utility/forward.html"><span class="kw1117">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">(</span>args<span class="br0">)</span>...<span class="br0">)</span> <span class="co1">// std::allocator::allocate</span></pre></div></div>
+<h4><span class="mw-headline" id=".E8.8A.B1.E6.8B.AC.E5.8F.B7.E5.8C.85.E5.9B.B4.E7.9A.84.E5.88.9D.E5.A7.8B.E5.8C.96.E5.99.A8">花括号包围的初始化器</span></h4>
+<p>在<i>花括号初始化器列表</i>（花括号包围的初始化器和其他<i>花括号初始化器列表</i>的列表，用于<a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a>和其他一些语境中）中，也可以出现包展开：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span>... <span class="me1">Ts</span><span class="sy1">&gt;</span> <span class="kw4">void</span> func<span class="br0">(</span>Ts... <span class="me1">args</span><span class="br0">)</span><span class="br0">{</span>
+    <span class="kw4">const</span> <span class="kw4">int</span> size <span class="sy1">=</span> sizeof...<span class="br0">(</span>args<span class="br0">)</span> <span class="sy2">+</span> <span class="nu0">2</span><span class="sy4">;</span>
+    <span class="kw4">int</span> res<span class="br0">[</span>size<span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">1</span>,args...,<span class="nu0">2</span><span class="br0">}</span><span class="sy4">;</span>
+    <span class="co1">// 因为初始化器列表保证顺序，所以这可用于按顺序对包的每个元素调用函数：</span>
+    <span class="kw4">int</span> dummy<span class="br0">[</span>sizeof...<span class="br0">(</span>Ts<span class="br0">)</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span> <span class="br0">(</span><a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> args, <span class="nu0">0</span><span class="br0">)</span>... <span class="br0">}</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h4><span class="mw-headline" id=".E6.A8.A1.E6.9D.BF.E5.AE.9E.E5.8F.82.E5.88.97.E8.A1.A8">模板实参列表</span></h4>
+<p>包展开可用于模板形参列表的任何位置，前提是模板拥有与该展开相匹配的形参。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> A, <span class="kw1">class</span> B, <span class="kw1">class</span>...<span class="me1">C</span><span class="sy1">&gt;</span> <span class="kw4">void</span> func<span class="br0">(</span>A arg1, B arg2, C...<span class="me1">arg3</span><span class="br0">)</span>
+<span class="br0">{</span>
+    container<span class="sy1">&lt;</span>A,B,C...<span class="sy1">&gt;</span> t1<span class="sy4">;</span>  <span class="co1">// 展开成 container&lt;A,B,E1,E2,E3&gt; </span>
+    container<span class="sy1">&lt;</span>C...,A,B<span class="sy1">&gt;</span> t2<span class="sy4">;</span>  <span class="co1">// 展开成 container&lt;E1,E2,E3,A,B&gt; </span>
+    container<span class="sy1">&lt;</span>A,C...,B<span class="sy1">&gt;</span> t3<span class="sy4">;</span>  <span class="co1">// 展开成 container&lt;A,E1,E2,E3,B&gt; </span>
+<span class="br0">}</span></pre></div></div>
+<h4><span class="mw-headline" id=".E5.87.BD.E6.95.B0.E5.BD.A2.E5.8F.82.E5.88.97.E8.A1.A8">函数形参列表</span></h4>
+<p>在函数形参列表中，若省略号出现于某个形参声明中（无论它是否指名函数形参包（例如在 <span class="t-spar">Args</span> <code><b>...</b></code> <span class="t-spar">args</span>中）），则该形参声明是模式：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> ...<span class="me1">Ts</span><span class="sy1">&gt;</span> <span class="kw4">void</span> f<span class="br0">(</span>Ts...<span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+f<span class="br0">(</span><span class="st0">'a'</span>, <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// Ts... 展开成 void f(char, int)</span>
+f<span class="br0">(</span><span class="nu16">0.1</span><span class="br0">)</span><span class="sy4">;</span>     <span class="co1">// Ts... 展开成 void f(double)</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> ...<span class="me1">Ts</span>, <span class="kw4">int</span>... <span class="me1">N</span><span class="sy1">&gt;</span> <span class="kw4">void</span> g<span class="br0">(</span>Ts <span class="br0">(</span><span class="sy3">&amp;</span>...<span class="me1">arr</span><span class="br0">)</span><span class="br0">[</span>N<span class="br0">]</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+<span class="kw4">int</span> n<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="sy4">;</span>
+g<span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">char</span>, <span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="st0">"a"</span>, n<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Ts (&amp;...arr)[N] 展开成 </span>
+                            <span class="co1">// const char (&amp;)[2], int(&amp;)[1]</span></pre></div></div>
+<p>注意：在模式 <code>Ts (&amp;...arr)[N]</code> 中，省略号是最内层元素，而非如所有其他包展开中一样为其最后元素。
+</p><p>注意：<code>Ts (&amp;...)[N]</code> 不被允许，因为 C++11 语法要求带括号的省略号形参拥有名字：<a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_active.html#1488">CWG #1488</a>。
+</p>
+<h4><span class="mw-headline" id=".E6.A8.A1.E6.9D.BF.E5.BD.A2.E5.8F.82.E5.88.97.E8.A1.A8">模板形参列表</span></h4>
+<p>包展开可以出现于模板形参列表中：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span>... <span class="me1">T</span><span class="sy1">&gt;</span> <span class="kw1">struct</span> value_holder
+<span class="br0">{</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span>T... <span class="me1">Values</span><span class="sy1">&gt;</span> <span class="co1">// 展开成非类型模板形参列表，</span>
+    <span class="kw1">struct</span> apply <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span>     <span class="co1">// 例如 &lt;int, char, int(&amp;)[5]&gt;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4><span class="mw-headline" id=".E5.9F.BA.E7.B1.BB.E8.AF.B4.E6.98.8E.E7.AC.A6.E4.B8.8E.E6.88.90.E5.91.98.E5.88.9D.E5.A7.8B.E5.8C.96.E5.99.A8.E5.88.97.E8.A1.A8">基类说明符与成员初始化器列表</span></h4>
+<p>包展开可以用于指定<a href="class.html" title="cpp/language/class">类声明</a>中的基类列表。典型情况下，这也意味着其构造函数也需要在<a href="constructor.html" title="cpp/language/initializer list">成员初始化器列表</a>中使用包展开，以调用这些基类的构造函数：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span>... <span class="me1">Mixins</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> X <span class="sy4">:</span> <span class="kw1">public</span> Mixins... <span class="br0">{</span>
+ <span class="kw1">public</span><span class="sy4">:</span>
+    X<span class="br0">(</span><span class="kw4">const</span> Mixins<span class="sy3">&amp;</span>... <span class="me1">mixins</span><span class="br0">)</span> <span class="sy4">:</span> Mixins<span class="br0">(</span>mixins<span class="br0">)</span>... <span class="br0">{</span> <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4><span class="mw-headline" id="Lambda_.E4.BF.98.E8.8E.B7">Lambda 俘获</span></h4>
+<p>包展开可以出现于 <a href="lambda.html" title="cpp/language/lambda">lambda</a> 表达式的俘获子句中
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> ...<span class="me1">Args</span><span class="sy1">&gt;</span>
+<span class="kw4">void</span> f<span class="br0">(</span>Args... <span class="me1">args</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">auto</span> lm <span class="sy1">=</span> <span class="br0">[</span><span class="sy3">&amp;</span>, args...<span class="br0">]</span> <span class="br0">{</span> <span class="kw1">return</span> g<span class="br0">(</span>args...<span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+    lm<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h4><span class="mw-headline" id="sizeof..._.E8.BF.90.E7.AE.97.E7.AC.A6">sizeof... 运算符</span></h4>
+<p><a href="sizeof....html" title="cpp/language/sizeof...">sizeof...</a> 也被归类为包展开
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span>... <span class="me1">Types</span><span class="sy1">&gt;</span>
+<span class="kw1">struct</span> count <span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">const</span> <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> value <span class="sy1">=</span> sizeof...<span class="br0">(</span>Types<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx17"><td>
+<h4> <span class="mw-headline" id=".E5.8A.A8.E6.80.81.E5.BC.82.E5.B8.B8.E8.AF.B4.E6.98.8E">动态异常说明</span></h4>
+<p><a href="except_spec.html" title="cpp/language/except spec">动态异常说明</a>中的异常列表亦可为包展开
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span>...<span class="me1">X</span><span class="sy1">&gt;</span> <span class="kw4">void</span> func<span class="br0">(</span><span class="kw4">int</span> arg<span class="br0">)</span> <span class="kw1">throw</span><span class="br0">(</span>X...<span class="br0">)</span>
+<span class="br0">{</span>
+ <span class="co1">// ... 在不同情形下抛出不同的 X</span>
+<span class="br0">}</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-until-cxx17">(C++17 前)</span></td></tr>
+</table>
+<h4><span class="mw-headline" id=".E5.AF.B9.E9.BD.90.E8.AF.B4.E6.98.8E.E7.AC.A6">对齐说明符</span></h4>
+<p>包展开允许在关键词 <a href="alignas.html" title="cpp/language/alignas">alignas</a> 所用的类型列表和表达式列表中使用
+</p>
+<h4><span class="mw-headline" id=".E5.B1.9E.E6.80.A7.E5.88.97.E8.A1.A8">属性列表</span></h4>
+<p>包展开允许在<a href="attributes.html" title="cpp/language/attributes">属性</a>列表中使用，如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">[</span><span class="br0">[</span>attributes...<span class="br0">]</span><span class="br0">]</span></span></span>。例如：<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> <span class="br0">[</span><span class="br0">[</span>attributes...<span class="br0">]</span><span class="br0">]</span> function<span class="br0">(</span><span class="br0">)</span></span></span>
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<h4> <span class="mw-headline" id=".E6.8A.98.E5.8F.A0.E8.A1.A8.E8.BE.BE.E5.BC.8F">折叠表达式</span></h4>
+<p>在<a href="fold.html" title="cpp/language/fold">折叠表达式</a>中，模式是不包含未展开形参包的整个子表达式。
+</p>
+<h4> <span class="mw-headline" id="using_.E5.A3.B0.E6.98.8E">using 声明</span></h4>
+<p>在 <a href="using_declaration.html" title="cpp/language/using declaration">using 声明</a>中，省略号可以出现于声明器列表内，这对于从一个形参包进行派生时有用：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">typename</span>... <span class="me1">bases</span><span class="sy1">&gt;</span>
+<span class="kw1">struct</span> X <span class="sy4">:</span> bases... <span class="br0">{</span>
+	<span class="kw1">using</span> bases<span class="sy4">::</span><span class="me2">g</span>...<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+X<span class="sy1">&lt;</span>B, D<span class="sy1">&gt;</span> x<span class="sy4">;</span> <span class="co1">// OK：引入 B::g 与 D::g</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E6.B3.A8.E8.A7.A3">注解</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本节未完成<br>原因：关于部分特化和其他访问单独元素方式的一些话？提及递归 vs 对数 vs 短路，例如折叠表达式 </td></tr></table>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+ 
+<span class="kw4">void</span> tprintf<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> format<span class="br0">)</span> <span class="co1">// 基础函数</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> format<span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T, <span class="kw1">typename</span>... <span class="me1">Targs</span><span class="sy1">&gt;</span>
+<span class="kw4">void</span> tprintf<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> format, T value, Targs... <span class="me1">Fargs</span><span class="br0">)</span> <span class="co1">// 递归变参函数</span>
+<span class="br0">{</span>
+    <span class="kw1">for</span> <span class="br0">(</span> <span class="sy4">;</span> <span class="sy2">*</span>format <span class="sy3">!</span><span class="sy1">=</span> <span class="st0">'<span class="es5">\0</span>'</span><span class="sy4">;</span> format<span class="sy2">++</span> <span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">if</span> <span class="br0">(</span> <span class="sy2">*</span>format <span class="sy1">==</span> <span class="st0">'%'</span> <span class="br0">)</span> <span class="br0">{</span>
+           <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> value<span class="sy4">;</span>
+           tprintf<span class="br0">(</span>format<span class="sy2">+</span><span class="nu0">1</span>, Fargs...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 递归调用</span>
+           <span class="kw1">return</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>format<span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    tprintf<span class="br0">(</span><span class="st0">"% world% %<span class="es1">\n</span>"</span>,<span class="st0">"Hello"</span>,<span class="st0">'!'</span>,<span class="nu0">123</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>输出：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Hello world! 123</pre></div></div> 
+</div>
+<p>上述例子定义了类似 <span class="t-lc"><a href="../io/c/printf.html" title="cpp/io/c/fprintf">std::printf</a></span> 的函数，并以一个值替换格式字符串中字符 % 的每次出现。
+</p><p>首个重载在仅传递格式字符串且无形参展开时调用。
+</p><p>第二个重载中分别包含针对实参头的一个模板形参和一个形参包，这允许递归调用中仅传递形参的尾部，直到它变为空。
+</p><p><code><b>Targs</b></code> 是模板形参包而 <code><b>Fargs</b></code> 是函数形参包
+</p>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2">  <a href="function_template.html" title="cpp/language/function template">函数模板</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td colspan="2">  <a href="class_template.html" title="cpp/language/class template">类模板</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <a href="sizeof....html" title="cpp/language/sizeof..."><tt>sizeof...</tt></a>
+</td>
+<td> 查询形参包中的元素数量。
+</td></tr>
+
+<tr class="t-dsc">
+<td colspan="2">  <a href="../utility/variadic.html" title="cpp/utility/variadic">C 风格的变参函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <a href="../preprocessor/replace.html" title="cpp/preprocessor/replace">预处理器宏</a>
+</td>
+<td> 亦可为变参
+</td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2306/1000000
+Preprocessor generated node count: 9176/1000000
+Post‐expand include size: 44158/2097152 bytes
+Template argument size: 14351/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:7609-0!*!0!!zh!*!zh!* and timestamp 20190823020544 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/parameter_pack&amp;oldid=62043">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/parameter_pack&amp;oldid=62043</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/parameter_pack">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年8月17日 (星期六) 08:18。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过15,959次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.617 secs. -->
+	</body>
+<!-- Cached 20190823020544 -->
+</html>

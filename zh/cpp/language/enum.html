@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>枚举声明</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/enum","wgTitle":"cpp/language/enum","wgCurRevisionId":61947,"wgArticleId":2708,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed CWG DR marker"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/enum","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_enum skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">枚举声明</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="declarations.html" title="cpp/language/declarations">声明</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> 概览 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations">声明语法</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#.E8.AF.B4.E6.98.8E.E7.AC.A6" title="cpp/language/declarations"> 声明说明符序列</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#.E5.A3.B0.E6.98.8E.E7.AC.A6" title="cpp/language/declarations"> 声明符</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 说明符 </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="typedef.html" title="cpp/language/typedef"><span class="t-lines"><span>typedef</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="inline.html" title="cpp/language/inline"><span class="t-lines"><span>inline</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual"> virtual 函数说明符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"> explicit 函数说明符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="friend.html" title="cpp/language/friend"><span class="t-lines"><span>friend</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="constexpr.html" title="cpp/language/constexpr"><span class="t-lines"><span>constexpr</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="consteval.html" title="cpp/language/consteval"><span class="t-lines"><span>consteval</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> 存储类说明符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="class.html" title="cpp/language/class"><span class="t-lines"><span>class</span><span>struct</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="union.html" title="cpp/language/union"><span class="t-lines"><span>union</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>enum</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="decltype.html" title="cpp/language/decltype"><span class="t-lines"><span>decltype</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="auto.html" title="cpp/language/auto"><span class="t-lines"><span>auto</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="alignas.html" title="cpp/language/alignas"><span class="t-lines"><span>alignas</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cv.html" title="cpp/language/cv"><span class="t-lines"><span>const</span><span>volatile</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="elaborated_type_specifier.html" title="cpp/language/elaborated type specifier">详述类型说明符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="attributes.html" title="cpp/language/attributes"> 属性</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> 声明符 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="reference.html" title="cpp/language/reference"> 引用</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="pointer.html" title="cpp/language/pointer"> 指针</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="array.html" title="cpp/language/array"> 数组</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 块声明 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> 简单声明</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="structured_binding.html" title="cpp/language/structured binding">结构化绑定声明</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="type_alias.html" title="cpp/language/type alias"> 别名声明</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace_alias.html" title="cpp/language/namespace alias"> 命名空间别名定义</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration"> using 声明</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html#using_.E6.8C.87.E4.BB.A4" title="cpp/language/namespace"> using 指令</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static_assert.html" title="cpp/language/static assert"> static_assert 声明</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="asm.html" title="cpp/language/asm"> asm 声明</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 不可见 enum 声明</strong><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 其他声明 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html" title="cpp/language/namespace"> 命名空间定义</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html" title="cpp/language/function"> 函数声明</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html" title="cpp/language/class template"> 类模板声明</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function_template.html" title="cpp/language/function template"> 函数模板声明</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html#.E6.98.BE.E5.BC.8F.E5.AE.9E.E4.BE.8B.E5.8C.96" title="cpp/language/class template"> 显式模板实例化</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_specialization.html" title="cpp/language/template specialization"> 显式模板特化</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language_linkage.html" title="cpp/language/language linkage"> 连接说明</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> 属性声明</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> 空声明</a> </td></tr>
+</table></div></td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p><i>枚举（enumeration）</i>是独立的类型，其值限制在一个取值范围内（细节见下文），它可以包含数个明确命名的常量（“<i>枚举项（enumerator）</i>”）。各常量的值是某个整型类型（称为该枚举的<i>底层类型（underlying type）</i>）的值。
+</p><p>枚举以下列语法定义：
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">enum-关键词</span> <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <span class="t-spar">enum-名</span><span class="t-mark">(可选)</span> <span class="t-spar">enum-基</span><span class="t-mark">(可选)</span><span class="t-mark-rev t-since-cxx11">(C++11)</span> <code><b>{ </b></code> <span class="t-spar">枚举项列表</span><span class="t-mark">(可选)</span> <code><b>} </b></code>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">enum-关键字</span> <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <span class="t-spar">enum-名</span> <span class="t-spar">enum-基</span><span class="t-mark">(可选)</span> <code><b>; </b></code>
+</td>
+<td> (2)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<div class="t-li1"><span class="t-li">1)</span> <i>enum-说明符</i>，出现于<a href="declarations.html" title="cpp/language/declarations">声明</a>语法的 <span class="t-spar">声明说明符序列</span> ：定义枚举类型与其枚举项。</div>
+<div class="t-li1"><span class="t-li">2)</span> <i>不可见（opaque）枚举声明</i>：定义枚举类型，但不定义其枚举项：在此声明后，该类型是完整类型，且其大小已知。<span class="t-rev-inl t-since-cxx14"><span>注意：仅有的在 <span class="t-spar">enum-名</span> 之前出现 <span class="t-spar">嵌套名说明符</span> 的情况，是类模板的有作用域枚举成员的<a href="template_specialization.html" title="cpp/language/template specialization">显式特化声明</a></span> <span><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></span></span></div>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">enum-关键字</span>
+</td>
+<td> -
+</td>
+<td>  <code><b>enum</b></code>、<code><b>enum class</b></code><span class="t-mark-rev t-since-cxx11">(C++11 起)</span> 或 <code><b>enum struct</b></code><span class="t-mark-rev t-since-cxx11">(C++11 起)</span> 之一
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td>  任意数量的<a href="attributes.html" title="cpp/language/attributes">属性</a>的可选序列
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">enum-名</span>
+</td>
+<td> -
+</td>
+<td>  所声明的枚举的名字。若存在，且若此声明为重声明，则其之前可带有 <span class="t-spar">嵌套名说明符</span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span>，即名字和作用域解析运算符 <code>::</code> 的序列并以作用域解析运算符结尾。仅可在无作用域枚举声明中省略名字
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">enum-基</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td>  冒号 (<code><b>:</b></code>)，后随指名某个整型类型的 <span class="t-spar">类型说明符序列</span>（若它为 cv 限定，则忽略其限定性），该类型将作为此枚举类型的固定底层类型
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">枚举项列表</span>
+</td>
+<td> -
+</td>
+<td>  枚举项定义的逗号分隔列表，每项要么是简单的 <span class="t-spar">标识符</span>，它成为枚举项之名，要么是带初始化器的标识符：<span class="t-spar">标识符</span> <code><b>=</b></code> <span class="t-spar">常量表达式</span>。<span class="t-rev-inl t-since-cxx17"><span>任一情况下，<span class="t-spar">标识符</span> 可直接后随一个可选的<a href="attributes.html" title="cpp/language/attributes">属性说明符序列</a>。</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>
+</td></tr></table>
+<p>有两种截然不同的枚举：<i>无作用域枚举</i>（以 <span class="t-spar">enum-关键词</span> <code><b>enum</b></code> 声明）和<i>有作用域枚举</i>（以 <span class="t-spar">enum-关键词</span> <code><b>enum class</b></code> 或 <code><b>enum struct</b></code> 声明）。
+</p>
+<h3><span class="mw-headline" id=".E6.97.A0.E4.BD.9C.E7.94.A8.E5.9F.9F.E6.9E.9A.E4.B8.BE">无作用域枚举</span></h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>enum</b></code> <span class="t-spar">名字</span> <code><b>{</b></code> <span class="t-spar">枚举项</span> <code><b>=</b></code> <span class="t-spar">常量表达式</span> <code><b>,</b></code> <span class="t-spar">枚举项</span> <code><b>=</b></code> <span class="t-spar">常量表达式</span> <code><b>,</b></code> ... <code><b>} </b></code>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>enum</b></code> <span class="t-spar">名字</span> <code><b>:</b></code> <span class="t-spar">类型</span> <code><b>{</b></code> <span class="t-spar">枚举项</span> <code><b>=</b></code> <span class="t-spar">常量表达式</span> <code><b>,</b></code> <span class="t-spar">枚举项</span> <code><b>=</b></code> <span class="t-spar">常量表达式</span> <code><b>,</b></code> ... <code><b>} </b></code>
+</td>
+<td> (2)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>enum</b></code> <span class="t-spar">名字</span> <code><b>:</b></code> <span class="t-spar">类型</span> <code><b>; </b></code>
+</td>
+<td> (3)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<div class="t-li1"><span class="t-li">1)</span> 声明无作用域枚举类型，其底层类型不固定（此情况中，底层类型是由实现定义的某个能表示所有枚举项值的整型类型；此类型不大于 <code>int</code>，除非枚举项的值不能放入 <code>int</code> 或 <code>unsigned int</code>。若枚举项列表为空，则底层类型为如同枚举拥有单个值为 0 的枚举项）。</div>
+<div class="t-li1"><span class="t-li">2)</span> 声明底层类型固定的无作用域枚举类型。</div>
+<div class="t-li1"><span class="t-li">3)</span> 无作用域枚举的不可见枚举声明必须指定底层类型。</div>
+<p>每个 <span class="t-spar">枚举项</span> 都成为该枚举类型（即 <span class="t-spar">名字</span>）的一个具名常量，在其外围作用域可见，且可用于要求常量的任何位置。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> Color <span class="br0">{</span> red, green, blue <span class="br0">}</span><span class="sy4">;</span>
+Color r <span class="sy1">=</span> red<span class="sy4">;</span>
+<span class="kw1">switch</span><span class="br0">(</span>r<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">case</span> red  <span class="sy4">:</span> <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"red<span class="es1">\n</span>"</span><span class="sy4">;</span>   <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">case</span> green<span class="sy4">:</span> <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"green<span class="es1">\n</span>"</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">case</span> blue <span class="sy4">:</span> <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"blue<span class="es1">\n</span>"</span><span class="sy4">;</span>  <span class="kw1">break</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>每个枚举项都与一个底层类型的值相关联。当在 <span class="t-spar">枚举项列表</span> 中提供了初始化器时，各枚举项的值由那些初始化器所定义。若首个枚举项无初始化器，则其关联值为零。对于其他任何定义中无初始化器的枚举项，其关联值为前一枚举项加一。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> Foo <span class="br0">{</span> a, b, c <span class="sy1">=</span> <span class="nu0">10</span>, d, e <span class="sy1">=</span> <span class="nu0">1</span>, f, g <span class="sy1">=</span> f <span class="sy2">+</span> c <span class="br0">}</span><span class="sy4">;</span>
+<span class="co1">//a = 0, b = 1, c = 10, d = 11, e = 1, f = 2, g = 12</span></pre></div></div>
+<p>无作用域枚举类型的值<a href="implicit_cast.html" title="cpp/language/implicit conversion">可隐式转换</a>为整型类型。若底层类型不固定，则其值可转换到以下列表中首个能保有其整个值范围的类型：<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span>。若底层类型固定，则其值可转换到其提升后的底层类型。 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> color <span class="br0">{</span> red, yellow, green <span class="sy1">=</span> <span class="nu0">20</span>, blue <span class="br0">}</span><span class="sy4">;</span>
+color col <span class="sy1">=</span> red<span class="sy4">;</span>
+<span class="kw4">int</span> n <span class="sy1">=</span> blue<span class="sy4">;</span> <span class="co1">// n == 21</span></pre></div></div>
+<p>整数、浮点和枚举类型的值，可用 <a href="static_cast.html" title="cpp/language/static cast"><code>static_cast</code></a> 或<a href="explicit_cast.html" title="cpp/language/explicit cast">显式转型</a>转换到任何枚举类型。若底层类型不固定，且若源值在范围外（源值在范围内，若它能以足以保有目标枚举的所有枚举项的最小位域表示，这里若源值为浮点类型则首先转换到枚举的底层类型），则其结果<span class="t-rev-inl t-until-cxx17"><span>未指明</span> <span><span class="t-mark-rev t-until-cxx17">(C++17 前)</span></span></span><span class="t-rev-inl t-since-cxx17"><span>未定义</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>。否则，结果与<a href="implicit_cast.html" title="cpp/language/implicit conversion">隐式转换</a>到底层类型的结果相同。
+</p><p>注意，这种转换后的值不必等于任何为该枚举所定义的具名枚举项。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> access_t <span class="br0">{</span> read <span class="sy1">=</span> <span class="nu0">1</span>, write <span class="sy1">=</span> <span class="nu0">2</span>, exec <span class="sy1">=</span> <span class="nu0">4</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">//枚举项：1、2、4 范围：0..7</span>
+access_t rwe <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span>access_t<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">7</span><span class="br0">)</span><span class="sy4">;</span>
+<a href="../error/assert.html"><span class="kw774">assert</span></a><span class="br0">(</span><span class="br0">(</span>rwe <span class="sy3">&amp;</span> read<span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>rwe <span class="sy3">&amp;</span> write<span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>rwe <span class="sy3">&amp;</span> exec<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+access_t x <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span>access_t<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu16">8.0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// C++17 起为未定义行为</span>
+access_t y <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span>access_t<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">8</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// C++17 起为未定义行为</span>
+ 
+<span class="kw2">enum</span> foo <span class="br0">{</span> a <span class="sy1">=</span> <span class="nu0">0</span>, b <span class="sy1">=</span> <a href="../types/climits.html"><span class="kw403">UINT_MAX</span></a> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 范围：[0, UINT_MAX]</span>
+foo x<span class="sy1">=</span> foo<span class="br0">(</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// C++17 起为未定义行为，即使 foo 的底层类型为 unsigned int</span></pre></div></div>
+<p>无作用域枚举的 <span class="t-spar">名字</span> 可以忽略：这种声明仅将各枚举项引入到其外围作用域中：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> <span class="br0">{</span> a, b, c <span class="sy1">=</span> <span class="nu0">0</span>, d <span class="sy1">=</span> a <span class="sy2">+</span> <span class="nu0">2</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 定义 a = 0, b = 1, c = 0, d = 2</span></pre></div></div>
+<p>当无作用域枚举是类成员时，其枚举项可用类成员访问运算符 <code><b>.</b></code> 和 <code><b>-&gt;</b></code> 访问：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> X
+<span class="br0">{</span>
+    <span class="kw2">enum</span> direction <span class="br0">{</span> left <span class="sy1">=</span> <span class="st0">'l'</span>, right <span class="sy1">=</span> <span class="st0">'r'</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+X x<span class="sy4">;</span>
+X<span class="sy2">*</span> p <span class="sy1">=</span> <span class="sy3">&amp;</span>x<span class="sy4">;</span>
+ 
+<span class="kw4">int</span> a <span class="sy1">=</span> X<span class="sy4">::</span><span class="me2">direction</span><span class="sy4">::</span><span class="me2">left</span><span class="sy4">;</span> <span class="co1">// 仅于 C++11 及之后允许</span>
+<span class="kw4">int</span> b <span class="sy1">=</span> X<span class="sy4">::</span><span class="me2">left</span><span class="sy4">;</span>
+<span class="kw4">int</span> c <span class="sy1">=</span> x.<span class="me1">left</span><span class="sy4">;</span>
+<span class="kw4">int</span> d <span class="sy1">=</span> p<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<h3> <span class="mw-headline" id=".E6.9C.89.E4.BD.9C.E7.94.A8.E5.9F.9F.E6.9E.9A.E4.B8.BE">有作用域枚举</span></h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>enum</b></code> <code><b>struct|class</b></code> <span class="t-spar">名字</span> <code><b>{</b></code> <span class="t-spar">枚举项</span> <code><b>=</b></code> <span class="t-spar">常量表达式</span> <code><b>,</b></code> <span class="t-spar">枚举项</span> <code><b>=</b></code> <span class="t-spar">常量表达式</span> <code><b>,</b></code> ... <code><b>} </b></code>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>enum</b></code> <code><b>struct|class</b></code> <span class="t-spar">名字</span> <code><b>:</b></code> <span class="t-spar">类型</span> <code><b>{</b></code> <span class="t-spar">枚举项</span> <code><b>=</b></code> <span class="t-spar">常量表达式</span> <code><b>,</b></code> <span class="t-spar">枚举项</span> <code><b>=</b></code> <span class="t-spar">常量表达式</span> <code><b>,</b></code> ... <code><b>} </b></code>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>enum</b></code> <code><b>struct|class</b></code> <span class="t-spar">名字</span> <code><b>; </b></code>
+</td>
+<td> (3)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>enum</b></code> <code><b>struct|class</b></code> <span class="t-spar">名字</span> <code><b>:</b></code> <span class="t-spar">类型</span> <code><b>; </b></code>
+</td>
+<td> (4)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<div class="t-li1"><span class="t-li">1)</span> 声明底层类型为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> 的有作用域枚举类型（关键词 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span></span></span> 与 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span></span></span> 完全等价）</div>
+<div class="t-li1"><span class="t-li">2)</span> 声明底层类型为 <span class="t-spar">类型</span> 的有作用域枚举类型</div>
+<div class="t-li1"><span class="t-li">3)</span> 底层类型为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> 的有作用域枚举类型的不可见枚举声明</div>
+<div class="t-li1"><span class="t-li">4)</span> 底层类型为 <span class="t-spar">类型</span> 的有作用域枚举类型的不可见枚举声明</div>
+<p>每个 <span class="t-spar">枚举项</span> 都成为该枚举的类型（即 <span class="t-spar">名字</span>）的具名常量，它为该枚举的作用域所包含，且可用作用域解析运算符访问。没有从有作用域枚举项到整数类型的隐式转换，尽管 <a href="static_cast.html" title="cpp/language/static cast">static_cast</a> 可用于获得枚举项的数值。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> <span class="kw1">class</span> Color <span class="br0">{</span> red, green <span class="sy1">=</span> <span class="nu0">20</span>, blue <span class="br0">}</span><span class="sy4">;</span>
+Color r <span class="sy1">=</span> Color<span class="sy4">::</span><span class="me2">blue</span><span class="sy4">;</span>
+<span class="kw1">switch</span><span class="br0">(</span>r<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">case</span> Color<span class="sy4">::</span><span class="me2">red</span>  <span class="sy4">:</span> <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"red<span class="es1">\n</span>"</span><span class="sy4">;</span>   <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">case</span> Color<span class="sy4">::</span><span class="me2">green</span><span class="sy4">:</span> <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"green<span class="es1">\n</span>"</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">case</span> Color<span class="sy4">::</span><span class="me2">blue</span> <span class="sy4">:</span> <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"blue<span class="es1">\n</span>"</span><span class="sy4">;</span>  <span class="kw1">break</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="co1">// int n = r; // 错误：不存在从有作用域枚举到 int 的转换</span>
+<span class="kw4">int</span> n <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">(</span>r<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK, n = 21</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<p>底层类型固定的有作用域枚举类型和无作用域枚举类型，若下列全部条件为真，则都能用<a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a>从一个整数初始化而无需转型：
+</p>
+<ul><li> 初始化是直接列表初始化
+</li><li> 初始化器列表仅有单个元素
+</li><li> 枚举是底层类型固定的有作用域枚举或无作用域枚举
+</li><li> 转换为非窄化转换
+</li></ul>
+<p>这使得我们能引入新的整数类型（例如 SafeInt）并享受与其底层整数类型相同的既存调用约定，即使在不利于以值传递/返回结构体的 ABI 上也是如此。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> byte <span class="sy4">:</span> <span class="kw4">unsigned</span> <span class="kw4">char</span> <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// byte 是新的整数类型</span>
+byte b <span class="br0">{</span> <span class="nu0">42</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// C++17 起 OK（直接列表初始化）</span>
+byte c <span class="sy1">=</span> <span class="br0">{</span> <span class="nu0">42</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 错误</span>
+byte d <span class="sy1">=</span> byte<span class="br0">{</span> <span class="nu0">42</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// C++17 起 OK；与 b 的值相同</span>
+byte e <span class="br0">{</span> <span class="sy2">-</span><span class="nu0">1</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 错误</span>
+ 
+<span class="kw1">struct</span> A <span class="br0">{</span> byte b<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+A a1 <span class="sy1">=</span> <span class="br0">{</span> <span class="br0">{</span> <span class="nu0">42</span> <span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 错误</span>
+A a2 <span class="sy1">=</span> <span class="br0">{</span> byte<span class="br0">{</span> <span class="nu0">42</span> <span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// C++17 起 OK</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span>byte<span class="br0">)</span><span class="sy4">;</span>
+f<span class="br0">(</span><span class="br0">{</span> <span class="nu0">42</span> <span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误</span>
+ 
+<span class="kw2">enum</span> <span class="kw1">class</span> Handle <span class="sy4">:</span> <a href="../types/integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a> <span class="br0">{</span> Invalid <span class="sy1">=</span> <span class="nu0">0</span> <span class="br0">}</span><span class="sy4">;</span>
+Handle h <span class="br0">{</span> <span class="nu0">42</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// C++17 起 OK</span></pre></div></div>
+<p><br>
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+ 
+<span class="co1">// 采用 16 位的 enum</span>
+<span class="kw2">enum</span> smallenum<span class="sy4">:</span> int16_t
+<span class="br0">{</span>
+    a,
+    b,
+    c
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+ 
+<span class="co1">// color 可为 red（值 0）、yellow（值 1）、green（值 20）或 blue（值 21）</span>
+<span class="kw2">enum</span> color
+<span class="br0">{</span>
+    red,
+    yellow,
+    green <span class="sy1">=</span> <span class="nu0">20</span>,
+    blue
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// altitude 可为 altitude::high 或 altitude::low</span>
+<span class="kw2">enum</span> <span class="kw1">class</span> altitude<span class="sy4">:</span> <span class="kw4">char</span>
+<span class="br0">{</span> 
+     high<span class="sy1">=</span><span class="st0">'h'</span>,
+     low<span class="sy1">=</span><span class="st0">'l'</span>, <span class="co1">// C++11 允许尾随逗号</span>
+<span class="br0">}</span><span class="sy4">;</span> 
+ 
+<span class="co1">// 常量 d 为 0，常量 e 为 1，常量 f 为 3</span>
+<span class="kw2">enum</span>
+<span class="br0">{</span>
+    d,
+    e,
+    f <span class="sy1">=</span> e <span class="sy2">+</span> <span class="nu0">2</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// 枚举类型（有作用域和无作用域）能拥有重载的运算符</span>
+<a href="../io/basic_ostream.html"><span class="kw1729">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">(</span><a href="../io/basic_ostream.html"><span class="kw1729">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, color c<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">switch</span><span class="br0">(</span>c<span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw1">case</span> red   <span class="sy4">:</span> os <span class="sy1">&lt;&lt;</span> <span class="st0">"red"</span><span class="sy4">;</span>    <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> yellow<span class="sy4">:</span> os <span class="sy1">&lt;&lt;</span> <span class="st0">"yellow"</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> green <span class="sy4">:</span> os <span class="sy1">&lt;&lt;</span> <span class="st0">"green"</span><span class="sy4">;</span>  <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> blue  <span class="sy4">:</span> os <span class="sy1">&lt;&lt;</span> <span class="st0">"blue"</span><span class="sy4">;</span>   <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">default</span>    <span class="sy4">:</span> os.<span class="me1">setstate</span><span class="br0">(</span><a href="../io/ios_base/iostate.html"><span class="kw1700">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">failbit</span></span></a><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">return</span> os<span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<a href="../io/basic_ostream.html"><span class="kw1729">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">(</span><a href="../io/basic_ostream.html"><span class="kw1729">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, altitude al<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">return</span> os <span class="sy1">&lt;&lt;</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">(</span>al<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    color col <span class="sy1">=</span> red<span class="sy4">;</span>
+    altitude a<span class="sy4">;</span>
+    a <span class="sy1">=</span> altitude<span class="sy4">::</span><span class="me2">low</span><span class="sy4">;</span>
+ 
+    <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"col = "</span> <span class="sy1">&lt;&lt;</span> col <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">"a = "</span>   <span class="sy1">&lt;&lt;</span> a   <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">"f = "</span>   <span class="sy1">&lt;&lt;</span> f   <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>输出：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">col = red
+a = l
+f = 3</pre></div></div> 
+</div>
+<h3><span class="mw-headline" id=".E7.BC.BA.E9.99.B7.E6.8A.A5.E5.91.8A">缺陷报告</span></h3>
+<p>下列更改行为的缺陷报告追溯地应用于以前出版的 C++ 标准。
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tr>
+<th> DR
+</th>
+<th> 应用于
+</th>
+<th> 出版时的行为
+</th>
+<th> 正确行为
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#1638">CWG 1638</a>
+</td>
+<td> C++14
+</td>
+<td> 不可见枚举声明的文法禁止用于模板特化
+</td>
+<td> 容许 nested-name-specifier
+</td></tr></table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 3920/1000000
+Preprocessor generated node count: 10027/1000000
+Post‐expand include size: 92075/2097152 bytes
+Template argument size: 29881/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2708-0!*!0!!zh!*!zh!* and timestamp 20190823020746 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/enum&amp;oldid=61947">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/enum&amp;oldid=61947</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/enum">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年7月29日 (星期一) 05:55。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过30,543次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.507 secs. -->
+	</body>
+<!-- Cached 20190823020747 -->
+</html>

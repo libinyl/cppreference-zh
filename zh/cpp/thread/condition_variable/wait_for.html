@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>std::condition_variable::wait_for</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/thread/condition_variable/wait_for","wgTitle":"cpp/thread/condition variable/wait for","wgCurRevisionId":45804,"wgArticleId":3748,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed LWG DR marker"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/thread/condition_variable/wait_for","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_thread_condition_variable_wait_for skin-cppreference2 action-view cpp-page-template cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::condition_variable::</span>wait_for</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../thread.html" title="cpp/thread">thread</a>‎ | <a href="../condition_variable.html" title="cpp/thread/condition variable">condition variable</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-page-template" style="">
+<p>
+</p>
+</div>
+<div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../thread.html" title="cpp/thread">线程支持库</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> 线程</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../thread.html" title="cpp/thread/thread"><span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/jthread&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/jthread（页面不存在）"><span class="t-lines"><span>jthread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/stop_token&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/stop token（页面不存在）"><span class="t-lines"><span>stop_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/stop_source&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/stop source（页面不存在）"><span class="t-lines"><span>stop_source</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/stop_callback&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/stop callback（页面不存在）"><span class="t-lines"><span>stop_callback</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../hardware_destructive_interference_size.html" title="cpp/thread/hardware destructive interference size"><span class="t-lines"><span>hardware_destructive_interference_size</span><span>hardware_constructive_interference_size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> <code>this_thread</code> 命名空间</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../get_id.html" title="cpp/thread/get id"><span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../yield.html" title="cpp/thread/yield"><span class="t-lines"><span>yield</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../sleep_for.html" title="cpp/thread/sleep for"><span class="t-lines"><span>sleep_for</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../sleep_until.html" title="cpp/thread/sleep until"><span class="t-lines"><span>sleep_until</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 互斥</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../mutex.html" title="cpp/thread/mutex"><span class="t-lines"><span>mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../recursive_mutex.html" title="cpp/thread/recursive mutex"><span class="t-lines"><span>recursive_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../shared_mutex.html" title="cpp/thread/shared mutex"><span class="t-lines"><span>shared_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../timed_mutex.html" title="cpp/thread/timed mutex"><span class="t-lines"><span>timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../recursive_timed_mutex.html" title="cpp/thread/recursive timed mutex"><span class="t-lines"><span>recursive_timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../shared_timed_mutex.html" title="cpp/thread/shared timed mutex"><span class="t-lines"><span>shared_timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark">(C++14)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 通用锁管理</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lock_guard.html" title="cpp/thread/lock guard"><span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../scoped_lock.html" title="cpp/thread/scoped lock"><span class="t-lines"><span>scoped_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../unique_lock.html" title="cpp/thread/unique lock"><span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../shared_lock.html" title="cpp/thread/shared lock"><span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark">(C++14)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lock_tag_t.html" title="cpp/thread/lock tag t"><span class="t-lines"><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lock.html" title="cpp/thread/lock"><span class="t-lines"><span>lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../try_lock.html" title="cpp/thread/try lock"><span class="t-lines"><span>try_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lock_tag.html" title="cpp/thread/lock tag"><span class="t-lines"><span>defer_lock</span><span>try_to_lock</span><span>adopt_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../once_flag.html" title="cpp/thread/once flag"><span class="t-lines"><span>once_flag</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../call_once.html" title="cpp/thread/call once"><span class="t-lines"><span>call_once</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 条件变量</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../condition_variable.html" title="cpp/thread/condition variable"><span class="t-lines"><span>condition_variable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../condition_variable_any.html" title="cpp/thread/condition variable any"><span class="t-lines"><span>condition_variable_any</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../notify_all_at_thread_exit.html" title="cpp/thread/notify all at thread exit"><span class="t-lines"><span>notify_all_at_thread_exit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../cv_status.html" title="cpp/thread/cv status"><span class="t-lines"><span>cv_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 信号量</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/counting_semaphore&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/counting semaphore（页面不存在）"><span class="t-lines"><span>counting_semaphore</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/binary_semaphore&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/binary semaphore（页面不存在）"><span class="t-lines"><span>binary_semaphore</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 闩与屏障</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/latch&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/latch（页面不存在）"><span class="t-lines"><span>latch</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/barrier&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/barrier（页面不存在）"><span class="t-lines"><span>barrier</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> future</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../promise.html" title="cpp/thread/promise"><span class="t-lines"><span>promise</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../future.html" title="cpp/thread/future"><span class="t-lines"><span>future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../shared_future.html" title="cpp/thread/shared future"><span class="t-lines"><span>shared_future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../packaged_task.html" title="cpp/thread/packaged task"><span class="t-lines"><span>packaged_task</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../async.html" title="cpp/thread/async"><span class="t-lines"><span>async</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../launch.html" title="cpp/thread/launch"><span class="t-lines"><span>launch</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../future_status.html" title="cpp/thread/future status"><span class="t-lines"><span>future_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../future_error.html" title="cpp/thread/future error"><span class="t-lines"><span>future_error</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../future/future_category.html" title="cpp/thread/future category"><span class="t-lines"><span>future_category</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../future_errc.html" title="cpp/thread/future errc"><span class="t-lines"><span>future_errc</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../condition_variable.html" title="cpp/thread/condition variable"><tt>std::condition_variable</tt></a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5">成员函数</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="condition_variable.html" title="cpp/thread/condition variable/condition variable"><span class="t-lines"><span>condition_variable::condition_variable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="~condition_variable.html" title="cpp/thread/condition variable/~condition variable"><span class="t-lines"><span>condition_variable::~condition_variable</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">通知</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="notify_one.html" title="cpp/thread/condition variable/notify one"><span class="t-lines"><span>condition_variable::notify_one</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="notify_all.html" title="cpp/thread/condition variable/notify all"><span class="t-lines"><span>condition_variable::notify_all</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">等待</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wait.html" title="cpp/thread/condition variable/wait"><span class="t-lines"><span>condition_variable::wait</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>condition_variable::wait_for</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wait_until.html" title="cpp/thread/condition variable/wait until"><span class="t-lines"><span>condition_variable::wait_until</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">原生句柄</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="native_handle.html" title="cpp/thread/condition variable/native handle"><span class="t-lines"><span>condition_variable::native handle</span></span></a></div></div></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Rep, <span class="kw1">class</span> Period <span class="sy1">&gt;</span><br>
+<p><a href="../cv_status.html"><span class="kw2176">std::<span class="me2">cv_status</span></span></a> wait_for<span class="br0">(</span> <a href="../unique_lock.html"><span class="kw2167">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="../mutex.html"><span class="kw2154">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span><span class="sy3">&amp;</span> lock,<br>
+</p>
+                         <span class="kw4">const</span> <a href="../../chrono/duration.html"><span class="kw993">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">duration</span></span></a><span class="sy1">&lt;</span>Rep, Period<span class="sy1">&gt;</span><span class="sy3">&amp;</span> rel_time<span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (1) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Rep, <span class="kw1">class</span> Period, <span class="kw1">class</span> Predicate <span class="sy1">&gt;</span><br>
+<p><span class="kw4">bool</span> wait_for<span class="br0">(</span> <a href="../unique_lock.html"><span class="kw2167">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="../mutex.html"><span class="kw2154">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span><span class="sy3">&amp;</span> lock,<br>
+               <span class="kw4">const</span> <a href="../../chrono/duration.html"><span class="kw993">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">duration</span></span></a><span class="sy1">&lt;</span>Rep, Period<span class="sy1">&gt;</span><span class="sy3">&amp;</span> rel_time,<br>
+</p>
+               Predicate pred<span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<div class="t-li1"><span class="t-li">1)</span> 原子地释放 <code>lock</code> ，阻塞当前线程，并将它添加到等待在 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span> 上的线程列表。线程将在执行 <span class="t-lc"><a href="notify_all.html" title="cpp/thread/condition variable/notify all">notify_all()</a></span> 或 <span class="t-lc"><a href="notify_one.html" title="cpp/thread/condition variable/notify one">notify_one()</a></span> 时，或度过相对时限 <code>rel_time</code> 时被解除阻塞。它亦可被虚假地解除阻塞。解阻塞时，无关缘由，重获得 <code>lock</code> 并退出 <code>wait_for()</code> 退出。<span class="t-rev-inl t-until-cxx14"><span>若此函数通过异常退出，则亦重获得 <code>lock</code> 。</span> <span><span class="t-mark-rev t-until-cxx14">(C++14 前)</span></span></span></div>
+<div class="t-li1"><span class="t-li">2)</span> 等价于 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">return</span> wait_until<span class="br0">(</span>lock, std<span class="sy4">::</span><span class="me2">chrono</span><span class="sy4">::</span><span class="me2">steady_clock</span><span class="sy4">::</span><span class="me2">now</span><span class="br0">(</span><span class="br0">)</span> <span class="sy2">+</span> rel_time, std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>pred<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></span></span> 。此重载可用于忽略虚假唤醒。</div>
+<p>用稳定时钟度量时长。由于调度或资源争议，此函数可能阻塞长于 <code>timeout_duration</code> 。
+</p><p>若当前线程未锁定 <code>lock.mutex()</code> ，则调用此函数是未定义行为。
+</p><p>若 <code>lock.mutex()</code> 与所有其他当前等待在同一条件变量上的线程所用的互斥不相同，则调用此函数是未定义行为。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14"><td>
+<p>若这些函数不能满足后置条件（ <span class="t-c"><span class="mw-geshi cpp source-cpp">lock.<span class="me1">owns_lock</span><span class="br0">(</span><span class="br0">)</span><span class="sy1">==</span><span class="kw2">true</span></span></span> 且调用方线程锁定 <span class="t-c"><span class="mw-geshi cpp source-cpp">lock.<span class="me1">mutex</span><span class="br0">(</span><span class="br0">)</span></span></span> ），则调用 <span class="t-lc"><a href="../../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span> 。例如，这可能在重锁定互斥抛异常的情况下发生。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E5.8F.82.E6.95.B0">参数</span></h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  lock
+</td>
+<td> -
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../unique_lock.html"><span class="kw2167">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="../mutex.html"><span class="kw2154">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span></span></span> 类型对象，必须被当前线程锁定
+</td></tr>
+<tr class="t-par">
+<td>  rel_time
+</td>
+<td> -
+</td>
+<td> 表示等待所耗的最大时间的 <span class="t-lc"><a href="../../chrono/duration.html" title="cpp/chrono/duration">std::chrono::duration</a></span> 类型对象。注意 rel_time 必须足够小，以在加到 <span class="t-lc"><a href="../../chrono/steady_clock/now.html" title="cpp/chrono/steady clock/now">std::chrono::steady_clock::now()</a></span> 时不溢出。
+</td></tr>
+<tr class="t-par">
+<td>   pred
+</td>
+<td> -
+</td>
+<td>  是否应该持续等待则返回 ​<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> 的谓词。<br>
+<p>谓词函数的签名应等价于如下者：
+</p><p><span class="t-cc"><span class="mw-geshi cpp source-cpp"> <span class="kw4">bool</span> pred<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></span>​
+</p>
+</td></tr></table>
+<h3><span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E5.80.BC">返回值</span></h3>
+<div class="t-li1"><span class="t-li">1)</span> 若经过 <code>rel_time</code> 所指定的关联时限则为 <span class="t-lc"><a href="../cv_status.html" title="cpp/thread/cv status">std::cv_status::timeout</a></span> ，否则为 <span class="t-lc"><a href="../cv_status.html" title="cpp/thread/cv status">std::cv_status::no_timeout</a></span> 。</div>
+<div class="t-li1"><span class="t-li">2)</span> 若经过 <code>rel_time</code> 时限后谓词 <code>pred</code> 仍求值为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> 则为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> ，否则为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> 。</div>
+<h3><span class="mw-headline" id=".E5.BC.82.E5.B8.B8">异常</span></h3>
+<div class="t-li1"><span class="t-li">1)</span> <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx14"><td>
+<p>可能抛出 <span class="t-lc"><a href="../../error/system_error.html" title="cpp/error/system error">std::system_error</a></span> ，亦可能传播 <span class="t-c"><span class="mw-geshi cpp source-cpp">lock.<span class="me1">lock</span><span class="br0">(</span><span class="br0">)</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp">lock.<span class="me1">unlock</span><span class="br0">(</span><span class="br0">)</span></span></span> 所抛的异常
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx14">(C++14 前)</span></td></tr>
+<tr class="t-rev t-since-cxx14"><td>
+<p>执行期间时钟、时间点或时长可能抛出的任何异常（标准库提供的时钟、时间点和时长决不抛出）
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></td></tr>
+</table></div>
+<div class="t-li1"><span class="t-li">2)</span> 同 <span class="t-v">(1)</span> ，但亦可传播 <code>pred</code> 所抛的异常</div>
+<h3><span class="mw-headline" id=".E6.B3.A8.E6.84.8F">注意</span></h3>
+<p>即使在锁下通知，重载 <span class="t-v">(1)</span> 在因时限退出时也不对关联谓词的状态做出保证。
+</p><p><code>notify_one()</code>/<code>notify_all()</code> 的效果与  <code>wait()</code>/<code>wait_for()</code>/<code>wait_until()</code> 的三个原子部分的每一者（解锁+等待、唤醒和锁定）以能看做原子变量<a href="../../atomic/memory_order.html#.E4.BF.AE.E6.94.B9.E9.A1.BA.E5.BA.8F" title="cpp/atomic/memory order">修改顺序</a>单独全序发生：顺序对此单独的 condition_variable 是特定的。譬如，这使得 <code>notify_one()</code> 不可能被延迟并解锁正好在进行 <code>notify_one()</code> 调用后开始等待的线程。
+</p>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;atomic&gt;</span>
+<span class="co2">#include &lt;condition_variable&gt;</span>
+<span class="co2">#include &lt;thread&gt;</span>
+<span class="co2">#include &lt;chrono&gt;</span>
+<span class="kw1">using</span> <span class="kw1">namespace</span> std<span class="sy4">::</span><span class="me2">chrono_literals</span><span class="sy4">;</span>
+ 
+<a href="../condition_variable.html"><span class="kw2171">std::<span class="me2">condition_variable</span></span></a> cv<span class="sy4">;</span>
+<a href="../mutex.html"><span class="kw2154">std::<span class="me2">mutex</span></span></a> cv_m<span class="sy4">;</span>
+<span class="kw4">int</span> i<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> waits<span class="br0">(</span><span class="kw4">int</span> idx<span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../unique_lock.html"><span class="kw2167">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="../mutex.html"><span class="kw2154">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lk<span class="br0">(</span>cv_m<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span>cv.<span class="me1">wait_for</span><span class="br0">(</span>lk, idx<span class="sy2">*</span>100ms, <span class="br0">[</span><span class="br0">]</span><span class="br0">{</span><span class="kw1">return</span> i <span class="sy1">==</span> <span class="nu0">1</span><span class="sy4">;</span><span class="br0">}</span><span class="br0">)</span><span class="br0">)</span> 
+        <a href="../../io/cerr.html"><span class="kw1760">std::<span class="me2">cerr</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Thread "</span> <span class="sy1">&lt;&lt;</span> idx <span class="sy1">&lt;&lt;</span> <span class="st0">" finished waiting. i == "</span> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">else</span>
+        <a href="../../io/cerr.html"><span class="kw1760">std::<span class="me2">cerr</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Thread "</span> <span class="sy1">&lt;&lt;</span> idx <span class="sy1">&lt;&lt;</span> <span class="st0">" timed out. i == "</span> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> signals<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../sleep_for.html"><span class="kw2149">std::<span class="me2">this_thread</span><span class="sy4">::</span><span class="me2">sleep_for</span></span></a><span class="br0">(</span>120ms<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../io/cerr.html"><span class="kw1760">std::<span class="me2">cerr</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Notifying...<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    cv.<span class="me1">notify_all</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../sleep_for.html"><span class="kw2149">std::<span class="me2">this_thread</span><span class="sy4">::</span><span class="me2">sleep_for</span></span></a><span class="br0">(</span>100ms<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">{</span>
+        <a href="../lock_guard.html"><span class="kw2166">std::<span class="me2">lock_guard</span></span></a><span class="sy1">&lt;</span><a href="../mutex.html"><span class="kw2154">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lk<span class="br0">(</span>cv_m<span class="br0">)</span><span class="sy4">;</span>
+        i <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <a href="../../io/cerr.html"><span class="kw1760">std::<span class="me2">cerr</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Notifying again...<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    cv.<span class="me1">notify_all</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../thread.html"><span class="kw2146">std::<span class="me2">thread</span></span></a> t1<span class="br0">(</span>waits, <span class="nu0">1</span><span class="br0">)</span>, t2<span class="br0">(</span>waits, <span class="nu0">2</span><span class="br0">)</span>, t3<span class="br0">(</span>waits, <span class="nu0">3</span><span class="br0">)</span>, t4<span class="br0">(</span>signals<span class="br0">)</span><span class="sy4">;</span>
+    t1.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> t2.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span>, t3.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span>, t4.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>输出：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Thread 1 timed out. i == 0
+Notifying...
+Thread 2 timed out. i == 0
+Notifying again...
+Thread 3 finished waiting. i == 1</pre></div></div> 
+</div>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="wait.html" title="cpp/thread/condition variable/wait"> <span class="t-lines"><span>wait</span></span></a></div></div>
+</td>
+<td>  阻塞当前线程，直到条件变量被唤醒 <br> <span class="t-mark">(公开成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="wait_until.html" title="cpp/thread/condition variable/wait until"> <span class="t-lines"><span>wait_until</span></span></a></div></div>
+</td>
+<td>   阻塞当前线程，直到条件变量被唤醒，或直到抵达指定时间点  <br> <span class="t-mark">(公开成员函数)</span> </td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 5932/1000000
+Preprocessor generated node count: 11800/1000000
+Post‐expand include size: 252580/2097152 bytes
+Template argument size: 37215/2097152 bytes
+Highest expansion depth: 23/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:3748-0!*!0!!zh!*!zh!* and timestamp 20190823013453 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/condition_variable/wait_for&amp;oldid=45804">https://zh.cppreference.com/mwiki/index.php?title=cpp/thread/condition_variable/wait_for&amp;oldid=45804</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/thread/condition_variable/wait_for">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2017年8月27日 (星期日) 23:27。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过8,407次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.810 secs. -->
+	</body>
+<!-- Cached 20190823013453 -->
+</html>

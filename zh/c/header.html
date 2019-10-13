@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>C 标准库头文件</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../common/favicon.ico">
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/header","wgTitle":"c/header","wgCurRevisionId":59257,"wgArticleId":959,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"c/header","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-c_header skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">C 标准库头文件</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../c.html" title="c">c</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../c.html" title="c"> C</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.html" title="c/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">头文件</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="c/types">类型支持</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="program.html" title="c/program">程序工具</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="variadic.html" title="c/variadic">变参数函数支持</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory.html" title="c/memory">动态内存管理</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="error.html" title="c/error">错误处理</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="chrono.html" title="c/chrono">日期和时间工具</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="c/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="c/algorithm">算法</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="c/numeric">数值</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="c/io">输入/输出支持</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="c/locale">本地化支持</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="c/thread">线程支持</a> <span class="t-mark">(C11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="c/atomic">原子操作</a> <span class="t-mark">(C11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental.html" title="c/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td> <code><b>&lt;assert.h&gt;</b></code>
+</td>
+<td> <a href="error.html" title="c/error">条件编译宏，将参数与零比较</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;complex.h&gt;</b></code> <span class="t-mark">(C99 起)</span>
+</td>
+<td> <a href="numeric/complex.html" title="c/numeric/complex">复数运算</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;ctype.h&gt;</b></code>
+</td>
+<td> <a href="string/byte.html" title="c/string/byte">用来确定包含于字符数据中的类型的函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;errno.h&gt;</b></code>
+</td>
+<td> <a href="error.html" title="c/error">报告错误条件的宏</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;fenv.h&gt;</b></code> <span class="t-mark">(C99 起)</span>
+</td>
+<td> <a href="numeric/fenv.html" title="c/numeric/fenv">浮点数环境</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;float.h&gt;</b></code>
+</td>
+<td> <a href="types/limits.html" title="c/types/limits">浮点数类型的极限</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;inttypes.h&gt;</b></code> <span class="t-mark">(C99 起)</span>
+</td>
+<td> <a href="types/integer.html" title="c/types/integer">整数类型的格式转换</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;iso646.h&gt;</b></code> <span class="t-mark-rev t-since-c95">(C95 起)</span>
+</td>
+<td> <a href="language/operator_alternative.html" title="c/language/operator alternative">符号的替代写法</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;limits.h&gt;</b></code>
+</td>
+<td> <a href="types/limits.html" title="c/types/limits">基本类型的大小</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;locale.h&gt;</b></code>
+</td>
+<td> <a href="locale.html" title="c/locale">本地化工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;math.h&gt;</b></code>
+</td>
+<td> <a href="numeric/math.html" title="c/numeric/math">常用数学函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;setjmp.h&gt;</b></code>
+</td>
+<td> <a href="program.html" title="c/program">非局部跳转</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;signal.h&gt;</b></code>
+</td>
+<td> <a href="program.html" title="c/program">信号处理</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdalign.h&gt;</b></code> <span class="t-mark">(C11 起)</span>
+</td>
+<td> <a href="types.html" title="c/types">alignas 与 alignof</a> 便利宏
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdarg.h&gt;</b></code>
+</td>
+<td> <a href="variadic.html" title="c/variadic">可变参数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdatomic.h&gt;</b></code> <span class="t-mark">(C11 起)</span>
+</td>
+<td> <a href="atomic.html" title="c/atomic">原子类型</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdbool.h&gt;</b></code> <span class="t-mark">(C99 起)</span>
+</td>
+<td> <a href="types.html" title="c/types">布尔类型</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stddef.h&gt;</b></code>
+</td>
+<td> <a href="types.html" title="c/types">常用宏定义</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdint.h&gt;</b></code> <span class="t-mark">(C99 起)</span>
+</td>
+<td> <a href="types/integer.html" title="c/types/integer">定宽整数类型</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdio.h&gt;</b></code>
+</td>
+<td> <a href="io.html" title="c/io">输入/输出</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdlib.h&gt;</b></code>
+</td>
+<td> 基础工具：<a href="memory.html" title="c/memory">内存管理</a>、<a href="program.html" title="c/program">程序工具</a>、<a href="string.html" title="c/string">字符串转换</a>、<a href="numeric/random.html" title="c/numeric/random">随机数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdnoreturn.h&gt;</b></code> <span class="t-mark">(C11 起)</span>
+</td>
+<td> <a href="types.html#.E9.99.84.E5.8A.A0.E7.9A.84.E5.9F.BA.E6.9C.AC.E7.B1.BB.E5.9E.8B.E5.8F.8A.E4.BE.BF.E5.88.A9.E5.AE.8F" title="c/types">noreturn</a> 便利宏
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;string.h&gt;</b></code>
+</td>
+<td> <a href="string/byte.html" title="c/string/byte">字符串处理</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;tgmath.h&gt;</b></code> <span class="t-mark">(C99 起)</span>
+</td>
+<td> <a href="numeric/tgmath.html" title="c/numeric/tgmath">泛型数学</a>（包装 math.h 和 complex.h 的宏）
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;threads.h&gt;</b></code> <span class="t-mark">(C11 起)</span>
+</td>
+<td> <a href="thread.html" title="c/thread">线程库</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;time.h&gt;</b></code>
+</td>
+<td>  <a href="chrono.html" title="c/chrono">时间/日期工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;uchar.h&gt;</b></code> <span class="t-mark">(C11 起)</span>
+</td>
+<td> <a href="string/multibyte.html" title="c/string/multibyte">UTF-16 和 UTF-32 字符工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;wchar.h&gt;</b></code> <span class="t-mark-rev t-since-c95">(C95 起)</span>
+</td>
+<td> <a href="string/wide.html" title="c/string/wide">扩展多字节和宽字符工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;wctype.h&gt;</b></code> <span class="t-mark-rev t-since-c95">(C95 起)</span>
+</td>
+<td> <a href="string/wide.html" title="c/string/wide">用来确定包含于宽字符数据中的类型的函数</a>
+</td></tr>
+</table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1294/1000000
+Preprocessor generated node count: 3706/1000000
+Post‐expand include size: 21360/2097152 bytes
+Template argument size: 5752/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:959-0!*!0!*!*!*!zh!* and timestamp 20190822224932 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=c/header&amp;oldid=59257">https://zh.cppreference.com/mwiki/index.php?title=c/header&amp;oldid=59257</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/c/header">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2018年12月26日 (星期三) 07:49。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过35,976次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.335 secs. -->
+	</body>
+<!-- Cached 20190822224932 -->
+</html>

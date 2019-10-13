@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>dynamic_cast 转换</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/dynamic_cast","wgTitle":"cpp/language/dynamic cast","wgCurRevisionId":61737,"wgArticleId":2707,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/dynamic_cast","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_dynamic_cast skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">dynamic_cast 转换</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="expressions.html" title="cpp/language/expressions"> 表达式</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> 概述 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="value_category.html" title="cpp/language/value category"> 值类别</a>（左值 lvalue、右值 rvalue、亡值 xvalue）</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="eval_order.html" title="cpp/language/eval order"> 求值顺序</a>（序列点）</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constant_expression.html" title="cpp/language/constant expression"> 常量表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="expressions.html#.E4.B8.8D.E6.B1.82.E5.80.BC.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/expressions"> 不求值表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="expressions.html#.E5.88.9D.E7.AD.89.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/expressions"> 初等表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lambda.html" title="cpp/language/lambda">lambda 表达式</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 字面量 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="integer_literal.html" title="cpp/language/integer literal">整数字面量</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="floating_literal.html" title="cpp/language/floating literal">浮点字面量</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bool_literal.html" title="cpp/language/bool literal">布尔字面量</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="character_literal.html" title="cpp/language/character literal">字符字面量</a>，包含<a href="escape.html" title="cpp/language/escape">转义序列</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string_literal.html" title="cpp/language/string literal">字符串字面量</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nullptr.html" title="cpp/language/nullptr">空指针字面量</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="user_literal.html" title="cpp/language/user literal">用户定义字面量</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 运算符 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_assignment.html" title="cpp/language/operator assignment"> 赋值运算符</a>:
+<code>a=b</code>, <code>a+=b</code>, <code>a-=b</code>, <code>a*=b</code>, <code>a/=b</code>, <code>a%=b</code>, <code>a&amp;=b</code>, <code>a|=b</code>, <code>a^=b</code>, <code>a&lt;&lt;=b</code>, <code>a&gt;&gt;=b</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_incdec.html" title="cpp/language/operator incdec"> 自增与自减</a>: <code>++a</code>, <code>--a</code>, <code>a++</code>, <code>a--</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_arithmetic.html" title="cpp/language/operator arithmetic"> 算术运算符</a>:
+<code>+a</code>, <code>-a</code>, <code>a+b</code>, <code>a-b</code>, <code>a*b</code>, <code>a/b</code>, <code>a%b</code>, <code>~a</code>, <code>a&amp;b</code>, <code>a|b</code>, <code>a^b</code>, <code>a&lt;&lt;b</code>, <code>a&gt;&gt;b</code> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_logical.html" title="cpp/language/operator logical"> 逻辑运算符</a>: <code>a||b</code>, <code>a&amp;&amp;b</code>, <code>!a</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_comparison.html" title="cpp/language/operator comparison"> 比较运算符</a>: <code>a==b</code>, <code>a!=b</code>, <code>a&lt;b</code>, <code>a&gt;b</code>, <code>a&lt;=b</code>, <code>a&gt;=b</code>, <code>a&lt;=&gt;b</code><span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_member_access.html" title="cpp/language/operator member access"> 成员访问运算符</a>: <code>a[b]</code>, <code>*a</code>, <code>&amp;a</code>, <code>a-&gt;b</code>, <code>a.b</code>, <code>a-&gt;*b</code>, <code>a.*b</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_other.html" title="cpp/language/operator other"> 其他运算符</a>: <code>a(...)</code>, <code>a,b</code>, <code>a?b:c</code> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_comparisons.html" title="cpp/language/default comparisons">默认比较</a><span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_alternative.html" title="cpp/language/operator alternative">运算符的代用表示</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_precedence.html" title="cpp/language/operator precedence">优先级和结合性</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fold.html" title="cpp/language/fold">折叠表达式</a><span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="new.html" title="cpp/language/new">new 表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="delete.html" title="cpp/language/delete">delete 表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="throw.html" title="cpp/language/throw">throw 表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="alignof.html" title="cpp/language/alignof">alignof</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sizeof.html" title="cpp/language/sizeof">sizeof</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sizeof....html" title="cpp/language/sizeof...">sizeof...</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeid.html" title="cpp/language/typeid">typeid</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept">noexcept</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operators.html" title="cpp/language/operators">运算符重载</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 类型转换 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="implicit_cast.html" title="cpp/language/implicit conversion">隐式转换</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="const_cast.html" title="cpp/language/const cast">const_cast</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static_cast.html" title="cpp/language/static cast">static_cast</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast">reinterpret_cast</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">dynamic_cast</strong></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit_cast.html" title="cpp/language/explicit cast">显式转换</a> <code>(T)a</code>, <code>T(a)</code></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cast_operator.html" title="cpp/language/cast operator">用户定义转换</a></td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>沿继承层级向上、向下及侧向，安全地转换到其他类的指针和引用。
+</p>
+<h3><span class="mw-headline" id=".E8.AF.AD.E6.B3.95">语法</span></h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td class="t-sdsc-nopad"> <code><b>dynamic_cast &lt;</b></code> <span class="t-spar">新类型</span> <code><b>&gt; (</b></code> <span class="t-spar">表达式</span> <code><b>)</b></code>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">新类型</span>
+</td>
+<td> -
+</td>
+<td> 指向完整类类型的指针、到完整类类型的引用，或指向（可选的 cv 限定）void 的指针
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">表达式</span>
+</td>
+<td> -
+</td>
+<td> 若 <span class="t-spar">新类型</span> 为引用，则为完整类类型的<span class="t-rev-inl t-until-cxx11"><span>左值</span> <span><span class="t-mark-rev t-until-cxx11">(C++11 前)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>泛左值</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>表达式，若 <span class="t-spar">新类型</span> 为指针，则为指向完整类类型的指针纯右值。
+</td></tr></table>
+<p>若转型成功，则 <code>dynamic_cast</code> 返回 <code>新类型</code> 类型的值。若转型失败且 <code>新类型</code> 是指针类型，则它返回该类型的空指针。若转型失败且 <code>新类型</code> 是引用类型，则它抛出与类型 <span class="t-lc"><a href="../types/bad_cast.html" title="cpp/types/bad cast">std::bad_cast</a></span> 的处理块匹配的异常。
+</p>
+<h3><span class="mw-headline" id=".E8.A7.A3.E9.87.8A">解释</span></h3>
+<p>唯有下列转换能用 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">dynamic_cast</span></span></span> 进行，但若这种转换会转换走<i>常量性</i>或<i>易变性</i>则亦不允许。
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 若 <span class="t-spar">表达式</span> 的类型恰是 <span class="t-spar">新类型</span> 或 <span class="t-spar">新类型</span> 的较少 cv 限定版本，则结果是 <span class="t-spar">表达式</span> 具有 <span class="t-spar">新类型</span> 类型的值。（换言之，<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">dynamic_cast</span></span></span> 可用以添加常量性。隐式转换和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">static_cast</span></span></span> 亦能进行此转换。）</div>
+<div class="t-li1"><span class="t-li">2)</span> 若 <span class="t-spar">表达式</span> 的值是空指针值，则结果是 <span class="t-spar">新类型</span> 类型的空指针值。</div>
+<div class="t-li1"><span class="t-li">3)</span> 若 <span class="t-spar">新类型</span> 是到 <code>Base</code> 的指针或引用，且 <span class="t-spar">表达式</span> 的类型是到 <code>Derived</code> 的指针或引用，其中 <code>Base</code> 是 <code>Derived</code> 的唯一可访问基类，则结果是到 <span class="t-spar">表达式</span> 所标识的对象中 <code>Base</code> 类子对象的指针或引用。（注意：隐式转换和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">static_cast</span></span></span> 亦能进行此转换。）</div>
+<div class="t-li1"><span class="t-li">4)</span> 若 <span class="t-spar">表达式</span> 是指向<a href="object.html#.E5.A4.9A.E6.80.81.E5.AF.B9.E8.B1.A1" title="cpp/language/object">多态类型</a>的指针，且 <code>新类型</code> 是到 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> 的指针，则结果是指向 <span class="t-spar">表达式</span> 所指向或引用的最终派生对象的指针。</div>
+<div class="t-li1"><span class="t-li">5)</span> 若 <span class="t-spar">表达式</span> 是到<a href="object.html#.E5.A4.9A.E6.80.81.E5.AF.B9.E8.B1.A1" title="cpp/language/object">多态类型</a> <code>Base</code> 的指针或引用，且 <code>新类型</code> 是到 <code>Derived</code> 类型的指针或引用，则进行运行时检查：</div>
+<div class="t-li2"><span class="t-li">a)</span> 检验 <span class="t-spar">表达式</span> 所指向/标识的最终派生对象。若在该对象中 <span class="t-spar">表达式</span> 指向/指代 <code>Derived</code> 的公开基类，且只有一个 <code>Derived</code> 类型对象从 <span class="t-spar">表达式</span> 所指向/标识的子对象派生，则转型结果指向/指代该 <code>Derived</code> 对象。（此之谓“向下转型（downcast）”。）</div>
+<div class="t-li2"><span class="t-li">b)</span> 否则，若 <span class="t-spar">表达式</span> 指向/指代最终派生对象的公开基类，而同时最终派生对象拥有 <code>Derived</code> 类型的无歧义公开基类，则转型结果指向/指代该 <code>Derived</code>（此之谓“侧向转型（sidecast）”。）</div>
+<div class="t-li2"><span class="t-li">c)</span> 否则，运行时检查失败。若 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">dynamic_cast</span></span></span> 用于指针，则返回 <span class="t-spar">新类型</span> 类型的空指针值。若它用于引用，则抛出 <span class="t-lc"><a href="../types/bad_cast.html" title="cpp/types/bad cast">std::bad_cast</a></span> 异常。</div>
+<div class="t-li1"><span class="t-li">6)</span> 当在构造函数或析构函数中（直接或间接）使用 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">dynamic_cast</span></span></span>，且 <span class="t-spar">表达式</span> 指代正在构造/销毁的对象时，该对象被认为是最终派生对象。若 <span class="t-spar">新类型</span> 不是到构造函数/析构函数自身的类或其基类之一的指针或引用，则行为未定义。</div>
+<p>与其他转型表达式相似：
+</p>
+<ul><li> 若 <span class="t-spar">新类型</span> 是左值引用类型（<span class="t-spar">表达式</span> 必为左值），则其结果为左值
+</li><li> 若 <span class="t-spar">新类型</span> 是右值引用类型（<span class="t-spar">表达式</span> 为完整类类型，<span class="t-rev-inl t-until-cxx17"><span>可以是左值或右值</span> <span><span class="t-mark-rev t-until-cxx17">(C++17 前)</span></span></span><span class="t-rev-inl t-since-cxx17"><span>必为泛左值（纯右值被<a href="implicit_cast.html#.E4.B8.B4.E6.97.B6.E9.87.8F.E5.AE.9E.E8.B4.A8.E5.8C.96" title="cpp/language/implicit conversion">实质化</a>）</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>），则其结果为亡值
+</li><li> 若 <span class="t-spar">新类型</span> 是指针类型，则其结果为纯右值
+</li></ul>
+<h3><span class="mw-headline" id=".E6.B3.A8.E8.A7.A3">注解</span></h3>
+<ul><li>亦可用 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">static_cast</span></span></span> 进行向下转型，它避免运行时检查的开销，但只有在程序（通过某些其他逻辑）能够保证 <span class="t-spar">表达式</span> 所指向的对象肯定是 <code>Derived</code> 时才是安全的。
+</li><li>某些形式的 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">dynamic_cast</span></span></span> 依赖于<a href="https://en.wikipedia.org/wiki/Run-time_type_information" class="extiw" title="enwiki:Run-time type information">运行时类型鉴别</a>（ RTTI ），即编译的程序中关于每个多态类的信息。编译器通常有选项禁用此信息。
+</li></ul>
+<h3><span class="mw-headline" id=".E5.85.B3.E9.94.AE.E8.AF.8D">关键词</span></h3>
+<p><a href="../keyword/dynamic_cast.html" title="cpp/keyword/dynamic cast"><tt>dynamic_cast</tt></a>
+</p>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+ 
+<span class="kw1">struct</span> V <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>  <span class="co1">// 必须为多态以使用运行时检查的 dynamic_cast</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> A <span class="sy4">:</span> <span class="kw1">virtual</span> V <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> <span class="kw1">virtual</span> V <span class="br0">{</span>
+  B<span class="br0">(</span>V<span class="sy2">*</span> v, A<span class="sy2">*</span> a<span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// 构造中转型（见后述 D 的构造函数中的调用）</span>
+    <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>B<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span>v<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 良好定义：v 有类型 V*，B 的 V 基类，产生 B*</span>
+    <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>B<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span>a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 未定义行为：a 有类型 A*，A 非 B 的基类</span>
+  <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> A, B <span class="br0">{</span>
+    D<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> B<span class="br0">(</span><span class="br0">(</span>A<span class="sy2">*</span><span class="br0">)</span>this, this<span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> Base <span class="br0">{</span>
+    <span class="kw1">virtual</span> ~Base<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> Derived<span class="sy4">:</span> Base <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> name<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    D d<span class="sy4">;</span> <span class="co1">// 最终派生对象</span>
+    A<span class="sy3">&amp;</span> a <span class="sy1">=</span> d<span class="sy4">;</span> <span class="co1">// 向上转型，可以用 dynamic_cast，但不必须</span>
+    D<span class="sy3">&amp;</span> new_d <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>D<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span>a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 向下转型</span>
+    B<span class="sy3">&amp;</span> new_b <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>B<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span>a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 侧向转型</span>
+ 
+ 
+    Base<span class="sy2">*</span> b1 <span class="sy1">=</span> new Base<span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span>Derived<span class="sy2">*</span> d <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>Derived<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span>b1<span class="br0">)</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"downcast from b1 to d successful<span class="es1">\n</span>"</span><span class="sy4">;</span>
+        d<span class="sy2">-</span><span class="sy1">&gt;</span>name<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 可以安全调用</span>
+    <span class="br0">}</span>
+ 
+    Base<span class="sy2">*</span> b2 <span class="sy1">=</span> new Derived<span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span>Derived<span class="sy2">*</span> d <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>Derived<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span>b2<span class="br0">)</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"downcast from b2 to d successful<span class="es1">\n</span>"</span><span class="sy4">;</span>
+        d<span class="sy2">-</span><span class="sy1">&gt;</span>name<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 可以安全调用</span>
+    <span class="br0">}</span>
+ 
+    delete b1<span class="sy4">;</span>
+    delete b2<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>输出：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">downcast from b2 to d successful</pre></div></div> 
+</div>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<ul><li> <a href="const_cast.html" title="cpp/language/const cast">const_cast</a>
+</li><li> <a href="static_cast.html" title="cpp/language/static cast">static_cast</a>
+</li><li> <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast">reinterpret_cast</a>
+</li><li> <a href="explicit_cast.html" title="cpp/language/explicit cast">显式转型</a>
+</li><li> <a href="implicit_cast.html" title="cpp/language/implicit conversion">隐式转换</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2215/1000000
+Preprocessor generated node count: 5823/1000000
+Post‐expand include size: 60279/2097152 bytes
+Template argument size: 11855/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2707-0!*!0!!zh!*!zh!* and timestamp 20190708131653 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/dynamic_cast&amp;oldid=61737">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/dynamic_cast&amp;oldid=61737</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/dynamic_cast">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年7月8日 (星期一) 06:16。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过14,782次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.073 secs. -->
+	</body>
+<!-- Cached 20190709030734 -->
+</html>

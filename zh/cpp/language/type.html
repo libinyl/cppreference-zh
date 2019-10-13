@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>类型</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/type","wgTitle":"cpp/language/type","wgCurRevisionId":59636,"wgArticleId":7801,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/type","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_type skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">类型</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="basic_concepts.html" title="cpp/language/basic concepts">基本概念</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> 语言关键词</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> 翻译阶段</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> 注释</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> <code>main()</code> 函数</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> 名字和标识符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 类型</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> 基础类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="object.html" title="cpp/language/object"> 对象</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scope.html" title="cpp/language/scope"> 作用域</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> 对象生存期</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> 存储期与连接</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="definition.html" title="cpp/language/definition"> 定义和单一定义规则（ODR）</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> 名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup"> 有限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup"> 无限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_if.html" title="cpp/language/as if"> “如同”规则</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ub.html" title="cpp/language/ub"> 未定义行为</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="cpp/language/memory model"> 内存模型</a> </td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p><a href="object.html" title="cpp/language/object">对象</a>、<a href="reference.html" title="cpp/language/reference">引用</a>、函数（包括<a href="template_specialization.html" title="cpp/language/template specialization">函数模板特化</a>）和<a href="expressions.html" title="cpp/language/expressions">表达式</a>具有称为<i>类型</i>的性质，它限制了对这些实体所容许的操作，并给原本寻常的位序列提供了语义含义。
+</p>
+<h3><span class="mw-headline" id=".E7.B1.BB.E5.9E.8B.E7.9A.84.E5.88.86.E7.B1.BB">类型的分类</span></h3>
+<p>C++ 类型系统由以下类型组成：
+</p>
+<ul><li> <a href="types.html" title="cpp/language/types">基础类型</a>（参阅 <span class="t-lc"><a href="../types/is_fundamental.html" title="cpp/types/is fundamental">std::is_fundamental</a></span> ）：
+</li></ul>
+<dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> 类型（参阅 <span class="t-lc"><a href="../types/is_void.html" title="cpp/types/is void">std::is_void</a></span> ）；
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../types/nullptr_t.html"><span class="kw102">std::<span class="me2">nullptr_t</span></span></a></span></span> 类型<span class="t-mark-rev t-since-cxx11">(C++11 起)</span> （参阅 <span class="t-lc"><a href="../types/is_null_pointer.html" title="cpp/types/is null pointer">std::is_null_pointer</a></span> ）；
+</li><li> 算术类型（参阅 <span class="t-lc"><a href="../types/is_arithmetic.html" title="cpp/types/is arithmetic">std::is_arithmetic</a></span> ）：
+</li></ul>
+<dl><dd><ul><li> 浮点类型（ <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span>）（参阅 <span class="t-lc"><a href="../types/is_floating_point.html" title="cpp/types/is floating point">std::is_floating_point</a></span> ）；
+</li><li> 整数类型（参阅 <span class="t-lc"><a href="../types/is_integral.html" title="cpp/types/is integral">std::is_integral</a></span> ）：
+</li></ul>
+<dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> 类型；
+</li><li> 字符类型：
+</li></ul>
+<dl><dd><ul><li> 窄字符类型：
+</li></ul>
+<dl><dd><ul><li> 通常字符类型（ <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span> ）
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">char8_t</span></span> 类型
+</li></ul>
+</dd></dl>
+<ul><li> 宽字符类型（ <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char16_t</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char32_t</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">wchar_t</span></span></span> ）；
+</li></ul>
+</dd></dl>
+<ul><li> 有符号整数类型（ <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span> <span class="kw4">int</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">int</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span> <span class="kw4">int</span></span></span> ）；
+</li><li> 无符号整数类型（ <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">short</span> <span class="kw4">int</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">int</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span> <span class="kw4">int</span></span></span> ）；
+</li></ul>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<ul><li> 复合类型（参阅 <span class="t-lc"><a href="../types/is_compound.html" title="cpp/types/is compound">std::is_compound</a></span> ）：
+</li></ul>
+<dl><dd><ul><li> <a href="reference.html" title="cpp/language/reference">引用类型</a>（参阅 <span class="t-lc"><a href="../types/is_reference.html" title="cpp/types/is reference">std::is_reference</a></span> ）：
+</li></ul>
+<dl><dd><ul><li> <a href="reference.html#.E5.B7.A6.E5.80.BC.E5.BC.95.E7.94.A8" title="cpp/language/reference">左值引用类型</a>（参阅 <span class="t-lc"><a href="../types/is_lvalue_reference.html" title="cpp/types/is lvalue reference">std::is_lvalue_reference</a></span> ）；
+</li></ul>
+<dl><dd><ul><li> 到对象的左值引用类型；
+</li><li> 到函数的左值引用类型；
+</li></ul>
+</dd></dl>
+<ul><li> <a href="reference.html#.E5.8F.B3.E5.80.BC.E5.BC.95.E7.94.A8" title="cpp/language/reference">右值引用类型</a>（参阅 <span class="t-lc"><a href="../types/is_rvalue_reference.html" title="cpp/types/is rvalue reference">std::is_rvalue_reference</a></span> ）；
+</li></ul>
+<dl><dd><ul><li> 到对象的右值引用类型；
+</li><li> 到函数的右值引用类型；
+</li></ul>
+</dd></dl>
+</dd></dl>
+<ul><li> <a href="pointer.html#.E6.8C.87.E9.92.88" title="cpp/language/pointer">指针类型</a>（参阅 <span class="t-lc"><a href="../types/is_pointer.html" title="cpp/types/is pointer">std::is_pointer</a></span> ）：
+</li></ul>
+<dl><dd><ul><li> <a href="pointer.html#.E5.AF.B9.E8.B1.A1.E6.8C.87.E9.92.88" title="cpp/language/pointer">指向对象的指针（对象指针）类型</a>；
+</li><li> <a href="pointer.html#.E5.87.BD.E6.95.B0.E6.8C.87.E9.92.88" title="cpp/language/pointer">指向函数的指针（函数指针）类型</a>；
+</li></ul>
+</dd></dl>
+<ul><li> <a href="pointer.html#.E6.88.90.E5.91.98.E6.8C.87.E9.92.88" title="cpp/language/pointer">指向成员的指针（成员指针）类型</a>（参阅 <span class="t-lc"><a href="../types/is_member_pointer.html" title="cpp/types/is member pointer">std::is_member_pointer</a></span> ）：
+</li></ul>
+<dl><dd><ul><li> <a href="pointer.html#.E6.95.B0.E6.8D.AE.E6.88.90.E5.91.98.E6.8C.87.E9.92.88" title="cpp/language/pointer">指向数据成员的指针</a>类型（参阅 <span class="t-lc"><a href="../types/is_member_object_pointer.html" title="cpp/types/is member object pointer">std::is_member_object_pointer</a></span> ）；
+</li><li> <a href="pointer.html#.E6.88.90.E5.91.98.E5.87.BD.E6.95.B0.E6.8C.87.E9.92.88" title="cpp/language/pointer">指向成员函数的指针</a>类型（参阅 <span class="t-lc"><a href="../types/is_member_function_pointer.html" title="cpp/types/is member function pointer">std::is_member_function_pointer</a></span> ）；
+</li></ul>
+</dd></dl>
+<ul><li> <a href="array.html" title="cpp/language/array">数组类型</a>（参阅 <span class="t-lc"><a href="../types/is_array.html" title="cpp/types/is array">std::is_array</a></span> ）；
+</li><li> <a href="function.html" title="cpp/language/function">函数类型</a>（参阅 <span class="t-lc"><a href="../types/is_function.html" title="cpp/types/is function">std::is_function</a></span> ）；
+</li><li> <a href="enum.html" title="cpp/language/enum">枚举类型</a>（参阅 <span class="t-lc"><a href="../types/is_enum.html" title="cpp/types/is enum">std::is_enum</a></span> ）；
+</li><li> <a href="class.html" title="cpp/language/class">类类型</a>：
+</li></ul>
+<dl><dd><ul><li> 非联合体类型（参阅 <span class="t-lc"><a href="../types/is_class.html" title="cpp/types/is class">std::is_class</a></span> ）；
+</li><li> <a href="union.html" title="cpp/language/union">联合体类型</a>（参阅 <span class="t-lc"><a href="../types/is_union.html" title="cpp/types/is union">std::is_union</a></span> ）。
+</li></ul>
+</dd></dl>
+</dd></dl>
+<p>对于除引用和函数以外的每个类型，类型系统还支持该类型的三个附加 <a href="cv.html" title="cpp/language/cv">cv 限定版本</a>（ <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span> 、 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">volatile</span></span></span> 及 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <span class="kw4">volatile</span></span></span> ）。
+</p><p>根据类型的各项性质，将它们分组到不同的类别之中：
+</p>
+<ul><li> 对象类型是非函数类型、非引用类型且非 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> 类型的（可有 cv 限定的）类型（参阅 <span class="t-lc"><a href="../types/is_object.html" title="cpp/types/is object">std::is_object</a></span> ）；
+</li><li> 标量类型是（可有 cv 限定的）算术、指针、成员指针、枚举和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../types/nullptr_t.html"><span class="kw102">std::<span class="me2">nullptr_t</span></span></a></span></span> 类型（参阅 <span class="t-lc"><a href="../types/is_scalar.html" title="cpp/types/is scalar">std::is_scalar</a></span> ）；
+</li><li> 平凡类型（参阅 <span class="t-lc"><a href="../types/is_trivial.html" title="cpp/types/is trivial">std::is_trivial</a></span> ）、 POD 类型（参阅 <span class="t-lc"><a href="../types/is_pod.html" title="cpp/types/is pod">std::is_pod</a></span> ）、字面类型（参阅 <span class="t-lc"><a href="../types/is_literal_type.html" title="cpp/types/is literal type">std::is_literal_type</a></span> ）和其他类别，列于<a href="../types.html" title="cpp/types">类型特征库</a>中，或作为<a href="../named_req.html" title="cpp/named req">具名类型要求</a>。
+</li></ul>
+<h3><span class="mw-headline" id=".E7.B1.BB.E5.9E.8B.E7.9A.84.E5.91.BD.E5.90.8D">类型的命名</span></h3>
+<p>通过以下方式来声明一个指代类型的<a href="name.html#.E5.90.8D.E5.AD.97" title="cpp/language/identifiers">名字</a>：
+</p>
+<ul><li> <a href="class.html" title="cpp/language/class">类</a>声明；
+</li><li> <a href="enum.html" title="cpp/language/enum">枚举</a>声明；
+</li><li> <a href="typedef.html" title="cpp/language/typedef">typedef</a> 声明；
+</li><li> <a href="type_alias.html" title="cpp/language/type alias">类型别名</a>声明。
+</li></ul>
+<p>常常需要在 C++ 程序中对没有名字的类型进行涉指；为此而设的语法被称为 <i>type-id（类型标识）</i>。指名类型 T 的类型标识的语法，完全就是省略了标识符的对 T 类型的变量或函数的<a href="declarations.html" title="cpp/language/declarations">声明</a>语法，但声明文法的 <i>decl-specifier-seq（声明说明符序列）</i> 被制约到 <i>type-specifier-seq（类型说明符序列）</i> ，而且仅当类型标识出现于非模板类型别名声明的右侧时，它才可以定义新类型。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span><span class="sy2">*</span> p<span class="sy4">;</span>               <span class="co1">// 声明 int 的指针</span>
+<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span>p<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 类型标识为 "int*"</span>
+ 
+<span class="kw4">int</span> a<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span>   <span class="co1">// 声明 3 个 int 的数组</span>
+new <span class="kw4">int</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// 类型标识为 "int[3]" （称为 new-type-id（new-类型标识））</span>
+ 
+<span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span>x<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span>      <span class="co1">// 声明返回 int 的 3 元素数组的指针的函数的指针的 2 元素数组</span>
+new <span class="br0">(</span><span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 类型标识为 "int (*(*[2])())[3]"</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>                    <span class="co1">// 声明接收 int 并返回 void 的函数</span>
+<a href="../utility/functional/function.html"><span class="kw1059">std::<span class="me2">function</span></span></a><span class="sy1">&lt;</span><span class="kw4">void</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy1">&gt;</span> x <span class="sy1">=</span> f<span class="sy4">;</span> <span class="co1">// 类型模板形参为类型标识 "void(int)"</span>
+<a href="../utility/functional/function.html"><span class="kw1059">std::<span class="me2">function</span></span></a><span class="sy1">&lt;</span><span class="kw4">auto</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="sy2">-</span><span class="sy1">&gt;</span> <span class="kw4">void</span><span class="sy1">&gt;</span> y <span class="sy1">=</span> f<span class="sy4">;</span> <span class="co1">// 同上</span>
+ 
+<a href="../container/vector.html"><span class="kw1269">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v<span class="sy4">;</span>       <span class="co1">// 声明 int 的 vector</span>
+sizeof<span class="br0">(</span><a href="../container/vector.html"><span class="kw1269">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 类型标识为 "std::vector&lt;int&gt;"</span>
+ 
+<span class="kw1">struct</span> <span class="br0">{</span> <span class="kw4">int</span> x<span class="sy4">;</span> <span class="br0">}</span> b<span class="sy4">;</span>         <span class="co1">// 创建新类型并声明该类型的对象 b</span>
+sizeof<span class="br0">(</span><span class="kw1">struct</span><span class="br0">{</span> <span class="kw4">int</span> x<span class="sy4">;</span> <span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// 错误：不能在 sizeof 表达式中定义新类型</span>
+<span class="kw1">using</span> t <span class="sy1">=</span> <span class="kw1">struct</span> <span class="br0">{</span> <span class="kw4">int</span> x<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 创建新类型并声明 t 为该类型的别名</span>
+ 
+sizeof<span class="br0">(</span><span class="kw4">static</span> <span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误：存储类说明符并不是 type-specifier-seq 的一部分</span>
+<a href="../utility/functional/function.html"><span class="kw1059">std::<span class="me2">function</span></span></a><span class="sy1">&lt;</span><span class="kw1">inline</span> <span class="kw4">void</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy1">&gt;</span> f<span class="sy4">;</span> <span class="co1">// 错误：函数说明符也不是</span></pre></div></div>
+<p>声明文法的 <i>declarator（声明符）</i> 部分在移除了<a href="name.html#.E5.90.8D.E5.AD.97" title="cpp/language/identifiers">名字</a>后被称为 <i>abstract-declarator（抽象声明符）</i> 。
+</p><p><i>类型标识</i>可用于下列情形：
+</p>
+<ul><li> 指定<a href="expressions.html#.E8.BD.AC.E6.8D.A2" title="cpp/language/expressions">转型表达式</a>中的目标类型；
+</li><li> 作为 <a href="sizeof.html" title="cpp/language/sizeof"><code>sizeof</code></a> 、 <a href="alignof.html" title="cpp/language/alignof"><code>alignof</code></a> 、 <a href="alignas.html" title="cpp/language/alignas"><code>alignas</code></a> 、 <a href="new.html" title="cpp/language/new"><code>new</code></a> 和 <a href="typeid.html" title="cpp/language/typeid"><code>typeid</code></a> 的实参；
+</li><li> 在<a href="type_alias.html" title="cpp/language/type alias">类型别名</a>声明的右侧；
+</li><li> 作为<a href="function.html" title="cpp/language/function">函数</a>声明的尾随返回类型；
+</li><li> 作为<a href="template_parameters.html#.E6.A8.A1.E6.9D.BF.E7.B1.BB.E5.9E.8B.E5.BD.A2.E5.8F.82" title="cpp/language/template parameters">模板类型形参</a>的默认实参；
+</li><li> 作为<a href="template_parameters.html#.E6.A8.A1.E6.9D.BF.E7.B1.BB.E5.9E.8B.E5.AE.9E.E5.8F.82" title="cpp/language/template parameters">模板类型形参</a>的模板实参；
+</li><li> 在<a href="except_spec.html" title="cpp/language/except spec">动态异常规定</a>中。
+</li></ul>
+<p><i>类型标识</i>经过一些修改可用于下列情形：
+</p>
+<ul><li> 在<a href="function.html#.E5.BD.A2.E5.8F.82.E5.88.97.E8.A1.A8" title="cpp/language/function">函数</a>形参列表中（省略形参名时），<i>类型标识</i>中以 <i>decl-specifier-seq</i> 代替 <i>type-specifier-seq</i> （特别是允许使用某些存储类说明符）；
+</li><li> 在<a href="cast_operator.html" title="cpp/language/cast operator">用户定义转换函数</a>名中，其抽象声明符不能包含函数或数组运算符。
+</li></ul>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本节未完成<br>原因：8.2[dcl.ambig.res] ，若能紧凑地总结 </td></tr></table>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本节未完成<br>原因：提及并链接到 <a href="decltype.html" title="cpp/language/decltype"><code>decltype</code></a> 和 <a href="auto.html" title="cpp/language/auto"><code>auto</code></a> </td></tr></table>
+<h3><span class="mw-headline" id=".E8.AF.A6.E8.BF.B0.E7.B1.BB.E5.9E.8B.E8.AF.B4.E6.98.8E.E7.AC.A6">详述类型说明符</span></h3>
+<p>详述类型说明符能用于涉指先前声明过的类名（类、结构体或联合体）或先前声明过的枚举名，即使该名字<a href="lookup.html" title="cpp/language/lookup">被非类型声明隐藏</a>仍可进行涉指。它们亦可用于声明新的类名。
+</p><p>细节见<a href="elaborated_type_specifier.html" title="cpp/language/elaborated type specifier">详述类型说明符</a>。
+</p>
+<h3><span class="mw-headline" id=".E9.9D.99.E6.80.81.E7.B1.BB.E5.9E.8B">静态类型</span></h3>
+<p>对程序进行编译时分析所得到的表达式的类型被称为表达式的<i>静态类型</i>。程序执行时静态类型不会更改。
+</p>
+<h3><span class="mw-headline" id=".E5.8A.A8.E6.80.81.E7.B1.BB.E5.9E.8B">动态类型</span></h3>
+<p>若某个<a href="value_category.html" title="cpp/language/value category">泛左值表达式</a>指代某个<a href="object.html" title="cpp/language/object">多态对象</a>，则其最终派生对象的类型被称为其动态类型。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// 给定</span>
+<span class="kw1">struct</span> B <span class="br0">{</span> <span class="kw1">virtual</span> ~B<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 多态类型</span>
+<span class="kw1">struct</span> D<span class="sy4">:</span> B <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 多态类型</span>
+D d<span class="sy4">;</span> <span class="co1">// 最终派生对象</span>
+B<span class="sy2">*</span> ptr <span class="sy1">=</span> <span class="sy3">&amp;</span>d<span class="sy4">;</span>
+<span class="co1">// (*ptr) 的静态类型为 B</span>
+<span class="co1">// (*ptr) 的动态类型为 D</span></pre></div></div>
+<p>对于纯右值表达式，动态类型始终与静态类型相同。
+</p>
+<h3><span class="mw-headline" id=".E4.B8.8D.E5.AE.8C.E6.95.B4.E7.B1.BB.E5.9E.8B">不完整类型</span></h3>
+<p>下列类型是<i>不完整类型</i>：
+</p>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> 类型（可有 <a href="cv.html" title="cpp/language/cv">cv</a> 限定）；
+</li><li> 已声明（例如由<a href="class.html#.E5.89.8D.E7.BD.AE.E5.A3.B0.E6.98.8E" title="cpp/language/class">前置声明</a>）但未定义的类类型；
+</li><li> <a href="array.html#.E6.9C.AA.E7.9F.A5.E8.BE.B9.E7.95.8C.E6.95.B0.E7.BB.84" title="cpp/language/array">未知边界数组</a>；
+</li><li> 不完整类型元素的数组
+</li><li> <a href="enum.html" title="cpp/language/enum">枚举类型</a>，从其声明点到确定其底层类型之间。
+</li></ul>
+<p>下列语境都要求类型 <code>T</code> 完整：
+</p>
+<ul><li> 返回类型为 <code>T</code> 或参数类型为 <code>T</code> 的函数的<a href="function.html" title="cpp/language/function">定义</a>或对它的调用；
+</li><li> <code>T</code> 类型对象的<a href="definition.html" title="cpp/language/definition">定义</a>;
+</li><li> <code>T</code> 类型<a href="data_members.html" title="cpp/language/data members">非静态数据成员</a>的声明；
+</li><li> <code>T</code> 类型对象或元素类型为 <code>T</code> 的数组的 <a href="new.html" title="cpp/language/new">new 表达式</a>；
+</li><li> 对 <code>T</code> 类型泛左值实施<a href="implicit_cast.html#.E5.B7.A6.E5.80.BC.E5.88.B0.E5.8F.B3.E5.80.BC.E8.BD.AC.E6.8D.A2" title="cpp/language/implicit conversion">左值到右值转换</a>；
+</li><li> 到 <code>T</code> 类型的<a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">隐式</a>或<a href="explicit_cast.html" title="cpp/language/explicit cast">显式</a>转换；
+</li><li> 到 <code>T*</code> 或 <code>T&amp;</code> 类型的 <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">标准转换</a>、 <a href="dynamic_cast.html" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a> 或 <a href="static_cast.html" title="cpp/language/static cast"><code>static_cast</code></a> ，不包括从<a href="../types/NULL.html" title="cpp/types/NULL">空指针常量</a>或从 <a href="pointer.html#void_.E7.9A.84.E6.8C.87.E9.92.88" title="cpp/language/pointer">void 的指针</a>进行的转换；
+</li><li> 对 <code>T</code> 类型表达式运用<a href="operator_member_access.html" title="cpp/language/operator member access">类成员访问运算符</a>；
+</li><li> 对 <code>T</code> 类型运用 <a href="typeid.html" title="cpp/language/typeid"><code>typeid</code></a> 、 <a href="sizeof.html" title="cpp/language/sizeof"><code>sizeof</code></a> 或 <a href="alignof.html" title="cpp/language/alignof"><code>alignof</code></a> 运算符；
+</li><li> 对 <code>T</code> 的指针运用的<a href="operator_arithmetic.html" title="cpp/language/operator arithmetic">算术运算符</a>；
+</li><li> 带有基类 <code>T</code> 的类的定义；
+</li><li> 赋值给 <code>T</code> 类型的左值；
+</li><li> <code>T</code> 、 <code>T&amp;</code> 或 <code>T*</code> 类型的异常的 <a href="try_catch.html" title="cpp/language/try catch">catch 子句</a>。
+</li></ul>
+<p>（通常在必须知道 <code>T</code> 的大小和布局时要求它完整。）
+</p><p>如果翻译单元中出现了这些情况中的任何情况，该类型的定义就必须在相同翻译单元中出现。否则不必出现。
+</p><p>不完整定义的对象类型可以变完整：
+</p>
+<ul><li> 类类型（例如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> X</span></span>）可在翻译单元中的一处不完整而在其之后补充完整；类型 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> X</span></span> 在这两处是相同类型：
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> X<span class="sy4">;</span>              <span class="co1">// X 是不完整类型</span>
+<span class="kw4">extern</span> X<span class="sy2">*</span> xp<span class="sy4">;</span>         <span class="co1">// xp 是指向不完整类型的指针</span>
+ 
+<span class="kw4">void</span> foo<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  xp<span class="sy2">++</span><span class="sy4">;</span>               <span class="co1">// 非良构： X 不完整</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">struct</span> X <span class="br0">{</span> <span class="kw4">int</span> i<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>  <span class="co1">// 现在 X 是完整类型</span>
+ 
+X x<span class="sy4">;</span>
+<span class="kw4">void</span> bar<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  xp <span class="sy1">=</span> <span class="sy3">&amp;</span>x<span class="sy4">;</span>            <span class="co1">// OK：类型是“X 的指针”</span>
+  xp<span class="sy2">++</span><span class="sy4">;</span>               <span class="co1">// OK：X 完整</span>
+<span class="br0">}</span></pre></div></div>
+<ul><li> 数组对象的声明类型可以是不完整类类型的数组，从而它不完整；若类类型在翻译单元中的后面完整，则该数组类型变得完整；两处的数组类型是同一类型。
+</li></ul>
+<ul><li> 数组对象的声明类型可为未知边界数组，从而在翻译单元的一处不完整，并在之后变完整；两处的数组类型（“<span class="t-c"><span class="mw-geshi cpp source-cpp">T</span></span> 的未知边界数组”与“<span class="t-c"><span class="mw-geshi cpp source-cpp">T</span></span> 的 <span class="t-c"><span class="mw-geshi cpp source-cpp">N</span></span> 元素数组”）是不同类型。
+</li></ul>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本节未完成<br>原因：完成不完整数组类型的示例，来自 §3.9[basic.types]/6 </td></tr></table>
+<p>未知边界数组的指针的类型，或由 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">typedef</span></span></span> 声明定义为未知边界数组的类型，无法变得完整。
+</p>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 3821/1000000
+Preprocessor generated node count: 9255/1000000
+Post‐expand include size: 47114/2097152 bytes
+Template argument size: 10081/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:7801-0!*!0!!zh!*!zh!* and timestamp 20190823134716 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/type&amp;oldid=59636">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/type&amp;oldid=59636</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/type">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年3月16日 (星期六) 05:39。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过10,232次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 2.275 secs. -->
+	</body>
+<!-- Cached 20190823134716 -->
+</html>

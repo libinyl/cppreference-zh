@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>定义与单一定义规则（ODR）</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/definition","wgTitle":"cpp/language/definition","wgCurRevisionId":61796,"wgArticleId":8013,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/definition","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_definition skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">定义与单一定义规则（ODR）</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="basic_concepts.html" title="cpp/language/basic concepts">基本概念</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> 语言关键词</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> 翻译阶段</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> 注释</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> <code>main()</code> 函数</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> 名字和标识符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="incomplete_type.html" title="cpp/language/type"> 类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> 基础类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="object.html" title="cpp/language/object"> 对象</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scope.html" title="cpp/language/scope"> 作用域</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> 对象生存期</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> 存储期与连接</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 定义和单一定义规则（ODR）</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> 名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup"> 有限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup"> 无限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_if.html" title="cpp/language/as if"> “如同”规则</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ub.html" title="cpp/language/ub"> 未定义行为</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="cpp/language/memory model"> 内存模型</a> </td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p><i>定义</i>是完全定义了声明中所引入的实体的<a href="declarations.html" title="cpp/language/declarations">声明</a>。除了以下情况外的声明都是定义：
+</p>
+<ul><li> 无函数体的函数声明
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 声明但不定义 f</span></pre></div></div>
+<ul><li> 带有<a href="storage_duration.html" title="cpp/language/storage duration">存储类说明符</a> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span></span></span> 或者<a href="language_linkage.html" title="cpp/language/language linkage">语言连接</a>说明符（诸如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <span class="st0">"C"</span></span></span> ）而无初始化器的所有声明
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">extern</span> <span class="kw4">const</span> <span class="kw4">int</span> a<span class="sy4">;</span> <span class="co1">// 声明但不定义 a</span>
+<span class="kw4">extern</span> <span class="kw4">const</span> <span class="kw4">int</span> b <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// 定义 b</span></pre></div></div>
+<ul><li> 在类的定义中的<span class="t-rev-inl t-since-cxx17"><span>非 inline</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span> <a href="static.html" title="cpp/language/static">静态数据成员</a>的声明
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">int</span> n<span class="sy4">;</span>               <span class="co1">// 定义 S::n</span>
+    <span class="kw4">static</span> <span class="kw4">int</span> i<span class="sy4">;</span>        <span class="co1">// 声明但不定义 S::i</span>
+    <span class="kw1">inline</span> <span class="kw4">static</span> <span class="kw4">int</span> x<span class="sy4">;</span> <span class="co1">// 定义 S::x</span>
+<span class="br0">}</span><span class="sy4">;</span>                       <span class="co1">// 定义 S</span>
+<span class="kw4">int</span> S<span class="sy4">::</span><span class="me2">i</span><span class="sy4">;</span>                <span class="co1">// 定义 S::i</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<ul><li> <span class="t-mark">(弃用)</span> 已经在类中用 <code><a href="constexpr.html" title="cpp/language/constexpr">constexpr</a></code> 说明符定义过的静态数据成员，在命名空间作用域中的声明
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">42</span><span class="sy4">;</span> <span class="co1">// 隐含为 inline，定义 S::x</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">constexpr</span> <span class="kw4">int</span> S<span class="sy4">::</span><span class="me2">x</span><span class="sy4">;</span> <span class="co1">// 声明 S::x ，不是重复定义</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<ul><li> （通过<a href="class.html#.E5.89.8D.E7.BD.AE.E5.A3.B0.E6.98.8E" title="cpp/language/class">前置声明</a>或通过在其他声明中使用详细类型说明符）对类名字进行的声明
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S<span class="sy4">;</span> <span class="co1">// 声明但不定义 S</span>
+<span class="kw1">class</span> Y f<span class="br0">(</span><span class="kw1">class</span> T p<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 声明但不定义 Y 和 T（以及 f 和 p）</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<ul><li> 枚举的<a href="enum.html" title="cpp/language/enum">不可见声明</a>
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> Color <span class="sy4">:</span> <span class="kw4">int</span><span class="sy4">;</span> <span class="co1">// 声明但不定义 Color</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<ul><li> <a href="template_parameters.html" title="cpp/language/template parameters">模板形参</a>的声明
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span> <span class="co1">// 声明但不定义 T</span></pre></div></div>
+<ul><li> 并非定义的函数声明中的形参声明
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 声明但不定义 f 和 x</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// 定义 f 和 x</span>
+     <span class="kw1">return</span> x<span class="sy2">+</span>a<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<ul><li> <a href="typedef.html" title="cpp/language/typedef">typedef</a> 声明
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">typedef</span> S S2<span class="sy4">;</span> <span class="co1">// 声明但不定义 S2（S 可以是不完整类型）</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<ul><li> <a href="type_alias.html" title="cpp/language/type alias">别名声明</a>
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">using</span> S2 <span class="sy1">=</span> S<span class="sy4">;</span> <span class="co1">// 声明但不定义 S2（S 可以是不完整类型）</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<ul><li> <a href="using_declaration.html" title="cpp/language/using declaration">using 声明</a>
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">using</span> N<span class="sy4">::</span><span class="me2">d</span><span class="sy4">;</span> <span class="co1">// 声明但不定义 d</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<ul><li> <a href="class_template_argument_deduction.html#.E7.94.A8.E6.88.B7.E5.AE.9A.E4.B9.89.E6.8E.A8.E5.AF.BC.E6.8C.87.E5.BC.95" title="cpp/language/class template argument deduction">推导指引</a>的声明（不定义任何实体）
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+<tr class="t-rev t-since-cxx11"><td>
+<ul><li> <a href="static_assert.html" title="cpp/language/static assert">static_assert</a> 声明（不定义任何实体）
+</li><li> <a href="declarations.html" title="cpp/language/declarations">特性声明</a>（不定义任何实体）
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<ul><li> <a href="declarations.html" title="cpp/language/declarations">空声明</a>（不定义任何实体）
+</li><li> <a href="namespace.html#using_.E6.8C.87.E4.BB.A4" title="cpp/language/namespace">using 指令</a>（不定义任何实体）
+</li></ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<ul><li> <a href="class_template.html#.E7.B1.BB.E6.A8.A1.E6.9D.BF.E5.AE.9E.E4.BE.8B.E5.8C.96" title="cpp/language/class template">显式实例化声明</a>（“extern 模板”）
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">extern</span> <span class="kw1">template</span> f<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span> <span class="co1">// 声明但不定义 f&lt;int, char&gt;</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<ul><li> 不是定义的<a href="template_specialization.html" title="cpp/language/template specialization">显式特化</a>声明
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> A<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy4">;</span> <span class="co1">// 声明但不定义 A&lt;int&gt;</span></pre></div></div>
+<p><a href="asm.html" title="cpp/language/asm">asm 声明</a>不定义任何实体，但它被归类为定义。
+</p><p>如果必要，编译器就会隐式定义<a href="default_constructor.html" title="cpp/language/default constructor">默认构造函数</a>、<a href="copy_constructor.html" title="cpp/language/copy constructor">复制构造函数</a>、<a href="move_constructor.html" title="cpp/language/move constructor">移动构造函数</a>、<a href="copy_assignment.html" title="cpp/language/copy assignment">复制赋值运算符</a>、<a href="move_assignment.html" title="cpp/language/move assignment">移动赋值运算符</a>和<a href="destructor.html" title="cpp/language/destructor">析构函数</a>。
+</p><p>如果任何对象的定义导致了具有<a href="incomplete_type.html" title="cpp/language/incomplete type" class="mw-redirect">不完整类型</a>或<a href="abstract_class.html" title="cpp/language/abstract class">抽象类类型</a>的对象，则程序非良构。
+</p><p><span id="ODR"></span>
+</p>
+<h3><span class="mw-headline" id=".E5.8D.95.E4.B8.80.E5.AE.9A.E4.B9.89.E8.A7.84.E5.88.99.EF.BC.88ODR.EF.BC.89">单一定义规则（ODR）</span></h3>
+<p>任何变量、函数、类类型、枚举类型<span class="t-rev-inl t-since-cxx20"><span>、<a href="constraints.html" title="cpp/language/constraints">概念</a></span> <span><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></span></span>或模板，在每个翻译单元中都只允许有一个定义（它们有些可以有多个声明，但定义只允许有一个）。
+</p><p>被 <i>ODR 式使用</i>（见下文）的非 <a href="inline.html" title="cpp/language/inline">inline</a> 函数或变量，要求在整个程序（包括所有的标准或用户定义的程序库）中，有且仅有一个定义。编译器不要求对这条规则的违反进行诊断，但违反它的程序的行为是未定义的。
+</p><p>对于 inline 函数<span class="t-rev-inl t-since-cxx17"><span>或 inline 变量</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>来说，在 <i>ODR 式使用</i>了它的每个翻译单元中都需要一个定义。
+</p><p>在以需要将类作为<a href="incomplete_type.html" title="cpp/language/incomplete type" class="mw-redirect">完整类型</a>的方式予以使用的每个翻译单元中，要求有且仅有该类的一个定义。
+</p><p>以下各种实体：类类型、枚举类型、具有外部连接的 inline 函数<span class="t-rev-inl t-since-cxx17"><span>、具有外部连接的 inline 变量</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>、类模板、非静态函数模板、类模板的静态数据成员、类模板的成员函数、模板部分特化<span class="t-rev-inl t-since-cxx20"><span>、<a href="constraints.html" title="cpp/language/constraints">概念</a></span> <span><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></span></span>，在程序中可以出现多个定义，只要每个定义都出现于不同的翻译单元中，且满足下列条件：
+</p>
+<ul><li> 每个定义都由相同的记号（token）序列构成（典型情况下是在同一个头文件中）
+</li><li> 每个定义内进行的名字查找（在重载决议后）都找到相同实体，但具有内部连接或无连接的常量可以指代不同的对象，只要不 ODR 式使用它们，并在它们在各个定义中都具有相同的值即可。
+</li><li> 重载运算符（包括转换，分配和解分配函数），在各个定义中都代表相同的函数（除非它们代表的是在这个定义中所定义的函数）
+</li><li> 它们具有相同的语言连接（比如包含文件时并未处于某个 extern "C" 块之中）
+</li><li> 以上三条规则同样适用于各个定义中的每个默认实参
+</li><li> 若该定义是带有隐式声明的构造函数的类定义，则在每个 ODR 式使用它的翻译单元中，必须为基类和成员调用相同的构造函数
+</li><li> 若该定义是模板定义，则所有这些要求一同适用于定义点的各个名字和实例化点的各个待决名
+</li></ul>
+<p>若满足了所有这些要求，则程序的行为如同在整个程序中只有一个定义。否则其行为未定义。
+</p><p>注意：在 C 中，类型无全程序范围的 ODR ，而同一变量的 extern 声明甚至可以在不同翻译单元中具有不同的类型，<a href="../../c/language/type.html#.E5.85.BC.E5.AE.B9.E7.B1.BB.E5.9E.8B" title="c/language/type" class="mw-redirect">只要它们是兼容的类型即可</a>。在 C++ 中，用于同一个类型的声明的源代码记号，必须如上所述相同：如果一个 .cpp 文件定义了 <code>struct S { int x; };</code> 而另一个 .cpp 文件定义了 <code>struct S { int y; };</code>，则它们链接到一起的程序的行为未定义。通常使用<a href="namespace.html" title="cpp/language/namespace">无名命名空间</a>来解决这种问题。
+</p>
+<h4><span class="mw-headline" id="ODR_.E5.BC.8F.E4.BD.BF.E7.94.A8">ODR 式使用</span></h4>
+<p>非正式地说，若读取（除非它是编译时常量）或写入对象的值，取对象的地址，或将引用绑定到它，则对象被 ODR 式使用；若引用有被使用，且其所引用者在编译时未知，则引用被 ODR 式使用；而若调用函数或取其地址，则函数被 ODR 式使用。若 ODR 式使用了对象、引用或函数，则其定义必须存在于程序中的某处；违规常为连接时错误。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="co1">// 静态数据成员</span>
+    <span class="co1">// 如果 ODR 式使用它，就需要一个类外的定义</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> f<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> r<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> n <span class="sy1">=</span> b <span class="sy4">?</span> <span class="br0">(</span><span class="nu0">1</span>, S<span class="sy4">::</span><span class="me2">x</span><span class="br0">)</span> <span class="co1">// S::x 此处并未 ODR 式使用</span>
+          <span class="sy4">:</span> f<span class="br0">(</span>S<span class="sy4">::</span><span class="me2">x</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// S::x 此处被 ODR 式使用：需要一个定义</span></pre></div></div>
+<p>正式地说，
+</p>
+<div class="t-li1"><span class="t-li">1)</span> <i>潜在求值 (potentially-evaluated)</i> 表达式 <code>ex</code> 中的变量 <code>x</code> 被 ODR 式使用，除非以下两条均为真：
+<dl><dd><ul><li> 对 <code>x</code> 进行左值向右值转换产生的常量表达式没有调用任何非平凡函数
+</li><li> 或者 <code>x</code> 不是对象（亦即 <code>x</code> 是引用），或者当 <code>x</code> 是对象时，它是某个更大的表达式 <code>e</code> 的<i>潜在结果（ potential result ）</i>之一，而这个更大的表达式要么是<a href="expressions.html#.E5.BC.83.E5.80.BC.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/expressions">弃值表达式</a>，要么对其实施了左值到右值转换
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span> <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 对 S::x 实施左值到右值转换产生常量表达式</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> 
+    S<span class="sy4">::</span><span class="me2">x</span><span class="sy4">;</span>        <span class="co1">// 弃值表达式不会 ODR 式使用 S::x</span>
+    <span class="kw1">return</span> S<span class="sy4">::</span><span class="me2">x</span><span class="sy4">;</span> <span class="co1">// 实施了左值到右值转换的表达式不会 ODR 式使用 S::x</span>
+<span class="br0">}</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">2)</span> 若 <span class="t-c"><span class="mw-geshi cpp source-cpp">this</span></span> 作为<i>潜在求值</i>表达式出现（包括非静态成员函数调用表达式中隐含的 <span class="t-c"><span class="mw-geshi cpp source-cpp">this</span></span> ），则 <a href="this.html" title="cpp/language/this"><code>*this</code></a> 被 ODR 使用。</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<div class="t-li1"><span class="t-li">3)</span> 若<a href="structured_binding.html" title="cpp/language/structured binding">结构化绑定</a>作为<i>潜在求值</i>表达式出现，则它被 ODR 使用。
+</div></td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<p>在以上各项定义中，<i>潜在求值</i>的含义是，其表达式并非诸如 <a href="sizeof.html" title="cpp/language/sizeof">sizeof</a> 这样的<a href="expressions.html#.E4.B8.8D.E6.B1.82.E5.80.BC.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/expressions">不求值表达式</a>（或其子表达式）的操作数。而表达式 <code>e</code> 的<i>潜在结果（potential result）集合</i>是 <code>e</code> 中所出现的标识表达式（id-expression）的（可能为空的）集合。组合起来有：
+</p>
+<ul><li> 当 <code>e</code> 是<a href="expressions.html" title="cpp/language/expressions">标识表达式</a>时，表达式 <code>e</code> 就是其唯一的潜在结果
+</li></ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<ul><li> 当 <code>e</code> 为数组下标表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">e1<span class="br0">[</span>e2<span class="br0">]</span></span></span>，其中操作数之一为数组时，该操作数的潜在结果包含于集合中
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<ul><li> 当 <code>e</code> 是类成员访问表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">e1.<span class="me1">e2</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp">e1<span class="sy2">-</span><span class="sy1">&gt;</span>e2</span></span> 时，对象表达式 e1 的潜在结果就包括在集合中
+</li><li> 当 <code>e</code> 是成员指针访问表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">e1.<span class="sy2">*</span>e2</span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp">e1<span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>e2</span></span>，且其第二个操作数为常量表达式时，对象表达式 e1 的潜在结果就包括在集合中
+</li><li> 当 <code>e</code> 是带有括号的表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>e1<span class="br0">)</span></span></span> 时，<code>e1</code> 的潜在结果被包括在集合中
+</li><li> 当 <code>e</code> 泛左值条件表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">e1<span class="sy4">?</span>e2<span class="sy4">:</span>e3</span></span>，其中 e2 和 e3 均为泛左值时，<code>e2</code> 和 <code>e3</code> 的潜在结果的并集都包括在集合中
+</li><li> 当 <code>e</code> 是逗号表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">e1,e2</span></span> 时，<code>e2</code> 的潜在结果被包括在潜在结果集合中
+</li><li> 否则，集合为空。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+  <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+  <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> b <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">bool</span> x<span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw1">return</span> x <span class="sy4">?</span> S<span class="sy4">::</span><span class="me2">a</span> <span class="sy4">:</span> S<span class="sy4">::</span><span class="me2">b</span><span class="sy4">;</span>
+  <span class="co1">// x 是子表达式 "x" （ ? 的左边）的一部分，它应用了左值到右值转换，</span>
+  <span class="co1">// 但对 x 实施这个转换不产生常量表达式，故 x 被 ODR 式使用</span>
+  <span class="co1">// S::a 和 S::b 都是左值，并均作为泛左值条件表达式的结果的“潜在结果”</span>
+  <span class="co1">// 该结果随即进行了为复制初始化返回值所要求的左值到右值转换，</span>
+  <span class="co1">// 故而 S::a 和 S::b 未被 ODR 式使用</span>
+<span class="br0">}</span></pre></div></div>
+<div class="t-li1"><span class="t-li">4)</span> 以下情况下函数被 ODR 式使用：
+<ul><li> 函数的名字出现于潜在求值表达式之中（这包括具名函数，重载运算符，<a href="cast_operator.html" title="cpp/language/cast operator">用户定义的转换</a>，用户定义的布置形式的 new 运算符，以及非默认的初始化等情况），若它被重载决议所选择，则它被 ODR 式使用，除非它是无限定的纯虚成员函数<span class="t-rev-inl t-since-cxx17"><span>或纯虚函数的成员指针</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>。
+</li><li> 如果<a href="virtual.html" title="cpp/language/virtual">虚成员函数</a>不是纯虚成员函数，它就被 ODR 式使用（需要虚函数的地址来构建虚表）
+</li><li> 类的<a href="../memory/new/operator_new.html" title="cpp/memory/new/operator new">分配</a>或解分配函数，由出现于潜在求值表达式中的 <a href="new.html" title="cpp/language/new">new 表达式</a>所 ODR 式使用
+</li><li> 类的解分配函数，由出现于潜在求值表达式中的 <a href="delete.html" title="cpp/language/delete">delete 表达式</a>所 ODR 式使用
+</li><li> 类的非布置分配或解分配函数，为这个类的构造函数的定义所 ODR 式使用
+</li><li> 类的非布置解分配函数，为这个类的析构函数的定义所 ODR 式使用，或由虚析构函数的定义点所进行的查找所选择时它被 ODR 式使用
+</li><li> 作为另一个类 <code>U</code> 的成员或基类的类 <code>T</code> 的赋值运算符，由 <code>U</code> 的隐式定义的复制赋值或移动赋值函数所 ODR 式使用。
+</li><li> 类的构造函数（也包括默认构造函数），由选择了它的<a href="initialization.html" title="cpp/language/initialization">初始化</a>所 ODR 式使用
+</li><li> 类的析构函数，当其被潜在调用时即被 ODR 式使用</li></ul></div>
+
+<p>所有这些情况中，即便发生了<a href="copy_elision.html" title="cpp/language/copy elision">复制消除</a>，其所选择用于复制或移动一个对象的构造函数仍被 ODR 式使用。
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本节未完成<br>原因：列出所有 ODR 式使用产生差异的情形 </td></tr></table>
+<h3><span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h3>
+<div class="t-ref-std-c++11">
+<ul><li> C++11 standard (ISO/IEC 14882:2011): 
+</li></ul>
+<dl><dd><ul><li> 3.2 One definition rule [basic.def.odr]
+</li></ul>
+</dd></dl>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2846/1000000
+Preprocessor generated node count: 9006/1000000
+Post‐expand include size: 43939/2097152 bytes
+Template argument size: 10137/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:8013-0!*!0!!*!*!zh!* and timestamp 20190721060145 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/definition&amp;oldid=61796">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/definition&amp;oldid=61796</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/definition">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年7月20日 (星期六) 23:01。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过7,702次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.072 secs. -->
+	</body>
+<!-- Cached 20190722010946 -->
+</html>

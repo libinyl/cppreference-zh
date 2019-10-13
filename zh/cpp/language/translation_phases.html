@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>翻译阶段</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/translation_phases","wgTitle":"cpp/language/translation phases","wgCurRevisionId":59751,"wgArticleId":7776,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/translation_phases","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_translation_phases skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">翻译阶段</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="basic_concepts.html" title="cpp/language/basic concepts">基本概念</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> 语言关键词</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 翻译阶段</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> 注释</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> <code>main()</code> 函数</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> 名字和标识符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="incomplete_type.html" title="cpp/language/type"> 类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> 基础类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="object.html" title="cpp/language/object"> 对象</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scope.html" title="cpp/language/scope"> 作用域</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> 对象生存期</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> 存储期与连接</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="definition.html" title="cpp/language/definition"> 定义和单一定义规则（ODR）</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> 名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup"> 有限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup"> 无限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_if.html" title="cpp/language/as if"> “如同”规则</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ub.html" title="cpp/language/ub"> 未定义行为</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="cpp/language/memory model"> 内存模型</a> </td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>编译器处理 C++ 源文件时，如同严格按照以下顺序进行各个阶段的处理：
+</p>
+<h3><span class="mw-headline" id=".E9.98.B6.E6.AE.B5_1">阶段 1</span></h3>
+<div class="t-li1"><span class="t-li">1)</span> 以实现定义方式，将源文件的各个单独字节，映射为<i>基本源字符集</i>的字符。特别是，依赖于 OS 的行尾指示符均被替换为换行字符。<i>基本源字符集</i>由以下 96 个字符组成：</div>
+<div class="t-li2"><span class="t-li">a)</span> 5 个空白字符（空格 (space)、水平制表 (horizontal tab)、垂直制表 (vertical tab)、换页 (form feed)和 换行 (new-line)）</div>
+<div class="t-li2"><span class="t-li">b)</span> 10 个数字字符，从 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'0'</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'9'</span></span></span></div>
+<div class="t-li2"><span class="t-li">c)</span> 52 个字母，从 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'a'</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'z'</span></span></span> 以及从 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'A'</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'Z'</span></span></span></div>
+<div class="t-li2"><span class="t-li">d)</span> 29 个标点字符：<span class="t-c"><span class="mw-geshi cpp source-cpp">_ <span class="br0">{</span> <span class="br0">}</span> <span class="br0">[</span> <span class="br0">]</span> <span class="co2"># ( ) &lt; &gt; % : ; . ? * + - / ^ &amp; | ~ ! = , \ " ’</span></span></span></div>
+<div class="t-li1"><span class="t-li">2)</span> 任何无法被映射到基本源字符集中的字符的源文件字符，均被替换为其<a href="escape.html" title="cpp/language/escape">通用字符名 (universal character name)</a>（用 <code>\u</code> 或 <code>\U</code> 转义），或某种被等价处理的由实现定义的形式。</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx17"><td>
+<div class="t-li1"><span class="t-li">3)</span> 将各个<a href="operator_alternative.html" title="cpp/language/operator alternative">三标符序列</a>替换为其对应的单字符表示。</div>
+</td>
+<td><span class="t-mark-rev t-until-cxx17">(C++17 前)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E9.98.B6.E6.AE.B5_2">阶段 2</span></h3>
+<div class="t-li1"><span class="t-li">1)</span> 凡在反斜杠出现于行尾（其后紧跟换行符）时，删除反斜杠和换行符，把两个物理源码行组合成一个逻辑源码行。这是单趟操作：以两个反斜杠结束，后随一个空行的行，不会把三行组合为一。若于此阶段组成了通用字符名（<span class="t-c"><span class="mw-geshi cpp source-cpp">\uXXXX</span></span>），则行为未定义。</div>
+<div class="t-li1"><span class="t-li">2)</span> 若此步骤后，非空源文件不以换行符结束（无论是原本就无换行，还是以反斜杠结束），则<span class="t-rev-inl t-until-cxx11"><span>其行为未定义</span> <span><span class="t-mark-rev t-until-cxx11">(C++11 前)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>添加一个终止的换行符</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>。</div>
+<h3><span class="mw-headline" id=".E9.98.B6.E6.AE.B5_3">阶段 3</span></h3>
+<div class="t-li1"><span class="t-li">1)</span> 将源文件分解为<a href="../comments.html" title="cpp/comment">注释</a>，空白字符（空格、水平制表、换行、垂直制表和换页）的序列，和下列各种<i>预处理记号 (preprocessing token)</i>：</div>
+<div class="t-li2"><span class="t-li">a)</span> 头文件名，如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;</span>iostream<span class="sy1">&gt;</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">"myfile.h"</span></span></span></div>
+<div class="t-li2"><span class="t-li">b)</span> <a href="name.html" title="cpp/language/identifiers">标识符</a></div>
+<div class="t-li2"><span class="t-li">c)</span> 预处理数字</div>
+<div class="t-li2"><span class="t-li">d)</span> <a href="character_literal.html" title="cpp/language/character literal">字符</a>与<a href="string_literal.html" title="cpp/language/string literal">字符串</a>字面量<span class="t-rev-inl t-since-cxx11"><span>，包含<a href="user_literal.html" title="cpp/language/user literal">用户定义</a>的</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span></div>
+<div class="t-li2"><span class="t-li">e)</span> 运算符与标点（包括<a href="operator_alternative.html" title="cpp/language/operator alternative">代用记号</a>），如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">+</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;&lt;=</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;</span><span class="sy2">%</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="co2">##</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp">and</span></span></div>
+<div class="t-li2"><span class="t-li">f)</span> 不属于任何其他类别的单独非空白字符</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<div class="t-li1"><span class="t-li">2)</span> 恢复在阶段 1 和 2 期间，在任何原始<a href="string_literal.html" title="cpp/language/string literal">字符串字面量</a>的首尾双引号之间进行的所有变换。</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<div class="t-li1"><span class="t-li">3)</span> 以一个空格字符替换每段注释。</div>
+<p>保持换行符。是否可将非换行空白字符序列缩减成单个空格字符是未指明的。
+</p><p><span id=".E6.9C.80.E5.A4.A7.E5.90.9E.E5.99.AC"></span>
+将输入分析为预处理记号，到某个给定字符为止时，通常将可构成一个预处理记号的最长字符序列处理成下一个预处理记号，即使这会导致后继分析失败也是如此。这常被称为<i>最大吞噬 (maximal munch)</i>。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> foo <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+<span class="kw4">int</span> bar <span class="sy1">=</span> <span class="nu12">0xE</span><span class="sy2">+</span>foo<span class="sy4">;</span>   <span class="co1">// 错误：非法的预处理数字 0xE+foo</span>
+<span class="kw4">int</span> baz <span class="sy1">=</span> <span class="nu12">0xE</span> <span class="sy2">+</span> foo<span class="sy4">;</span> <span class="co1">// OK</span>
+ 
+<span class="kw4">int</span> quux <span class="sy1">=</span> bar<span class="sy2">+++++</span>baz<span class="sy4">;</span> <span class="co1">// 错误：bar++ ++ +baz，而非 bar++ + ++baz。</span></pre></div></div>
+<p>最大吞噬规则的唯一例外是：
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<ul><li> 若下一个字符所开始的字符序列可作为<a href="string_literal.html" title="cpp/language/string literal">原始字符串字面量</a>的前缀和起始双引号，则下个预处理记号应当为原始字符串字面量。该字面量由匹配原始字符串模式的最短字符序列组成。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#define R "x"</span>
+<span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> s <span class="sy1">=</span> R<span class="st0">"y"</span><span class="sy4">;</span> <span class="co1">// 非良构的原始字符串字面量，而非 "x" "y"</span>
+<span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> s2 <span class="sy1">=</span> R<span class="st0">"(a)"</span> <span class="st0">"b)"</span><span class="sy4">;</span> <span class="co1">// 原始字符串字面量后随普通字符串字面量</span></pre></div></div>
+<ul><li> 若其后三个字符是 <code><b>&lt;::</b></code>，而后继字符既非 <code><b>:</b></code> 亦非 <code><b>&gt;</b></code>，则把 <code><b>&lt;</b></code> 自身当做预处理记号（而非<a href="operator_alternative.html" title="cpp/language/operator alternative">代用记号</a> <code>&lt;:</code> 的首字符）。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> Foo <span class="br0">{</span> <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> v <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<a href="../container/vector.html"><span class="kw1269">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Foo</span><span class="sy1">&gt;</span> x<span class="sy4">;</span> <span class="co1">// OK，&lt;: 未被当作 [ 的代用记号</span>
+<span class="kw4">extern</span> <span class="kw4">int</span> y<span class="sy1">&lt;</span><span class="sy4">::</span><span class="sy1">&gt;</span><span class="sy4">;</span>     <span class="co1">// OK，同 extern int y[]。</span>
+<span class="kw4">int</span> z<span class="sy1">&lt;</span><span class="sy4">:::</span><span class="me2">Foo</span><span class="sy4">::</span><span class="me2">value</span><span class="sy4">:</span><span class="sy1">&gt;</span><span class="sy4">;</span> <span class="co1">// OK，int z[::Foo::value];</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<ul><li> 头文件名预处理记号仅在 <code>#include</code> 指令中形成。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../container/vector.html"><span class="kw1269">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> x<span class="sy4">;</span> <span class="co1">// OK，&lt;int&gt; 不是头文件名</span></pre></div></div>
+<h3><span class="mw-headline" id=".E9.98.B6.E6.AE.B5_4">阶段 4</span></h3>
+<div class="t-li1"><span class="t-li">1)</span> 执行<a href="../preprocessor.html" title="cpp/preprocessor">预处理器</a>。</div>
+<div class="t-li1"><span class="t-li">2)</span> <a href="../preprocessor/include.html" title="cpp/preprocessor/include">#include</a> 指令所引入的每个文件都经历阶段 1 到 4 的处理，递归执行。</div>
+<div class="t-li1"><span class="t-li">3)</span> 此阶段结束时，从源码移除所有预处理器指令。</div>
+<h3><span class="mw-headline" id=".E9.98.B6.E6.AE.B5_5">阶段 5</span></h3>
+<div class="t-li1"><span class="t-li">1)</span> 将<a href="character_literal.html" title="cpp/language/character literal">字符字面量</a>及<a href="string_literal.html" title="cpp/language/string literal">字符串字面量</a>中的所有字符，从源字符集转换到<i>执行字符集</i>（可为如 UTF-8 这样的多字节字符集，只要阶段 1 中所列的<i>基本源字符集</i>的 96 个字符都拥有单字节表示即可）。</div>
+<div class="t-li1"><span class="t-li">2)</span> 将字符字面量和非原始字符串字面量中的<a href="escape.html" title="cpp/language/escape">转义序列</a>和通用字符名展开，并转换到<i>执行字符集</i>。
+若某个通用字符名所指定的字符不是执行字符集的成员，则结果是由实现定义的，但保证不是空（宽）字符。</div>
+<p>注意：某些实现中，能以命令行选项控制此阶段所进行的转换：gcc 和 clang 用 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span>finput<span class="sy2">-</span>charset</span></span> 指定源字符集的编码，用 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span>fexec<span class="sy2">-</span>charset</span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span>fwide<span class="sy2">-</span>exec<span class="sy2">-</span>charset</span></span> 指定<span class="t-rev-inl t-since-c11"><span>无编码前缀的</span> <span><span class="t-mark">(C11 起)</span></span></span>字符串和字符字面量中的执行字符集的编码，而 Visual Studio 2015 Update 2 及之后版本分别用 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">/</span>source<span class="sy2">-</span>charset</span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">/</span>execution<span class="sy2">-</span>charset</span></span> 指定源字符集和执行字符集。
+</p>
+<h3><span class="mw-headline" id=".E9.98.B6.E6.AE.B5_6">阶段 6</span></h3>
+<p>拼接相邻的<a href="string_literal.html" title="cpp/language/string literal">字符串字面量</a>。
+</p>
+<h3><span class="mw-headline" id=".E9.98.B6.E6.AE.B5_7">阶段 7</span></h3>
+<p>发生编译：将各个预处理记号转换成记号（token）。将所有记号当作一个翻译单元进行语法和语义分析并进行翻译。
+</p>
+<h3><span class="mw-headline" id=".E9.98.B6.E6.AE.B5_8">阶段 8</span></h3>
+<p>检验每个翻译单元，产生所要求的模板实例化的列表，其中包含<a href="class_template.html" title="cpp/language/class template">显式实例化</a>所要求者。定位模板定义，并进行所要求的实例化，以产生<i>实例化单元（instantiation unit）</i>。
+</p>
+<h3><span class="mw-headline" id=".E9.98.B6.E6.AE.B5_9">阶段 9</span></h3>
+<p>将翻译单元、实例化单元和为满足外部引用所需的库组件汇集成一个程序映像，它含有在其执行环境中执行所需的信息。
+</p>
+<h3><span class="mw-headline" id=".E6.B3.A8.E6.84.8F">注意</span></h3>
+<p>某些编译器不实现实例化单元（又称为<a rel="nofollow" class="external text" href="http://docs.oracle.com/cd/E18659_01/html/821-1383/bkagr.html#scrolltoc">模板仓库</a>或<a rel="nofollow" class="external text" href="http://www-01.ibm.com/support/knowledgecenter/SSXVZZ_12.1.0/com.ibm.xlcpp121.linux.doc/compiler_ref/fcat_template.html?lang=en">模板注册表</a>），而是简单地在阶段 7 编译每个模板实例化，存储代码于其所显式或隐式要求的对象文件中，然后由连接器于阶段 9 将这些编译后的实例化缩减到一个。
+</p>
+<h3><span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h3>
+<div class="t-ref-std-c++11">
+<ul><li> C++11 standard (ISO/IEC 14882:2011): 
+</li></ul>
+<dl><dd><ul><li> 2.2 Phases of translation [lex.phases]
+</li></ul>
+</dd></dl>
+</div>
+<div class="t-ref-std-c++98">
+<ul><li> C++98 standard (ISO/IEC 14882:1998): 
+</li></ul>
+<dl><dd><ul><li> 2.1 Phases of translation [lex.phases]
+</li></ul>
+</dd></dl>
+</div>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1875/1000000
+Preprocessor generated node count: 5258/1000000
+Post‐expand include size: 38231/2097152 bytes
+Template argument size: 6736/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:7776-0!*!0!!zh!*!zh!* and timestamp 20190823010006 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/translation_phases&amp;oldid=59751">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/translation_phases&amp;oldid=59751</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/translation_phases">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年3月28日 (星期四) 00:24。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过6,859次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.446 secs. -->
+	</body>
+<!-- Cached 20190823010006 -->
+</html>

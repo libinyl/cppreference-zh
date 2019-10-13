@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>引用初始化</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/reference_initialization","wgTitle":"cpp/language/reference initialization","wgCurRevisionId":60132,"wgArticleId":2746,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/reference_initialization","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_reference_initialization skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">引用初始化</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="initialization.html" title="cpp/language/initialization">初始化</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"><a href="initialization.html" title="cpp/language/initialization">初始化器</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="default_initialization.html" title="cpp/language/default initialization">默认初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="value_initialization.html" title="cpp/language/value initialization">值初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="direct_initialization.html" title="cpp/language/direct initialization">直接初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="aggregate_initialization.html" title="cpp/language/aggregate initialization">聚合初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><strong class="selflink">引用初始化</strong></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="copy_elision.html" title="cpp/language/copy elision">复制消除</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="initialization.html#.E9.9D.9E.E5.B1.80.E9.83.A8.E5.8F.98.E9.87.8F" title="cpp/language/initialization">静态初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="zero_initialization.html" title="cpp/language/zero initialization">零初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="constant_initialization.html" title="cpp/language/constant initialization">常量初始化</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="initialization.html#.E9.9D.9E.E5.B1.80.E9.83.A8.E5.8F.98.E9.87.8F" title="cpp/language/initialization">动态非局部初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="initialization.html#.E9.9D.9E.E5.B1.80.E9.83.A8.E5.8F.98.E9.87.8F" title="cpp/language/initialization">有序动态初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="initialization.html#.E9.9D.9E.E5.B1.80.E9.83.A8.E5.8F.98.E9.87.8F" title="cpp/language/initialization">无序动态初始化</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5">类成员初始化</td></tr>
+<tr class="t-nv"><td colspan="5"><a href="constructor.html" title="cpp/language/initializer list">成员初始化器列表</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="data_members.html#.E6.88.90.E5.91.98.E5.88.9D.E5.A7.8B.E5.8C.96" title="cpp/language/data members">类内<i>花括号或等号</i>初始化器</a></td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>绑定引用到对象
+</p>
+<h3><span class="mw-headline" id=".E8.AF.AD.E6.B3.95">语法</span></h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> 
+<p><span class="t-spar">T</span> <code><b>&amp;</b></code> <span class="t-spar">ref</span> <code><b>=</b></code> <span class="t-spar">object</span> <code><b>;</b></code>
+</p><p><span class="t-spar">T</span> <code><b>&amp;</b></code> <span class="t-spar">ref</span> <code><b>=</b></code> <code><b>{ </b></code> <span class="t-spar">arg1, arg2, ...</span> <code><b>};</b></code>
+</p><p><span class="t-spar">T</span> <code><b>&amp;</b></code> <span class="t-spar">ref</span> <code><b>(</b></code> <span class="t-spar">object</span> <code><b>) </b></code><code><b>;</b></code>
+</p><p><span class="t-spar">T</span> <code><b>&amp;</b></code> <span class="t-spar">ref</span> <code><b>{ </b></code> <span class="t-spar">arg1, arg2, ...</span> <code><b>} </b></code><code><b>;</b></code>
+</p>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> 
+<p><span class="t-spar">T</span> <code><b>&amp;&amp;</b></code> <span class="t-spar">ref</span> <code><b>=</b></code> <span class="t-spar">object</span> <code><b>;</b></code>
+</p><p><span class="t-spar">T</span> <code><b>&amp;&amp;</b></code> <span class="t-spar">ref</span> <code><b>=</b></code> <code><b>{ </b></code> <span class="t-spar">arg1, arg2, ...</span> <code><b>};</b></code>
+</p><p><span class="t-spar">T</span> <code><b>&amp;&amp;</b></code> <span class="t-spar">ref</span> <code><b>(</b></code> <span class="t-spar">object</span> <code><b>) </b></code><code><b>;</b></code>
+</p><p><span class="t-spar">T</span> <code><b>&amp;&amp;</b></code> <span class="t-spar">ref</span> <code><b>{</b></code> <span class="t-spar">arg1, arg2, ...</span> <code><b>} </b></code><code><b>;</b></code>
+</p>
+</td>
+<td> (2)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> 给定 <span class="t-spar">R</span> <span class="t-spar">fn</span> <code><b>(</b></code> <span class="t-spar">T</span> <code><b>&amp;</b></code> <span class="t-spar">arg</span> <code><b>);</b></code> 或 <span class="t-spar">R</span> <span class="t-spar">fn</span> <code><b>(</b></code> <span class="t-spar">T</span> <code><b>&amp;&amp;</b></code> <span class="t-spar">arg</span> <code><b>);</b></code>
+<p><span class="t-spar">fn</span> <code><b>(</b></code> <span class="t-spar">object</span> <code><b>)</b></code>
+</p><p><span class="t-spar">fn</span> <code><b>(</b></code> <code><b>{</b></code> <span class="t-spar">arg1, arg2, ...</span> <code><b>} </b></code> <code><b>)</b></code>
+</p>
+</td>
+<td> (3)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">T</span> <code><b>&amp;</b></code> <span class="t-spar">fn</span> <code><b>()</b></code> 或 <span class="t-spar">T</span> <code><b>&amp;&amp;</b></code> <span class="t-spar">fn</span> <code><b>()</b></code> 内
+<p><code><b>return</b></code> <span class="t-spar">object</span> <code><b>;</b></code>
+</p>
+</td>
+<td> (4)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> 给定 <span class="t-spar">Class</span> 内的 <span class="t-spar">T</span> <code><b>&amp;</b></code> <span class="t-spar">ref</span> <code><b>;</b></code> 或 <span class="t-spar">T</span> <code><b>&amp;&amp;</b></code> <span class="t-spar">ref</span> <code><b>;</b></code>
+<p><span class="t-spar">Class</span><code><b>::</b></code><span class="t-spar">Class(...)</span> <code><b>:</b></code> <span class="t-spar">ref</span><code><b>(</b></code> <span class="t-spar">object</span><code><b>)</b></code> {...}
+</p>
+</td>
+<td> (5)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<h3><span class="mw-headline" id=".E8.A7.A3.E9.87.8A">解释</span></h3>
+<p>能以 <code>T</code> 类型的对象、<code>T</code> 类型的函数或可隐式转换到 <code>T</code> 的对象，初始化 <code>T</code> 的引用。一旦初始化，则不能更改引用使之引用另一对象。
+</p><p>在下列情形初始化引用：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 以初始化器声明具名<a href="reference.html#.E5.B7.A6.E5.80.BC.E5.BC.95.E7.94.A8" title="cpp/language/reference">左值引用</a>变量时</div>
+<div class="t-li1"><span class="t-li">2)</span> 以初始化器声明具名<a href="reference.html#.E5.8F.B3.E5.80.BC.E5.BC.95.E7.94.A8" title="cpp/language/reference">右值引用</a>变量时</div>
+<div class="t-li1"><span class="t-li">3)</span> 当函数形参拥有引用类型时，在函数调用表达式中</div>
+<div class="t-li1"><span class="t-li">4)</span> 当函数返回引用类型时，在 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">return</span></span></span> 语句中</div>
+<div class="t-li1"><span class="t-li">5)</span> 以<a href="constructor.html" title="cpp/language/initializer list">成员初始化器</a>初始化引用类型的<a href="data_members.html" title="cpp/language/data members">非静态数据成员</a>时</div>
+<p>引用初始化的效果是：
+</p>
+<ul><li> 若初始化器是花括号初始化器列表 <code><b>{</b></code> <span class="t-spar">arg1, arg2, ...</span> <code><b>} </b></code>，则遵循<a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a>。
+</li></ul>
+<ul><li> 否则，若引用是左值引用：
+</li></ul>
+<dl><dd><ul><li> 若 <span class="t-spar">object</span> 是左值表达式，且其类型为 <code>T</code> 或派生于 <code>T</code>，而且有相等或更少的 cv 限定，则引用被绑定到左值表达式所标识的对象或其基类子对象。
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">double</span> d <span class="sy1">=</span> <span class="nu16">2.0</span><span class="sy4">;</span>
+<span class="kw4">double</span><span class="sy3">&amp;</span> rd <span class="sy1">=</span> d<span class="sy4">;</span>        <span class="co1">// rd 引用 d</span>
+<span class="kw4">const</span> <span class="kw4">double</span><span class="sy3">&amp;</span> rcd <span class="sy1">=</span> d<span class="sy4">;</span> <span class="co1">// rcd 引用 d</span>
+<span class="kw1">struct</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> A <span class="br0">{</span><span class="br0">}</span> b<span class="sy4">;</span>
+A<span class="sy3">&amp;</span> ra <span class="sy1">=</span> b<span class="sy4">;</span>             <span class="co1">// ra 引用 b 中的 A 子对象</span>
+<span class="kw4">const</span> A<span class="sy3">&amp;</span> rca <span class="sy1">=</span> b<span class="sy4">;</span>      <span class="co1">// rca 引用 b 中的 A 子对象</span></pre></div></div>
+<dl><dd><ul><li> 否则，若 <span class="t-spar">object</span> 的类型与 <code>T</code> 不相同且不从它派生，而 <span class="t-spar">object</span> 拥有到左值的转换函数，其类型为 <code>T</code> 或派生于 <code>T</code> 并有相等或更少的 cv 限定，则绑定引用到转换函数所返回的左值所标识的对象（或到其基类子对象）。
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> A <span class="br0">{</span> operator <span class="kw4">int</span><span class="sy3">&amp;</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span><span class="sy3">&amp;</span> ir <span class="sy1">=</span> B<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// ir 指代 B::operator int&amp; 的结果</span></pre></div></div>
+<ul><li> 否则，若引用是 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span> 的左值引用<span class="t-rev-inl t-since-cxx11"><span>或右值引用</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>：
+</li></ul>
+<dl><dd><ul><li> 若 <span class="t-spar">object</span> 是非位域右值或函数左值，且其类型是 <code>T</code> 或派生于 <code>T</code>，拥有相等或更少 cv 限定，则绑定引用到初始化器表达式的值或其基类子对象<span class="t-rev-inl t-since-cxx17"><span>（经<a href="implicit_cast.html#.E4.B8.B4.E6.97.B6.E9.87.8F.E5.AE.9E.E8.B4.A8.E5.8C.96" title="cpp/language/implicit conversion">实质化临时量</a>之后，若需要）</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>。
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">extern</span> B f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">const</span> A<span class="sy3">&amp;</span> rca2 <span class="sy1">=</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 到 B 右值的 A 子对象。</span>
+A<span class="sy3">&amp;&amp;</span> rra <span class="sy1">=</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// 同上</span>
+ 
+<span class="kw4">int</span> i2 <span class="sy1">=</span> <span class="nu0">42</span><span class="sy4">;</span>
+<span class="kw4">int</span><span class="sy3">&amp;&amp;</span> rri <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy3">&amp;&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span>i2<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 直接绑定到 i2</span></pre></div></div>
+<dl><dd><ul><li> 否则，若 <span class="t-spar">object</span> 的类型不同于 <code>T</code> 且不从它派生，而 <span class="t-spar">object</span> 拥有到右值或函数左值的转换函数，其类型为 <code>T</code> 或从 <code>T</code> 派生，且拥有有相等或更少的 cv 限定，则绑定引用到转换函数的结果或到其基类子对象<span class="t-rev-inl t-since-cxx17"><span>（在<a href="implicit_cast.html#.E4.B8.B4.E6.97.B6.E9.87.8F.E5.AE.9E.E8.B4.A8.E5.8C.96" title="cpp/language/implicit conversion">实质化临时量</a>后，若需要）</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>。
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> X <span class="br0">{</span> operator B<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span> x<span class="sy4">;</span>
+<span class="kw4">const</span> A<span class="sy3">&amp;</span> r <span class="sy1">=</span> x<span class="sy4">;</span> <span class="co1">// 绑定到转换结果的 A 子对象</span>
+B<span class="sy3">&amp;&amp;</span> rrb <span class="sy1">=</span> x<span class="sy4">;</span>    <span class="co1">// 直接绑定到转换的结果</span></pre></div></div>
+<dl><dd><ul><li> 否则，将 <span class="t-spar">object</span> 隐式转换为 <code>T</code>。绑定引用到转换<span class="t-rev-inl t-since-cxx17"><span>（在<a href="implicit_cast.html#.E4.B8.B4.E6.97.B6.E9.87.8F.E5.AE.9E.E8.B4.A8.E5.8C.96" title="cpp/language/implicit conversion">实质化临时量</a>后）</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>的结果。若 <span class="t-spar">object</span>（或若由用户定义转换函数进行转换，则为转换函数的结果）类型为 <code>T</code> 或派生于 <code>T</code>，则它必须拥有等于或少于 <code>T</code> 的 cv 限定<span class="t-rev-inl t-since-cxx11"><span>，而若引用为右值引用，则它必须不是左值</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>。
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span> operator <span class="kw4">volatile</span> <span class="kw4">int</span><span class="sy3">&amp;</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span> a<span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="br0">{</span> operator <span class="kw4">int</span><span class="sy3">&amp;</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span> b<span class="sy4">;</span>
+<span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> r <span class="sy1">=</span> a<span class="sy4">;</span> <span class="co1">// 错误：不能从转换结果直接初始化 r ，</span>
+                  <span class="co1">// 因为转换结果拥有类型 "volatile int&amp;"</span>
+<span class="kw4">int</span><span class="sy3">&amp;&amp;</span> r2 <span class="sy1">=</span> b<span class="sy4">;</span> <span class="co1">// 错误：转换结果拥有类型 "int&amp;"</span>
+ 
+<span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> rs <span class="sy1">=</span> <span class="st0">"abc"</span><span class="sy4">;</span> <span class="co1">// rs 指代从字符数组复制初始化的临时量</span>
+<span class="kw4">const</span> <span class="kw4">double</span><span class="sy3">&amp;</span> rcd2 <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>        <span class="co1">// rcd2 指代值为 2.0 的临时量</span>
+<span class="kw4">int</span> i3 <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>
+<span class="kw4">double</span><span class="sy3">&amp;&amp;</span> rrd3 <span class="sy1">=</span> i3<span class="sy4">;</span>            <span class="co1">// rrd3 指代值为 2.0 的临时量</span></pre></div></div>
+<h3><span class="mw-headline" id=".E4.B8.B4.E6.97.B6.E9.87.8F.E7.94.9F.E5.AD.98.E6.9C.9F">临时量生存期</span></h3>
+<p>一旦引用被绑定到临时量或其子对象，临时量的生存期就被延续以匹配引用的生存期，但有下列例外：
+</p>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">return</span></span></span> 语句中绑定到函数返回值的临时量不被延续：它立即于返回表达式的末尾销毁。这种函数始终返回悬垂引用。
+</li></ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx14"><td>
+<ul><li> 在构造函数<a href="constructor.html" title="cpp/language/initializer list">初始化器列表</a>中绑定到引用成员的临时量，只持续到构造函数退出前，而非对象存在期间（注意：这种初始化从 DR 1696 开始非良构）。
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-until-cxx14">(C++14 前)</span></td></tr>
+</table>
+<ul><li> 在函数调用中绑定到函数形参的临时量，存在到含这次函数调用的全表达式结尾为止：若函数返回一个引用，而其生命长于全表达式，则它将成为悬垂引用。
+</li><li> 绑定到 new 表达式中所用的初始化器中的引用的临时量，存在到含该 new 表达式的全表达式结尾为止，而非被初始化对象的存在期间。若被初始化对象的声明长于全表达式，则其引用成员将成为悬垂引用。
+</li></ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<ul><li> 绑定到用直接初始化语法（括号），而非列表初始化语法（花括号）初始化的聚合体的引用元素中的引用的临时量，存在直至含该初始化器的全表达式末尾为止。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span>
+  <span class="kw4">int</span><span class="sy3">&amp;&amp;</span> r<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+A a1<span class="br0">{</span><span class="nu0">7</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// OK：延续生存期</span>
+A a2<span class="br0">(</span><span class="nu0">7</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 良构，但有悬垂引用</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+<p>总而言之，临时量的生存期不能以进一步“传递”来延续：从绑定了该临时量的引用初始化的第二引用不影响临时量的生存期。
+</p>
+<h3><span class="mw-headline" id=".E6.B3.A8.E8.A7.A3">注解</span></h3>
+<p>仅在函数形参声明，函数返回类型声明，类成员声明，以及带 <code>extern</code> 说明符时，引用可以不与初始化器一同出现。
+</p>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;utility&gt;</span>
+<span class="co2">#include &lt;sstream&gt;</span>
+<span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">int</span> mi<span class="sy4">;</span>
+    <span class="kw4">const</span> <a href="../utility/pair.html"><span class="kw1096">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>,<span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> mp<span class="sy4">;</span> <span class="co1">// 引用成员</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> foo<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+ 
+<span class="kw1">struct</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> A <span class="br0">{</span>
+    <span class="kw4">int</span> n<span class="sy4">;</span>
+    operator <span class="kw4">int</span><span class="sy3">&amp;</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> n<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+B bar<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="kw1">return</span> B<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+ 
+<span class="co1">//int&amp; bad_r;      // 错误：无初始化器</span>
+<span class="kw4">extern</span> <span class="kw4">int</span><span class="sy3">&amp;</span> ext_r<span class="sy4">;</span> <span class="co1">// OK</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+<span class="co1">//  左值</span>
+    <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw4">int</span><span class="sy3">&amp;</span> r1 <span class="sy1">=</span> n<span class="sy4">;</span>                    <span class="co1">// 到对象 n 的左值引用</span>
+    <span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> cr<span class="br0">(</span>n<span class="br0">)</span><span class="sy4">;</span>               <span class="co1">// 引用可以有更多 cv 限定</span>
+    <span class="kw4">volatile</span> <span class="kw4">int</span><span class="sy3">&amp;</span> cv<span class="br0">{</span>n<span class="br0">}</span><span class="sy4">;</span>            <span class="co1">// 可使用任何初始化器语法</span>
+    <span class="kw4">int</span><span class="sy3">&amp;</span> r2 <span class="sy1">=</span> r1<span class="sy4">;</span>                   <span class="co1">// 另一到对象 n 的左值引用</span>
+<span class="co1">//  int&amp; bad = cr;                  // 错误：更少 cv 限定</span>
+    <span class="kw4">int</span><span class="sy3">&amp;</span> r3 <span class="sy1">=</span> <span class="kw1">const_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span>cr<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 需要 const_cast</span>
+ 
+    <span class="kw4">void</span> <span class="br0">(</span><span class="sy3">&amp;</span>rf<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="sy1">=</span> foo<span class="sy4">;</span>  <span class="co1">// 到函数的左值引用</span>
+    <span class="kw4">int</span> ar<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span>
+    <span class="kw4">int</span> <span class="br0">(</span><span class="sy3">&amp;</span>ra<span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> ar<span class="sy4">;</span>      <span class="co1">// 到数组的左值引用</span>
+ 
+    B b<span class="sy4">;</span>
+    A<span class="sy3">&amp;</span> base_ref <span class="sy1">=</span> b<span class="sy4">;</span>        <span class="co1">// 到基类子对象的左值引用</span>
+    <span class="kw4">int</span><span class="sy3">&amp;</span> converted_ref <span class="sy1">=</span> b<span class="sy4">;</span> <span class="co1">// 到转换结果的左值引用</span>
+ 
+<span class="co1">//  右值</span>
+<span class="co1">//  int&amp; bad = 1;        // 错误：不能绑定左值引用到右值</span>
+    <span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> cref <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// 绑定到右值</span>
+    <span class="kw4">int</span><span class="sy3">&amp;&amp;</span> rref <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>      <span class="co1">// 绑定到右值</span>
+ 
+    <span class="kw4">const</span> A<span class="sy3">&amp;</span> cref2 <span class="sy1">=</span> bar<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 到 B 临时量的 A 子对象的引用</span>
+    A<span class="sy3">&amp;&amp;</span> rref2 <span class="sy1">=</span> bar<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">// 相同</span>
+ 
+    <span class="kw4">int</span><span class="sy3">&amp;&amp;</span> xref <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy3">&amp;&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span>n<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 直接绑定到 n</span>
+<span class="co1">//  int&amp;&amp; copy_ref = n;                 // 错误：不能绑定到左值</span>
+    <span class="kw4">double</span><span class="sy3">&amp;&amp;</span> copy_ref <span class="sy1">=</span> n<span class="sy4">;</span>              <span class="co1">// 绑定到值为 1.0 的右值临时量</span>
+ 
+<span class="co1">// 临时量生存期上的限制</span>
+    <a href="../io/basic_ostream.html"><span class="kw1729">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> buf_ref <span class="sy1">=</span> <a href="../io/basic_ostringstream.html"><span class="kw1736">std::<span class="me2">ostringstream</span></span></a><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'a'</span><span class="sy4">;</span> <span class="co1">// ostringstream 临时量</span>
+                      <span class="co1">// 被绑定到 operator&lt;&lt; 的左运算数，但其生存期在分号结束，</span>
+                      <span class="co1">// 故 buf_ref 为悬垂引用。</span>
+ 
+    S a <span class="br0">{</span> <span class="nu0">1</span>, <span class="br0">{</span><span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span>         <span class="co1">// 绑定临时量 pair {2,3} 到引用成员 a.mp 并延长其生存期以匹配 a</span>
+    S<span class="sy2">*</span> p <span class="sy1">=</span> new S<span class="br0">{</span> <span class="nu0">1</span>, <span class="br0">{</span><span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 绑定临时量 pair {2,3} 到引用成员 p-&gt;mp ，</span>
+                               <span class="co1">// 但其生存期在分号结束</span>
+                               <span class="co1">// p-&gt;mp 是悬垂引用</span>
+    delete p<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<ul><li> <a href="default_initialization.html" title="cpp/language/default initialization">默认初始化</a>
+</li><li> <a href="direct_initialization.html" title="cpp/language/direct initialization">直接初始化</a>
+</li><li> <a href="value_initialization.html" title="cpp/language/value initialization">值初始化</a>
+</li><li> <a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a>
+</li><li> <a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2551/1000000
+Preprocessor generated node count: 6837/1000000
+Post‐expand include size: 50939/2097152 bytes
+Template argument size: 20033/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2746-0!*!0!!zh!*!zh!* and timestamp 20190505205550 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/reference_initialization&amp;oldid=60132">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/reference_initialization&amp;oldid=60132</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/reference_initialization">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年4月28日 (星期日) 08:24。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过7,277次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.307 secs. -->
+	</body>
+<!-- Cached 20190505205550 -->
+</html>

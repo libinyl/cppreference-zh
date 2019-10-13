@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>数值库</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../common/favicon.ico">
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/numeric","wgTitle":"cpp/numeric","wgCurRevisionId":62060,"wgArticleId":3030,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/numeric","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_numeric skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">数值库</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">数值库</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><strong class="selflink">数值库</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="numeric/math.html" title="cpp/numeric/math">常用数学函数</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric/special_math.html" title="cpp/numeric/special math">特殊数学函数</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric/constants.html" title="cpp/numeric/constants">数学常数</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric/fenv.html" title="cpp/numeric/fenv">浮点环境</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric/complex.html" title="cpp/numeric/complex">复数</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric/valarray.html" title="cpp/numeric/valarray">数值数组</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric/random.html" title="cpp/numeric/random">伪随机数生成</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric/ratio.html" title="cpp/numeric/ratio">编译时有理数算术</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5">数值算法</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">插值</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/midpoint.html" title="cpp/numeric/midpoint"><span class="t-lines"><span>midpoint</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/lerp.html" title="cpp/numeric/lerp"><span class="t-lines"><span>lerp</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">通用数值运算</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/inner_product.html" title="cpp/algorithm/inner product"><span class="t-lines"><span>inner_product</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/adjacent_difference.html" title="cpp/algorithm/adjacent difference"><span class="t-lines"><span>adjacent_difference</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/partial_sum.html" title="cpp/algorithm/partial sum"><span class="t-lines"><span>partial_sum</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">位操作</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/bit_cast.html" title="cpp/numeric/bit cast"><span class="t-lines"><span>bit_cast</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/ispow2.html" title="cpp/numeric/ispow2"><span class="t-lines"><span>ispow2</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/ceil2.html" title="cpp/numeric/ceil2"><span class="t-lines"><span>ceil2</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/floor2.html" title="cpp/numeric/floor2"><span class="t-lines"><span>floor2</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/log2p1.html" title="cpp/numeric/log2p1"><span class="t-lines"><span>log2p1</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/rotl.html" title="cpp/numeric/rotl"><span class="t-lines"><span>rotl</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/rotr.html" title="cpp/numeric/rotr"><span class="t-lines"><span>rotr</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/countl_zero.html" title="cpp/numeric/countl zero"><span class="t-lines"><span>countl_zero</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/countl_one.html" title="cpp/numeric/countl one"><span class="t-lines"><span>countl_one</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/countr_zero.html" title="cpp/numeric/countr zero"><span class="t-lines"><span>countr_zero</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/countr_one.html" title="cpp/numeric/countr one"><span class="t-lines"><span>countr_one</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric/popcount.html" title="cpp/numeric/popcount"><span class="t-lines"><span>popcount</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="types/endian.html" title="cpp/types/endian"><span class="t-lines"><span>endian</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>C++ 数值库包含常用数学函数及类型，以及优化的数值数组及对随机数生成的支持。
+</p>
+<h2><span class="mw-headline" id=".E6.95.B0.E5.AD.A6.E5.87.BD.E6.95.B0.E4.B8.8E.E7.B1.BB.E5.9E.8B">数学函数与类型</span></h2>
+<h3><span class="mw-headline" id=".E5.B8.B8.E7.94.A8.E6.95.B0.E5.AD.A6.E5.87.BD.E6.95.B0"><a href="numeric/math.html" title="cpp/numeric/math">常用数学函数</a></span></h3>
+<p>头文件 <a href="header/cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a> 提供<a href="numeric/math.html" title="cpp/numeric/math">标准 C 库数学函数</a>，例如 <span class="t-lc"><a href="numeric/math/fabs.html" title="cpp/numeric/math/fabs">std::fabs</a></span> 、 <span class="t-lc"><a href="numeric/math/sqrt.html" title="cpp/numeric/math/sqrt">std::sqrt</a></span> 及 <span class="t-lc"><a href="numeric/math/sin.html" title="cpp/numeric/math/sin">std::sin</a></span> 。
+</p>
+<h3><span class="mw-headline" id=".E7.89.B9.E6.AE.8A.E6.95.B0.E5.AD.A6.E5.87.BD.E6.95.B0_.28C.2B.2B17_.E8.B5.B7.29"><a href="numeric/special_math.html" title="cpp/numeric/special math">特殊数学函数</a> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></h3>
+<p>头文件 <a href="header/cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a> 亦提供数个特殊数学函数，例如 <span class="t-lc"><a href="numeric/special_math/beta.html" title="cpp/numeric/special math/beta">std::beta</a></span> 、 <span class="t-lc"><a href="numeric/special_math/hermite.html" title="cpp/numeric/special math/hermite">std::hermite</a></span> 及 <span class="t-lc"><a href="numeric/special_math/cyl_bessel_i.html" title="cpp/numeric/special math/cyl bessel i">std::cyl_bessel_i</a></span> 。
+</p>
+<h3><span class="mw-headline" id=".E6.95.B0.E5.AD.A6.E5.B8.B8.E6.95.B0_.28C.2B.2B20_.E8.B5.B7.29"><a href="numeric/constants.html" title="cpp/numeric/constants">数学常数</a> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span></span></h3>
+<p>头文件 <a href="header/numbers.html" title="cpp/header/numbers"><tt>&lt;numbers&gt;</tt></a> 提供数个数学常数，例如 <span class="t-lc">std::numbers::pi</span> 或 <span class="t-lc">std::numbers::sqrt2</span> 。
+</p>
+<h3><span class="mw-headline" id=".E5.A4.8D.E6.95.B0.E7.AE.97.E6.9C.AF">复数算术</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;complex&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/complex.html" title="cpp/numeric/complex"> <span class="t-lines"><span>complex</span></span></a></div></div>
+</td>
+<td>  复数类型 <br> <span class="t-mark">(类模板)</span>
+</td></tr>
+</table>
+<h3><span class="mw-headline" id=".E6.95.B0.E5.80.BC.E6.95.B0.E7.BB.84">数值数组</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;valarray&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/valarray.html" title="cpp/numeric/valarray"> <span class="t-lines"><span>valarray</span></span></a></div></div>
+</td>
+<td>  数值数组、数组掩码及数组切片 <br> <span class="t-mark">(类模板)</span>
+</td></tr>
+</table>
+<h2><span class="mw-headline" id=".E6.95.B0.E5.80.BC.E7.AE.97.E6.B3.95">数值算法</span></h2>
+<p>头文件 <a href="header/numeric.html" title="cpp/header/numeric"><tt>&lt;numeric&gt;</tt></a> 提供下列数值算法：
+</p>
+<h3><span class="mw-headline" id=".E5.9B.A0.E6.95.B0.E8.BF.90.E7.AE.97">因数运算</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;numeric&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/gcd.html" title="cpp/numeric/gcd"> <span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   返回二个整数最大公约数的 <code>constexpr</code> 函数模板 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/lcm.html" title="cpp/numeric/lcm"> <span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   返回二个整数最小公倍数的 <code>constexpr</code> 函数模板 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+</table>
+<h3><span class="mw-headline" id=".E6.8F.92.E5.80.BC.E8.BF.90.E7.AE.97">插值运算</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;numeric&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/midpoint.html" title="cpp/numeric/midpoint"> <span class="t-lines"><span>midpoint</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  两个数值或指针间的中点 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;cmath&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/lerp.html" title="cpp/numeric/lerp"> <span class="t-lines"><span>lerp</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  线性插值函数 <br> <span class="t-mark">(函数)</span> </td></tr>
+</table>
+<h3><span class="mw-headline" id=".E6.95.B0.E5.80.BC.E8.BF.90.E7.AE.97">数值运算</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;numeric&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/iota.html" title="cpp/algorithm/iota"> <span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>   用从起始值开始连续递增的值填充一个范围  <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/accumulate.html" title="cpp/algorithm/accumulate"> <span class="t-lines"><span>accumulate</span></span></a></div></div>
+</td>
+<td>   对一个范围内的元素求和 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/reduce.html" title="cpp/algorithm/reduce"> <span class="t-lines"><span>reduce</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  类似 <span class="t-lc"><a href="algorithm/accumulate.html" title="cpp/algorithm/accumulate">std::accumulate</a></span>，但不依序执行 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/transform_reduce.html" title="cpp/algorithm/transform reduce"> <span class="t-lines"><span>transform_reduce</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   应用一个函数对象，然后以乱序规约 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/inner_product.html" title="cpp/algorithm/inner product"> <span class="t-lines"><span>inner_product</span></span></a></div></div>
+</td>
+<td>   计算两个范围的元素的内积  <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/adjacent_difference.html" title="cpp/algorithm/adjacent difference"> <span class="t-lines"><span>adjacent_difference</span></span></a></div></div>
+</td>
+<td>   计算范围内各相邻元素之间的差  <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/partial_sum.html" title="cpp/algorithm/partial sum"> <span class="t-lines"><span>partial_sum</span></span></a></div></div>
+</td>
+<td>   计算范围内元素的部分和 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/inclusive_scan.html" title="cpp/algorithm/inclusive scan"> <span class="t-lines"><span>inclusive_scan</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  类似 <span class="t-lc"><a href="algorithm/partial_sum.html" title="cpp/algorithm/partial sum">std::partial_sum</a></span>，第 i 个和中包含第 i 个输入 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/exclusive_scan.html" title="cpp/algorithm/exclusive scan"> <span class="t-lines"><span>exclusive_scan</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  类似 <span class="t-lc"><a href="algorithm/partial_sum.html" title="cpp/algorithm/partial sum">std::partial_sum</a></span>，第 i 个和中排除第 i 个输入 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/transform_inclusive_scan.html" title="cpp/algorithm/transform inclusive scan"> <span class="t-lines"><span>transform_inclusive_scan</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  应用一个函数对象，然后进行包含扫描 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/transform_exclusive_scan.html" title="cpp/algorithm/transform exclusive scan"> <span class="t-lines"><span>transform_exclusive_scan</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  应用一个函数对象，然后进行排除扫描 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+</table>
+<h2><span class="mw-headline" id=".E6.9D.82.E9.A1.B9">杂项</span></h2>
+<h3><span class="mw-headline" id=".E4.BC.AA.E9.9A.8F.E6.9C.BA.E6.95.B0.E7.94.9F.E6.88.90"><a href="numeric/random.html" title="cpp/numeric/random">伪随机数生成</a></span></h3>
+<p>头文件 <a href="header/random.html" title="cpp/header/random"><tt>&lt;random&gt;</tt></a> 定义<a href="numeric/random.html" title="cpp/numeric/random">为随机数生成器与数值分布</a>。头文件 <code>cstdlib</code> 亦包含 C 风格随机数生成，通过 <span class="t-lc"><a href="numeric/random/srand.html" title="cpp/numeric/random/srand">std::srand</a></span> 和 <span class="t-lc"><a href="numeric/random/rand.html" title="cpp/numeric/random/rand">std::rand</a></span> 。
+</p>
+<h3><span class="mw-headline" id=".E7.BC.96.E8.AF.91.E6.97.B6.E6.9C.89.E7.90.86.E6.95.B0.E7.AE.97.E6.9C.AF_.28C.2B.2B11_.E8.B5.B7.29"><a href="numeric/ratio.html" title="cpp/numeric/ratio">编译时有理数算术</a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></h3>
+<p>头文件 <a href="header/ratio.html" title="cpp/header/ratio"><tt>&lt;ratio&gt;</tt></a> 提供<a href="numeric/ratio.html" title="cpp/numeric/ratio">操作和存储编译时比例的类型和函数</a>。
+</p>
+<h3><span class="mw-headline" id=".E6.B5.AE.E7.82.B9.E7.8E.AF.E5.A2.83_.28C.2B.2B11_.E8.B5.B7.29"><a href="numeric/fenv.html" title="cpp/numeric/fenv">浮点环境</a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></h3>
+<p>头文件 <a href="header/cfenv.html" title="cpp/header/cfenv"><tt>&lt;cfenv&gt;</tt></a> 定义<a href="numeric/fenv.html" title="cpp/numeric/fenv">关系到异常浮点状态的标志和函数</a>，例如上溢和除以零。
+</p>
+<h3><span class="mw-headline" id=".E4.BD.8D.E6.93.8D.E7.BA.B5_.28C.2B.2B20_.E8.B5.B7.29">位操纵 <span class="t-mark-rev t-since-cxx20">(C++20 起)</span> </span></h3>
+<p>头文件 <a href="header/bit.html" title="cpp/header/bit"><tt>&lt;bit&gt;</tt></a> 提供数个访问、操纵及处理单独位和位序列的函数模板。
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;bit&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于命名空间 <code>std</code></div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/bit_cast.html" title="cpp/numeric/bit cast"> <span class="t-lines"><span>bit_cast</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  将一个类型的对象表示重解释为另一类型的对象表示 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/ispow2.html" title="cpp/numeric/ispow2"> <span class="t-lines"><span>ispow2</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  检查一个数是否为二的整数次幂 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/ceil2.html" title="cpp/numeric/ceil2"> <span class="t-lines"><span>ceil2</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  寻找不小于给定值的最小的二的整数次幂 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/floor2.html" title="cpp/numeric/floor2"> <span class="t-lines"><span>floor2</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  寻找不大于给定值的最大的二的整数次幂 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/log2p1.html" title="cpp/numeric/log2p1"> <span class="t-lines"><span>log2p1</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  寻找表示给定值所需的最小位数 <br> <span class="t-mark">(函数模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/rotl.html" title="cpp/numeric/rotl"> <span class="t-lines"><span>rotl</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>   计算逐位左旋转的结果  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/rotr.html" title="cpp/numeric/rotr"> <span class="t-lines"><span>rotr</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>   计算逐位右旋转的结果  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/countl_zero.html" title="cpp/numeric/countl zero"> <span class="t-lines"><span>countl_zero</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>   从最高位起计量连续的 0 位的数量  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/countl_one.html" title="cpp/numeric/countl one"> <span class="t-lines"><span>countl_one</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>   从最高位起计量连续的 1 位的数量  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/countr_zero.html" title="cpp/numeric/countr zero"> <span class="t-lines"><span>countr_zero</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>   从最低位起计量连续的 0 位的数量  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/countr_one.html" title="cpp/numeric/countr one"> <span class="t-lines"><span>countr_one</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>   从最低位起计量连续的 1 位的数量  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="numeric/popcount.html" title="cpp/numeric/popcount"> <span class="t-lines"><span>popcount</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>   计量无符号整数中为 1 的位的数量  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/endian.html" title="cpp/types/endian"> <span class="t-lines"><span>endian</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  指示标量类型的端序 <br> <span class="t-mark">(枚举)</span> </td></tr>
+</table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 6511/1000000
+Preprocessor generated node count: 7606/1000000
+Post‐expand include size: 215743/2097152 bytes
+Template argument size: 38317/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:3030-0!*!0!!zh!*!zh!* and timestamp 20190823020550 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/numeric&amp;oldid=62060">https://zh.cppreference.com/mwiki/index.php?title=cpp/numeric&amp;oldid=62060</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/numeric">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年8月19日 (星期一) 17:14。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过20,921次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.072 secs. -->
+	</body>
+<!-- Cached 20190823023008 -->
+</html>

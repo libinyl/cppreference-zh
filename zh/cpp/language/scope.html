@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>作用域</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/scope","wgTitle":"cpp/language/scope","wgCurRevisionId":61794,"wgArticleId":8006,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/scope","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_scope skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">作用域</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="basic_concepts.html" title="cpp/language/basic concepts">基本概念</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> 语言关键词</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> 翻译阶段</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> 注释</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> <code>main()</code> 函数</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> 名字和标识符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="incomplete_type.html" title="cpp/language/type"> 类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> 基础类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="object.html" title="cpp/language/object"> 对象</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 作用域</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> 对象生存期</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> 存储期与连接</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="definition.html" title="cpp/language/definition"> 定义和单一定义规则（ODR）</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> 名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup"> 有限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup"> 无限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_if.html" title="cpp/language/as if"> “如同”规则</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ub.html" title="cpp/language/ub"> 未定义行为</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="cpp/language/memory model"> 内存模型</a> </td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>C++ 程序中出现的每个<a href="name.html" title="cpp/language/name" class="mw-redirect">名字</a>，只在某些可能不连续的源码部分中有效，这些部分被称为其<i>作用域</i>。
+</p><p>在作用域内，能用<a href="lookup.html" title="cpp/language/lookup">无限定名字查找</a>将名字与其声明关联起来。
+</p>
+<h3><span class="mw-headline" id=".E5.9D.97.E4.BD.9C.E7.94.A8.E5.9F.9F">块作用域</span></h3>
+<p><a href="statements.html#.E5.A4.8D.E5.90.88.E8.AF.AD.E5.8F.A5" title="cpp/language/statements">块（复合语句）</a>中的声明所引入的变量的潜在作用域，开始于其声明点并终止于该块末尾。实际作用域与潜在作用域相同，除非有内嵌块带有引入了相同名字的声明（这种情况下，从外层声明的作用域中排除掉嵌套声明的整个潜在作用域）。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="co1">// 第一个 'a' 的作用域开始</span>
+    <span class="sy2">++</span>a<span class="sy4">;</span> <span class="co1">// 名字 'a' 在作用域中并指代第一个 'a'</span>
+    <span class="br0">{</span>
+        <span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// 第二个 'a' 的作用域开始</span>
+                   <span class="co1">// 第一个 'a' 的作用域间断</span>
+        a <span class="sy1">=</span> <span class="nu0">42</span><span class="sy4">;</span>    <span class="co1">// 'a' 在作用域中并指代第二个 'a'</span>
+    <span class="br0">}</span> <span class="co1">// 块结束，第二个 'a' 的作用域结束</span>
+      <span class="co1">//       第一个 'a' 的作用域恢复</span>
+<span class="br0">}</span> <span class="co1">// 块结束，第一个 'a' 的作用域结束</span>
+<span class="kw4">int</span> b <span class="sy1">=</span> a<span class="sy4">;</span> <span class="co1">// 错误：名字 'a' 不在作用域中</span></pre></div></div>
+<p>声明于异常处理块中的名字的潜在作用域开始于其声明点，并在该异常处理块结束时结束，而且在其他异常处理块或外围块中不在作用域中。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">try</span> <span class="br0">{</span>   
+    f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span> <span class="kw1">catch</span><span class="br0">(</span><span class="kw4">const</span> <a href="../error/runtime_error.html"><span class="kw770">std::<span class="me2">runtime_error</span></span></a><span class="sy3">&amp;</span> re<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// re 的作用域开始</span>
+    <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// n 的作用开始</span>
+    <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> re.<span class="me1">what</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// re 在作用域中</span>
+<span class="br0">}</span> <span class="co1">// re 的作用域结束， n 的作用域结束</span>
+ <span class="kw1">catch</span><span class="br0">(</span><a href="../error/exception.html"><span class="kw764">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> re.<span class="me1">what</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误： re 不在作用域中</span>
+    <span class="sy2">++</span>n<span class="sy4">;</span> <span class="co1">// 错误： n 不在作用域中</span>
+<span class="br0">}</span></pre></div></div>
+<p>在 <a href="for.html" title="cpp/language/for">for 循环</a>的<i>初始化语句</i>中，在 <a href="for.html" title="cpp/language/for">for 循环</a>的<i>条件</i>中，在<a href="range-for.html" title="cpp/language/range-for">范围 for 循环</a>的<i>范围声明</i>中，<span class="t-rev-inl t-since-cxx17"><span>在 <a href="if.html" title="cpp/language/if">if 语句</a>或 <a href="switch.html" title="cpp/language/switch">switch 语句</a>的<i>初始化语句</i>中，</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>在 <a href="if.html" title="cpp/language/if">if 语句</a>、<a href="while.html" title="cpp/language/while">while 循环</a>或 <a href="switch.html" title="cpp/language/switch">switch 语句</a>的<i>条件</i>中，声明的名字的潜在作用域，开始于其声明点，并结束于控制语句的末尾。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">Base<span class="sy2">*</span> bp <span class="sy1">=</span> new Derived<span class="sy4">;</span>
+<span class="kw1">if</span><span class="br0">(</span>Derived<span class="sy2">*</span> dp <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>Derived<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span>bp<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">{</span>
+    dp<span class="sy2">-</span><span class="sy1">&gt;</span>f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// dp 在作用域中</span>
+<span class="br0">}</span> <span class="co1">// dp 的作用域结束</span>
+ 
+<span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="co1">// n 的作用域开始</span>
+    n <span class="sy1">&lt;</span> <span class="nu0">10</span><span class="sy4">;</span>    <span class="co1">// n 在作用域中</span>
+    <span class="sy2">++</span>n<span class="br0">)</span>       <span class="co1">// n 在作用域中</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span> <span class="co1">// n 在作用域中</span>
+<span class="br0">}</span> <span class="co1">// n 的作用域结束</span></pre></div></div>
+<p><span id=".E5.87.BD.E6.95.B0.E5.8E.9F.E5.9E.8B.E4.BD.9C.E7.94.A8.E5.9F.9F"></span>
+</p>
+<h3><span class="mw-headline" id=".E5.87.BD.E6.95.B0.E5.BD.A2.E5.8F.82.E4.BD.9C.E7.94.A8.E5.9F.9F">函数形参作用域</span></h3>
+<p>函数形参（包括 lambda 表达式的形参）或函数局部预定义变量的潜在作用域开始于其声明点。
+</p>
+<ul><li> 若最内层的外围函数声明符不是函数定义的声明符，则其潜在作用域终止于该函数声明符的结尾。
+</li><li> 否则，其潜在作用域终止于<a href="function-try-block.html" title="cpp/language/function-try-block">函数 try 块</a>的最后异常处理块的末尾，或若不使用函数 try 块则为函数体的末尾。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">const</span> <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">3</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> f1<span class="br0">(</span><span class="kw4">int</span> n,     <span class="co1">// 全局 'n' 的作用域间断</span>
+                  <span class="co1">// 参数 'n' 的作用域开始</span>
+       <span class="kw4">int</span> y <span class="sy1">=</span> n<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误：默认实参涉指了形参</span>
+ 
+<span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span>f2<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span> n<span class="br0">)</span><span class="br0">)</span><span class="br0">[</span>n<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// OK ：函数形参 'n' 的作用域终止于其函数声明符的末尾</span>
+                        <span class="co1">// 数组声明符中，全局 n 在作用域中</span>
+<span class="co1">// （这声明了返回 int 的 3 元素数组的指针的函数的指针）</span>
+ 
+<span class="co1">// 相反</span>
+<span class="kw4">auto</span> <span class="br0">(</span><span class="sy2">*</span>f3<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span> n<span class="br0">)</span><span class="sy2">-</span><span class="sy1">&gt;</span><span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">[</span>n<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// 错误：以参数 'n' 为数组边界</span>
+ 
+ 
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">2</span><span class="br0">)</span>  <span class="co1">// 'n' 的作用域开始</span>
+<span class="kw1">try</span> <span class="co1">// 函数 try 块</span>
+<span class="br0">{</span>         <span class="co1">// 函数体开始</span>
+   <span class="sy2">++</span>n<span class="sy4">;</span>   <span class="co1">// 'n' 在作用域中并指代函数形参</span>
+   <span class="br0">{</span>
+      <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// 局部变量 'n' 的作用域开始</span>
+                 <span class="co1">// 函数参数 'n' 的作用域中断</span>
+      <span class="sy2">++</span>n<span class="sy4">;</span> <span class="co1">// 'n' 在此块中指代局部变量</span>
+    <span class="br0">}</span>            <span class="co1">// 局部变量 'n' 的作用域结束</span>
+                 <span class="co1">// 函数参数 'n' 的作用域恢复</span>
+<span class="br0">}</span> <span class="kw1">catch</span><span class="br0">(</span>...<span class="br0">)</span> <span class="br0">{</span>
+   <span class="sy2">++</span>n<span class="sy4">;</span> <span class="co1">// n 在作用域中并指代函数形参</span>
+   <span class="kw1">throw</span><span class="sy4">;</span>
+<span class="br0">}</span> <span class="co1">// 最后异常处理块结束，函数形参 'n' 的作用域结束</span>
+<span class="kw4">int</span> a <span class="sy1">=</span> n<span class="sy4">;</span> <span class="co1">// OK ：名称 'n' 在作用域中</span></pre></div></div>
+<h3><span class="mw-headline" id=".E5.87.BD.E6.95.B0.E4.BD.9C.E7.94.A8.E5.9F.9F">函数作用域</span></h3>
+<p>声明于函数内的<a href="statements.html#.E6.A0.87.E5.8F.B7" title="cpp/language/statements">标号（且只有标号）</a>，在该函数和其所有内嵌代码块的任何位置都在作用域中，无论在其自身声明的前后。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="br0">{</span>   
+       <span class="kw1">goto</span> label<span class="sy4">;</span> <span class="co1">// label 在作用域中，尽管之后才声明</span>
+label<span class="sy4">:;</span>
+   <span class="br0">}</span>
+   <span class="kw1">goto</span> label<span class="sy4">;</span> <span class="co1">// label 忽略块作用域</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">goto</span> label<span class="sy4">;</span> <span class="co1">// 错误： g() 中 label 不在作用域中</span>
+<span class="br0">}</span></pre></div></div>
+<h3><span class="mw-headline" id=".E5.91.BD.E5.90.8D.E7.A9.BA.E9.97.B4.E4.BD.9C.E7.94.A8.E5.9F.9F">命名空间作用域</span></h3>
+<p><a href="namespace.html" title="cpp/language/namespace">命名空间</a>中声明的任何实体的潜在作用域均开始于其声明，并由其后的同一命名空间名的所有命名空间定义拼合起来，再加上对于将这个名字或其整个命名空间引入到其他作用域的每个 <a href="namespace.html" title="cpp/language/namespace">using 指令</a>来说，包括这个作用域的剩余部分。
+</p><p>翻译单元的顶层作用域（“文件作用域”或“全局作用域”）亦为命名空间，而被正式称作“全局命名空间作用域”。任何声明于全局命名空间作用域的实体的潜在作用域均开始于其声明，并持续到翻译单元的结尾。
+</p><p>声明于无名命名空间或内联命名空间的实体的作用域包括外围命名空间；
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">namespace</span> N <span class="br0">{</span> <span class="co1">// N 的作用域开始（作为全局命名空间的成员）</span>
+    <span class="kw4">int</span> i<span class="sy4">;</span> <span class="co1">// i 的作用域开始</span>
+    <span class="kw4">int</span> g<span class="br0">(</span><span class="kw4">int</span> a<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> a<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// g 的作用域开始</span>
+    <span class="kw4">int</span> j<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// j 的作用域开始</span>
+    <span class="kw4">void</span> q<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// q 的作用域开始</span>
+    <span class="kw1">namespace</span> <span class="br0">{</span>
+        <span class="kw4">int</span> x<span class="sy4">;</span> <span class="co1">// x 的作用域开始</span>
+    <span class="br0">}</span> <span class="co1">// x 的作用域不结束</span>
+    <span class="kw1">inline</span> <span class="kw1">namespace</span> inl <span class="br0">{</span> <span class="co1">// inl 的作用域开始</span>
+      <span class="kw4">int</span> y<span class="sy4">;</span> <span class="co1">// y 的作用域开始</span>
+    <span class="br0">}</span> <span class="co1">// y 的作用域不结束</span>
+<span class="br0">}</span> <span class="co1">// i 、 g 、 j 、 q 、 inl 、 x 、 y 的作用域间断</span>
+ 
+<span class="kw1">namespace</span> <span class="br0">{</span>
+    <span class="kw4">int</span> l<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// l 的作用域开始</span>
+<span class="br0">}</span> <span class="co1">// l 的作用域不结束（它是无名命名空间的成员）</span>
+ 
+<span class="kw1">namespace</span> N <span class="br0">{</span> <span class="co1">//  i 、 g 、 j 、 q 、 inl 、 x 、 y 的作用域持续</span>
+    <span class="kw4">int</span> g<span class="br0">(</span><span class="kw4">char</span> a<span class="br0">)</span> <span class="br0">{</span>  <span class="co1">// 重载 N::g(int)</span>
+        <span class="kw1">return</span> l<span class="sy2">+</span>a<span class="sy4">;</span>  <span class="co1">// 来自无名命名空间的 l 在作用域中</span>
+    <span class="br0">}</span>
+    <span class="co1">// int i; // 错误：重复定义（ i 已在作用域中）</span>
+    <span class="kw4">int</span> j<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK ：允许重复的函数声明</span>
+    <span class="kw4">int</span> j<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="co1">// OK ：先前声明的 N::j() 的定义</span>
+        <span class="kw1">return</span> g<span class="br0">(</span>i<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 调用 N::g(int)</span>
+    <span class="br0">}</span>
+    <span class="kw4">int</span> q<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误： q 已在作用域中并有不同的返回类型</span>
+<span class="br0">}</span> <span class="co1">// i 、 g 、 j 、 q 、 inl 、 x 、 y 的作用域间断</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">using</span> <span class="kw1">namespace</span> N<span class="sy4">;</span> <span class="co1">// i 、 g 、 j 、 q 、 inl 、 x 、 y 的作用域恢复</span>
+    i <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// N::i 在作用域中</span>
+    x <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// N::(匿名)::x 在作用域中</span>
+    y <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// N::inl::y 在作用域中</span>
+    inl<span class="sy4">::</span><span class="me2">y</span> <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// N::inl 亦在作用域中</span>
+<span class="br0">}</span> <span class="co1">// i 、 g 、 j 、 q 、 inl 、 x 、 y 的作用域间断</span></pre></div></div>
+<h3><span class="mw-headline" id=".E7.B1.BB.E4.BD.9C.E7.94.A8.E5.9F.9F">类作用域</span></h3>
+<p><a href="class.html" title="cpp/language/class">类</a>中声明的名字的潜在作用域开始于其声明点，并包含类体的剩余部分和所有函数体（无论是否定义于类定义外或在该名字的声明之前）、默认实参、异常规定、类内花括号或等号初始化器，还（递归地）包括嵌套类中的所有这些内容。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> X <span class="br0">{</span>
+    <span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> a <span class="sy1">=</span> n<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// X::n 在默认实参中在作用域</span>
+         <span class="kw1">return</span> a<span class="sy2">*</span>n<span class="sy4">;</span>   <span class="co1">// X::n 在函数体内在作用域中</span>
+    <span class="br0">}</span>
+    <span class="kw1">using</span> r <span class="sy1">=</span> <span class="kw4">int</span><span class="sy4">;</span>
+    r g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">int</span> i <span class="sy1">=</span> n<span class="sy2">*</span><span class="nu0">2</span><span class="sy4">;</span>   <span class="co1">// X::n 在初始化器内在作用域中</span>
+ 
+<span class="co1">//  int x[n];      // 错误： n 在类体内不在作用域中</span>
+    <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw4">int</span> x<span class="br0">[</span>n<span class="br0">]</span><span class="sy4">;</span>      <span class="co1">// OK ： n 现在在类体内在作用域中</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">//r X::g() {       // 错误： r 在类外成员函数的作用域外</span>
+<span class="kw4">auto</span> X<span class="sy4">::</span><span class="me2">g</span><span class="br0">(</span><span class="br0">)</span><span class="sy2">-</span><span class="sy1">&gt;</span>r <span class="br0">{</span>   <span class="co1">// OK ：尾随返回类型 X::r 在作用域中</span>
+    <span class="kw1">return</span> n<span class="sy4">;</span>      <span class="co1">// X::n 在类外成员函数体的作用域中</span>
+<span class="br0">}</span></pre></div></div>
+<p>若在声明某个名字之前就在类体中使用，而有该名字的另一声明在作用域中，则程序<a href="ub.html" title="cpp/language/ub">非良构，不要求诊断</a>。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">typedef</span> <span class="kw4">int</span> c<span class="sy4">;</span> <span class="co1">// ::c</span>
+<span class="kw2">enum</span> <span class="br0">{</span> i <span class="sy1">=</span> <span class="nu0">1</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// ::i</span>
+<span class="kw1">class</span> X <span class="br0">{</span>
+    <span class="kw4">char</span> v<span class="br0">[</span>i<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// 错误：此处 i 指代 ::i ，但亦有 X::i</span>
+    <span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+         <span class="kw1">return</span> sizeof<span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK ：成员函数体内在作用域中的是 X::c 而非 ::c</span>
+    <span class="br0">}</span>
+    <span class="kw4">char</span> c<span class="sy4">;</span> <span class="co1">// X::c</span>
+    <span class="kw2">enum</span> <span class="br0">{</span> i <span class="sy1">=</span> <span class="nu0">2</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// X::i</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">typedef</span> <span class="kw4">char</span><span class="sy2">*</span> T<span class="sy4">;</span>
+<span class="kw1">struct</span> Y <span class="br0">{</span>
+    T a<span class="sy4">;</span> <span class="co1">// 错误：此处，T 指代 ::T ，但亦有 Y::T</span>
+    <span class="kw1">typedef</span> <span class="kw4">long</span> T<span class="sy4">;</span>
+    T b<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>任何类成员名只能用于四种语境中：
+</p>
+<ul><li> 在其自身的类作用域或在派生类的类作用域之中
+</li><li> 在对其类或其派生类的类型的表达式运用 <code><b>.</b></code> 运算符之后
+</li><li> 在对其类或其派生的类的指针类型的表达式运用 <code><b>-&gt;</b></code> 运算符之后
+</li><li> 在对其类或其派生类的名字运用 <code><b>::</b></code> 运算符之后
+</li></ul>
+<h3><span class="mw-headline" id=".E6.9E.9A.E4.B8.BE.E4.BD.9C.E7.94.A8.E5.9F.9F">枚举作用域</span></h3>
+<p><a href="enum.html" title="cpp/language/enum">有作用域枚举</a>中引入的枚举项的名字的作用域开始于其声明点，并终止于 enum 说明符的末尾（与之相反，无作用域枚举项的作用域在 enum 说明符的结尾后仍在作用域中）：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> e1_t <span class="br0">{</span> <span class="co1">// 无作用域枚举</span>
+  A,
+  B <span class="sy1">=</span> A<span class="sy2">*</span><span class="nu0">2</span>
+<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// A 与 B 的作用域不结束</span>
+ 
+<span class="kw2">enum</span> <span class="kw1">class</span> e2_t <span class="br0">{</span> <span class="co1">// 有作用域枚举</span>
+    SA,
+    SB <span class="sy1">=</span> SA<span class="sy2">*</span><span class="nu0">2</span> <span class="co1">// SA 在作用域中</span>
+<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// SA 与 SB 的作用域结束</span>
+ 
+e1_t e1 <span class="sy1">=</span> B<span class="sy4">;</span> <span class="co1">// OK ： B 在作用域中</span>
+<span class="co1">// e2_t e2 = SB; // 错误： SB 不在作用域中</span>
+e2_t e2 <span class="sy1">=</span> e2_t<span class="sy4">::</span><span class="me2">SB</span><span class="sy4">;</span> <span class="co1">// OK</span></pre></div></div>
+<h3><span class="mw-headline" id=".E6.A8.A1.E6.9D.BF.E5.BD.A2.E5.8F.82.E4.BD.9C.E7.94.A8.E5.9F.9F">模板形参作用域</span></h3>
+<p>模板形参名的潜在作用域直接开始于其声明点，并持续到于其中引入了它的最小模板声明的末尾。具体而言，模板形参能用于其后的模板形参的声明，及基类的指定，但不能用于其前的模板形参的声明。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">typename</span> T, <span class="co1">// T 的作用域开始</span>
+          T<span class="sy2">*</span> p,       <span class="co1">// T 能用用于非类型形参</span>
+          <span class="kw1">class</span> U <span class="sy1">=</span> T <span class="co1">// T 能用作默认类型</span>
+        <span class="sy1">&gt;</span>
+<span class="kw1">class</span> X <span class="sy4">:</span> <span class="kw1">public</span> Array<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="co1">// T 能用于基类名</span>
+<span class="br0">{</span>
+   <span class="co1">// T 还能在体内使用</span>
+<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// T 与 U 的作用域结束， X 的作用域持续</span></pre></div></div>
+<p>模板模板形参的形参名的潜在作用域，是该名字出现于其中的最小模板形参列表
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">template</span><span class="sy1">&lt;</span> <span class="co1">// 模板模板形参</span>
+                    <span class="kw1">typename</span> Y,     <span class="co1">// Y 的作用域开始</span>
+                    <span class="kw1">typename</span> G <span class="sy1">=</span> Y <span class="co1">// Y 在作用域中</span>
+                  <span class="sy1">&gt;</span> <span class="co1">// Y 与 G 的作用域结束</span>
+          <span class="kw1">class</span> T,
+<span class="co1">//          typename U = Y // 错误： Y 不在作用域中</span>
+          <span class="kw1">typename</span> U
+        <span class="sy1">&gt;</span>
+<span class="kw1">class</span> X
+<span class="br0">{</span>
+<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// T 与 U 的作用域结束</span></pre></div></div>
+<p>与其他嵌套作用域类似，模板形参名在其自身的持续期间隐藏来自外层作用域的相同名字：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">typedef</span> <span class="kw4">int</span> N<span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span> N X, <span class="co1">// int 类型的非类型模板形参</span>
+          <span class="kw1">typename</span> N, <span class="co1">// 此 N 的作用域开始，打断 ::N 的作用域</span>
+          <span class="kw1">template</span><span class="sy1">&lt;</span>N Y<span class="sy1">&gt;</span> <span class="kw1">class</span> T <span class="co1">// 此处的 N 是模板形参，非 int</span>
+         <span class="sy1">&gt;</span> <span class="kw1">struct</span> A<span class="sy4">;</span></pre></div></div>
+<h3><span class="mw-headline" id=".E5.A3.B0.E6.98.8E.E7.82.B9">声明点</span></h3>
+<p>作用域始于<i>声明点</i>，它定位如下：
+</p><p>对于简单声明所引入的变量和其他名字，声明点紧随该名字的<a href="declarations.html#.E5.A3.B0.E6.98.8E.E7.AC.A6" title="cpp/language/declarations">声明符</a>之后，且在其初始化器之前（若其存在）：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">unsigned</span> <span class="kw4">char</span> x <span class="sy1">=</span> <span class="nu0">32</span><span class="sy4">;</span> <span class="co1">// 第一个 'x' 的作用域开始</span>
+<span class="br0">{</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span> x <span class="sy1">=</span> x<span class="sy4">;</span> <span class="co1">// 第二个 'x' 的作用域在初始化器 (= x) 前开始</span>
+                         <span class="co1">// 这不以值 32 初始化第二个 'x' ，</span>
+                         <span class="co1">// 这以其自身的不确定值初始化第二个 'x'</span>
+<span class="br0">}</span>
+<a href="../utility/functional/function.html"><span class="kw1059">std::<span class="me2">function</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy1">&gt;</span> f <span class="sy1">=</span> <span class="br0">[</span><span class="sy3">&amp;</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">int</span> n<span class="br0">)</span><span class="br0">{</span><span class="kw1">return</span> n<span class="sy1">&gt;</span><span class="nu0">1</span> <span class="sy4">?</span> n<span class="sy2">*</span>f<span class="br0">(</span>n<span class="sy2">-</span><span class="nu0">1</span><span class="br0">)</span> <span class="sy4">:</span> n<span class="sy4">;</span><span class="br0">}</span><span class="sy4">;</span>
+           <span class="co1">// 函数对象名 'f' 在 lambda 中在作用域中，</span>
+           <span class="co1">// 而且能正确地被按引用俘获，给出递归函数</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// 首个 'x' 的作用域开始</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> x<span class="br0">[</span>x<span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 第二个 x 的作用域在初始化器 (= {}) 前开始，但在声明器 (x[x]) 后。</span>
+                   <span class="co1">// 在声明器内，外层 'x' 仍在作用域中，这声明 2 个 int 的数组。</span>
+<span class="br0">}</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<p><a href="structured_binding.html" title="cpp/language/structured binding">结构化绑定</a>的声明点紧随该结构化绑定声明的 <span class="t-spar">identifier-list</span>（标识符列表）之后，但禁止结构化绑定的初始化器提及其所引入的任何名字。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<p>类或模板的声明点，紧随其<a href="classes.html" title="cpp/language/classes">类头</a>中所出现的命名类名的标识符（或指名模板特化的 <a href="templates.html#template-id" title="cpp/language/templates">template-id</a>（模板标识））之后，并且在基类列表中已处于作用域中：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// 名称 'S' 在其出现后立即处于作用域中，</span>
+<span class="co1">// 故它能用于基类列表</span>
+<span class="kw1">struct</span> S<span class="sy4">:</span> <a href="../memory/enable_shared_from_this.html"><span class="kw744">std::<span class="me2">enable_shared_from_this</span></span></a><span class="sy1">&lt;</span>S<span class="sy1">&gt;</span> 
+<span class="br0">{</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>枚举的声明点，紧随 <a href="enum.html" title="cpp/language/enum">enum 说明符</a>或笼统枚举声明（取决于何者为先）中所出现的命名它的标识符之后：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> E <span class="sy4">:</span> <span class="kw4">int</span> <span class="br0">{</span> <span class="co1">// E 已在作用域中</span>
+    A <span class="sy1">=</span> sizeof<span class="br0">(</span>E<span class="br0">)</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p><a href="type_alias.html" title="cpp/language/type alias">类型别名或别名模板</a>的声明点紧随该别名所代表的类型标识（type-id）之后：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">using</span> T <span class="sy1">=</span> <span class="kw4">int</span><span class="sy4">;</span> <span class="co1">// T 的声明点在分号处</span>
+<span class="kw1">using</span> T <span class="sy1">=</span> T<span class="sy4">;</span>   <span class="co1">// 同 T = int</span></pre></div></div>
+<p>枚举项的声明点紧随其定义之后（而非在初始化器之前，这点不同于变量）：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">12</span><span class="sy4">;</span>
+<span class="br0">{</span>
+    <span class="kw2">enum</span> <span class="br0">{</span>
+        x <span class="sy1">=</span> x <span class="sy2">+</span> <span class="nu0">1</span>, <span class="co1">// 声明点在逗号处，初始化 x 为 13</span>
+        y <span class="sy1">=</span> x <span class="sy2">+</span> <span class="nu0">1</span>  <span class="co1">// 枚举项 x 在作用域中，初始化 y 为 14</span>
+    <span class="br0">}</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><a href="injected-class-name.html" title="cpp/language/injected-class-name"><span class="t-spar">injected-class-name</span>（注入类名）</a>的声明点紧随其类（或类模板）定义的开花括号之后
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> Array
+<span class="co1">// : std::enable_shared_from_this&lt;Array&gt; // 错误：注入类名不在作用域中</span>
+   <span class="sy4">:</span> <a href="../memory/enable_shared_from_this.html"><span class="kw744">std::<span class="me2">enable_shared_from_this</span></span></a><span class="sy1">&lt;</span> Array<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="sy1">&gt;</span> <span class="co1">// OK ：模板名 Array 在作用域中</span>
+<span class="br0">{</span> <span class="co1">// 注入类名 Array 现在在作用域中，如同为公开成员名</span>
+    Array<span class="sy2">*</span> p<span class="sy4">;</span> <span class="co1">// 指向 Array&lt;T&gt; 的指针</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本节未完成<br>原因：[basic.scope.pdecl] 的剩余内容 </td></tr></table>
+<h3><span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h3>
+<div class="t-ref-std-c++11">
+<ul><li> C++11 standard (ISO/IEC 14882:2011): 
+</li></ul>
+<dl><dd><ul><li> 3.3 Scope [basic.scope]
+</li></ul>
+</dd></dl>
+</div>
+<div class="t-ref-std-c++98">
+<ul><li> C++98 standard (ISO/IEC 14882:1998): 
+</li></ul>
+<dl><dd><ul><li> 3.3 Declarative regions and scopes [basic.scope]
+</li></ul>
+</dd></dl>
+</div>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1773/1000000
+Preprocessor generated node count: 7995/1000000
+Post‐expand include size: 35040/2097152 bytes
+Template argument size: 12582/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:8006-0!*!0!!zh!*!zh!* and timestamp 20190822235550 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/scope&amp;oldid=61794">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/scope&amp;oldid=61794</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/scope">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年7月20日 (星期六) 22:29。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过6,209次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 2.015 secs. -->
+	</body>
+<!-- Cached 20190822235551 -->
+</html>

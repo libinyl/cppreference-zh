@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>重载决议</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/overload_resolution","wgTitle":"cpp/language/overload resolution","wgCurRevisionId":62023,"wgArticleId":7804,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed CWG DR marker"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/overload_resolution","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_overload_resolution skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">重载决议</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="functions.html" title="cpp/language/functions"> 函数</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> 声明 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html" title="cpp/language/function"> 函数声明</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html#.E5.BD.A2.E5.8F.82.E5.88.97.E8.A1.A8" title="cpp/language/function"> 函数形参列表</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html#.E5.87.BD.E6.95.B0.E5.AE.9A.E4.B9.89" title="cpp/language/function"> 函数定义</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_arguments.html" title="cpp/language/default arguments"> 默认实参</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="variadic_arguments.html" title="cpp/language/variadic arguments"> 变长实参</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="inline.html" title="cpp/language/inline"> inline 说明符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lambda.html" title="cpp/language/lambda"> lambda 表达式</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="coroutines.html" title="cpp/language/coroutines"> 协程</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 函数调用 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="adl.html" title="cpp/language/adl"> 实参依赖查找 (ADL)</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_other.html#.E5.86.85.E5.BB.BA.E7.9A.84.E5.87.BD.E6.95.B0.E8.B0.83.E7.94.A8.E8.BF.90.E7.AE.97.E7.AC.A6" title="cpp/language/operator other"> 函数调用运算符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req/FunctionObject.html" title="cpp/named req/FunctionObject"> 函数对象</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 重载 </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 重载决议</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operators.html" title="cpp/language/operators"> 运算符重载</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="overloaded_address.html" title="cpp/language/overloaded address"> 重载集地址</a> </td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>为了编译函数调用，编译器必须首先进行<a href="lookup.html" title="cpp/language/lookup">名字查找</a>，对于函数可能涉及<a href="adl.html" title="cpp/language/adl">参数依赖查找</a>，而对于函数模板可能后随<a href="template_argument_deduction.html" title="cpp/language/template argument deduction">模板实参推导</a>。若这些步骤产生多于一个<i>候选函数</i>，则进行<i>重载决议</i>，选择将要实际调用的函数。
+</p><p>通常来说，所调用的函数是各形参与各实参之间的匹配最紧密的候选函数。
+</p><p>关于其他可以出现重载函数名的语境，见<a href="overloaded_address.html" title="cpp/language/overloaded address">取重载函数的地址</a>。
+</p>
+<h3><span class="mw-headline" id=".E7.BB.86.E8.8A.82">细节</span></h3>
+<p>重载决议开始前，将名字查找和模板实参推导所选择的函数组成<i>候选函数</i>的集合（确切的判别标准取决于发生重载决议的语境，见下文）。
+</p><p>若任何候选函数是<a href="member_functions.html" title="cpp/language/member functions">成员函数</a>（静态或非静态），但非构造函数，则将它当做如同它有一个额外形参（<i>隐式对象形参</i>），代表调用函数所用的对象，并出现在首个实际形参之前。
+</p><p>类似地，调用成员函数所用的对象，作为<i>隐含对象实参</i>，前附于实参列表。
+</p><p>对于类 <code>X</code> 的成员函数，隐含对象形参的类型受成员函数的 cv 限定和引用限定影响，如<a href="member_functions.html" title="cpp/language/member functions">成员函数</a>中所述。
+</p><p>就确定<i>隐式对象形参</i>类型而言，用户定义转换函数被认为是<i>隐含对象实参</i>的成员。
+</p><p>就确定<i>隐式对象形参</i>类型而言，由 using 声明引入到派生类中的成员函数，被认为是派生类的成员。
+</p><p>对于静态成员函数，其<i>隐式对象形参</i>被认为匹配任何对象：不检验其类型，不为之尝试转换序列。
+</p><p>对于重载决议的剩余部分，<i>隐含对象实参</i>与其他实参不可辨别，但下列特殊规则适用于<i>隐式对象形参</i>：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 不能对隐式对象形参运用用户定义转换</div>
+<div class="t-li1"><span class="t-li">2)</span> 右值能绑定到非 const 的隐式对象形参<span class="t-rev-inl t-since-cxx11"><span>（除非是对引用限定的成员函数）</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>，且不影响隐式转换的等级。
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> B <span class="br0">{</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> A <span class="br0">{</span> operator B<span class="sy3">&amp;</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+A a<span class="sy4">;</span>
+a.<span class="me1">B</span><span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误：不能对隐式对象形参运用用户定义转换</span>
+<span class="kw1">static_cast</span><span class="sy1">&lt;</span>B<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span>a<span class="br0">)</span>.<span class="me1">f</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK</span></pre></div></div></div>
+<p>若有任何候选函数是函数模板，则使用<a href="template_argument_deduction.html" title="cpp/language/template argument deduction">模板实参推导</a>生成其特化，并把这种特化当做非模板函数对待，但在决断规则中另行有所规定。若一个名字指代一或多个函数模板，并且亦指代重载的非模板函数，则这些函数和从模板生成的特化都是候选。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<p>若构造函数模板或转换函数模板拥有<a href="explicit.html" title="cpp/language/explicit">条件性 explicit 说明符</a>，而在推导后它恰好为<a href="dependent_name.html#.E5.80.BC.E5.BE.85.E5.86.B3.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/dependent name">值待决的</a>，若语境要求非 explicit 的候选而所生成的候选为 explicit，则从候选集中移除它。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+<p>候选函数列表中始终不包含被定义为弃置的预置<a href="move_constructor.html" title="cpp/language/move constructor">移动构造函数</a>和<a href="move_assignment.html" title="cpp/language/move assignment">移动赋值运算符</a>。
+</p><p>在构造派生类对象时，候选函数列表中不包含继承的复制和移动构造函数。
+</p>
+<h3><span class="mw-headline" id=".E5.80.99.E9.80.89.E5.87.BD.E6.95.B0">候选函数</span></h3>
+<p>使用重载决议的每种语境，都以其独有的方式准备其候选函数集合和实参列表：
+</p>
+<h4><span class="mw-headline" id=".E8.B0.83.E7.94.A8.E5.85.B7.E5.90.8D.E5.87.BD.E6.95.B0">调用具名函数</span></h4>
+<p>若 <code>E</code> 在<a href="operator_other.html#.E5.86.85.E5.BB.BA.E7.9A.84.E5.87.BD.E6.95.B0.E8.B0.83.E7.94.A8.E8.BF.90.E7.AE.97.E7.AC.A6" title="cpp/language/operator other">函数调用表达式</a> <code>E(args)</code> 中指名重载的函数和/或函数模板（但非可调用对象）的集合，则遵循下列规则：
+</p>
+<ul><li> 若表达式 <code>E</code> 具有 <code>PA-&gt;B</code> 或 <code>A.B</code> 的形式（其中 A 具有类类型 cv T），则将 <code>B</code> 作为 <code>T</code> 的成员函数<a href="lookup.html" title="cpp/language/lookup">查找</a>。该查找所找到的函数声明均为候选函数。就重载决议而言，实参列表拥有 cv T 类型的隐含对象实参。
+</li><li> 若表达式 <code>E</code> 为<a href="expressions.html#.E5.88.9D.E7.AD.89.E8.A1.A8.E8.BE.BE.E5.BC.8F" title="cpp/language/expressions">初等表达式</a>，则遵循函数调用的正常规则<a href="lookup.html" title="cpp/language/lookup">查找</a>其名字（可能涉及 <a href="adl.html" title="cpp/language/adl">ADL</a>）。此查找所找到的函数声明（取决于查找的工作方式）为下列之一：
+</li></ul>
+<dl><dd>a) 全部是非成员函数（该情况下，就重载决议而言，实参列表正是函数调用表达式中所用的实参列表）
+</dd><dd>b) 全部是某个类 <code>T</code> 的成员函数，该情况下，若 <a href="this.html" title="cpp/language/this">this</a> 在作用域中且为指向 <code>T</code> 或从 <code>T</code> 派生的类的指针，则以 <code>*this</code> 为隐含对象实参。否则（若 <code>this</code> 不在作用域中或不指向 <code>T</code>），以一个 <code>T</code> 类型的虚假对象为隐含对象实参，而若重载决议继而选择了非静态成员函数，则程序非良构。
+</dd></dl>
+<h4><span class="mw-headline" id=".E8.B0.83.E7.94.A8.E7.B1.BB.E5.AF.B9.E8.B1.A1">调用类对象</span></h4>
+<p>若 <code>E</code> 在<a href="operator_other.html#.E5.86.85.E5.BB.BA.E7.9A.84.E5.87.BD.E6.95.B0.E8.B0.83.E7.94.A8.E8.BF.90.E7.AE.97.E7.AC.A6" title="cpp/language/operator other">函数调用表达式</a> <code>E(args)</code> 中拥有类型 cv <code>T</code>，则
+</p>
+<ul><li> 在表达式 <code>(E).operator()</code> 的语境中，对名字进行 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="br0">(</span><span class="br0">)</span></span></span> 的通常<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/%E6%9F%A5%E6%89%BE&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/查找（页面不存在）">查找</a>获得 T 的函数调用运算符，并把每个找到的函数声明添加到候选函数集。
+</li><li> 对于 <code>T</code> 或 <code>T</code> 的基类中每个（未被隐藏的）非 explicit 的<a href="cast_operator.html" title="cpp/language/cast operator">用户定义转换函数</a>，且其 cv 限定符与 <code>T</code> 的 cv 限定符相同或更多，并且该转换函数转换到：
+</li></ul>
+<dl><dd><ul><li> 函数指针
+</li><li> 函数指针的引用
+</li><li> 函数的引用
+</li></ul>
+</dd><dd>则将一个拥有独有名称的<i>代表调用函数</i>添加到候选函数集，该函数的首个形参为转换结果，剩余各形参为转换结果所接受的形参列表，而其返回类型为转换结果的返回类型。若后继的重载决议选择此代表函数，则将调用用户定义转换函数，然后调用转换的结果。
+</dd></dl>
+<p>任何情况下，就重载决议而言的实参列表，是函数调用表达式的实参列表，前面加上隐含对象实参 <code>E</code>（匹配到代表函数时，用户定义转换将自动将隐含对象实参转换为代表函数的首个实参）。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f1<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> f2<span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">struct</span> A <span class="br0">{</span>
+    <span class="kw1">using</span> fp1 <span class="sy1">=</span> <span class="kw4">int</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>
+    operator fp1<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> f1<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 转换函数，到函数指针</span>
+    <span class="kw1">using</span> fp2 <span class="sy1">=</span> <span class="kw4">int</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span><span class="sy4">;</span>
+    operator fp2<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> f2<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 转换函数，到函数指针</span>
+<span class="br0">}</span> a<span class="sy4">;</span>
+<span class="kw4">int</span> i <span class="sy1">=</span> a<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 通过转换函数返回的指针调用 f1</span></pre></div></div>
+<h4><span class="mw-headline" id=".E8.B0.83.E7.94.A8.E9.87.8D.E8.BD.BD.E8.BF.90.E7.AE.97.E7.AC.A6">调用重载运算符</span></h4>
+<p>若表达式中某个运算符的至少一个实参具有类类型或枚举类型，则<a href="expressions.html#.E8.BF.90.E7.AE.97.E7.AC.A6" title="cpp/language/expressions">内建运算符</a>和<a href="operators.html" title="cpp/language/operators">用户定义的运算符重载</a>都参与重载决议，所选择的候选函数集如下：
+</p><p>对于实参具有类型 <code>T1</code>（移除 cv 限定后）的一元运算符 <code><b>@</b></code>，或左操作数具有类型 <code>T1</code> 而右操作数具有类型 <code>T2</code>（移除 cv 限定后）的二元运算符 <code><b>@</b></code>，准备下列候选函数集：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> <i>成员候选</i>：若 <code>T1</code> 是完整类，或当前正在定义的类，则成员候选集是对 <code>T1::operator@</code> 进行<a href="lookup.html" title="cpp/language/lookup">有限定的名字查找</a>的结果。所有其他情况下，成员候选集为空。</div>
+<div class="t-li1"><span class="t-li">2)</span> <i>非成员候选</i>：对于<a href="operators.html" title="cpp/language/operators">运算符重载</a>容许非成员形式的运算符，为在表达式的语境中对 <code>operator@</code> 进行<a href="lookup.html" title="cpp/language/lookup">无限定名字查找</a>（可能涉及 <a href="adl.html" title="cpp/language/adl">ADL</a>）所找到的所有声明，但忽略成员函数声明而且其不会阻止到下个外围作用域中继续进行查找。若二元运算符的两个操作数，或一元运算符的唯一操作数具有枚举类型，则查找集中仅有形参具有该枚举类型（或到该枚举类型引用）的函数，成为非成员候选函数。</div>
+<div class="t-li1"><span class="t-li">3)</span> <i>内建候选</i>：对于 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator,</span></span>、一元 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy3">&amp;</span></span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">-</span><span class="sy1">&gt;</span></span></span>，内建候选集为空。对于其他运算符，内建候选是<a href="expressions.html#.E8.BF.90.E7.AE.97.E7.AC.A6" title="cpp/language/expressions">内建运算符页面</a>中列出的函数，只要所有操作数都能隐式转换为其各个形参。若有任何内建候选拥有的形参列表与某个并非函数模板特化的非成员候选相同，则不将该内建候选添加到内建候选列表。当考虑内建的赋值运算符时，限制从其左侧实参进行的转换：不考虑用户定义转换。</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<div class="t-li1"><span class="t-li">4)</span> <i>重写候选</i>：对于六个关系运算符表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">==</span>y</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy3">!</span><span class="sy1">=</span>y</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&lt;</span>y</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&lt;=</span>y</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&gt;</span>y</span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&gt;=</span>y</span></span>，若 <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&lt;=&gt;</span>y @ <span class="nu0">0</span></span></span> 良构（意味着 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;=&gt;</span></span></span> 返回 std::*_ordering 而 @ 是 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">==</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">!</span><span class="sy1">=</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&gt;</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;=</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&gt;=</span></span></span> 之一，或者 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;=&gt;</span></span></span> 返回 std::*_equality 而 @ 是 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">==</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">!</span><span class="sy1">=</span></span></span> 之一），则将所有找到的成员、非成员和内建 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&lt;=&gt;</span></span></span> 添加到集合中。此外，对于六个关系运算符表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">==</span>y</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy3">!</span><span class="sy1">=</span>y</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&lt;</span>y</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&lt;=</span>y</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&gt;</span>y</span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&gt;=</span>y</span></span> 以及三路比较表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy1">&lt;=&gt;</span>y</span></span>，若 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">0</span> @ y <span class="sy1">&lt;=&gt;</span> x</span></span> 良构，则对每个找到的成员、非成员和内建 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&lt;=&gt;</span></span></span>，将一个具有相反顺序的两个形参的合成候选添加到集合中。任何情况下，在重写的表达式的语境中均不再考虑重写候选。对于所有其他运算符，重写候选集为空。
+</div></td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+<p>提交给重载决议的候选函数集合是以上集合的并集。就重载决议而言的实参列表由运算符的各操作数组成，除了 <code>operator-&gt;</code> 的情况，其第二操作数并非函数调用的实参（见<a href="operator_member_access.html#.E5.86.85.E5.BB.BA.E7.9A.84.E6.88.90.E5.91.98.E8.AE.BF.E9.97.AE.E8.BF.90.E7.AE.97.E7.AC.A6" title="cpp/language/operator member access">成员访问运算符</a>）。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span>
+    operator <span class="kw4">int</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 用户定义转换</span>
+<span class="br0">}</span><span class="sy4">;</span>
+A operator<span class="sy2">+</span><span class="br0">(</span><span class="kw4">const</span> A<span class="sy3">&amp;</span>, <span class="kw4">const</span> A<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 非成员用户定义运算符</span>
+<span class="kw4">void</span> m<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    A a, b<span class="sy4">;</span>
+    a <span class="sy2">+</span> b<span class="sy4">;</span> <span class="co1">// 成员候选：无</span>
+           <span class="co1">// 非成员候选：operator+(a,b)</span>
+           <span class="co1">// 内建候选：int(a) + int(b)</span>
+           <span class="co1">// 重载决议选择 operator+(a,b)</span>
+<span class="br0">}</span></pre></div></div>
+<p>若重载决议选择了内建候选，则从类类型的操作数进行的<a href="implicit_cast.html" title="cpp/language/implicit conversion">用户定义转换序列</a>不允许拥有第二个标准转换序列：用户定义转换函数必须直接给出期待的操作数类型：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> Y <span class="br0">{</span> operator <span class="kw4">int</span><span class="sy2">*</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>  <span class="co1">// Y 可转换为 int*</span>
+<span class="kw4">int</span> <span class="sy2">*</span>a <span class="sy1">=</span> Y<span class="br0">(</span><span class="br0">)</span> <span class="sy2">+</span> <span class="nu16">100.0</span><span class="sy4">;</span> <span class="co1">// 错误：指针和 double 之间没有 operator+</span></pre></div></div>
+<p>对于 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator,</span></span>、一元 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy3">&amp;</span></span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">-</span><span class="sy1">&gt;</span></span></span>，若候选函数集中没有可行函数（见后述），则将运算符解释为内建运算符。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<p>若对运算符 <code>@</code> 的重载决议选择了重写候选，则用重写的 <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&lt;=&gt;</span></span></span> 候选将 <span class="t-c"><span class="mw-geshi cpp source-cpp">x @ y</span></span> 解释为重写的表达式：当所选择的候选是具有逆序形参的合成候选时，解释为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">0</span> @ <span class="br0">(</span>y <span class="sy1">&lt;=&gt;</span> x<span class="br0">)</span></span></span>，否则为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>x <span class="sy1">&lt;=&gt;</span> y<span class="br0">)</span> @ <span class="nu0">0</span></span></span>。
+</p><p>这种情况下的重载决议有一条决胜规则：偏好非重写候选甚于重写候选，且偏好非合成重写候选甚于合成重写候选。
+</p><p>这种具有逆序实参的查找使得可以只写一个 <span class="t-c"><span class="mw-geshi cpp source-cpp">operatror<span class="sy1">&lt;=&gt;</span><span class="br0">(</span><a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a>, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span><span class="br0">)</span></span></span> 就生成 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a></span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span></span></span> 间的所有双向比较。更多细节见<a href="default_comparisons.html" title="cpp/language/default comparisons">默认比较</a>。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+<h4><span class="mw-headline" id=".E7.94.B1.E6.9E.84.E9.80.A0.E5.87.BD.E6.95.B0.E5.88.9D.E5.A7.8B.E5.8C.96">由构造函数初始化</span></h4>
+<p>当对类类型的对象进行<a href="direct_initialization.html" title="cpp/language/direct initialization">直接初始化</a>或在<a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a>之外的语境中进行<a href="default_initialization.html" title="cpp/language/default initialization">默认初始化</a>时，候选函数是正在初始化的类的所有构造函数。实参列表为初始化器的表达式列表。
+</p><p>当对类类型对象从某个相同或派生类类型的对象进行复制初始化，或在复制初始化语境中进行默认初始化时，候选函数是正在初始化的类的所有<a href="converting_constructor.html" title="cpp/language/converting constructor">转换构造函数</a>。实参列表是初始化器的表达式。
+</p>
+<h4><span class="mw-headline" id=".E9.80.9A.E8.BF.87.E8.BD.AC.E6.8D.A2.E8.BF.9B.E8.A1.8C.E5.A4.8D.E5.88.B6.E5.88.9D.E5.A7.8B.E5.8C.96">通过转换进行复制初始化</span></h4>
+<p>若类类型对象的<a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a>要求调用某个<a href="cast_operator.html" title="cpp/language/cast operator">用户定义转换函数</a>以将 cv <code>S</code> 类型的初始化器表达式转换为正在初始化的对象的 cv <code>T</code> 类型，则下列函数是候选函数：
+</p>
+<ul><li> <code>T</code> 的所有<a href="converting_constructor.html" title="cpp/language/converting constructor">转换构造函数</a>
+</li><li> 从 <code>S</code> 及其各基类（除非隐藏）到 <code>T</code> 或 <code>T</code> 的派生类或到它们的引用的非 explicit 转换函数。若此复制初始化是 <i>cv</i> <code>T</code> 的直接初始化序列的一部分（对于接受一个到 cv <code>T</code> 的引用的构造函数，初始化要绑定到其首个形参的引用），则亦考虑 explicit 转换函数。
+</li></ul>
+<p>无论哪种方式，就重载决议而言的实参列表均由单个实参组成，即初始化器表达式，它将会与构造函数的首个实参或转换函数的隐式对象实参相比较。
+</p>
+<h4><span class="mw-headline" id=".E9.80.9A.E8.BF.87.E8.BD.AC.E6.8D.A2.E8.BF.9B.E8.A1.8C.E9.9D.9E.E7.B1.BB.E5.88.9D.E5.A7.8B.E5.8C.96">通过转换进行非类初始化</span></h4>
+<p>当非类类型 cv1 <code>T</code> 对象的初始化要求某个<a href="cast_operator.html" title="cpp/language/cast operator">用户定义转换函数</a>，以从类类型 cv <code>S</code> 的初始化器表达式转换时，下列函数为候选：
+</p>
+<ul><li> <code>S</code> 及其基类（除非隐藏）中的，产生 <code>T</code> 类型，或可由<a href="implicit_cast.html" title="cpp/language/implicit conversion">标准转换序列</a>转换到 <code>T</code> 的类型，或到这些类型的引用的，非 explicit 用户定义转换函数。对于选择候选函数而言，忽略返回类型上的 cv 限定符。
+</li><li> 若这是<a href="direct_initialization.html" title="cpp/language/direct initialization">直接初始化</a>，则亦考虑 <code>S</code> 及其基类（除非隐藏）中的，产生 <code>T</code> 类型，或可由<a href="implicit_cast.html" title="cpp/language/implicit conversion">限定性转换</a>转换到 <code>T</code> 的类型，或到这些类型的引用的，explicit 用户定义转换函数。
+</li></ul>
+<p>无论哪种方式，就重载决议而言的实参列表均由单个实参组成，即初始化器表达式，它将会与转换函数的隐含对象实参相比较。
+</p>
+<h4><span class="mw-headline" id=".E9.80.9A.E8.BF.87.E8.BD.AC.E6.8D.A2.E8.BF.9B.E8.A1.8C.E5.BC.95.E7.94.A8.E5.88.9D.E5.A7.8B.E5.8C.96">通过转换进行引用初始化</span></h4>
+<p>在将指代 cv1 <code>T</code> 的引用绑定到从初始化器表达式转换到类类型 cv2 <code>S</code> 的左值或右值结果的<a href="reference_initialization.html" title="cpp/language/reference initialization">引用初始化</a>期间，为候选集选择下列函数：
+</p>
+<ul><li> <code>S</code> 及其基类（除非隐藏）中的，到以下类型的非 explicit 用户定义转换函数
+</li></ul>
+<dl><dd><ul><li> （当初始化左值引用或到函数的右值引用时）到 cv2 <code>T2</code> 的左值引用
+</li><li> （当初始化右值引用或到函数的左值引用时）cv2 <code>T2</code> 或到 cv2 <code>T2</code> 的右值引用
+</li></ul>
+</dd><dd>其中 cv2 T2 与 cv1 T 引用兼容
+</dd></dl>
+<ul><li> 对于直接初始化，若 T2 与 T 为同一类型或能以限定性转换转换到 T，则亦考虑 explicit 用户定义转换函数。
+</li></ul>
+<p>无论哪种方式，就重载决议而言的实参列表均由单个实参组成，即初始化器表达式，它将会与转换函数的隐含对象实参相比较。
+</p>
+<h4><span class="mw-headline" id=".E5.88.97.E8.A1.A8.E5.88.9D.E5.A7.8B.E5.8C.96">列表初始化</span></h4>
+<p>当非聚合类类型 <code>T</code> 的对象进行<a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a>时，进行两阶段的重载决议。
+</p>
+<ul><li> 在阶段 1，候选函数是 <code>T</code> 的所有初始化器列表构造函数，而就重载决议而言的实参列表由单个初始化器列表实参组成
+</li><li> 若阶段 1 的重载决议失败则进入阶段 2，其中候选函数是 <code>T</code> 的所有构造函数，而就重载决议而言的实参列表由初始化器列表的各个单独元素所组成。
+</li></ul>
+<p>若初始化器列表为空而 <code>T</code> 拥有默认构造函数，则跳过阶段 1。
+</p><p>在复制列表初始化中，若阶段 2 选择 explicit 构造函数，则初始化非良构（与复制初始化的总体相反，它们甚至不考虑 explicit 构造函数）。
+</p>
+<h3><span class="mw-headline" id=".E5.8F.AF.E8.A1.8C.E5.87.BD.E6.95.B0">可行函数</span></h3>
+<p>给定以上述方式构造的候选函数集，重载决议的下一步骤是检验各个实参与形参，并将集合缩减为<i>可行函数（viable function）</i>的集合
+</p><p>为了被包含在可行函数集中，候选函数必须满足下列条件：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 若有 <code>M</code> 个实参，则刚好具有 <code>M</code> 个形参的候选函数可行。</div>
+<div class="t-li1"><span class="t-li">2)</span> 若候选函数的形参少于 <code>M</code> 个，但具有一个<a href="variadic_arguments.html" title="cpp/language/variadic arguments">省略号形参</a>，则它可行。</div>
+<div class="t-li1"><span class="t-li">3)</span> 若候选函数的形参多于 <code>M</code> 个，而第 <code>M+1</code> 个形参和所有后随形参都具有默认实参，则它可行。对于剩余的重载决议，形参列表被截断到 M。</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<div class="t-li1"><span class="t-li">4)</span> 若函数拥有关联的<a href="constraints.html" title="cpp/language/constraints">制约</a>，则其必须得以满足。</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+<div class="t-li1"><span class="t-li">5)</span> 对于每个实参，必须至少存在一个隐式转换序列，将它转换到对应的形参。</div>
+<div class="t-li1"><span class="t-li">6)</span> 若任何形参具有引用类型，则在此步骤中负责引用绑定：若右值实参对应非 const 左值引用形参，或左值实参对应右值引用形参，则函数不可行。</div>
+<p>禁止用户定义转换（转换构造函数和用户定义转换函数两者）参与可能使得能应用多于一次用户定义转换的隐式转换序列。特别是，若转换目标是构造函数的首个形参，或用户定义转换函数的隐式对象形参，而该构造/用户定义转换是下列初始化的候选，则不考虑用户定义转换
+</p>
+<ul><li> <a href="overload_resolution.html#.E9.80.9A.E8.BF.87.E8.BD.AC.E6.8D.A2.E8.BF.9B.E8.A1.8C.E5.A4.8D.E5.88.B6.E5.88.9D.E5.A7.8B.E5.8C.96">通过用户定义转换进行复制初始化</a>，
+</li><li> <a href="overload_resolution.html#.E9.80.9A.E8.BF.87.E8.BD.AC.E6.8D.A2.E8.BF.9B.E8.A1.8C.E9.9D.9E.E7.B1.BB.E5.88.9D.E5.A7.8B.E5.8C.96">通过转换函数进行非类类型的初始化</a>，
+</li><li> <a href="overload_resolution.html#.E9.80.9A.E8.BF.87.E8.BD.AC.E6.8D.A2.E8.BF.9B.E8.A1.8C.E5.BC.95.E7.94.A8.E5.88.9D.E5.A7.8B.E5.8C.96">为直接引用绑定的通过转换函数进行的初始化</a>，
+</li><li> 在类的<a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a>的第二步骤（直接初始化）期间<a href="overload_resolution.html#.E7.94.B1.E6.9E.84.E9.80.A0.E5.87.BD.E6.95.B0.E5.88.9D.E5.A7.8B.E5.8C.96">通过构造函数所作的初始化</a>，
+</li><li>由列表初始化所作的初始化，其中的初始化器列表刚好拥有一个元素，且其自身是一个初始化器列表，而目标是类 X 的构造函数的首个实参，而该转换是到 X 或到（可为 cv 限定的）X 的引用的转换
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span> A<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="br0">{</span> B<span class="br0">(</span>A<span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+B b<span class="br0">{</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// B 的列表初始化</span>
+<span class="co1">// 候选：B(const B&amp;)、B(B&amp;&amp;)、B(A)</span>
+<span class="co1">// {0} -&gt; B&amp;&amp; 不可行：要调用 B(A)</span>
+<span class="co1">// {0} -&gt; const B&amp; ：不可行：要绑定到右值，要调用 B(A)</span>
+<span class="co1">// {0} -&gt; A 可行。调用 A(int)：不禁止到 A 的用户定义转换</span></pre></div></div>
+<h3><span class="mw-headline" id=".E6.9C.80.E4.BD.B3.E5.8F.AF.E8.A1.8C.E5.87.BD.E6.95.B0">最佳可行函数</span></h3>
+<p>对于每对可行函数 <code>F1</code> 和 <code>F2</code>，对从第 <code>i</code> 实参到第 <code>i</code> 形参的转换做排行，以确定何者更好（除了首个实参，静态成员函数的<i>隐式对象实参</i>在排行上没有影响）。
+</p><p>若 F1 的所有实参的隐式转换<i>不劣于</i> F2 的所有实参的隐式转换，且满足下列条件，则确定 <code>F1</code> 是优于 <code>F2</code> 的函数
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 至少存在一个 F1 的实参，其隐式转换<i>优于</i> F2 的该实参的对应的隐式转换</div>
+<div class="t-li1"><span class="t-li">2)</span> 或若非如此，（只在通过转换进行非类初始化的语境中，）从 F1 的返回类型到要初始化的类型的标准转换序列<i>优于</i>从 F2 的返回类型到该类型的标准转换序列</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<div class="t-li1"><span class="t-li">3)</span> 或若非如此，（仅在对函数类型的引用进行直接引用绑定所作的，通过转换函数进行初始化的语境中，）F1 的返回类型是与正在初始化的引用相同种类的引用（左值或右值），而 F2 的返回类型不是</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<div class="t-li1"><span class="t-li">4)</span> 或若非如此，F1 是非模板函数而 F2 是模板特化</div>
+<div class="t-li1"><span class="t-li">5)</span> 或若非如此，F1 与 F2 都是模板特化，且按照<a href="function_template.html#.E5.87.BD.E6.95.B0.E6.A8.A1.E6.9D.BF.E9.87.8D.E8.BD.BD" title="cpp/language/function template">模板特化的偏序规则</a>，F1 <i>更特殊</i></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<div class="t-li1"><span class="t-li">6)</span> 或若非如此，F1 与 F2 为拥有相同形参类型列表的非模板函数，且按照<a href="constraints.html" title="cpp/language/constraints">制约的偏序</a>规则，F1 比 F2 更受制约</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<div class="t-li1"><span class="t-li">7)</span> 或若非如此，F1 是类 D 的构造函数，F2 是 D 的基类 B 的构造函数，而对应每个实参的 F1 和 F2 的形参均具有相同类型</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<div class="t-li1"><span class="t-li">8)</span> 或若非如此，F2 是重写的候选而 F1 不是，</div>
+<div class="t-li1"><span class="t-li">9)</span> 或若非如此，F1 和 F2 都是重写候选，而 F2 是带逆序形参的合成重写候选而 F1 不是</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<div class="t-li1"><span class="t-li">10)</span> 或若非如此，F1 是从<a href="class_template_argument_deduction.html#.E7.94.A8.E6.88.B7.E5.AE.9A.E4.B9.89.E6.8E.A8.E5.AF.BC.E6.8C.87.E5.BC.95" title="cpp/language/class template argument deduction">用户定义推导指引</a>所生成而 F2 不是</div>
+<div class="t-li1"><span class="t-li">11)</span> 或若非如此，F1 是<a href="class_template_argument_deduction.html#.E7.94.A8.E6.88.B7.E5.AE.9A.E4.B9.89.E6.8E.A8.E5.AF.BC.E6.8C.87.E5.BC.95" title="cpp/language/class template argument deduction">复制推导候选</a>而 F2 不是</div>
+<div class="t-li1"><span class="t-li">12)</span> 或若非如此，F1 是从非模板构造函数生成而 F2 是从构造函数模板生成
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> A <span class="br0">{</span>
+    <span class="kw1">using</span> value_type <span class="sy1">=</span> T<span class="sy4">;</span>
+    A<span class="br0">(</span>value_type<span class="br0">)</span><span class="sy4">;</span>                  <span class="co1">// #1</span>
+    A<span class="br0">(</span><span class="kw4">const</span> A<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>                    <span class="co1">// #2</span>
+    A<span class="br0">(</span>T, T, <span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>                   <span class="co1">// #3</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> U<span class="sy1">&gt;</span> A<span class="br0">(</span><span class="kw4">int</span>, T, U<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// #4</span>
+<span class="br0">}</span><span class="sy4">;</span>                                  <span class="co1">// #5 为 A(A)，为复制推导候选</span>
+A x <span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// 使用 #3，从非模板构造函数生成</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> A<span class="br0">(</span>T<span class="br0">)</span> <span class="sy2">-</span><span class="sy1">&gt;</span> A<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">;</span>  <span class="co1">// #6，不如 #5 特殊</span>
+A a <span class="br0">(</span><span class="nu0">42</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 使用 #6 推出 A&lt;int&gt; 并用 #1 初始化</span>
+A b <span class="sy1">=</span> a<span class="sy4">;</span>  <span class="co1">// 使用 #5 推出 A&lt;int&gt; 并用 #2 初始化</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> A<span class="br0">(</span>A<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">)</span> <span class="sy2">-</span><span class="sy1">&gt;</span> A<span class="sy1">&lt;</span>A<span class="sy1">&lt;</span>T<span class="sy1">&gt;&gt;</span><span class="sy4">;</span>  <span class="co1">// #7，和 #5 一样特殊</span>
+A b2 <span class="sy1">=</span> a<span class="sy4">;</span>  <span class="co1">// 使用 #7 推出 A&lt;A&lt;int&gt;&gt; 并用 #1 初始化</span></pre></div></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<p>对所有可行函数进行这些逐对比较。若恰有一个可行函数优于所有其他函数，则重载决议成功并调用该函数。否则编译失败。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> Fcn<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy2">*</span>, <span class="kw4">short</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 重载 #1</span>
+<span class="kw4">void</span> Fcn<span class="br0">(</span><span class="kw4">int</span><span class="sy2">*</span>, <span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 重载 #2</span>
+<span class="kw4">int</span> i<span class="sy4">;</span>
+<span class="kw4">short</span> s <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    Fcn<span class="br0">(</span><span class="sy3">&amp;</span>i, <span class="nu0">1L</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// 第 1 实参：&amp;i -&gt; int* 优于 &amp;i -&gt; const int*</span>
+                  <span class="co1">// 第 2 实参：1L -&gt; short 与 1L -&gt; int 等价</span>
+                  <span class="co1">// 调用 Fcn(int*, int)</span>
+ 
+    Fcn<span class="br0">(</span><span class="sy3">&amp;</span>i,<span class="st0">'c'</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// 第 1 实参：&amp;i -&gt; int* 优于 &amp;i -&gt; const int*</span>
+                  <span class="co1">// 第 2 实参：'c' -&gt; int 优于 'c' -&gt; short</span>
+                  <span class="co1">// 调用 Fcn(int*, int)</span>
+ 
+    Fcn<span class="br0">(</span><span class="sy3">&amp;</span>i, s<span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// 第 1 实参：&amp;i -&gt; int* 优于 &amp;i -&gt; const int*</span>
+                  <span class="co1">// 第 2 实参：s -&gt; short 优于 s -&gt; int</span>
+                  <span class="co1">// 无胜者，编译错误</span>
+<span class="br0">}</span></pre></div></div>
+<h3><span class="mw-headline" id=".E9.9A.90.E5.BC.8F.E8.BD.AC.E6.8D.A2.E5.BA.8F.E5.88.97.E7.9A.84.E6.8E.92.E8.A1.8C">隐式转换序列的排行</span></h3>
+<p>重载决议所考虑的实参-形参隐式转换序列，对应于<a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a>中（对于非引用形参）所用的<a href="implicit_cast.html" title="cpp/language/implicit conversion">隐式转换</a>，但在考虑到隐含对象形参的转换，或到赋值运算符的左侧操作数的转换时，不考虑创建临时对象的转换。
+</p><p>每种<a href="implicit_cast.html" title="cpp/language/implicit conversion">标准转换序列的类型</a>都被赋予三个等级之一：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> <b>准确匹配</b>：不要求转换、左值到右值转换、限定性转换、<span class="t-rev-inl t-since-cxx17"><span>函数指针转换、</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>类类型到相同类的用户定义转换</div>
+<div class="t-li1"><span class="t-li">2)</span> <b>提升</b>：整型提升、浮点提升</div>
+<div class="t-li1"><span class="t-li">3)</span> <b>转换</b>：整型转换、浮点转换、浮点整型转换、指针转换、成员指针转换、布尔转换、派生类到其基类的用户定义转换</div>
+<p>标准转换序列的等级是其所含的标准转换（至多可有<a href="implicit_cast.html" title="cpp/language/implicit conversion">三次转换</a>）中的最差等级。
+</p><p>直接绑定引用形参到实参表达式是恒等或派生类到基类转换：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> Base <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> Derived <span class="sy4">:</span> Base <span class="br0">{</span><span class="br0">}</span> d<span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span>Base<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// 重载 #1</span>
+<span class="kw4">int</span> f<span class="br0">(</span>Derived<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 重载 #2</span>
+<span class="kw4">int</span> i <span class="sy1">=</span> f<span class="br0">(</span>d<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// d -&gt; Derived&amp; 拥有准确匹配等级</span>
+              <span class="co1">// d -&gt; Base&amp; 拥有转换等级</span>
+              <span class="co1">// 调用 f(Derived&amp;)</span></pre></div></div>
+<p>因为转换序列的排行仅操作类型和值类别，故就排行而言，<a href="bit_field.html" title="cpp/language/bit field">位域</a>能绑定到引用形参，但若选择了这个函数，则程序非良构。
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 标准转换序列始终<i>优于</i>用户定义转换序列或省略号转换序列。</div>
+<div class="t-li1"><span class="t-li">2)</span> 用户定义转换序列始终<i>优于</i><a href="variadic_arguments.html" title="cpp/language/variadic arguments">省略号转换</a>序列</div>
+<div class="t-li1"><span class="t-li">3)</span> 标准转换序列 <code>S1</code> <i>优于</i>标准转换序列 <code>S2</code>，条件为</div>
+<div class="t-li2"><span class="t-li">a)</span> <code>S1</code> 为 <code>S2</code> 的子序列，排除左值变换。恒等转换序列被认为是任何其他转换的子序列</div>
+<div class="t-li2"><span class="t-li">b)</span> 或若非如此，<code>S1</code> 的等级优于 <code>S2</code> 的等级</div>
+<div class="t-li2"><span class="t-li">c)</span> 或若非如此，<code>S1</code> 和 <code>S2</code> 都绑定到某个引用形参，而其并非某个引用限定的成员函数的隐式对象形参，且 <code>S1</code> 绑定右值引用到右值而 <code>S2</code> 绑定左值引用到右值
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> i<span class="sy4">;</span>
+<span class="kw4">int</span> f1<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> g<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// 重载 #1</span>
+<span class="kw4">int</span> g<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 重载 #2</span>
+<span class="kw4">int</span> j <span class="sy1">=</span> g<span class="br0">(</span>i<span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// 左值 int -&gt; const int&amp; 是仅有的合法转换</span>
+<span class="kw4">int</span> k <span class="sy1">=</span> g<span class="br0">(</span>f1<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 右值 int -&gt; const int&amp;&amp; 优于 右值 int -&gt; const int&amp;</span></pre></div></div></div>
+<div class="t-li2"><span class="t-li">d)</span> 或若非如此，<code>S1</code> 和 <code>S2</code> 都绑定到引用形参，且 <code>S1</code> 绑定左值引用到函数而 <code>S2</code> 绑定右值引用到函数。
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">void</span><span class="br0">(</span><span class="sy3">&amp;</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// 重载 #1</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">void</span><span class="br0">(</span><span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 重载 #2</span>
+<span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> i1 <span class="sy1">=</span> f<span class="br0">(</span>g<span class="br0">)</span><span class="sy4">;</span>     <span class="co1">// 调用 #1</span></pre></div></div></div>
+<div class="t-li2"><span class="t-li">e)</span> 或若非如此，则 <code>S1</code> 和 <code>S2</code> 都绑定到仅在顶层 cv 限定性有别的引用形参，而 <code>S1</code> 的类型比 <code>S2</code> 的 cv 限定性<i>更少</i>。
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span> <span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 重载 #1</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> <span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// 重载 #2（均为引用）</span>
+<span class="kw4">int</span> g<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span> <span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 重载 #1</span>
+<span class="kw4">int</span> g<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>         <span class="co1">// 重载 #2</span>
+<span class="kw4">int</span> i<span class="sy4">;</span>
+<span class="kw4">int</span> j <span class="sy1">=</span> f<span class="br0">(</span>i<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 左值 i -&gt; int&amp; 优于 左值 int -&gt; const int&amp;</span>
+              <span class="co1">// 调用 f(int&amp;)</span>
+<span class="kw4">int</span> k <span class="sy1">=</span> g<span class="br0">(</span>i<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 左值 i -&gt; const int&amp; 排行为准确匹配</span>
+              <span class="co1">// 左值 i -&gt; 右值 int 排行为准确匹配</span>
+              <span class="co1">// 有歧义的重载：编译错误</span></pre></div></div></div>
+<div class="t-li2"><span class="t-li">f)</span> 或若非如此，则 S1 与 S2 仅在限定性转换有别，而 <code>S1</code> 的结果的 cv 限定是 <code>S2</code> 的结果的 cv 限定的子集
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy2">*</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span><span class="sy2">*</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> i<span class="sy4">;</span>
+<span class="kw4">int</span> j <span class="sy1">=</span> f<span class="br0">(</span><span class="sy3">&amp;</span>i<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// &amp;i -&gt; int* 优于 &amp;i -&gt; const int*，调用 f(int*)</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">4)</span> 用户定义转换序列 <code>U1</code> <i>优于</i>用户定义转换序列 <code>U2</code>，若它们调用相同的构造函数/用户定义转换函数，或以聚合初始化初始化相同的类，而任一情况下 <code>U1</code> 中的第二标准转换序列优于 <code>U2</code> 中的第二标准转换序列
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span>
+    operator <span class="kw4">short</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 用户定义转换函数</span>
+<span class="br0">}</span> a<span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// 重载 #1</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 重载 #2</span>
+<span class="kw4">int</span> i <span class="sy1">=</span> f<span class="br0">(</span>a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// A -&gt; short，后随 short -&gt; int（等级为提升）</span>
+              <span class="co1">// A -&gt; short，后随 short -&gt; float（等级为转换）</span>
+              <span class="co1">// 调用 f(int)</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">5)</span> 列表初始化序列 <code>L1</code> <i>优于</i>列表初始化序列 <code>L2</code>，若 <code>L1</code> 初始化 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a></span></span> 形参而 <code>L2</code> 不如此。
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f1<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>                                 <span class="co1">// #1</span>
+<span class="kw4">void</span> f1<span class="br0">(</span><a href="../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span><span class="kw4">long</span><span class="sy1">&gt;</span><span class="br0">)</span><span class="sy4">;</span>         <span class="co1">// #2</span>
+<span class="kw4">void</span> g1<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> f1<span class="br0">(</span><span class="br0">{</span><span class="nu0">42</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>                       <span class="co1">// 选择 #2</span>
+ 
+<span class="kw4">void</span> f2<span class="br0">(</span><a href="../utility/pair.html"><span class="kw1096">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span>, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// #3</span>
+<span class="kw4">void</span> f2<span class="br0">(</span><a href="../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// #4</span>
+<span class="kw4">void</span> g2<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> f2<span class="br0">(</span><span class="br0">{</span><span class="st0">"foo"</span>,<span class="st0">"bar"</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>              <span class="co1">// 选择 #4</span></pre></div></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14"><td>
+<div class="t-li1"><span class="t-li">6)</span> 列表初始化序列 <code>L1</code> <i>优于</i>列表初始化序列 <code>L2</code>，若对应形参是到数组的引用，而 L1 转换到“N1 个 T 的数组”，L2 转换到“N2 个 T 的数组”，而 N1 小于 N2。</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></td></tr>
+</table>
+<p>若两个转换序列因为拥有相同等级而不可辨别，则应用下列额外规则：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 涉及指针到 bool 或成员指针到 bool 的转换劣于不涉及这些的转换。</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<div class="t-li1"><span class="t-li">2)</span> 如果底层类型固定的<a href="enum.html" title="cpp/language/enum">枚举</a>的底层类型与经提升后的底层类型不同，则提升到其底层类型的转换优于提升到提升后底层类型的转换。
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> num <span class="sy4">:</span> <span class="kw4">char</span> <span class="br0">{</span> one <span class="sy1">=</span> <span class="st0">'0'</span> <span class="br0">}</span><span class="sy4">;</span>
+<a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> num<span class="sy4">::</span><span class="me2">one</span><span class="sy4">;</span> <span class="co1">// '0'，非 48</span></pre></div></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<div class="t-li1"><span class="t-li">3)</span> 派生类指针到基类指针的转换优于派生类指针到 void 指针的转换，而基类指针到 void 的转换优于派生类指针到 void 指针的转换。</div>
+<div class="t-li1"><span class="t-li">4)</span> 若 <code>Mid</code>（直接或间接）派生自 <code>Base</code>，而 <code>Derived</code>（直接或间接）派生自 <code>Mid</code>，则</div>
+<div class="t-li2"><span class="t-li">a)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived<span class="sy2">*</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Mid<span class="sy2">*</span></span></span> 优于 <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived<span class="sy2">*</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy2">*</span></span></span></div>
+<div class="t-li2"><span class="t-li">b)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived</span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Mid<span class="sy3">&amp;</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp">Mid<span class="sy3">&amp;&amp;</span></span></span> 优于 <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived</span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy3">&amp;</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy3">&amp;&amp;</span></span></span></div>
+<div class="t-li2"><span class="t-li">c)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy4">::</span><span class="sy2">*</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Mid<span class="sy4">::</span><span class="sy2">*</span></span></span> 优于 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy4">::</span><span class="sy2">*</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived<span class="sy4">::</span><span class="sy2">*</span></span></span></div>
+<div class="t-li2"><span class="t-li">d)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived</span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Mid</span></span> 优于 <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived</span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base</span></span></div>
+<div class="t-li2"><span class="t-li">e)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">Mid<span class="sy2">*</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy2">*</span></span></span> 优于 <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived<span class="sy2">*</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy2">*</span></span></span></div>
+<div class="t-li2"><span class="t-li">f)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">Mid</span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy3">&amp;</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy3">&amp;&amp;</span></span></span> 优于 <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived</span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy3">&amp;</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy3">&amp;&amp;</span></span></span></div>
+<div class="t-li2"><span class="t-li">g)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">Mid<span class="sy4">::</span><span class="sy2">*</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived<span class="sy4">::</span><span class="sy2">*</span></span></span> 优于 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base<span class="sy4">::</span><span class="sy2">*</span></span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived<span class="sy4">::</span><span class="sy2">*</span></span></span></div>
+<div class="t-li2"><span class="t-li">h)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">Mid</span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base</span></span> 优于 <span class="t-c"><span class="mw-geshi cpp source-cpp">Derived</span></span> 到 <span class="t-c"><span class="mw-geshi cpp source-cpp">Base</span></span></div>
+<p>对有歧义的转换序列的分级与用户定义转换序列相同，因为一个实参的多个转换序列仅若它们涉及不同的用户定义转换时才能存在：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> B<span class="sy4">;</span>
+<span class="kw1">class</span> A <span class="br0">{</span> A <span class="br0">(</span>B<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 转换构造函数</span>
+<span class="kw1">class</span> B <span class="br0">{</span> operator A <span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 用户定义转换函数</span>
+<span class="kw1">class</span> C <span class="br0">{</span> C <span class="br0">(</span>B<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 转换构造函数</span>
+<span class="kw4">void</span> f<span class="br0">(</span>A<span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span> <span class="co1">// 重载 #1</span>
+<span class="kw4">void</span> f<span class="br0">(</span>C<span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span> <span class="co1">// 重载 #2</span>
+B b<span class="sy4">;</span>
+f<span class="br0">(</span>b<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// B -&gt; A 经由构造函数或 B -&gt; A 经由函数（有歧义转换）</span>
+      <span class="co1">// b -&gt; C 经由构造函数（用户定义转换）</span>
+      <span class="co1">// 重载 #1 和 #2 的转换不可辨别；编译失败</span></pre></div></div>
+<h3><span class="mw-headline" id=".E5.88.97.E8.A1.A8.E5.88.9D.E5.A7.8B.E5.8C.96.E4.B8.AD.E7.9A.84.E9.9A.90.E5.BC.8F.E8.BD.AC.E6.8D.A2.E5.BA.8F.E5.88.97">列表初始化中的隐式转换序列</span></h3>
+<p>在<a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a>中，实参是 <span class="t-spar">花括号初始化器列表</span>，但它不是表达式，故到就重载决议而言的形参类型的隐式转换序列以下列规则决定：
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14"><td>
+<ul><li> 若形参类型是某聚合体 <code>X</code>，而初始化器列表确切地由一个同类型或其派生类（可有 cv 限定）的元素组成，则隐式转换序列是将该元素转换到形参类型所要求的序列。
+</li><li> 否则，若形参类型是到字符数组的引用，而初始化器列表拥有单个元素，元素为类型适当的字符串字面量，则隐式转换序列为恒等转换。
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></td></tr>
+</table>
+<ul><li> 若形参类型为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>X<span class="sy1">&gt;</span></span></span>，且存在从每个初始化器列表元素到 <code>X</code> 的非窄化隐式转换，则就重载决议而言的隐式转换序列是所需的最坏转换。若 <span class="t-spar">花括号初始化器列表</span> 为空，则转换序列为恒等转换。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span>
+    A<span class="br0">(</span><a href="../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">)</span><span class="sy4">;</span>                    <span class="co1">// #1</span>
+    A<span class="br0">(</span><a href="../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>complex<span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;&gt;</span><span class="br0">)</span><span class="sy4">;</span>           <span class="co1">// #2</span>
+    A<span class="br0">(</span><a href="../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">)</span><span class="sy4">;</span>               <span class="co1">// #3</span>
+<span class="br0">}</span><span class="sy4">;</span>
+A a<span class="br0">{</span><span class="nu16">1.0</span>,<span class="nu16">2.0</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 选择 #1（右值 double -&gt; double：恒等转换）</span>
+<span class="kw4">void</span> g<span class="br0">(</span>A<span class="br0">)</span><span class="sy4">;</span>
+g<span class="br0">(</span><span class="br0">{</span><span class="st0">"foo"</span>,<span class="st0">"bar"</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 选择 #3（左值 const char[4] -&gt; std::string：用户定义转换）</span></pre></div></div>
+<ul><li> 否则，若形参类型为“N 个 T 的数组”（这只对到数组的引用发生），则<span class="t-rev-inl t-since-cxx14"><span>初始化器列表必须有 N 或更少的元素，而</span> <span><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></span></span>所用的隐式转换序列是将列表<span class="t-rev-inl t-since-cxx14"><span>（或空花括号对，若 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">{</span><span class="br0">}</span></span></span> 小于 N）</span> <span><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></span></span>的每个元素转换到 <code>T</code> 所需的最坏隐式转换序列。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">typedef</span> <span class="kw4">int</span> IA<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">void</span> h<span class="br0">(</span><span class="kw4">const</span> IA<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+h<span class="br0">(</span><span class="br0">{</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>        <span class="co1">// int -&gt; int 恒等转换</span></pre></div></div>
+<ul><li> 否则，若形参类型为非聚合类类型 <code>X</code>，则重载决议选取 X 的构造函数 C 以从实参初始化器列表初始化
+</li></ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14"><td>
+<dl><dd><ul><li> 若 C 是非初始化器列表构造函数，而该初始化器列表拥有单个元素，其类型为可为 cv 限定的 X，则隐式转换序列具有准确匹配等级。若该初始化器列表拥有单个元素，其具有可有 cv 限定的派生自 X 的类型，则隐式转换序列具有转换等级。（注意其与聚合体的区别：聚合体在考虑<a href="aggregate_initialization.html" title="cpp/language/aggregate initialization">聚合初始化</a>前直接从单元素初始化器列表进行初始化，而非聚合体在考虑任何其他构造函数之前考虑 initializer_list 构造函数）
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></td></tr>
+</table>
+<dl><dd><ul><li> <span class="t-rev-inl t-since-cxx14"><span>否则，</span> <span><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></span></span>隐式转换序列是以恒等转换为第二标准转换序列的用户定义转换序列。
+</li></ul>
+</dd></dl>
+<p>若多个构造函数可行，但无一优于其他，则隐式转换序列是有歧义的转换序列。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span> A<span class="br0">(</span><a href="../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span>A<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="br0">{</span> B<span class="br0">(</span><span class="kw4">int</span>, <span class="kw4">double</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> g<span class="br0">(</span>B<span class="br0">)</span><span class="sy4">;</span>
+g<span class="br0">(</span><span class="br0">{</span><span class="st0">'a'</span>,<span class="st0">'b'</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// 调用 g(B(int,double))，用户定义转换</span>
+<span class="co1">// g({1.0, 1,0}); // 错误：double-&gt;int 为窄化，在列表初始化中不允许</span>
+<span class="kw4">void</span> f<span class="br0">(</span>B<span class="br0">)</span><span class="sy4">;</span>
+<span class="co1">// f({'a','b'}); // f(A) 与 f(B) 均为用户定义转换</span></pre></div></div>
+<ul><li> 否则，若形参类型为可按照<a href="aggregate_initialization.html" title="cpp/language/aggregate initialization">聚合初始化</a>从初始化器列表初始化的聚合体，则隐式转换序列是以恒等转换为第二标准转换序列的用户定义转换序列。
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span> <span class="kw4">int</span> m1<span class="sy4">;</span> <span class="kw4">double</span> m2<span class="sy4">;</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span>A<span class="br0">)</span><span class="sy4">;</span>
+f<span class="br0">(</span><span class="br0">{</span><span class="st0">'a'</span>,<span class="st0">'b'</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// 调用 f(A(int,double))，用户定义转换</span></pre></div></div>
+<ul><li> 否则，若形参为引用，则应用引用初始化规则
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span> <span class="kw4">int</span> m1<span class="sy4">;</span> <span class="kw4">double</span> m2<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">const</span> A<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+f<span class="br0">(</span><span class="br0">{</span><span class="st0">'a'</span>,<span class="st0">'b'</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// 创建临时量，调用 f(A(int,double))。用户定义转换</span></pre></div></div>
+<ul><li> 否则，若形参类型不是类，且初始化器列表拥有一个元素，则隐式转换序列为将该元素转换到形参类型所要求者。
+</li><li> 否则，若形参类型不是类，且初始化器列表无元素，则隐式转换序列为恒等转换。
+</li></ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<p>若实参是指派初始化器列表，则仅当形参拥有聚合类型，而该类型能按照<a href="aggregate_initialization.html" title="cpp/language/aggregate initialization">聚合初始化</a>的规则从初始化器列表初始化时，转换才可行。该情况下隐式转换序列是以恒等转换为第二标准转换序列的用户定义转换序列。
+</p><p>若在重载决议后，聚合体各成员的声明顺序与所选择的重载不匹配，则形参的初始化将为非良构。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span> <span class="kw4">int</span> x, y<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="br0">{</span> <span class="kw4">int</span> y, x<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span>A a, <span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// #1</span>
+<span class="kw4">void</span> f<span class="br0">(</span>B b, ...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// #2</span>
+<span class="kw4">void</span> g<span class="br0">(</span>A a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// #3</span>
+<span class="kw4">void</span> g<span class="br0">(</span>B b<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// #4</span>
+ 
+<span class="kw4">void</span> h<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    f<span class="br0">(</span><span class="br0">{</span>.<span class="me1">x</span> <span class="sy1">=</span> <span class="nu0">1</span>, .<span class="me1">y</span> <span class="sy1">=</span> <span class="nu0">2</span><span class="br0">}</span>, <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK：调用 #1</span>
+    f<span class="br0">(</span><span class="br0">{</span>.<span class="me1">y</span> <span class="sy1">=</span> <span class="nu0">2</span>, .<span class="me1">x</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="br0">}</span>, <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误：选择 #1，初始化由于不匹配的成员顺序失败</span>
+    g<span class="br0">(</span><span class="br0">{</span>.<span class="me1">x</span> <span class="sy1">=</span> <span class="nu0">1</span>, .<span class="me1">y</span> <span class="sy1">=</span> <span class="nu0">2</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// 错误：在 #3 和 #4 间有歧义</span>
+<span class="br0">}</span></pre></div></div>
+<p><br>
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E7.BC.BA.E9.99.B7.E6.8A.A5.E5.91.8A">缺陷报告</span></h3>
+<p>下列更改行为的缺陷报告追溯地应用于以前出版的 C++ 标准。
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tr>
+<th> DR
+</th>
+<th> 应用于
+</th>
+<th> 出版时的行为
+</th>
+<th> 正确行为
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#1601">CWG 1601</a>
+</td>
+<td> C++11
+</td>
+<td> 从 enum 转换到其底层类型不偏好固定的底层类型
+</td>
+<td> 底层类型比提升后的该类型更受偏好
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#1467">CWG 1467</a>
+</td>
+<td> C++14
+</td>
+<td> 略去了聚合体和数组的同类型列表初始化
+</td>
+<td> 定义这种初始化
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#2137">CWG 2137</a>
+</td>
+<td> C++14
+</td>
+<td> 从 {X} 列表初始化 X 时，初始化器列表构造函数输给复制构造函数
+</td>
+<td> 非聚合体首先考虑初始化器列表
+</td></tr></table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<ul><li> <a href="lookup.html" title="cpp/language/lookup">名字查找</a> 
+</li><li> <a href="adl.html" title="cpp/language/adl">实参依赖查找</a> 
+</li><li> <a href="template_argument_deduction.html" title="cpp/language/template argument deduction">模板实参推导</a>
+</li><li> <a href="sfinae.html" title="cpp/language/sfinae">SFINAE</a>
+</li></ul>
+<h3><span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h3>
+<div class="t-ref-std-c++17">
+<ul><li> C++17 standard (ISO/IEC 14882:2017): 
+</li></ul>
+<dl><dd><ul><li> 16.3 Overload resolution [over.match]
+</li></ul>
+</dd></dl>
+</div>
+<div class="t-ref-std-c++14">
+<ul><li> C++14 standard (ISO/IEC 14882:2014): 
+</li></ul>
+<dl><dd><ul><li> 13.3 Overload resolution [over.match]
+</li></ul>
+</dd></dl>
+</div>
+<div class="t-ref-std-c++11">
+<ul><li> C++11 standard (ISO/IEC 14882:2011): 
+</li></ul>
+<dl><dd><ul><li> 13.3 Overload resolution [over.match]
+</li></ul>
+</dd></dl>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 5926/1000000
+Preprocessor generated node count: 10629/1000000
+Post‐expand include size: 74744/2097152 bytes
+Template argument size: 30496/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:7804-0!*!0!!zh!*!zh!* and timestamp 20190819122700 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/overload_resolution&amp;oldid=62023">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/overload_resolution&amp;oldid=62023</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/overload_resolution">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年8月11日 (星期日) 02:00。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过7,850次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 6.000 secs. -->
+	</body>
+<!-- Cached 20190819122700 -->
+</html>

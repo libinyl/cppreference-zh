@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>结点把柄 (C++17)</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/container/node_handle","wgTitle":"cpp/container/node handle","wgCurRevisionId":58444,"wgArticleId":9312,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["conditionally noexcept"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/container/node_handle","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_container_node_handle skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">结点把柄 <span class="t-mark-rev t-since-cxx17">(C++17)</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../container.html" title="cpp/container">container</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../container.html" title="cpp/container">容器库</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="deque.html" title="cpp/container/deque"><span class="t-lines"><span>deque</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="forward_list.html" title="cpp/container/forward list"><span class="t-lines"><span>forward_list</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="list.html" title="cpp/container/list"><span class="t-lines"><span>list</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="set.html" title="cpp/container/set"><span class="t-lines"><span>set</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="multiset.html" title="cpp/container/multiset"><span class="t-lines"><span>multiset</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="map.html" title="cpp/container/map"><span class="t-lines"><span>map</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="multimap.html" title="cpp/container/multimap"><span class="t-lines"><span>multimap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unordered_set.html" title="cpp/container/unordered set"><span class="t-lines"><span>unordered_set</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unordered_multiset.html" title="cpp/container/unordered multiset"><span class="t-lines"><span>unordered_multiset</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unordered_map.html" title="cpp/container/unordered map"><span class="t-lines"><span>unordered_map</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unordered_multimap.html" title="cpp/container/unordered multimap"><span class="t-lines"><span>unordered_multimap</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="stack.html" title="cpp/container/stack"><span class="t-lines"><span>stack</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="queue.html" title="cpp/container/queue"><span class="t-lines"><span>queue</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="priority_queue.html" title="cpp/container/priority queue"><span class="t-lines"><span>priority_queue</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="span.html" title="cpp/container/span"><span class="t-lines"><span>span</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="coMULTI">/*unspecified*/</span><span class="sy1">&gt;</span><br>
+<span class="kw1">class</span> <span class="coMULTI">/*node-handle*/</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span> </td>
+</tr> 
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>关联容器 <span class="t-lc"><a href="set.html" title="cpp/container/set">std::set</a></span> 、 <span class="t-lc"><a href="map.html" title="cpp/container/map">std::map</a></span> 、 <span class="t-lc"><a href="multiset.html" title="cpp/container/multiset">std::multiset</a></span> 、 <span class="t-lc"><a href="multimap.html" title="cpp/container/multimap">std::multimap</a></span> 、 <span class="t-lc"><a href="unordered_set.html" title="cpp/container/unordered set">std::unordered_set</a></span> 、 <span class="t-lc"><a href="unordered_map.html" title="cpp/container/unordered map">std::unordered_map</a></span> 、 <span class="t-lc"><a href="unordered_multiset.html" title="cpp/container/unordered multiset">std::unordered_multiset</a></span> 、 <span class="t-lc"><a href="unordered_multimap.html" title="cpp/container/unordered multimap">std::unordered_multimap</a></span> 是基于结点的数据结构，而且可用称作<i>结点把柄</i>的未指定类型的对象释出其结点。
+</p><p>结点把柄是仅移动类型，它占有元素（ <code>value_type</code> ）并提供对元素的访问，并提供对元素关键部分（ <code>key_type</code> ）和被映射部分（ <code>mapped_type</code> ）的非 const 访问。若允许在持有结点时析构结点把柄，则用容器的分配器正确地析构结点。结点把柄含有容器分配器的副本，这是结点把柄能在容器生存期外存在所必须的。
+</p><p>结点把柄的准确类型（此处显示为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*node-handle*/</span></span></span> ）是未指定的，但每个容器都暴露其结点把柄类型为成员 <code>node_type</code> 。
+</p><p>结点把柄能用于在二个有相同关键、值和分配器类型（忽略比较或哈希/相等性）的关联容器间传递结点的所有权，而无需调用任何容器元素上的复制/移动操作（这种操作被称为“接合”）。在唯一和非唯一容器间传递也是容许的：来自 <span class="t-lc"><a href="map.html" title="cpp/container/map">std::map</a></span> 的结点把柄能插入 <span class="t-lc"><a href="multimap.html" title="cpp/container/multimap">std::multimap</a></span> ，但不能插入 <span class="t-lc"><a href="unordered_map.html" title="cpp/container/unordered map">std::unordered_map</a></span> 或 <span class="t-lc"><a href="set.html" title="cpp/container/set">std::set</a></span> 。
+</p><p>结点把柄可以为空，该情况下它不保有元素和分配器。默认构造和被移动的结点把柄是空的。另外，空的结点把柄可由对容器成员函数 <code>extract</code> 的失败调用产生。
+</p><p>若成功将元素插入容器，则为结点把柄所占有时获得的到该元素的引用或指针会被非法化。
+</p><p>对于所有 <code>key_type</code> 为 <code>K</code> 而 <code>mapped_type</code> 为 <code>T</code> 的映射容器（ <span class="t-lc"><a href="map.html" title="cpp/container/map">std::map</a></span> 、 <span class="t-lc"><a href="multimap.html" title="cpp/container/multimap">std::multimap</a></span> 、 <span class="t-lc"><a href="unordered_map.html" title="cpp/container/unordered map">std::unordered_map</a></span> 及 <span class="t-lc"><a href="unordered_multimap.html" title="cpp/container/unordered multimap">std::unordered_multimap</a></span> ），若对 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/pair.html"><span class="kw1096">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>K, T<span class="sy1">&gt;</span></span></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/pair.html"><span class="kw1096">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> K, T<span class="sy1">&gt;</span></span></span> 存在 <span class="t-lc"><a href="../utility/pair.html" title="cpp/utility/pair">std::pair</a></span> 的用户定义特化，则涉及结点把柄的操作行为未定义。
+</p>
+<h3><span class="mw-headline" id=".E6.88.90.E5.91.98.E7.B1.BB.E5.9E.8B">成员类型</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-sep">
+<td colspan="2">  
+</td></tr>
+<tr class="t-dsc-hitem">
+<td> 成员类型
+</td>
+<td> 定义
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <code>key_type</code><span class="t-mark">(仅 map 容器)</span>
+</td>
+<td> 存储于结点的关键</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>mapped_type</code><span class="t-mark">(仅 map 容器)</span>
+</td>
+<td> 存储于结点的元素的被映射部分</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>value_type</code><span class="t-mark">(仅 set 容器)</span>
+</td>
+<td>  存储于结点的元素</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>allocator_type</code>
+</td>
+<td>  销毁元素时使用的分配器</td></tr>
+</table>
+<h3><span class="mw-headline" id=".E6.88.90.E5.91.98.E5.87.BD.E6.95.B0">成员函数</span></h3>
+<div class="t-member">
+<h2> <span class="mw-headline" id=".E6.9E.84.E9.80.A0.E5.87.BD.E6.95.B0">构造函数</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> <span class="coMULTI">/*node-handle*/</span><span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td> (1) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*node-handle*/</span><span class="br0">(</span><span class="coMULTI">/*node-handle*/</span><span class="sy3">&amp;&amp;</span> nh<span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<div class="t-li1"><span class="t-li">1)</span> 默认构造函数初始化结点把柄为空状态。</div>
+<div class="t-li1"><span class="t-li">2)</span> 移动构造函数从 <code>nh</code> 取走容器元素所有权，移动构造成员分配器，并令 <code>nh</code> 留在空状态。</div>
+<h3> <span class="mw-headline" id=".E5.8F.82.E6.95.B0">参数</span></h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  nh
+</td>
+<td> -
+</td>
+<td> 同类型的结点把柄（不必属于相同容器）
+</td></tr></table>
+<h3> <span class="mw-headline" id=".E6.B3.A8.E6.84.8F">注意</span></h3>
+<p>结点把柄是仅移动的，不定义复制构造函数。
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="operator.3D"> operator=</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*node-handle*/</span><span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span><span class="coMULTI">/*node-handle*/</span><span class="sy3">&amp;&amp;</span> nh<span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<ul><li> 若结点把柄非空， 
+</li></ul>
+<dl><dd><ul><li> 则通过调用 <code>std::allocator_traits&lt;allocator_type&gt;::destroy</code> ，销毁此结点把柄所管理的容器元素对象中的 <code>value_type</code> 子对象；
+</li><li> 通过调用 <code>allocator_traits&lt;allocator_type&gt;::rebind_traits&lt;container-node-type&gt;::deallocate</code> 解分配容器元素；
+</li></ul>
+</dd></dl>
+<ul><li> 从 <code>nh</code> 获得容器元素的所有权；
+</li><li> 若结点把柄为空（从而不含分配器）或若 <code>allocator_traits&lt;allocator_type&gt;::propagate_on_container_move_assignment</code> 为 <code>true</code> ，则从 <code>nh</code> 移动赋值分配器；
+</li><li> 设置 <code>nh</code> 为空状态。
+</li></ul>
+<p>若结点非空且 <code>allocator_traits&lt;allocator_type&gt;::propagate_on_container_move_assignment</code> 为 <code>false</code> 且分配器比较不相等，则行为未定义。
+</p>
+<h3> <span class="mw-headline" id=".E5.8F.82.E6.95.B0_2">参数</span></h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  nh
+</td>
+<td> -
+</td>
+<td> 同类型的结点把柄（不必属于相同容器）
+</td></tr></table>
+<h3> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E">返回</span></h3>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span>
+</p>
+<h3> <span class="mw-headline" id=".E5.BC.82.E5.B8.B8">异常</span></h3>
+<p>（无）
+</p>
+<h3> <span class="mw-headline" id=".E6.B3.A8.E6.84.8F_2">注意</span></h3>
+<p>结点把柄是仅移动的，不定义复制赋值。
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id=".E6.9E.90.E6.9E.84.E5.87.BD.E6.95.B0">析构函数</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp">~<span class="coMULTI">/*node-handle*/</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<ul><li> 若结点把柄非空, 
+</li></ul>
+<dl><dd><ul><li>  则通过调用 <code>std::allocator_traits&lt;allocator_type&gt;::destroy</code> ，销毁此结点把柄所管理的容器元素对象中的 <code>value_type</code> 子对象；
+</li><li> 通过调用 <code>allocator_traits&lt;allocator_type&gt;::rebind_traits&lt;container-node-type&gt;::deallocate</code> 解分配容器元素。
+</li></ul>
+</dd></dl>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="empty"> empty</span></h2>
+<table class="t-dcl-begin"><tbody>
+</tbody>
+<tbody class="t-dcl-rev">
+<tr class="t-dcl t-until-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> empty<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-until-cxx20">(C++20 前)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="br0">[</span><span class="br0">[</span>nodiscard<span class="br0">]</span><span class="br0">]</span> <span class="kw4">bool</span> empty<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span> </td>
+</tr>
+</tbody><tbody>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>若结点把柄为空则返回 <code>true</code> ，否则返回 <code>false</code> 。
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="operator_bool"> operator bool</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> operator <span class="kw4">bool</span><span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>若结点把柄为空则转换为 <code>false</code> ，否则返回 <code>true</code> 。
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="get_allocator"> get_allocator</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp">allocator_type get_allocator<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>返回存储的分配器（它是源容器的分配器副本）的副本。若结点把柄为空则行为未定义。
+</p>
+<h3> <span class="mw-headline" id=".E5.BC.82.E5.B8.B8_2">异常</span></h3>
+<p>（无）
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="value"> value </span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp">value_type<span class="sy3">&amp;</span> value<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark">(仅 set 容器)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>返回到此结点把柄所管理的容器元素对象中的 <code>value_type</code> 子对象的引用。若结点把柄为空则行为未定义。
+</p>
+<h3> <span class="mw-headline" id=".E5.BC.82.E5.B8.B8_3">异常</span></h3>
+<p>（无）
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="key"> key </span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp">key_type<span class="sy3">&amp;</span> key<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark">(仅 map 容器)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>返回到此结点把柄所管理的容器元素对象中的 <code>value_type</code> 子对象的 <code>key_type</code> 成员的非 const 引用。若结点把柄为空则行为未定义。
+</p>
+<h3> <span class="mw-headline" id=".E5.BC.82.E5.B8.B8_4">异常</span></h3>
+<p>（无）
+</p>
+<h3> <span class="mw-headline" id=".E6.B3.A8.E6.84.8F_3">注意</span></h3>
+<p>此函数使得能够修改从映射释出的结点的关键，再重插入到映射，而无需复制或移动元素。
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="mapped"> mapped </span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp">mapped_type<span class="sy3">&amp;</span> mapped<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark">(仅 map 容器)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>返回到此结点把柄所管理的容器元素对象中的 <code>value_type</code> 子对象的 <code>mapped_type</code> 成员的引用。若结点把柄为空则行为未定义。
+</p>
+<h3> <span class="mw-headline" id=".E5.BC.82.E5.B8.B8_5">异常</span></h3>
+<p>（无）
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="swap"> swap </span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> swap<span class="br0">(</span><span class="coMULTI">/*node-handle*/</span><span class="sy3">&amp;</span> nh<span class="br0">)</span> <span class="kw1">noexcept</span><span class="br0">(</span><span class="coMULTI">/* see below */</span><span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<ul><li> 交换容器结点的所有权；
+</li><li> 若一个结点为空或两个结点均为非空且 <code>std::allocator_traits&lt;allocator_type&gt;::propagate_on_container_swap</code> 为 <code>true</code> ，则一同交换分配器。
+</li></ul>
+<p>若两个结点均为非空且 <code>allocator_traits&lt;allocator_type&gt;::propagate_on_container_swap</code> 为 <code>false</code> 而分配器比较不相等，则行为未定义。
+</p>
+<h3> <span class="mw-headline" id=".E5.BC.82.E5.B8.B8_6">异常</span></h3>
+<div class="t-noexcept-full"><a href="../language/noexcept_spec.html" title="cpp/language/noexcept spec"><tt>noexcept</tt></a> 规定：  
+<div class="t-noexcept-box"><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span><span class="br0">(</span><a href="../memory/allocator_traits.html"><span class="kw701">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>allocator_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">propagate_on_container_swap</span><span class="sy4">::</span><span class="me2">value</span> <span class="sy3">||</span><br>
+ <a href="../memory/allocator_traits.html"><span class="kw701">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>allocator_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">is_always_equal</span><span class="sy4">::</span><span class="me2">value</span><span class="br0">)</span></span></span></div></div>
+</div>
+<h3><span class="mw-headline" id=".E9.9D.9E.E6.88.90.E5.91.98.E5.87.BD.E6.95.B0">非成员函数</span></h3>
+<div class="t-member">
+<h2> <span class="mw-headline" id="swap_2"> swap </span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">friend</span> <span class="kw4">void</span> swap<span class="br0">(</span><span class="coMULTI">/*node-handle*/</span><span class="sy3">&amp;</span> x, <span class="coMULTI">/*node-handle*/</span><span class="sy3">&amp;</span> y<span class="br0">)</span> <span class="kw1">noexcept</span><span class="br0">(</span><span class="kw1">noexcept</span><span class="br0">(</span>x.<span class="me1">swap</span><span class="br0">(</span>y<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>等效地执行 <span class="t-c"><span class="mw-geshi cpp source-cpp">x.<span class="me1">swap</span><span class="br0">(</span>y<span class="br0">)</span></span></span> 。
+</p>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 4328/1000000
+Preprocessor generated node count: 9268/1000000
+Post‐expand include size: 77023/2097152 bytes
+Template argument size: 19417/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:9312-0!*!0!!zh!*!zh!* and timestamp 20190823093104 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/container/node_handle&amp;oldid=58444">https://zh.cppreference.com/mwiki/index.php?title=cpp/container/node_handle&amp;oldid=58444</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/container/node_handle">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2018年11月25日 (星期日) 06:24。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过1,273次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 2.021 secs. -->
+	</body>
+<!-- Cached 20190823093105 -->
+</html>

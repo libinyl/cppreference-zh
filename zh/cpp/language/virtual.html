@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>virtual 函数说明符</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/virtual","wgTitle":"cpp/language/virtual","wgCurRevisionId":61818,"wgArticleId":2768,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/virtual","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_virtual skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">virtual 函数说明符</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="classes.html" title="cpp/language/classes">类</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5">概述</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="classes.html" title="cpp/language/classes">综述</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"><code>class</code>/<code>struct</code> 类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"><code>union</code> 类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="injected-class-name.html" title="cpp/language/injected-class-name">注入类名</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5">成员</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html" title="cpp/language/data members">数据成员</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static.html" title="cpp/language/static">静态成员</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="this.html" title="cpp/language/this"><code>this</code> 指针</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nested_classes.html" title="cpp/language/nested types">嵌套类</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">成员模板</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bit_field.html" title="cpp/language/bit field">位域</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration"><code>using</code> 声明</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_functions.html" title="cpp/language/member functions">成员函数</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="access.html" title="cpp/language/access">成员访问指定符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constructor.html" title="cpp/language/initializer list">构造函数与成员初始化器列表</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html#.E6.88.90.E5.91.98.E5.88.9D.E5.A7.8B.E5.8C.96" title="cpp/language/data members">默认成员初始化器</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="friend.html" title="cpp/language/friend"><code>friend</code> 指定符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"><code>explicit</code> 指定符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="converting_constructor.html" title="cpp/language/converting constructor">转换构造函数</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5">特殊成员函数</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_constructor.html" title="cpp/language/default constructor">默认构造函数</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_constructor.html" title="cpp/language/copy constructor">复制构造函数</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_constructor.html" title="cpp/language/move constructor">移动构造函数</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_assignment.html" title="cpp/language/copy assignment">复制赋值运算符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_assignment.html" title="cpp/language/move assignment">移动赋值运算符</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="destructor.html" title="cpp/language/destructor">析构函数</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5">继承</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="derived_class.html" title="cpp/language/derived class">基与派生类</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ebo.html" title="cpp/language/ebo">空基类优化</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">虚成员函数</strong></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="abstract_class.html" title="cpp/language/abstract class">纯虚函数与抽象类</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="override.html" title="cpp/language/override"><tt>override</tt></a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="final.html" title="cpp/language/final"><tt>final</tt></a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">virtual</span></span></span> 说明符指定非静态<a href="member_functions.html" title="cpp/language/member functions">成员函数</a>为<i>虚</i>函数并支持动态调用派发。它只能在非静态成员函数的首个声明（即当它于类定义中声明时）的 <span class="t-spar">声明说明符序列</span> 中出现。
+</p>
+<h3><span class="mw-headline" id=".E8.A7.A3.E9.87.8A">解释</span></h3>
+<p>虚函数是可在派生类中覆盖其行为的成员函数。与非虚函数相反，即使没有关于该类实际类型的编译时信息，仍然保留被覆盖的行为。当使用到基类的指针或引用来处理派生类时，对被覆盖的虚函数的调用，将会调用定义于派生类中的行为。当使用<a href="lookup.html" title="cpp/language/lookup">有限定名字查找</a>（即函数名出现在作用域解析运算符 <code>::</code> 的右侧）时，此行为被抑制。
+</p>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw1">struct</span> Base <span class="br0">{</span>
+   <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+       <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"base<span class="es1">\n</span>"</span><span class="sy4">;</span>
+   <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> Derived <span class="sy4">:</span> Base <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> override <span class="br0">{</span> <span class="co1">// 'override' 可选</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"derived<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    Base b<span class="sy4">;</span>
+    Derived d<span class="sy4">;</span>
+ 
+    <span class="co1">// 通过引用调用虚函数</span>
+    Base<span class="sy3">&amp;</span> br <span class="sy1">=</span> b<span class="sy4">;</span> <span class="co1">// br 的类型是 Base&amp;</span>
+    Base<span class="sy3">&amp;</span> dr <span class="sy1">=</span> d<span class="sy4">;</span> <span class="co1">// dr 的类型也是 Base&amp;</span>
+    br.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 打印 "base"</span>
+    dr.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 打印 "derived"</span>
+ 
+    <span class="co1">// 通过指针调用虚函数</span>
+    Base<span class="sy2">*</span> bp <span class="sy1">=</span> <span class="sy3">&amp;</span>b<span class="sy4">;</span> <span class="co1">// bp 的类型是 Base*</span>
+    Base<span class="sy2">*</span> dp <span class="sy1">=</span> <span class="sy3">&amp;</span>d<span class="sy4">;</span> <span class="co1">// dp 的类型也是 Base*</span>
+    bp<span class="sy2">-</span><span class="sy1">&gt;</span>f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 打印 "base"</span>
+    dp<span class="sy2">-</span><span class="sy1">&gt;</span>f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 打印 "derived"</span>
+ 
+    <span class="co1">// 非虚函数调用</span>
+    br.<span class="me1">Base</span><span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 打印 "base"</span>
+    dr.<span class="me1">Base</span><span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 打印 "base"</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<h3><span class="mw-headline" id=".E7.BB.86.E8.8A.82">细节</span></h3>
+<p>若某个成员函数 <code>vf</code> 在类 <code>Base</code> 中被声明为 <code>virtual</code>，且某个直接或间接派生于 <code>Base</code> 的类 <code>Derived</code> 拥有一个下列几项与之相同的成员函数声明
+</p>
+<ul><li> 名字
+</li><li> 形参列表（但非返回类型）
+</li><li> cv 限定符
+</li><li> 引用限定符
+</li></ul>
+<p>则类 <code>Derived</code> 中的此函数亦为<i>虚</i>函数（无论其声明中是否使用关键词 <code>virtual</code>）并<i>覆盖</i> Base::vf（无论其声明中是否使用单词 <code>override</code>）。
+</p><p>要覆盖的 <code>Base::vf</code> 不需要可见（可声明为 private，或用私有继承继承）。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> B <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> do_f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 私有成员</span>
+ <span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> do_f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 公开接口</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> <span class="kw1">public</span> B <span class="br0">{</span>
+    <span class="kw4">void</span> do_f<span class="br0">(</span><span class="br0">)</span> override<span class="sy4">;</span> <span class="co1">// 覆盖 B::do_f</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    D d<span class="sy4">;</span>
+    B<span class="sy2">*</span> bp <span class="sy1">=</span> <span class="sy3">&amp;</span>d<span class="sy4">;</span>
+    bp<span class="sy2">-</span><span class="sy1">&gt;</span>f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 内部调用 D::do_f();</span>
+<span class="br0">}</span></pre></div></div>
+<p>每个虚函数都有其<i>最终覆盖函数</i>，它是进行虚函数调用时所执行的函数。基类 <code>Base</code> 的虚成员函数 <code>vf</code> 是最终覆盖函数，除非派生类声明或（通过多重继承）继承了覆盖 <code>vf</code> 的另一个函数。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span> <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>     <span class="co1">// A::f 是虚函数</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> A <span class="br0">{</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>         <span class="co1">// B::f 覆盖 A::f in B</span>
+<span class="kw1">struct</span> C <span class="sy4">:</span> <span class="kw1">virtual</span> B <span class="br0">{</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// C::f 覆盖 A::f in C</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> <span class="kw1">virtual</span> B <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// D 不引入覆盖函数，B::f 在 D 中为最终</span>
+<span class="kw1">struct</span> E <span class="sy4">:</span> C, D  <span class="br0">{</span>       <span class="co1">// E 不引入覆盖函数，C::f 在 E 中为最终</span>
+    <span class="kw1">using</span> A<span class="sy4">::</span><span class="me2">f</span><span class="sy4">;</span> <span class="co1">// 非函数声明，仅令 A::f 能为查找所见</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+   E e<span class="sy4">;</span>
+   e.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// 虚调用调用 C::f，e 中的最终覆盖函数</span>
+   e.<span class="me1">E</span><span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 非虚调用调用 A::f，它在 E 中可见</span>
+<span class="br0">}</span></pre></div></div>
+<p>若一个函数拥有多于一个最终覆盖函数，则程序非良构：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> VB1 <span class="sy4">:</span> <span class="kw1">virtual</span> A <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 覆盖 A::f</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> VB2 <span class="sy4">:</span> <span class="kw1">virtual</span> A <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 覆盖 A::f</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="co1">// struct Error : VB1, VB2 {</span>
+<span class="co1">//     // 错误：A::f 在 Error 中拥有两个最终覆盖函数</span>
+<span class="co1">// };</span>
+<span class="kw1">struct</span> Okay <span class="sy4">:</span> VB1, VB2 <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK：这是 A::f 的最终覆盖函数</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> VB1a <span class="sy4">:</span> <span class="kw1">virtual</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 不声明覆盖函数</span>
+<span class="kw1">struct</span> Da <span class="sy4">:</span> VB1a, VB2 <span class="br0">{</span>
+    <span class="co1">// Da 中，A::f 的最终覆盖函数是 VB2::f</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>具有相同名字但不同形参列表的函数并不覆盖同名的基类函数，但会<i>隐藏</i>它：在<a href="lookup.html" title="cpp/language/lookup">无限定名字查找</a>检查派生类的作用域时，查找找到该声明而不再检查基类。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> B <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> B <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// D::f 隐藏 B::f（错误的形参列表）</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D2 <span class="sy4">:</span> D <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// D2::f 覆盖 B::f（它不可见也不要紧）</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    B b<span class="sy4">;</span>   B<span class="sy3">&amp;</span> b_as_b   <span class="sy1">=</span> b<span class="sy4">;</span>
+    D d<span class="sy4">;</span>   B<span class="sy3">&amp;</span> d_as_b   <span class="sy1">=</span> d<span class="sy4">;</span>    D<span class="sy3">&amp;</span> d_as_d <span class="sy1">=</span> d<span class="sy4">;</span>
+    D2 d2<span class="sy4">;</span> B<span class="sy3">&amp;</span> d2_as_b  <span class="sy1">=</span> d2<span class="sy4">;</span>   D<span class="sy3">&amp;</span> d2_as_d <span class="sy1">=</span> d2<span class="sy4">;</span>
+ 
+    b_as_b.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 调用 B::f()</span>
+    d_as_b.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 调用 B::f()</span>
+    d2_as_b.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 调用 D2::f()</span>
+ 
+    d_as_d.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误：D 中的查找只找到 f(int)</span>
+    d2_as_d.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误：D 中的查找只找到 f(int)</span>
+<span class="br0">}</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<p>若函数以说明符 <code>override</code> 声明，但不覆盖任何虚函数，则程序非良构：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> B <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> B <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> override<span class="sy4">;</span> <span class="co1">// OK，D::f(int) 覆盖 B::f(int)</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">long</span><span class="br0">)</span> override<span class="sy4">;</span> <span class="co1">// 错误：f(long) 不覆盖 B::f(int)</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>若函数以说明符 <code>final</code> 声明，而另一函数试图覆盖之，则程序非良构：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> B <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> final<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> B <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span> <span class="co1">// 错误：D::f 试图覆盖 final B::f</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<p>非成员函数和静态成员函数不能为虚函数。
+</p><p>函数模板不能被声明为 <code>virtual</code>。这只适用于自身是模板的函数——类模板的常规成员函数可被声明为虚函数。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<p>虚函数（无论是声明为 virtual 者还是覆盖函数）不能有任何关联制约
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> requires <span class="kw2">true</span><span class="sy4">;</span> <span class="co1">// 错误：受制约的虚函数</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p><a href="consteval.html" title="cpp/language/consteval"><code>consteval</code></a> 虚函数不能覆盖非 <code>consteval</code> 虚函数或被它覆盖。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+<p>在编译时替换虚函数的<a href="default_arguments.html" title="cpp/language/default arguments">默认实参</a>。
+</p>
+<h4><span class="mw-headline" id=".E5.8D.8F.E5.8F.98.E8.BF.94.E5.9B.9E.E7.B1.BB.E5.9E.8B">协变返回类型</span></h4>
+<p>若函数 <code>Derived::f</code> 覆盖 <code>Base::f</code>，则其返回类型必须要么相同要么为<i>协变（covariant）</i>。当满足所有下列要求时，两个类型为协变：
+</p>
+<ul><li> 两个类型均为到类的指针或引用（左值或右值）。不允许多级指针或引用。
+</li><li> <code>Base::f()</code> 的返回类型中被引用/指向的类，必须是 <code>Derived::f()</code> 的返回类型中被引用/指向的类的无歧义且可访问的直接或间接基类。
+</li><li> <code>Derived::f()</code> 的返回类型必须有相对于 <code>Base::f()</code> 的返回类型的相等或较少的 <a href="cv.html" title="cpp/language/cv">cv 限定</a>。
+</li></ul>
+<p><code>Derived::f</code> 的返回类型中的类必须要么是 <code>Derived</code> 自身，要么必须是于 <code>Derived::f</code> 声明点的某个<a href="incomplete_type.html" title="cpp/language/incomplete type" class="mw-redirect">完整类型</a>。
+</p><p>进行虚函数调用时，最终覆盖函数的返回类型被<a href="implicit_cast.html" title="cpp/language/implicit conversion">隐式转换</a>成所调用的被覆盖函数的返回类型：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> B <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> Base <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> vf1<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> vf2<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> vf3<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">virtual</span> B<span class="sy2">*</span> vf4<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">virtual</span> B<span class="sy2">*</span> vf5<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">class</span> D <span class="sy4">:</span> <span class="kw1">private</span> B <span class="br0">{</span>
+    <span class="kw1">friend</span> <span class="kw1">struct</span> Derived<span class="sy4">;</span> <span class="co1">// Derived 中，B 是 D 的可访问基类</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">class</span> A<span class="sy4">;</span> <span class="co1">// 前置声明的类是不完整类型</span>
+ 
+<span class="kw1">struct</span> Derived <span class="sy4">:</span> <span class="kw1">public</span> Base <span class="br0">{</span>
+    <span class="kw4">void</span> vf1<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// 虚函数，覆盖 Base::vf1()</span>
+    <span class="kw4">void</span> vf2<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 非虚函数，隐藏 Base::vf2()</span>
+<span class="co1">//  char vf3();    // 错误：覆盖 Base::vf3，但具有不同且非协变的返回类型</span>
+    D<span class="sy2">*</span> vf4<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">// 覆盖 Base::vf4() 并具有协变的返回类型</span>
+<span class="co1">//  A* vf5();      // 错误：A 是不完整类型</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    Derived d<span class="sy4">;</span>
+    Base<span class="sy3">&amp;</span> br <span class="sy1">=</span> d<span class="sy4">;</span>
+    Derived<span class="sy3">&amp;</span> dr <span class="sy1">=</span> d<span class="sy4">;</span>
+ 
+    br.<span class="me1">vf1</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 调用 Derived::vf1()</span>
+    br.<span class="me1">vf2</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 调用 Base::vf2()</span>
+<span class="co1">//  dr.vf2(); // 错误：vf2(int) 隐藏 vf2()</span>
+ 
+    B<span class="sy2">*</span> p <span class="sy1">=</span> br.<span class="me1">vf4</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 调用 Derived::vf4() 并将结果转换为 B*</span>
+    D<span class="sy2">*</span> q <span class="sy1">=</span> dr.<span class="me1">vf4</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 调用 Derived::vf4() 而不将结果转换为 B*</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<h4><span class="mw-headline" id=".E8.99.9A.E6.9E.90.E6.9E.84.E5.87.BD.E6.95.B0">虚析构函数</span></h4>
+<p>虽然析构函数是不继承的，但若基类声明其析构函数为 <code>virtual</code>，则派生的析构函数始终覆盖它。这使得可以通过指向基类的指针 delete 动态分配的多态类型对象
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> Base <span class="br0">{</span>
+ <span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw1">virtual</span> ~Base<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="coMULTI">/* 释放 Base 的资源 */</span> <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">class</span> Derived <span class="sy4">:</span> <span class="kw1">public</span> Base <span class="br0">{</span>
+    ~Derived<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="coMULTI">/* 释放 Derived 的资源 */</span> <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    Base<span class="sy2">*</span> b <span class="sy1">=</span> new Derived<span class="sy4">;</span>
+    delete b<span class="sy4">;</span> <span class="co1">// 进行对 Base::~Base() 的虚函数调用</span>
+              <span class="co1">// 由于它是虚函数，故它调用的是 Derived::~Derived()，</span>
+              <span class="co1">// 这就能释放派生类的资源，然后遵循通常的析构顺序</span>
+              <span class="co1">// 调用 Base::~Base()</span>
+<span class="br0">}</span></pre></div></div>
+<p>此外，若类是<i>多态的</i>（声明或继承了至少一个虚函数），且其析构函数非虚，则删除它是<i>未定义行为</i>，无论不调用派生的析构函数时是否会导致资源泄漏。
+</p><p>一条有用的方针是，任何基类的析构函数必须为<a rel="nofollow" class="external text" href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#discussion-make-base-class-destructors-public-and-virtual-or-protected-and-nonvirtual">公开且虚，或受保护且非虚</a>。
+</p>
+<h3><span class="mw-headline" id=".E5.9C.A8.E6.9E.84.E9.80.A0.E5.92.8C.E6.9E.90.E6.9E.84.E6.9C.9F.E9.97.B4">在构造和析构期间</span></h3>
+<p>当从构造函数或从析构函数中直接或间接调用虚函数（包括在类的非静态数据成员的构造或析构期间，例如在成员<a href="constructor.html" title="cpp/language/initializer list">初始化器列表</a>中），且对其实施调用的对象是正在构造或析构中的对象时，所调用的函数是构造函数或析构函数的类中的最终覆盖函数，而非进一步的派生类中的覆盖函数。 
+换言之，在构造和析构期间，进一步的派生类并不存在。
+</p><p>当构建具有多个分支的复杂类时，在属于一个分支的构造函数内，多态被限制到该类及其基类：若它获得了指向这个子层级之外的某个基类子对象的指针或引用，且试图进行虚函数调用（例如通过显式成员访问），则行为未定义：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> V <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> A <span class="sy4">:</span> <span class="kw1">virtual</span> V <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// A::f 是 V::f 在 A 中的最终覆盖函数</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> <span class="kw1">virtual</span> V <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// B::g 是 V::g 在 B 中的最终覆盖函数</span>
+    B<span class="br0">(</span>V<span class="sy2">*</span>, A<span class="sy2">*</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> A, B <span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// D::f 是 V::f 在 D 中的最终覆盖函数</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// D::g 是 V::g 在 D 中的最终覆盖函数</span>
+ 
+    <span class="co1">// 注意：A 在 B 之前初始化</span>
+    D<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> B<span class="br0">(</span><span class="br0">(</span>A<span class="sy2">*</span><span class="br0">)</span>this, this<span class="br0">)</span> 
+    <span class="br0">{</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// B 的构造函数，从 D 的构造函数调用 </span>
+B<span class="sy4">::</span><span class="me2">B</span><span class="br0">(</span>V<span class="sy2">*</span> v, A<span class="sy2">*</span> a<span class="br0">)</span>
+<span class="br0">{</span>
+    f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 对 V::f 的虚调用（尽管 D 拥有最终覆盖函数，D 也不存在）</span>
+    g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 对 B::g 的虚调用，在 B 中是最终覆盖函数</span>
+ 
+    v<span class="sy2">-</span><span class="sy1">&gt;</span>g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// v 的类型 V 是 B 的基类，虚调用如前调用 B::g</span>
+ 
+    a<span class="sy2">-</span><span class="sy1">&gt;</span>f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// a 的类型 A 不是 B 的基类，它属于层级中的不同分支。</span>
+            <span class="co1">// 尝试通过这个分支进行虚调用导致未定义行为，</span>
+            <span class="co1">// 即使此情况下 A 已完成构造</span>
+            <span class="co1">// （它在 B 之前构造，因为它在 D 的基类列表中先于 B 出现）</span>
+            <span class="co1">// 实践中，对 A::f 的虚调用会试图使用 B 的虚成员函数表，</span>
+            <span class="co1">// 因为它在 B 的构造期间是活跃的</span>
+<span class="br0">}</span></pre></div></div>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<ul><li> <a href="derived_class.html" title="cpp/language/derived class">派生类和继承模式</a>
+</li><li> <a href="override.html" title="cpp/language/override">override 说明符</a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</li><li> <a href="final.html" title="cpp/language/final">final 说明符</a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1442/1000000
+Preprocessor generated node count: 4408/1000000
+Post‐expand include size: 44209/2097152 bytes
+Template argument size: 12840/2097152 bytes
+Highest expansion depth: 14/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2768-0!*!0!!zh!*!zh!* and timestamp 20190721180743 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/virtual&amp;oldid=61818">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/virtual&amp;oldid=61818</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/virtual">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年7月21日 (星期日) 11:07。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过7,951次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.079 secs. -->
+	</body>
+<!-- Cached 20190722090257 -->
+</html>

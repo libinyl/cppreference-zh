@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>std::moneypunct_byname</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/locale/moneypunct_byname","wgTitle":"cpp/locale/moneypunct byname","wgCurRevisionId":51036,"wgArticleId":2867,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/locale/moneypunct_byname","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_locale_moneypunct_byname skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>moneypunct_byname</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../locale.html" title="cpp/locale">locale</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../locale.html" title="cpp/locale">本地化库</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> 本地环境与平面</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="use_facet.html" title="cpp/locale/use facet"><span class="t-lines"><span>use_facet</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="has_facet.html" title="cpp/locale/has facet"><span class="t-lines"><span>has_facet</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 字符分类</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isspace.html" title="cpp/locale/isspace"><span class="t-lines"><span>isspace</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isblank.html" title="cpp/locale/isblank"><span class="t-lines"><span>isblank</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iscntrl.html" title="cpp/locale/iscntrl"><span class="t-lines"><span>iscntrl</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isupper.html" title="cpp/locale/isupper"><span class="t-lines"><span>isupper</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="islower.html" title="cpp/locale/islower"><span class="t-lines"><span>islower</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isalpha.html" title="cpp/locale/isalpha"><span class="t-lines"><span>isalpha</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isdigit.html" title="cpp/locale/isdigit"><span class="t-lines"><span>isdigit</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ispunct.html" title="cpp/locale/ispunct"><span class="t-lines"><span>ispunct</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isxdigit.html" title="cpp/locale/isxdigit"><span class="t-lines"><span>isxdigit</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isalnum.html" title="cpp/locale/isalnum"><span class="t-lines"><span>isalnum</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isprint.html" title="cpp/locale/isprint"><span class="t-lines"><span>isprint</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isgraph.html" title="cpp/locale/isgraph"><span class="t-lines"><span>isgraph</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 转换</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="toupper.html" title="cpp/locale/toupper"><span class="t-lines"><span>toupper</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tolower.html" title="cpp/locale/tolower"><span class="t-lines"><span>tolower</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wstring_convert.html" title="cpp/locale/wstring convert"><span class="t-lines"><span>wstring_convert</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wbuffer_convert.html" title="cpp/locale/wbuffer convert"><span class="t-lines"><span>wbuffer_convert</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 平面类别基类</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ctype_base.html" title="cpp/locale/ctype base"><span class="t-lines"><span>ctype_base</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="codecvt_base.html" title="cpp/locale/codecvt base"><span class="t-lines"><span>codecvt_base</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="messages_base.html" title="cpp/locale/messages base"><span class="t-lines"><span>messages_base</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="time_base.html" title="cpp/locale/time base"><span class="t-lines"><span>time_base</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="money_base.html" title="cpp/locale/money base"><span class="t-lines"><span>money_base</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 平面类别</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ctype.html" title="cpp/locale/ctype"><span class="t-lines"><span>ctype</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ctype_char.html" title="cpp/locale/ctype char"><span class="t-lines"><span>ctype&lt;char&gt;</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="codecvt.html" title="cpp/locale/codecvt"><span class="t-lines"><span>codecvt</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="collate.html" title="cpp/locale/collate"><span class="t-lines"><span>collate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="messages.html" title="cpp/locale/messages"><span class="t-lines"><span>messages</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="time_get.html" title="cpp/locale/time get"><span class="t-lines"><span>time_get</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="time_put.html" title="cpp/locale/time put"><span class="t-lines"><span>time_put</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="num_get.html" title="cpp/locale/num get"><span class="t-lines"><span>num_get</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="num_put.html" title="cpp/locale/num put"><span class="t-lines"><span>num_put</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numpunct.html" title="cpp/locale/numpunct"><span class="t-lines"><span>numpunct</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="money_get.html" title="cpp/locale/money get"><span class="t-lines"><span>money_get</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="money_put.html" title="cpp/locale/money put"><span class="t-lines"><span>money_put</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="moneypunct.html" title="cpp/locale/moneypunct"><span class="t-lines"><span>moneypunct</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 本地环境限定平面</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ctype_byname.html" title="cpp/locale/ctype byname"><span class="t-lines"><span>ctype_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="codecvt_byname.html" title="cpp/locale/codecvt byname"><span class="t-lines"><span>codecvt_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="messages_byname.html" title="cpp/locale/messages byname"><span class="t-lines"><span>messages_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="collate_byname.html" title="cpp/locale/collate byname"><span class="t-lines"><span>collate_byname</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="time_get_byname.html" title="cpp/locale/time get byname"><span class="t-lines"><span>time_get_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="time_put_byname.html" title="cpp/locale/time put byname"><span class="t-lines"><span>time_put_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numpunct_byname.html" title="cpp/locale/numpunct byname"><span class="t-lines"><span>numpunct_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>moneypunct_byname</span></span></strong></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 编码转换平面</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="codecvt_utf8.html" title="cpp/locale/codecvt utf8"><span class="t-lines"><span>codecvt_utf8</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="codecvt_utf16.html" title="cpp/locale/codecvt utf16"><span class="t-lines"><span>codecvt_utf16</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="codecvt_utf8_utf16.html" title="cpp/locale/codecvt utf8 utf16"><span class="t-lines"><span>codecvt_utf8_utf16</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="codecvt_mode.html" title="cpp/locale/codecvt mode"><span class="t-lines"><span>codecvt_mode</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> C 本地环境</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="setlocale.html" title="cpp/locale/setlocale"><span class="t-lines"><span>setlocale</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="localeconv.html" title="cpp/locale/localeconv"><span class="t-lines"><span>localeconv</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lconv.html" title="cpp/locale/lconv"><span class="t-lines"><span>lconv</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="LC_categories.html" title="cpp/locale/LC categories"><span class="t-lines"><span>LC_ALL</span><span>LC_COLLATE</span><span>LC_CTYPE</span><span>LC_MONETARY</span><span>LC_NUMERIC</span><span>LC_TIME</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>定义于头文件 <code><a href="../header/locale.html" title="cpp/header/locale">&lt;locale&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> CharT, <span class="kw4">bool</span> Intl <span class="sy1">=</span> <span class="kw2">false</span> <span class="sy1">&gt;</span><br>
+<span class="kw1">class</span> moneypunct_byname <span class="sy4">:</span> <span class="kw1">public</span> <a href="moneypunct.html"><span class="kw1972">std::<span class="me2">moneypunct</span></span></a><span class="sy1">&lt;</span>CharT, Intl<span class="sy1">&gt;</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p><span class="t-lc"><strong class="selflink">std::moneypunct_byname</strong></span> 是 <span class="t-lc"><a href="moneypunct.html" title="cpp/locale/moneypunct">std::moneypunct</a></span> 平面，封装在其构造时指定的 locale 的货币格式化偏好。
+</p><p>标准库提供二个特化
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;locale&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">moneypunct_byname</span><span class="sy1">&lt;</span><span class="kw4">char</span>, Intl<span class="sy1">&gt;</span></span></span>
+</td>
+<td> 窄字符 I/O 的本地环境限定 <span class="t-lc"><a href="moneypunct.html" title="cpp/locale/moneypunct">std::moneypunct</a></span> 平面
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">moneypunct_byname</span><span class="sy1">&lt;</span><span class="kw4">wchar_t</span>, Intl<span class="sy1">&gt;</span></span></span>
+</td>
+<td> 宽字符 I/O 的本地环境限定 <span class="t-lc"><a href="moneypunct.html" title="cpp/locale/moneypunct">std::moneypunct</a></span> 平面
+</td></tr>
+</table>
+<h3><span class="mw-headline" id=".E6.88.90.E5.91.98.E7.B1.BB.E5.9E.8B">成员类型</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-sep">
+<td colspan="2">  
+</td></tr>
+<tr class="t-dsc-hitem">
+<td> 成员类型
+</td>
+<td> 定义
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <code>pattern</code>
+</td>
+<td>  <span class="t-lc"><a href="money_base.html" title="cpp/locale/money base">std::money_base::pattern</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>string_type</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1228">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></span>
+</td></tr>
+</table>
+<h3><span class="mw-headline" id=".E6.88.90.E5.91.98.E5.87.BD.E6.95.B0">成员函数</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><strong class="selflink"> <span class="t-lines"><span>(构造函数)</span></span></strong></div></div>
+</td>
+<td>  构造新的 <code>moneypunct_byname</code> 平面 <br> <span class="t-mark">(公开成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><strong class="selflink"> <span class="t-lines"><span>(析构函数)</span></span></strong></div></div>
+</td>
+<td>  析构 <code>moneypunct_byname</code> 平面 <br> <span class="t-mark">(受保护成员函数)</span> </td></tr>
+</table>
+<div class="t-template-editlink" style="">
+</div><div class="t-member">
+<h2> <span class="mw-headline" id="std::moneypunct_byname::moneypunct_byname"> <span style="font-size:0.7em; line-height:130%">std::moneypunct_byname::</span>moneypunct_byname </span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> moneypunct_byname<span class="br0">(</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> name, <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> refs <span class="sy1">=</span> <span class="nu0">0</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> moneypunct_byname<span class="br0">(</span> <span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> name, <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> refs <span class="sy1">=</span> <span class="nu0">0</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>为名为 <code>name</code> 的本地环境构造新的 <code>std::moneypunct_byname</code> 平面。 
+</p><p><code>refs</code> 用于资源管理：在销毁最后一个保有平面的 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="locale.html"><span class="kw1894">std::<span class="me2">locale</span></span></a></span></span> 对象时，若 <span class="t-c"><span class="mw-geshi cpp source-cpp">refs <span class="sy1">==</span> <span class="nu0">0</span></span></span> ，则实现销毁平面对象。否则，不销毁对象。
+</p>
+<h3> <span class="mw-headline" id=".E5.8F.82.E6.95.B0">参数</span></h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  name
+</td>
+<td> -
+</td>
+<td> 本地环境的名称
+</td></tr>
+<tr class="t-par">
+<td>  refs
+</td>
+<td> -
+</td>
+<td> 链接到该平面的引用数
+</td></tr></table>
+</div>
+<div class="t-template-editlink" style="">
+</div><div class="t-member">
+<h2> <span class="mw-headline" id="std::moneypunct_byname::.7Emoneypunct_byname"> <span style="font-size:0.7em; line-height:130%">std::moneypunct_byname::</span>~moneypunct_byname </span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">protected</span><span class="sy4">:</span><br>
+~moneypunct_byname<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>销毁平面。
+</p>
+</div>
+<div class="t-template-editlink" style="">
+</div><div class="t-inherited">
+<h2> <span class="mw-headline" id=".E7.BB.A7.E6.89.BF.E8.87.AA_std::moneypunct">继承自  <a href="moneypunct.html" title="cpp/locale/moneypunct"> <span style="font-size:0.7em; line-height:130%">std::</span>moneypunct</a> </span></h2>
+<h3> <span class="mw-headline" id=".E6.88.90.E5.91.98.E7.B1.BB.E5.9E.8B_2">成员类型</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-sep">
+<td colspan="2">  
+</td></tr>
+<tr class="t-dsc-hitem">
+<td> 成员类型
+</td>
+<td> 定义
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <code>char_type</code>
+</td>
+<td>  <code>CharT</code>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>string_type</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1228">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></span>
+</td></tr>
+</table>
+<h3> <span class="mw-headline" id=".E6.88.90.E5.91.98.E5.87.BD.E6.95.B0_2">成员函数</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/decimal_point.html" title="cpp/locale/moneypunct/decimal point"> <span class="t-lines"><span>decimal_point</span></span></a></div></div>
+</td>
+<td>  调用 <code>do_decimal_point</code> <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的公开成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/thousands_sep.html" title="cpp/locale/moneypunct/thousands sep"> <span class="t-lines"><span>thousands_sep</span></span></a></div></div>
+</td>
+<td>  调用 <code>do_thousands_sep</code>  <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的公开成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/grouping.html" title="cpp/locale/moneypunct/grouping"> <span class="t-lines"><span>grouping</span></span></a></div></div>
+</td>
+<td>  调用 <code>do_grouping</code>  <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的公开成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/curr_symbol.html" title="cpp/locale/moneypunct/curr symbol"> <span class="t-lines"><span>curr_symbol</span></span></a></div></div>
+</td>
+<td>  调用 <code>do_curr_symbol</code>  <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的公开成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/positive_sign.html" title="cpp/locale/moneypunct/positive sign"> <span class="t-lines"><span>positive_sign</span><span>negative_sign</span></span></a></div></div>
+</td>
+<td>   调用 <code>do_positive_sign</code> 或 <code>do_negative_sign</code>  <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的公开成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/frac_digits.html" title="cpp/locale/moneypunct/frac digits"> <span class="t-lines"><span>frac_digits</span></span></a></div></div>
+</td>
+<td>  调用 <code>do_frac_digits</code>  <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的公开成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/pos_format.html" title="cpp/locale/moneypunct/pos format"> <span class="t-lines"><span>pos_format</span><span>neg_format</span></span></a></div></div>
+</td>
+<td>  调用 <code>do_pos_format</code>/<code>do_neg_format</code>  <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的公开成员函数)</span> </td></tr>
+</table>
+<h3> <span class="mw-headline" id=".E5.8F.97.E4.BF.9D.E6.8A.A4.E6.88.90.E5.91.98.E5.87.BD.E6.95.B0">受保护成员函数</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/decimal_point.html" title="cpp/locale/moneypunct/decimal point"> <span class="t-lines"><span>do_decimal_point</span></span></a></div><div><span class="t-lines"><span><span class="t-cmark">[虚]</span></span></span></div></div>
+</td>
+<td>  提供用作小数点的字符 <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的虚受保护成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/thousands_sep.html" title="cpp/locale/moneypunct/thousands sep"> <span class="t-lines"><span>do_thousands_sep</span></span></a></div><div><span class="t-lines"><span><span class="t-cmark">[虚]</span></span></span></div></div>
+</td>
+<td>  提供用作千分隔符的字符 <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的虚受保护成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/grouping.html" title="cpp/locale/moneypunct/grouping"> <span class="t-lines"><span>do_grouping</span></span></a></div><div><span class="t-lines"><span><span class="t-cmark">[虚]</span></span></span></div></div>
+</td>
+<td>  提供二个千分隔符间的位数 <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的虚受保护成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/curr_symbol.html" title="cpp/locale/moneypunct/curr symbol"> <span class="t-lines"><span>do_curr_symbol</span></span></a></div><div><span class="t-lines"><span><span class="t-cmark">[虚]</span></span></span></div></div>
+</td>
+<td>  提供用作通货标识符的字符串 <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的虚受保护成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/positive_sign.html" title="cpp/locale/moneypunct/positive sign"> <span class="t-lines"><span>do_positive_sign</span><span>do_negative_sign</span></span></a></div><div><span class="t-lines"><span><span class="t-cmark">[虚]</span></span></span></div></div>
+</td>
+<td>  提供指示正或负值的字符串 <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的虚受保护成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/frac_digits.html" title="cpp/locale/moneypunct/frac digits"> <span class="t-lines"><span>do_frac_digits</span></span></a></div><div><span class="t-lines"><span><span class="t-cmark">[虚]</span></span></span></div></div>
+</td>
+<td>  提供小数点后要显示的位数 <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的虚受保护成员函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct/pos_format.html" title="cpp/locale/moneypunct/pos format"> <span class="t-lines"><span>do_pos_format</span><span>do_neg_format</span></span></a></div><div><span class="t-lines"><span><span class="t-cmark">[虚]</span></span></span></div></div>
+</td>
+<td>  提供通货值的格式化模式 <br> <span class="t-mark">(<code>std::moneypunct&lt;CharT,International&gt;</code> 的虚受保护成员函数)</span> </td></tr>
+</table>
+<h3> <span class="mw-headline" id=".E6.88.90.E5.91.98.E5.B8.B8.E9.87.8F">成员常量</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-sep">
+<td colspan="2">  
+</td></tr>
+<tr class="t-dsc-hitem">
+<td> 成员
+</td>
+<td> 定义
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-dsc-small">const bool</span> <code>intl</code> <span class="t-cmark">[静态]</span>
+</td>
+<td>  <code>International</code>
+</td></tr>
+</table>
+<h3> <span class="mw-headline" id=".E6.88.90.E5.91.98.E5.AF.B9.E8.B1.A1">成员对象</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">static std::locale::id</span> id</span></span></div></div>
+</td>
+<td>  locale 的 <i>id</i> <br> <span class="t-mark">(公开成员对象)</span>
+</td></tr>
+</table>
+</div>
+<div class="t-template-editlink" style="">
+</div><div class="t-inherited">
+<h2> <span class="mw-headline" id=".E7.BB.A7.E6.89.BF.E8.87.AA_std::money_base">继承自  <a href="money_base.html" title="cpp/locale/money base"><span style="font-size:0.7em; line-height:130%">std::</span>money_base</a> </span></h2>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-sep">
+<td colspan="2">  
+</td></tr>
+<tr class="t-dsc-hitem">
+<td> 成员类型
+</td>
+<td> 定义
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">enum</span> part <span class="br0">{</span> none, space, symbol, sign, value <span class="br0">}</span><span class="sy4">;</span></span></span>
+</td>
+<td> 无作用域枚举类型
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span> pattern <span class="br0">{</span> <span class="kw4">char</span> field<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span></span></span>
+</td>
+<td> 货币格式类型
+</td></tr>
+</table>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-sep">
+<td colspan="2">  
+</td></tr>
+<tr class="t-dsc-hitem">
+<td> 枚举常量
+</td>
+<td> 解释
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <code>none</code>
+</td>
+<td> 容许但不要求空白符，除了在末位置不容许空白符
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>space</code>
+</td>
+<td> 要求一或多个空白字符
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>symbol</code>
+</td>
+<td> 要求 moneypunct::curr_symbol 所返回的字符序列
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>sign</code>
+</td>
+<td> 要求 moneypunct::positive_sign 或 moneypunct::negative_sign 所返回的首个字符
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>value</code>
+</td>
+<td> 要求绝对数值货币值
+</td></tr>
+</table>
+</div>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><p>此示例演示如何应用另一语言的货币格式化规则而不更改 locale 的剩余部分。</p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;iomanip&gt;</span>
+<span class="co2">#include &lt;locale&gt;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">long</span> <span class="kw4">double</span> mon <span class="sy1">=</span> <span class="nu0">1234567</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">(</span><a href="locale.html"><span class="kw1894">std::<span class="me2">locale</span></span></a><span class="br0">(</span><span class="st0">"en_US.utf8"</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1759">std::<span class="me2">wcout</span></span></a>.<span class="me1">imbue</span><span class="br0">(</span><a href="locale.html"><span class="kw1894">std::<span class="me2">locale</span></span></a><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1759">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> L<span class="st0">"american locale : "</span> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/showbase.html"><span class="kw1766">std::<span class="me2">showbase</span></span></a>
+               <span class="sy1">&lt;&lt;</span> <a href="../io/manip/put_money.html"><span class="kw1799">std::<span class="me2">put_money</span></span></a><span class="br0">(</span>mon<span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1759">std::<span class="me2">wcout</span></span></a>.<span class="me1">imbue</span><span class="br0">(</span><a href="locale.html"><span class="kw1894">std::<span class="me2">locale</span></span></a><span class="br0">(</span><a href="../io/cout.html"><span class="kw1759">std::<span class="me2">wcout</span></span></a>.<span class="me1">getloc</span><span class="br0">(</span><span class="br0">)</span>,
+                                 new std<span class="sy4">::</span><span class="me2">moneypunct_byname</span><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="st0">"ru_RU.utf8"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1759">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> L<span class="st0">"american locale with russian moneypunct: "</span>
+               <span class="sy1">&lt;&lt;</span> <a href="../io/manip/put_money.html"><span class="kw1799">std::<span class="me2">put_money</span></span></a><span class="br0">(</span>mon<span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>输出：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">american locale : $12,345.67
+american locale with russian moneypunct: 12 345.67 руб</pre></div></div> 
+</div>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="moneypunct.html" title="cpp/locale/moneypunct"> <span class="t-lines"><span>moneypunct</span></span></a></div></div>
+</td>
+<td>  定义 <span class="t-lc"><a href="money_get.html" title="cpp/locale/money get">std::money_get</a></span> 与 <span class="t-lc"><a href="money_put.html" title="cpp/locale/money put">std::money_put</a></span> 所用的货币格式解析器的参数 <br> <span class="t-mark">(类模板)</span> </td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 8851/1000000
+Preprocessor generated node count: 11261/1000000
+Post‐expand include size: 281614/2097152 bytes
+Template argument size: 58056/2097152 bytes
+Highest expansion depth: 38/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2867-0!*!0!!zh!*!zh!* and timestamp 20190825005038 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/locale/moneypunct_byname&amp;oldid=51036">https://zh.cppreference.com/mwiki/index.php?title=cpp/locale/moneypunct_byname&amp;oldid=51036</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/locale/moneypunct_byname">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2017年11月23日 (星期四) 06:09。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过2,273次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.556 secs. -->
+	</body>
+<!-- Cached 20190825005038 -->
+</html>

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>函数声明</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/function","wgTitle":"cpp/language/function","wgCurRevisionId":61953,"wgArticleId":2717,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed CWG DR marker","Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/function","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_function skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">函数声明</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="functions.html" title="cpp/language/functions"> 函数</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> 声明 </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 函数声明</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html#.E5.BD.A2.E5.8F.82.E5.88.97.E8.A1.A8" title="cpp/language/function"> 函数形参列表</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html#.E5.87.BD.E6.95.B0.E5.AE.9A.E4.B9.89" title="cpp/language/function"> 函数定义</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_arguments.html" title="cpp/language/default arguments"> 默认实参</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="variadic_arguments.html" title="cpp/language/variadic arguments"> 变长实参</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="inline.html" title="cpp/language/inline"> inline 说明符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lambda.html" title="cpp/language/lambda"> lambda 表达式</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="coroutines.html" title="cpp/language/coroutines"> 协程</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 函数调用 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="adl.html" title="cpp/language/adl"> 实参依赖查找 (ADL)</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_other.html#.E5.86.85.E5.BB.BA.E7.9A.84.E5.87.BD.E6.95.B0.E8.B0.83.E7.94.A8.E8.BF.90.E7.AE.97.E7.AC.A6" title="cpp/language/operator other"> 函数调用运算符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req/FunctionObject.html" title="cpp/named req/FunctionObject"> 函数对象</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 重载 </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="overload_resolution.html" title="cpp/language/overload resolution"> 重载决议</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operators.html" title="cpp/language/operators"> 运算符重载</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="overloaded_address.html" title="cpp/language/overloaded address"> 重载集地址</a> </td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>函数声明引入函数名及其类型。函数定义将函数名/类型与函数体关联。
+</p>
+<h3><span class="mw-headline" id=".E5.87.BD.E6.95.B0.E5.A3.B0.E6.98.8E">函数声明</span></h3>
+<p>函数声明可出现于任何作用域。在类作用域中的函数声明引入成员函数（除非使用 <code>friend</code> 说明符），细节见<a href="member_functions.html" title="cpp/language/member functions">成员函数</a>和<a href="friend.html" title="cpp/language/friend">友元函数</a>。
+</p><p>被声明的函数类型由<i>返回类型（return type）</i>（由<a href="declarations.html" title="cpp/language/declarations">声明语法</a>的 <span class="t-spar">声明说明符序列</span> 提供）和函数声明符（<span class="t-spar">声明符</span>）组成。
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">noptr-声明符</span> <code><b>(</b></code> <span class="t-spar">形参列表</span> <code><b>)</b></code> <span class="t-spar">cv</span><span class="t-mark">(可选)</span> <span class="t-spar">ref</span><span class="t-mark">(可选)</span> <span class="t-spar">异常说明</span><span class="t-mark">(可选)</span>  <span class="t-spar">attr</span><span class="t-mark">(可选)</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">noptr-声明符</span> <code><b>(</b></code> <span class="t-spar">形参列表</span> <code><b>)</b></code> <span class="t-spar">cv</span><span class="t-mark">(可选)</span> <span class="t-spar">ref</span><span class="t-mark">(可选)</span> <span class="t-spar">异常说明</span><span class="t-mark">(可选)</span>  <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <code><b>-&gt;</b></code> <span class="t-spar">尾随返回类型</span>
+</td>
+<td> (2)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<p>（<span class="t-spar">声明符</span> 语法的其他形式见<a href="declarations.html" title="cpp/language/declarations">声明</a>）
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 常规函数声明语法</div>
+<div class="t-li1"><span class="t-li">2)</span> 尾随返回类型声明：尾随返回类型仅在最外层函数声明符中允许使用。此情况下的 <span class="t-spar">声明说明符序列</span> 必须包含关键词 <code>auto</code></div>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">noptr-声明符</span>
+</td>
+<td> -
+</td>
+<td> 任何合法的 <span class="t-spar">声明符</span>，但若它以 *、&amp; 或 &amp;&amp; 开始，则它必须为括号所环绕。
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">形参列表</span>
+</td>
+<td> -
+</td>
+<td> 可以为空，函数形参的逗号分隔列表（细节见下文）
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td> 可选的<a href="attributes.html" title="cpp/language/attributes">属性</a>列表。这些属性应用于函数类型，而非函数自身。出现于声明符中标识符之后的属性与出现于声明开端的属性合并，若它们存在。
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">cv</span>
+</td>
+<td> -
+</td>
+<td> const/volatile 限定，只允许在非静态成员函数中使用
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">ref</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td> 引用限定，只允许在非静态成员函数中使用
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">异常说明</span>
+</td>
+<td> -
+</td>
+<td> <a href="except_spec.html" title="cpp/language/except spec">动态异常说明</a><span class="t-mark-rev t-until-cxx17">(C++17 前)</span>或
+<p><a href="noexcept_spec.html" title="cpp/language/noexcept spec">noexcept 说明</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>之一。<span class="t-rev-inl t-until-cxx17"><span>注意，异常说明不是函数类型的一部分</span> <span><span class="t-mark-rev t-until-cxx17">(C++17 前)</span></span></span>
+</p>
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">尾随返回类型</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td> 尾随返回类型，当返回类型取决于实参名时，例如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T, <span class="kw1">class</span> U<span class="sy1">&gt;</span> <span class="kw4">auto</span> add<span class="br0">(</span>T t, U u<span class="br0">)</span> <span class="sy2">-</span><span class="sy1">&gt;</span> decltype<span class="br0">(</span>t <span class="sy2">+</span> u<span class="br0">)</span><span class="sy4">;</span></span></span>，或当返回类型复杂时，例如在 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">auto</span> fpif<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy2">-</span><span class="sy1">&gt;</span><span class="kw4">int</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span></span></span> 中，尾随返回类型很有用
+</td></tr></table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<p>如在<a href="declarations.html#.E5.A3.B0.E6.98.8E.E7.AC.A6" title="cpp/language/declarations">声明</a>中所提及的，声明符可以后随 <i>requires</i> 子句，它声明该函数所关联的<a href="constraints.html" title="cpp/language/constraints">制约</a>，而<a href="overload_resolution.html" title="cpp/language/overload resolution">重载决议</a>所要选择的函数必须满足该制约。（例如 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> f1<span class="br0">(</span><span class="kw4">int</span> a<span class="br0">)</span> requires <span class="kw2">true</span><span class="sy4">;</span></span></span>）注意，关联的制约是函数签名的一部分，但不是函数类型的一部分。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+<p>只要 <span class="t-spar">声明说明符序列</span> 允许，函数声明符就可与其他声明符混合：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// 声明一个 int、一个 int*、一个函数，及一个函数指针</span>
+<span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">1</span>, <span class="sy2">*</span>p <span class="sy1">=</span> <a href="../types/NULL.html"><span class="kw103">NULL</span></a>, f<span class="br0">(</span><span class="br0">)</span>, <span class="br0">(</span><span class="sy2">*</span>pf<span class="br0">)</span><span class="br0">(</span><span class="kw4">double</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="co1">// 声明说明符序列 是 int</span>
+<span class="co1">// 声明符 f() 声明（但不定义）</span>
+<span class="co1">//                一个不接受实参并返回 int 的函数</span>
+ 
+<span class="kw1">struct</span> S
+<span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">char</span><span class="br0">)</span> <span class="kw4">const</span>, g<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span><span class="sy4">;</span> <span class="co1">// 声明两个非静态成员函数</span>
+    <span class="kw1">virtual</span> <span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">char</span><span class="br0">)</span>, x<span class="sy4">;</span> <span class="co1">// 编译时错误：virtual（在 声明说明符序列 中）</span>
+                            <span class="co1">// 仅在非静态成员函数的声明中允许</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>函数的返回类型不能是函数类型或数组类型（但可以是到它们的指针或引用）。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<p>与任何声明相同，出现于声明之前的属性和声明符中直接跟在标识符之后的属性，都应用于所声明或定义的实体（在此例中，应用到函数）
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="br0">[</span><span class="br0">[</span>noreturn<span class="br0">]</span><span class="br0">]</span> <span class="kw4">void</span> f <span class="br0">[</span><span class="br0">[</span>noreturn<span class="br0">]</span><span class="br0">]</span> <span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK：两个属性都应用到函数 f</span></pre></div></div>
+<p>然而，（语法上）出现于声明符之后的属性，应用到函数类型，而非函数自身
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">[</span><span class="br0">[</span>noreturn<span class="br0">]</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// 错误：此属性对效果无作用</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<p>与任何声明相同，<code>ret func(params)</code> 所声明的函数 <code>func</code> 的类型为 <code>ret(params)</code>（但适用下文所述的形参类型重编）：参见 <a href="incomplete_type.html#.E7.B1.BB.E5.9E.8B.E7.9A.84.E5.91.BD.E5.90.8D" title="cpp/language/type">类型的命名</a>。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14"><td>
+<h3> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E7.B1.BB.E5.9E.8B.E6.8E.A8.E5.AF.BC">返回类型推导</span></h3>
+<p>若函数声明的 <i>声明说明符序列</i> 包含关键词 <code>auto</code>，则尾随返回类型可以省略，而编译器将从 <a href="return.html" title="cpp/language/return">return</a> 语句中所用的表达式的类型推导出它。若返回类型使用的不是 <code>decltype(auto)</code>，则推导遵循<a href="template_argument_deduction.html#.E5.85.B6.E4.BB.96.E8.AF.AD.E5.A2.83" title="cpp/language/template argument deduction">模板实参推导</a>的规则进行。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+<span class="kw4">auto</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> x<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 返回类型是 int</span>
+<span class="kw4">const</span> <span class="kw4">auto</span><span class="sy3">&amp;</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> x<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 返回类型是 const int&amp;</span></pre></div></div>
+<p>若返回类型是 <code>decltype(auto)</code>，则返回类型为将 return 语句中所用的表达式包裹于 <a href="decltype.html" title="cpp/language/decltype">decltype</a> 中时所得到的类型。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+decltype<span class="br0">(</span><span class="kw4">auto</span><span class="br0">)</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> x<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 返回类型是 int，同 decltype(x)</span>
+decltype<span class="br0">(</span><span class="kw4">auto</span><span class="br0">)</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span><span class="br0">(</span>x<span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 返回类型是 int&amp;，同 decltype((x))</span></pre></div></div>
+<p>（注意：“<code>const decltype(auto)&amp;</code>”是错误的，<code>decltype(auto)</code> 必须独自使用）
+</p><p>若有多条返回语句，则它们必须推导出相同类型
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">auto</span> f<span class="br0">(</span><span class="kw4">bool</span> val<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">if</span><span class="br0">(</span>val<span class="br0">)</span> <span class="kw1">return</span> <span class="nu0">123</span><span class="sy4">;</span> <span class="co1">// 推导返回类型 int</span>
+    <span class="kw1">else</span>    <span class="kw1">return</span> <span class="nu17">3.14f</span><span class="sy4">;</span> <span class="co1">// 错误：推导返回类型 float</span>
+<span class="br0">}</span></pre></div></div>
+<p>若无 return 语句或若 return 语句的实参是 void 表达式，则所声明的返回类型，必须要么是 <span class="t-c"><span class="mw-geshi cpp source-cpp">decltype<span class="br0">(</span><span class="kw4">auto</span><span class="br0">)</span></span></span>，此情况中推导返回类型是 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span>，要么是（可有 cv 限定的）<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">auto</span></span></span>，此情况中推导的返回类型则是（同一 cv 限定的）<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span>。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">auto</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// 返回 void</span>
+<span class="kw4">auto</span> g<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 返回 void</span>
+<span class="kw4">auto</span><span class="sy2">*</span> x<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// 错误: 不能从 void 推导 auto*</span></pre></div></div>
+<p>一旦在函数中见到一条 return 语句，则从该语句推导的返回类型就可用于函数的剩余部分，包括其他 return 语句。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">auto</span> sum<span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">if</span><span class="br0">(</span>i <span class="sy1">==</span> <span class="nu0">1</span><span class="br0">)</span>
+        <span class="kw1">return</span> i<span class="sy4">;</span> <span class="co1">// sum 的返回类型是 int</span>
+    <span class="kw1">else</span>
+        <span class="kw1">return</span> sum<span class="br0">(</span>i <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">)</span> <span class="sy2">+</span> i<span class="sy4">;</span> <span class="co1">// OK，sum 的返回类型已知</span>
+<span class="br0">}</span></pre></div></div>
+<p>若 return 语句使用花括号初始化器列表（brace-init-list），则不允许推导：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">auto</span> func <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 错误</span></pre></div></div>
+<p><a href="virtual.html" title="cpp/language/virtual">虚函数</a>不能使用返回类型推导。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> F
+<span class="br0">{</span>
+    <span class="kw1">virtual</span> <span class="kw4">auto</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 错误</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>若函数使用返回类型推导，则它不能用其推导的类型或其他种类的返回类型推导再声明，即使推导出相同类型也是如此
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">auto</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>               <span class="co1">// 已声明，未定义</span>
+<span class="kw4">auto</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="nu0">42</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 已定义，返回类型是 int</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>                <span class="co1">// 错误：不能使用推导的类型</span>
+decltype<span class="br0">(</span><span class="kw4">auto</span><span class="br0">)</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>     <span class="co1">// 错误：不同种类的推导</span>
+<span class="kw4">auto</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>               <span class="co1">// OK：再声明</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> A <span class="br0">{</span> <span class="kw1">friend</span> T frf<span class="br0">(</span>T<span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">auto</span> frf<span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> i<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 不是 A&lt;int&gt; 的友元</span></pre></div></div>
+<p>除了<a href="cast_operator.html" title="cpp/language/cast operator">用户定义转换函数</a>以外的<a href="function_template.html" title="cpp/language/function template">函数模板</a>可以使用返回类型推导。即使 return 语句中的表达式并非<a href="dependent_name.html" title="cpp/language/dependent name">待决的</a>，推导也在实例化时发生。这种实例化并不处于 <a href="sfinae.html" title="cpp/language/sfinae">SFINAE</a> 的目的的立即语境中。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">auto</span> f<span class="br0">(</span>T t<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> t<span class="sy4">;</span> <span class="br0">}</span>
+<span class="kw1">typedef</span> decltype<span class="br0">(</span>f<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span> fint_t<span class="sy4">;</span> <span class="co1">// 实例化 f&lt;int&gt; 以推导返回类型</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">auto</span> f<span class="br0">(</span>T<span class="sy2">*</span> t<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="sy2">*</span>t<span class="sy4">;</span> <span class="br0">}</span>
+<span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>p<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span><span class="sy2">*</span><span class="br0">)</span> <span class="sy1">=</span> <span class="sy3">&amp;</span>f<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// 实例化两个 f 以确定返回类型，</span>
+                                  <span class="co1">// 选择第二个模板重载</span></pre></div></div>
+<p>使用返回类型推导的函数模板特化必须使用同一返回类型占位符
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span> <span class="kw4">auto</span> g<span class="br0">(</span>T t<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> t<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// #1</span>
+<span class="kw1">template</span> <span class="kw4">auto</span> g<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">// OK，返回类型是 int</span>
+<span class="co1">//template char g(char);   // 错误，无匹配的模板</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw4">auto</span> g<span class="br0">(</span><span class="kw4">double</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK，用未知返回类型的前置声明</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span> T g<span class="br0">(</span>T t<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> t<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// OK，不等价于 #1</span>
+<span class="kw1">template</span> <span class="kw4">char</span> g<span class="br0">(</span><span class="kw4">char</span><span class="br0">)</span><span class="sy4">;</span>     <span class="co1">// OK，现在有匹配的模板</span>
+<span class="kw1">template</span> <span class="kw4">auto</span> g<span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// 仍然匹配 #1</span>
+<span class="co1">// void h() { return g(42); } // 错误，歧义</span></pre></div></div>
+<p><a href="function_template.html#.E6.98.BE.E5.BC.8F.E5.AE.9E.E4.BE.8B.E5.8C.96" title="cpp/language/function template">显式实例化声明</a>自身并不实例化使用返回类型推导的函数模板
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span> <span class="kw4">auto</span> f<span class="br0">(</span>T t<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> t<span class="sy4">;</span> <span class="br0">}</span>
+<span class="kw4">extern</span> <span class="kw1">template</span> <span class="kw4">auto</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 不实例化 f&lt;int&gt;</span>
+<span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>p<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="sy1">=</span> f<span class="sy4">;</span> <span class="co1">// 实例化 f&lt;int&gt; 以确定其返回类型，</span>
+                   <span class="co1">// 但仍需要在程序的别处出现显式实例化的定义</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E5.BD.A2.E5.8F.82.E5.88.97.E8.A1.A8">形参列表</span></h3>
+<p>形参列表决定调用函数时所能指定的实参。它是<i>形参声明</i>的逗号分隔列表，其中每一项拥有下列语法
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <span class="t-spar">声明说明符序列</span> <span class="t-spar">声明符</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <span class="t-spar">声明说明符序列</span> <span class="t-spar">声明符</span> <code><b>= </b></code> <span class="t-spar">初始化器</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <span class="t-spar">声明说明符序列</span> <span class="t-spar">抽象声明符</span><span class="t-mark">(可选)</span>
+</td>
+<td> (3)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <span class="t-spar">声明说明符序列</span> <span class="t-spar">抽象声明符</span><span class="t-mark">(可选)</span> <code><b>= </b></code> <span class="t-spar">初始化器</span>
+</td>
+<td> (4)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>void</b></code>
+</td>
+<td> (5)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<div class="t-li1"><span class="t-li">1)</span> 声明具名（形式）参数。<span class="t-spar">声明说明符序列</span> 和 <span class="t-spar">声明符</span> 的含义见<a href="declarations.html" title="cpp/language/declarations">声明</a>。
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> a, <span class="kw4">int</span> <span class="sy2">*</span>p, <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span>x<span class="br0">)</span><span class="br0">(</span><span class="kw4">double</span><span class="br0">)</span><span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">2)</span> 声明带有<a href="default_arguments.html" title="cpp/language/default arguments">默认值</a>的具名（形式）参数。
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">7</span>, <span class="kw4">int</span> <span class="sy2">*</span>p <span class="sy1">=</span> nullptr, <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span>x<span class="br0">)</span><span class="br0">(</span><span class="kw4">double</span><span class="br0">)</span><span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> nullptr<span class="br0">)</span><span class="sy4">;</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">3)</span> 声明一个无名形参
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span>, <span class="kw4">int</span> <span class="sy2">*</span>, <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span><span class="kw4">double</span><span class="br0">)</span><span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">4)</span> 声明具有<a href="default_arguments.html" title="cpp/language/default arguments">默认值</a>的无名形参
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> <span class="sy1">=</span> <span class="nu0">7</span>, <span class="kw4">int</span> <span class="sy2">*</span> <span class="sy1">=</span> nullptr, <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span><span class="kw4">double</span><span class="br0">)</span><span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> nullptr<span class="br0">)</span><span class="sy4">;</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">5)</span> 指示函数不接受形参，它是空参数列表的确切同意词：<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="sy4">;</span></span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></span> 声明同一函数。注意类型 <code>void</code>（可以有 cv 限定）不能在其他情况下用于参数列表：<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">void</span>, <span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span></span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span><span class="br0">)</span><span class="sy4">;</span></span></span> 是错误的（但可以使用其衍生类型，如 <code>void*</code>）。<span class="t-rev-inl t-since-cxx11"><span>在模板中，只能使用非待决的 void（当以 <code>T = void</code> 实例化时，采用单个 <code>T</code> 类型的形参的函数不会成为无形参函数）</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span></div>
+<p>省略号 <code><b>...</b></code> 可出现于形参列表末尾；这声明一个<a href="variadic_arguments.html" title="cpp/language/variadic arguments">变参函数（variadic function）</a>：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> printf<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> fmt ...<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>为了与 C89 兼容，当形参列表含有至少一个形参时，省略号前可出现可选的逗号：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> printf<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> fmt, ...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK，同上</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx17"><td>
+<p>尽管 <span class="t-spar">声明说明符序列</span> 蕴含了可以存在类型说明符之外的<a href="declarations.html#.E8.AF.B4.E6.98.8E.E7.AC.A6" title="cpp/language/declarations">说明符</a>，但其他受允许的说明符仅有 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">register</span></span></span> <span class="t-rev-inl t-until-cxx11"><span>和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">auto</span></span></span></span> <span><span class="t-mark-rev t-until-cxx11">(C++11 前)</span></span></span>，且它无任何效果。
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx17">(C++17 前)</span></td></tr>
+</table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx20"><td>
+<p>若任何函数形参使用了<i>占位符（placeholder）</i>（<code>auto</code> 或 <a href="../concepts.html" title="cpp/concepts">概念（concept）类型</a>），则函数声明转变为<a href="function_template.html#.E7.AE.80.E5.86.99.E5.87.BD.E6.95.B0.E6.A8.A1.E6.9D.BF" title="cpp/language/function template">简写函数模板</a>声明：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f1<span class="br0">(</span><span class="kw4">auto</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// 同 template&lt;class T&gt; void f(T)</span>
+<span class="kw4">void</span> f2<span class="br0">(</span>C1 <span class="kw4">auto</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 同 template&lt;C1 T&gt; void f7(T)，若 C1 是概念</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></td></tr>
+</table>
+<p>声明于函数声明之中的形参名通常只用作以自身为文档的目的。它们在函数定义中被使用（但仍是可选的）。
+</p><p>形参列表中的每个函数形参的类型，根据下列规则确定：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 首先，以如同在任何<a href="declarations.html" title="cpp/language/declarations">声明</a>中的方式，组合<span class="t-spar">声明说明符序列</span>和声明符以确定其类型。</div>
+<div class="t-li1"><span class="t-li">2)</span> 若类型是“T 的数组”或“T 的未知边界数组”，则它被替换成类型“T 的指针”</div>
+<div class="t-li1"><span class="t-li">3)</span> 若类型是函数类型 F，则它被替换成类型“F 的指针”</div>
+<div class="t-li1"><span class="t-li">4)</span> 从形参类型中丢弃顶层 cv 限定符（此调整只影响函数类型，但不改动形参的性质：<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span> p, decltype<span class="br0">(</span>p<span class="br0">)</span><span class="sy2">*</span><span class="br0">)</span><span class="sy4">;</span></span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span>, <span class="kw4">const</span> <span class="kw4">int</span><span class="sy2">*</span><span class="br0">)</span><span class="sy4">;</span></span></span> 声明同一函数）</div>
+<p>因为这些规则，下列函数声明确切地声明同一函数：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">char</span> s<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">char</span><span class="br0">[</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> s<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">const</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">volatile</span> s<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>下列声明也确切地声明同一函数：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>g<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx14"><td>
+<p>形参类型不能是含有到未知边界数组的引用或指针的类型，含有这种类型的多级指针/数组，或含有指向以这些类型为形参的函数指针
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx14">(C++14 前)</span></td></tr>
+</table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<p>指示<a href="variadic_arguments.html" title="cpp/language/variadic arguments">可变实参</a>的省略号前不能有逗号，即使它跟随指示<a href="parameter_pack.html" title="cpp/language/parameter pack">形参包</a>展开的省略号也是如此，故下列函数模板是确切相同的：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> ...<span class="me1">Args</span><span class="sy1">&gt;</span> <span class="kw4">void</span> f<span class="br0">(</span>Args..., ...<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> ...<span class="me1">Args</span><span class="sy1">&gt;</span> <span class="kw4">void</span> f<span class="br0">(</span>Args... ...<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> ...<span class="me1">Args</span><span class="sy1">&gt;</span> <span class="kw4">void</span> f<span class="br0">(</span>Args......<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>使用这种声明的例子之一是 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../types/is_function.html"><span class="kw478">std::<span class="me2">is_function</span></span></a></span></span> 的实现。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E5.87.BD.E6.95.B0.E5.AE.9A.E4.B9.89">函数定义</span></h3>
+<p>非成员函数的定义只能出现在命名空间作用域中（不存在嵌套函数）。<a href="member_functions.html" title="cpp/language/member functions">成员函数</a>的定义亦可出现在<a href="class.html" title="cpp/language/class">类定义</a>的体内。它们拥有下列语法：
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td class="t-sdsc-nopad"> <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <span class="t-spar">声明说明符序列</span><span class="t-mark">(可选)</span> <span class="t-spar">声明符</span> <span class="t-spar">虚声明符序列</span><span class="t-mark">(可选)</span> <span class="t-spar">函数体</span>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<p>其中 <span class="t-spar">函数体</span> 是下列之一
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">构造函数初始化器</span><span class="t-mark">(可选)</span> <span class="t-spar">复合语句</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">函数-try-块</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>=</b></code> <code><b>delete</b></code> <code><b>;</b></code>
+</td>
+<td> (3)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>=</b></code> <code><b>default</b></code> <code><b>;</b></code>
+</td>
+<td> (4)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<div class="t-li1"><span class="t-li">1)</span> 常规函数体</div>
+<div class="t-li1"><span class="t-li">2)</span> <a href="function-try-block.html" title="cpp/language/function-try-block">函数 try 块</a>（这是包装在 try/catch 块内的常规函数体）</div>
+<div class="t-li1"><span class="t-li">3)</span> 显式弃置的函数定义</div>
+<div class="t-li1"><span class="t-li">4)</span> 显式预置的函数定义，仅对<a href="member_functions.html#.E7.89.B9.E6.AE.8A.E6.88.90.E5.91.98.E5.87.BD.E6.95.B0" title="cpp/language/member functions">特殊成员函数</a>允许
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td> 可选的<a href="attributes.html" title="cpp/language/attributes">属性</a>列表。这些属性与出现在 <span class="t-spar">声明符</span> 中标识符之后的属性结合（见本页顶部），若它们存在。
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">声明说明符序列</span>
+</td>
+<td> -
+</td>
+<td> 带有说明符的返回类型，与<a href="declarations.html" title="cpp/language/declarations">声明文法</a>相同
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">声明符</span>
+</td>
+<td> -
+</td>
+<td> 函数声明符，与上述函数声明文法相同。<span class="t-rev-inl t-since-cxx20"><span>和函数声明一样，它可后随 <span class="t-spar">requires-子句</span></span> <span><span class="t-mark-rev t-since-cxx20">(C++20 起)</span></span></span>
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">虚说明符序列</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td> <a href="override.html" title="cpp/language/override">override</a>、<a href="final.html" title="cpp/language/final">final</a>，或它们任意顺序的组合（仅对成员函数允许）
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">构造函数初始化器</span>
+</td>
+<td> -
+</td>
+<td> <a href="constructor.html" title="cpp/language/initializer list">成员初始化器列表</a>，仅在构造函数中允许
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">复合语句</span>
+</td>
+<td> -
+</td>
+<td> 花括号环绕的<a href="statements.html#.E5.A4.8D.E5.90.88.E8.AF.AD.E5.8F.A5" title="cpp/language/statements">语句序列</a>，它们构成函数体
+</td></tr></table></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> max<span class="br0">(</span><span class="kw4">int</span> a, <span class="kw4">int</span> b, <span class="kw4">int</span> c<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> m <span class="sy1">=</span> <span class="br0">(</span>a <span class="sy1">&gt;</span> b<span class="br0">)</span><span class="sy4">?</span> a <span class="sy4">:</span> b<span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="br0">(</span>m <span class="sy1">&gt;</span> c<span class="br0">)</span><span class="sy4">?</span> m <span class="sy4">:</span> c<span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="co1">// 声明说明符序列 是“int”</span>
+<span class="co1">// 声明符是“max(int a, int b, int c)”</span>
+<span class="co1">// 函数体是 { ... }</span></pre></div></div>
+<p>函数体是一条<a href="statements.html#.E5.A4.8D.E5.90.88.E8.AF.AD.E5.8F.A5" title="cpp/language/statements">复合语句</a>（为一对花括号所环绕的零或多条语句），它们在函数调用时被执行。
+</p><p>函数的各个形参类型和返回类型不能是<a href="incomplete_type.html" title="cpp/language/incomplete type" class="mw-redirect">不完整的</a><a href="class.html" title="cpp/language/class">类类型</a>，<span class="t-rev-inl t-since-cxx11"><span>除了被弃置的函数</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>。完整性检查在函数<i>体</i>的语境中进行，这允许<a href="member_functions.html" title="cpp/language/member functions">成员函数</a>返回在其中定义它们的类（或其外围类），尽管在定义点它是不完整的（它在函数体内完整）。
+</p><p>在函数定义的 <span class="t-spar">声明符</span> 中声明的形参，在函数体内<a href="scope.html" title="cpp/language/scope">处于作用域中</a>。若某个形参未在函数体中使用，则它不需要具名（使用抽象声明符足矣）
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> print<span class="br0">(</span><span class="kw4">int</span> a, <span class="kw4">int</span><span class="br0">)</span> <span class="co1">// 未使用第二个形参</span>
+<span class="br0">{</span>
+    <a href="../io/c/fprintf.html"><span class="kw1845">std::<span class="me2">printf</span></span></a><span class="br0">(</span><span class="st0">"a = %d<span class="es1">\n</span>"</span>,a<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>尽管形参上的顶层 <a href="cv.html" title="cpp/language/cv">cv 限定符</a>在函数声明中被忽略，它们亦会修饰形参的类型，这在函数体中可见：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span> n<span class="br0">)</span> <span class="co1">// 声明 void(int) 类型的函数</span>
+<span class="br0">{</span>
+    <span class="co1">// 但在体内，n 的类型是 const int</span>
+<span class="br0">}</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<h3> <span class="mw-headline" id=".E5.BC.83.E7.BD.AE.E5.87.BD.E6.95.B0">弃置函数</span></h3>
+<p>如果取代函数体而使用特殊语法 <code><b>= delete ;</b></code>，则该函数被定义为<i>弃置的（deleted）</i>。任何弃置函数的使用都是非良构的（程序无法编译）。这包含调用，包括显式（以函数调用运算符）及隐式（对弃置的重载运算符、特殊成员函数、分配函数等的调用），构成指向弃置函数的指针或成员指针，甚或是在不求值表达式中使用弃置函数。但是，允许隐式 <a href="definition.html#ODR_.E5.BC.8F.E4.BD.BF.E7.94.A8" title="cpp/language/definition">ODR 式使用</a> 刚好被弃置的非纯虚成员函数。
+</p><p>若函数被重载，则首先进行<a href="overload_resolution.html" title="cpp/language/overload resolution">重载决议</a>，且仅当选择了弃置函数时程序才非良构。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> sometype
+<span class="br0">{</span>
+    <span class="kw4">void</span><span class="sy2">*</span> <a href="../memory/new/operator_new.html"><span class="kw687">operator new</span></a><span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span>
+    <span class="kw4">void</span><span class="sy2">*</span> <a href="../memory/new/operator_new.html"><span class="kw687">operator new</span></a><span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+sometype<span class="sy2">*</span> p <span class="sy1">=</span> new sometype<span class="sy4">;</span> <span class="co1">// 错误：尝试调用弃置的 sometype::operator new</span></pre></div></div>
+<p>函数的弃置定义必须是翻译单元中的首条声明：已经声明过的函数不能声明为弃置的：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> sometype <span class="br0">{</span> sometype<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+sometype<span class="sy4">::</span><span class="me2">sometype</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span> <span class="co1">// 错误：必须在首条声明弃置</span></pre></div></div>
+<h3> <span class="mw-headline" id="func">__func__</span></h3>
+<p>在函数体内，如同以如下方式定义了函数局部的预定义变量 <span class="t-lc">__func__</span>
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">char</span> __func__<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="st0">"function-name"</span><span class="sy4">;</span></pre></div></div>
+<p>此变量具有块作用域及静态存储期：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S
+<span class="br0">{</span>
+    S<span class="br0">(</span><span class="br0">)</span><span class="sy4">:</span> s<span class="br0">(</span>__func__<span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// OK：初始化器列表是函数体的一部分</span>
+    <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> s<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> s <span class="sy1">=</span> __func__<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 错误：形参列表是声明符的一部分</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E6.B3.A8.E8.A7.A3">注解</span></h3>
+<p>在使用直接初始化语法的变量声明和函数声明之间有歧义的情况下，编译器选择函数声明；见<a href="direct_initialization.html#.E6.B3.A8.E6.84.8F" title="cpp/language/direct initialization">直接初始化</a>
+</p>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本节未完成<br>原因：移动/清理 </td></tr></table>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+ 
+<span class="co1">// 命名空间（文件）作用域中的声明</span>
+<span class="co1">// （定义在后面提供）</span>
+<span class="kw4">int</span> f1<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="co1">// 拥有默认实参的简单函数，不返回内容</span>
+<span class="kw4">void</span> f0<span class="br0">(</span><span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> arg <span class="sy1">=</span> <span class="st0">"world"</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Hello, "</span> <span class="sy1">&lt;&lt;</span> arg <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// 返回指向 f0 的指针的函数</span>
+<span class="kw4">auto</span> fp11<span class="br0">(</span><span class="br0">)</span> <span class="sy2">-</span><span class="sy1">&gt;</span> <span class="kw4">void</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span><span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">return</span> f0<span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// 返回指向 f0 的指针的函数，C++11 前的风格</span>
+<span class="kw4">void</span> <span class="br0">(</span><span class="sy2">*</span>fp03<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">(</span><span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">return</span> f0<span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    f0<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    fp11<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span><span class="st0">"test"</span><span class="br0">)</span><span class="sy4">;</span>
+    fp03<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span><span class="st0">"again"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">int</span> f2<span class="br0">(</span><a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 块作用域中的声明</span>
+    <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> f2<span class="br0">(</span><span class="st0">"bad12"</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// 简单的非成员函数，返回 int</span>
+<span class="kw4">int</span> f1<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">return</span> <span class="nu0">42</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// 拥有异常说明和函数 try 块的函数</span>
+<span class="kw4">int</span> f2<span class="br0">(</span><a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a> str<span class="br0">)</span> <span class="kw1">noexcept</span> <span class="kw1">try</span>
+<span class="br0">{</span> 
+    <span class="kw1">return</span> <a href="../string/basic_string/stol.html"><span class="kw1257">std::<span class="me2">stoi</span></span></a><span class="br0">(</span>str<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw1">catch</span><span class="br0">(</span><span class="kw4">const</span> <a href="../error/exception.html"><span class="kw764">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cerr.html"><span class="kw1760">std::<span class="me2">cerr</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"stoi() failed!<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>输出：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Hello, world
+Hello, test
+Hello, again
+stoi() failed!
+0</pre></div></div> 
+</div>
+<h3><span class="mw-headline" id=".E7.BC.BA.E9.99.B7.E6.8A.A5.E5.91.8A">缺陷报告</span></h3>
+<p>下列更改行为的缺陷报告追溯地应用于以前出版的 C++ 标准。
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tr>
+<th> DR
+</th>
+<th> 应用于
+</th>
+<th> 出版时的行为
+</th>
+<th> 正确行为
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#1394">CWG 1394</a>
+</td>
+<td> C++11
+</td>
+<td> 弃置函数不能返回不完整类型
+</td>
+<td> 允许不完整的返回类型
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#577">CWG 577</a>
+</td>
+<td> C++11
+</td>
+<td> 待决类型 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> 可用于声明无形参函数
+</td>
+<td> 仅允许非待决的 void
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#393">CWG 393</a>
+</td>
+<td> C++14
+</td>
+<td> 含有到未知边界数组的指针/引用的类型不能作为形参
+</td>
+<td> 允许这些类型
+</td></tr></table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 5091/1000000
+Preprocessor generated node count: 13732/1000000
+Post‐expand include size: 79646/2097152 bytes
+Template argument size: 36920/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2717-0!*!0!!zh!*!zh!* and timestamp 20190823003026 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/function&amp;oldid=61953">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/function&amp;oldid=61953</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/function">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年7月29日 (星期一) 10:16。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过12,742次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 3.567 secs. -->
+	</body>
+<!-- Cached 20190823003026 -->
+</html>

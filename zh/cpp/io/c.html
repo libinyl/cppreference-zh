@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>C 风格文件输入/输出</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/io/c","wgTitle":"cpp/io/c","wgCurRevisionId":59520,"wgArticleId":742,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/io/c","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_io_c skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">C 风格文件输入/输出</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../io.html" title="cpp/io">io</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../io.html" title="cpp/io">输入/输出库</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="manip.html" title="cpp/io/manip"> I/O 操纵符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> C 风格 I/O</strong></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 缓冲 </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_streambuf.html" title="cpp/io/basic streambuf"><span class="t-lines"><span>basic_streambuf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_filebuf.html" title="cpp/io/basic filebuf"><span class="t-lines"><span>basic_filebuf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_stringbuf.html" title="cpp/io/basic stringbuf"><span class="t-lines"><span>basic_stringbuf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strstreambuf.html" title="cpp/io/strstreambuf"><span class="t-lines"><span>strstreambuf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-deprecated-cxx98">(C++98 中弃用)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_syncbuf.html" title="cpp/io/basic syncbuf"><span class="t-lines"><span>basic_syncbuf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 流 </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 抽象 </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ios_base.html" title="cpp/io/ios base"><span class="t-lines"><span>ios_base</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_ios.html" title="cpp/io/basic ios"><span class="t-lines"><span>basic_ios</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_istream.html" title="cpp/io/basic istream"><span class="t-lines"><span>basic_istream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_ostream.html" title="cpp/io/basic ostream"><span class="t-lines"><span>basic_ostream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_iostream.html" title="cpp/io/basic iostream"><span class="t-lines"><span>basic_iostream</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 文件 I/O </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_ifstream.html" title="cpp/io/basic ifstream"><span class="t-lines"><span>basic_ifstream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_ofstream.html" title="cpp/io/basic ofstream"><span class="t-lines"><span>basic_ofstream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_fstream.html" title="cpp/io/basic fstream"><span class="t-lines"><span>basic_fstream</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 字符串 I/O </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_istringstream.html" title="cpp/io/basic istringstream"><span class="t-lines"><span>basic_istringstream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_ostringstream.html" title="cpp/io/basic ostringstream"><span class="t-lines"><span>basic_ostringstream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_stringstream.html" title="cpp/io/basic stringstream"><span class="t-lines"><span>basic_stringstream</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 数组 I/O </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="istrstream.html" title="cpp/io/istrstream"><span class="t-lines"><span>istrstream</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-deprecated-cxx98">(C++98 中弃用)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ostrstream.html" title="cpp/io/ostrstream"><span class="t-lines"><span>ostrstream</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-deprecated-cxx98">(C++98 中弃用)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strstream.html" title="cpp/io/strstream"><span class="t-lines"><span>strstream</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-deprecated-cxx98">(C++98 中弃用)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 同步的输出</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_osyncstream.html" title="cpp/io/basic osyncstream"><span class="t-lines"><span>basic_osyncstream</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 类型 </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="streamoff.html" title="cpp/io/streamoff"><span class="t-lines"><span>streamoff</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="streamsize.html" title="cpp/io/streamsize"><span class="t-lines"><span>streamsize</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fpos.html" title="cpp/io/fpos"><span class="t-lines"><span>fpos</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 错误类别接口 </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iostream_category.html" title="cpp/io/iostream category"><span class="t-lines"><span>iostream_category</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="io_errc.html" title="cpp/io/io errc"><span class="t-lines"><span>io_errc</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><strong class="selflink">C 风格 I/O</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> 函数</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 文件访问</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fopen.html" title="cpp/io/c/fopen"><span class="t-lines"><span>fopen</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/freopen.html" title="cpp/io/c/freopen"><span class="t-lines"><span>freopen</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fclose.html" title="cpp/io/c/fclose"><span class="t-lines"><span>fclose</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fflush.html" title="cpp/io/c/fflush"><span class="t-lines"><span>fflush</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fwide.html" title="cpp/io/c/fwide"><span class="t-lines"><span>fwide</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/setbuf.html" title="cpp/io/c/setbuf"><span class="t-lines"><span>setbuf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/setvbuf.html" title="cpp/io/c/setvbuf"><span class="t-lines"><span>setvbuf</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 直接输入/输出</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fread.html" title="cpp/io/c/fread"><span class="t-lines"><span>fread</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fwrite.html" title="cpp/io/c/fwrite"><span class="t-lines"><span>fwrite</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 无格式输入/输出</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fgetc.html" title="cpp/io/c/fgetc"><span class="t-lines"><span>fgetc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fgets.html" title="cpp/io/c/fgets"><span class="t-lines"><span>fgets</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fputc.html" title="cpp/io/c/fputc"><span class="t-lines"><span>fputc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fputs.html" title="cpp/io/c/fputs"><span class="t-lines"><span>fputs</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/getchar.html" title="cpp/io/c/getchar"><span class="t-lines"><span>getchar</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/gets.html" title="cpp/io/c/gets"><span class="t-lines"><span>gets</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx14">(C++14 前)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/putchar.html" title="cpp/io/c/putchar"><span class="t-lines"><span>putchar</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/puts.html" title="cpp/io/c/puts"><span class="t-lines"><span>puts</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/ungetc.html" title="cpp/io/c/ungetc"><span class="t-lines"><span>ungetc</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fgetwc.html" title="cpp/io/c/fgetwc"><span class="t-lines"><span>fgetwc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fgetws.html" title="cpp/io/c/fgetws"><span class="t-lines"><span>fgetws</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fputwc.html" title="cpp/io/c/fputwc"><span class="t-lines"><span>fputwc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fputws.html" title="cpp/io/c/fputws"><span class="t-lines"><span>fputws</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/getwchar.html" title="cpp/io/c/getwchar"><span class="t-lines"><span>getwchar</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/putwchar.html" title="cpp/io/c/putwchar"><span class="t-lines"><span>putwchar</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/ungetwc.html" title="cpp/io/c/ungetwc"><span class="t-lines"><span>ungetwc</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 有格式输入/输出</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/scanf.html" title="cpp/io/c/fscanf"><span class="t-lines"><span>scanf</span><span>fscanf</span><span>sscanf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/vfscanf.html" title="cpp/io/c/vfscanf"><span class="t-lines"><span>vscanf</span><span>vfscanf</span><span>vsscanf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/printf.html" title="cpp/io/c/fprintf"><span class="t-lines"><span>printf</span><span>fprintf</span><span>sprintf</span><span>snprintf</span></span></a></div><div><span class="t-lines"><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/vfprintf.html" title="cpp/io/c/vfprintf"><span class="t-lines"><span>vprintf</span><span>vfprintf</span><span>vsprintf</span><span>vsnprintf</span></span></a></div><div><span class="t-lines"><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fwscanf.html" title="cpp/io/c/fwscanf"><span class="t-lines"><span>wscanf</span><span>fwscanf</span><span>swscanf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/vfwscanf.html" title="cpp/io/c/vfwscanf"><span class="t-lines"><span>vwscanf</span><span>vfwscanf</span><span>vswscanf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fwprintf.html" title="cpp/io/c/fwprintf"><span class="t-lines"><span>wprintf</span><span>fwprintf</span><span>swprintf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/vfwprintf.html" title="cpp/io/c/vfwprintf"><span class="t-lines"><span>vwprintf</span><span>vfwprintf</span><span>vswprintf</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 文件定位</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/ftell.html" title="cpp/io/c/ftell"><span class="t-lines"><span>ftell</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fgetpos.html" title="cpp/io/c/fgetpos"><span class="t-lines"><span>fgetpos</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fseek.html" title="cpp/io/c/fseek"><span class="t-lines"><span>fseek</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/fsetpos.html" title="cpp/io/c/fsetpos"><span class="t-lines"><span>fsetpos</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/rewind.html" title="cpp/io/c/rewind"><span class="t-lines"><span>rewind</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 错误处理</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/clearerr.html" title="cpp/io/c/clearerr"><span class="t-lines"><span>clearerr</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/feof.html" title="cpp/io/c/feof"><span class="t-lines"><span>feof</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/ferror.html" title="cpp/io/c/ferror"><span class="t-lines"><span>ferror</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/perror.html" title="cpp/io/c/perror"><span class="t-lines"><span>perror</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 文件上的操作</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/remove.html" title="cpp/io/c/remove"><span class="t-lines"><span>remove</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/rename.html" title="cpp/io/c/rename"><span class="t-lines"><span>rename</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/tmpfile.html" title="cpp/io/c/tmpfile"><span class="t-lines"><span>tmpfile</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="c/tmpnam.html" title="cpp/io/c/tmpnam"><span class="t-lines"><span>tmpnam</span></span></a></div></div></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>C++ 标准库的 C I/O 子集实现 C 风格流输入/输出操作。 <code>&lt;cstdio&gt;</code> 头文件提供通用文件支持并提供有窄和多字节字符输入/输出能力的函数，而 <code>&lt;cwchar&gt;</code> 头文件提供有宽字符输入/输出能力的函数。
+</p><p>C 流是 <span class="t-lc"><strong class="selflink">std::FILE</strong></span> 类型对象，只能通过 <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">FILE</span><span class="sy2">*</span></span></span> 类型指针访问及操作（注意：在可能以解引用合法的 <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">FILE</span><span class="sy2">*</span></span></span> ，复制创建 <span class="t-lc"><strong class="selflink">std::FILE</strong></span> 类型的局部对象时，在 I/O 函数使用这种副本的地址是未定义行为）。每个 C 流与外部物理设备（文件、标准输入流、打印机、序列端口等）关联。
+</p><p>C 流能用于无格式和有格式的输入及输出。它们对本地环境敏感，并可在需要时提供宽/多字节转换。不同于关联到其自身本地环境的 C++ 流，所有 C 流都访问同一本地环境对象：最近 <span class="t-lc"><a href="../locale/setlocale.html" title="cpp/locale/setlocale">std::setlocale</a></span> 所安装者。
+</p><p>除了访问设备所必须的系统限定信息（例如 POSIX 文件描述符），每个 C 流对象保有以下内容：
+</p>
+<div class="t-li1"><span class="t-li">1)</span> 字符宽度：未设置、窄或宽。</div>
+<div class="t-li1"><span class="t-li">2)</span> 缓冲状态：无缓冲、行缓冲、全缓冲。</div>
+<div class="t-li1"><span class="t-li">3)</span> 缓冲区，可为外部的用户提供缓冲区所替换。</div>
+<div class="t-li1"><span class="t-li">4)</span> I/O 模式：输入、输出或更新（兼具输入与输出）。</div>
+<div class="t-li1"><span class="t-li">5)</span> 二进制/文本模式指示器。</div>
+<div class="t-li1"><span class="t-li">6)</span> 文件尾指示器。</div>
+<div class="t-li1"><span class="t-li">7)</span> 错误状态指示器。</div>
+<div class="t-li1"><span class="t-li">8)</span> 文件位置指示器（ <code>std::fpos_t</code> 类型对象），对于宽字符流包含剖析状态（ <span class="t-lc"><a href="../string/multibyte/mbstate_t.html" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></span> 类型对象）。</div>
+<div class="t-li1"><span class="t-li">9)</span> <span class="t-mark-rev t-since-cxx17">(C++17)</span>在多个线程读、写、寻位或查询流时避免数据竞争的再入锁。</div>
+<h4><span class="mw-headline" id=".E7.AA.84.E4.B8.8E.E5.AE.BD.E9.9D.A2.E5.90.91">窄与宽面向</span></h4>
+<p>新打开的流无面向。首次到 <span class="t-lc">std::fwide</span> 的调用或 I/O 函数建立面向：宽 I/O 函数令流为宽面向，窄 I/O 函数令流为窄面向。一旦设置，则面向只能以 <span class="t-lc"><a href="c/freopen.html" title="cpp/io/c/freopen">std::freopen</a></span> 更改。不能在宽面向流上调用窄 I/O 函数，不能在窄面向流上调用宽 I/O 函数。宽 I/O 函数在宽与多字节字符间如同以调用 <span class="t-lc"><a href="../string/multibyte/mbrtowc.html" title="cpp/string/multibyte/mbrtowc">std::mbrtowc</a></span> 和 <span class="t-lc"><a href="../string/multibyte/wcrtomb.html" title="cpp/string/multibyte/wcrtomb">std::wcrtomb</a></span> 转换。不同于程序中合法的多字节字符串，文件中的多字节字符可以含有嵌入的空字符且不必以初始迁移状态开始或结束。
+</p><p>POSIX 要求在流对象的面向变成宽时，将当前安装的 C 本地环境的 LC_CTYPE 平面存储于其中，而且将它用于此流上的所有将来 I/O 直至面向被更改，无关乎任何到 <span class="t-lc"><a href="../locale/setlocale.html" title="cpp/locale/setlocale">std::setlocale</a></span> 的后继调用。
+</p>
+<h4><span class="mw-headline" id=".E4.BA.8C.E8.BF.9B.E5.88.B6.E4.B8.8E.E6.96.87.E6.9C.AC.E6.A8.A1.E5.BC.8F">二进制与文本模式</span></h4>
+<p><i>文本流</i>是被组合进行（零或更多字符加上终止的 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es1">\n</span>'</span></span></span> ）的有序字符序列。最后一行是否要求终止的 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es1">\n</span>'</span></span></span> 是实现定义的。可能必须在输入与输出时添加、切换或删除字符，以符合 OS 中的表示文本（尤其是 Windows OS 上的 C 流在输出时将 <code>\n</code> 转换为 <code>\r\n</code> ，输入时将 <code>\r\n</code> 转换为 <code>\n</code> ）。
+</p><p>仅若下列条件全为真，从文本流读取的数据才保证与先前写出到该文本流者比较相等：
+</p>
+<ul><li> 数据只由打印字符和控制字符 <code>\t</code> 及 <code>\n</code> 组成（尤其是 Windows OS 上，字符 <code>'\0x1A'</code> 终止输入）
+</li><li> 没有 \n 立即前附空格符（立即先于 \n 写入的空格符可能在读取时消失）
+</li><li> 尾字符是 \n
+</li></ul>
+<p><i>二进制流</i>是能通透地记录内部数据的有序字符序列。从二进制流读取的数据始终与先前写出到该流者比较相等。仅允许实现后附一些空字符到流结尾。宽二进制流不必终止于初始迁移状态。
+</p><p>POSIX 实现不辨别文本与二进制流（无 \n 或任何其他字符的特殊映射）。
+</p>
+<h3><span class="mw-headline" id=".E5.87.BD.E6.95.B0">函数</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;cstdio&gt;</code> </div>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E6.96.87.E4.BB.B6.E8.AE.BF.E9.97.AE"> 文件访问 </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fopen.html" title="cpp/io/c/fopen"> <span class="t-lines"><span>fopen</span></span></a></div></div>
+</td>
+<td>  打开文件 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/freopen.html" title="cpp/io/c/freopen"> <span class="t-lines"><span>freopen</span></span></a></div></div>
+</td>
+<td>  以不同名称打开既存流 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fclose.html" title="cpp/io/c/fclose"> <span class="t-lines"><span>fclose</span></span></a></div></div>
+</td>
+<td>  关闭文件 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fflush.html" title="cpp/io/c/fflush"> <span class="t-lines"><span>fflush</span></span></a></div></div>
+</td>
+<td>  将输出流与实际文件同步 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fwide.html" title="cpp/io/c/fwide"> <span class="t-lines"><span>fwide</span></span></a></div></div>
+</td>
+<td>  在宽字符 I/O 和窄字符 I/O 间切换文件流 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/setbuf.html" title="cpp/io/c/setbuf"> <span class="t-lines"><span>setbuf</span></span></a></div></div>
+</td>
+<td>  为文件流设置缓冲区 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/setvbuf.html" title="cpp/io/c/setvbuf"> <span class="t-lines"><span>setvbuf</span></span></a></div></div>
+</td>
+<td>  为文件流设置缓冲区与其大小 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E7.9B.B4.E6.8E.A5.E8.BE.93.E5.85.A5.2F.E8.BE.93.E5.87.BA"> 直接输入/输出 </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fread.html" title="cpp/io/c/fread"> <span class="t-lines"><span>fread</span></span></a></div></div>
+</td>
+<td>  从文件读取 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fwrite.html" title="cpp/io/c/fwrite"> <span class="t-lines"><span>fwrite</span></span></a></div></div>
+</td>
+<td>  写入文件 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E6.97.A0.E6.A0.BC.E5.BC.8F.E8.BE.93.E5.85.A5.2F.E8.BE.93.E5.87.BA"> 无格式输入/输出 </span></h5>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id=".E5.AD.97.E8.8A.82.2F.E5.A4.9A.E5.AD.97.E8.8A.82.E5.AD.97.E7.AC.A6"> 字节/多字节字符 </span></h6>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fgetc.html" title="cpp/io/c/fgetc"> <span class="t-lines"><span>fgetc</span><span>getc</span></span></a></div></div>
+</td>
+<td>  从文件流获取字符 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fgets.html" title="cpp/io/c/fgets"> <span class="t-lines"><span>fgets</span></span></a></div></div>
+</td>
+<td>  从文件流获取字符串 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fputc.html" title="cpp/io/c/fputc"> <span class="t-lines"><span>fputc</span><span>putc</span></span></a></div></div>
+</td>
+<td>  写字符到文件流 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fputs.html" title="cpp/io/c/fputs"> <span class="t-lines"><span>fputs</span></span></a></div></div>
+</td>
+<td>  写字符串到文件流 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/getchar.html" title="cpp/io/c/getchar"> <span class="t-lines"><span>getchar</span></span></a></div></div>
+</td>
+<td>  从 <span class="t-lc"><strong class="selflink">stdin</strong></span> 读取字符 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/gets.html" title="cpp/io/c/gets"> <span class="t-lines"><span>gets</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-deprecated-cxx11">(C++11 中弃用)</span></span><span><span class="t-mark-rev t-until-cxx14">(C++14 中移除)</span></span></span></div></div>
+</td>
+<td>  从 <span class="t-lc"><strong class="selflink">stdin</strong></span> 读取字符串 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/putchar.html" title="cpp/io/c/putchar"> <span class="t-lines"><span>putchar</span></span></a></div></div>
+</td>
+<td>  写字符到 <span class="t-lc"><strong class="selflink">stdout</strong></span> <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/puts.html" title="cpp/io/c/puts"> <span class="t-lines"><span>puts</span></span></a></div></div>
+</td>
+<td>  写字符串到 <span class="t-lc"><strong class="selflink">stdout</strong></span>  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/ungetc.html" title="cpp/io/c/ungetc"> <span class="t-lines"><span>ungetc</span></span></a></div></div>
+</td>
+<td>  把字符放回文件流 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id=".E5.AE.BD.E5.AD.97.E7.AC.A6">  宽字符 </span></h6>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fgetwc.html" title="cpp/io/c/fgetwc"> <span class="t-lines"><span>fgetwc</span><span>getwc</span></span></a></div></div>
+</td>
+<td>  从文件流获取宽字符 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fgetws.html" title="cpp/io/c/fgetws"> <span class="t-lines"><span>fgetws</span></span></a></div></div>
+</td>
+<td>  从文件流获取宽字符串 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fputwc.html" title="cpp/io/c/fputwc"> <span class="t-lines"><span>fputwc</span><span>putwc</span></span></a></div></div>
+</td>
+<td>  写宽字符到文件流 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fputws.html" title="cpp/io/c/fputws"> <span class="t-lines"><span>fputws</span></span></a></div></div>
+</td>
+<td>  写宽字符串到文件流 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/getwchar.html" title="cpp/io/c/getwchar"> <span class="t-lines"><span>getwchar</span></span></a></div></div>
+</td>
+<td>  从 <span class="t-lc"><strong class="selflink">stdin</strong></span> 读取宽字符 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/putwchar.html" title="cpp/io/c/putwchar"> <span class="t-lines"><span>putwchar</span></span></a></div></div>
+</td>
+<td>  写宽字符到 <span class="t-lc"><strong class="selflink">stdout</strong></span> <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/ungetwc.html" title="cpp/io/c/ungetwc"> <span class="t-lines"><span>ungetwc</span></span></a></div></div>
+</td>
+<td>  把宽字符放回文件流 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E6.9C.89.E6.A0.BC.E5.BC.8F.E8.BE.93.E5.85.A5.2F.E8.BE.93.E5.87.BA"> 有格式输入/输出 </span></h5>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id=".E5.AD.97.E8.8A.82.2F.E5.A4.9A.E5.AD.97.E8.8A.82.E5.AD.97.E7.AC.A6_2">  字节/多字节字符 </span></h6>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/scanf.html" title="cpp/io/c/fscanf"> <span class="t-lines"><span>scanf</span><span>fscanf</span><span>sscanf</span></span></a></div></div>
+</td>
+<td>  从 <span class="t-lc"><strong class="selflink">stdin</strong></span>、文件流或缓冲区读取有格式输入 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/vfscanf.html" title="cpp/io/c/vfscanf"> <span class="t-lines"><span>vscanf</span><span>vfscanf</span><span>vsscanf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  使用可变实参列表<br>从 <span class="t-lc"><strong class="selflink">stdin</strong></span>、文件流或缓冲区读取有格式输入 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/printf.html" title="cpp/io/c/fprintf"> <span class="t-lines"><span>printf</span><span>fprintf</span><span>sprintf</span><span>snprintf</span></span></a></div><div><span class="t-lines"><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>   打印有格式输出到 <span class="t-lc"><strong class="selflink">stdout</strong></span>、文件流或缓冲区  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/vfprintf.html" title="cpp/io/c/vfprintf"> <span class="t-lines"><span>vprintf</span><span>vfprintf</span><span>vsprintf</span><span>vsnprintf</span></span></a></div><div><span class="t-lines"><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  使用可变实参列表<br>打印有格式输出到 <span class="t-lc"><strong class="selflink">stdout</strong></span>、文件流或缓冲区 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id=".E5.AE.BD.E5.AD.97.E7.AC.A6_2">  宽字符 </span></h6>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fwscanf.html" title="cpp/io/c/fwscanf"> <span class="t-lines"><span>wscanf</span><span>fwscanf</span><span>swscanf</span></span></a></div></div>
+</td>
+<td>  从 <span class="t-lc"><strong class="selflink">stdin</strong></span>、文件流或缓冲区读取有格式宽字符输入 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/vfwscanf.html" title="cpp/io/c/vfwscanf"> <span class="t-lines"><span>vwscanf</span><span>vfwscanf</span><span>vswscanf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  使用可变实参列表<br>从 <span class="t-lc"><strong class="selflink">stdin</strong></span>、文件流或缓冲区读取有格式宽字符输入 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fwprintf.html" title="cpp/io/c/fwprintf"> <span class="t-lines"><span>wprintf</span><span>fwprintf</span><span>swprintf</span></span></a></div></div>
+</td>
+<td>  打印有格式宽字符输出到 <span class="t-lc"><strong class="selflink">stdout</strong></span>、文件流或缓冲区 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/vfwprintf.html" title="cpp/io/c/vfwprintf"> <span class="t-lines"><span>vwprintf</span><span>vfwprintf</span><span>vswprintf</span></span></a></div></div>
+</td>
+<td>  使用可变实参列表打印<br>有格式宽字符输出到 <span class="t-lc"><strong class="selflink">stdout</strong></span>、文件流或缓冲区 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E6.96.87.E4.BB.B6.E5.AF.BB.E4.BD.8D"> 文件寻位 </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/ftell.html" title="cpp/io/c/ftell"> <span class="t-lines"><span>ftell</span></span></a></div></div>
+</td>
+<td>  返回当前文件位置指示器 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fgetpos.html" title="cpp/io/c/fgetpos"> <span class="t-lines"><span>fgetpos</span></span></a></div></div>
+</td>
+<td>  获取文件位置指示器 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fseek.html" title="cpp/io/c/fseek"> <span class="t-lines"><span>fseek</span></span></a></div></div>
+</td>
+<td>  移动文件位置指示器到文件中的指定位置 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/fsetpos.html" title="cpp/io/c/fsetpos"> <span class="t-lines"><span>fsetpos</span></span></a></div></div>
+</td>
+<td>  移动文件位置指示器到文件中的指定位置 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/rewind.html" title="cpp/io/c/rewind"> <span class="t-lines"><span>rewind</span></span></a></div></div>
+</td>
+<td>  移动文件位置指示器到文件起始 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E9.94.99.E8.AF.AF.E5.A4.84.E7.90.86"> 错误处理 </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/clearerr.html" title="cpp/io/c/clearerr"> <span class="t-lines"><span>clearerr</span></span></a></div></div>
+</td>
+<td>  清除错误 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/feof.html" title="cpp/io/c/feof"> <span class="t-lines"><span>feof</span></span></a></div></div>
+</td>
+<td>  检查文件尾 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/ferror.html" title="cpp/io/c/ferror"> <span class="t-lines"><span>ferror</span></span></a></div></div>
+</td>
+<td>  检查文件错误 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/perror.html" title="cpp/io/c/perror"> <span class="t-lines"><span>perror</span></span></a></div></div>
+</td>
+<td>  显示对应当前错误的字符串于 <span class="t-lc"><strong class="selflink">stderr</strong></span> <br> <span class="t-mark">(函数)</span> </td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E6.96.87.E4.BB.B6.E4.B8.8A.E7.9A.84.E6.93.8D.E4.BD.9C"> 文件上的操作 </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/remove.html" title="cpp/io/c/remove"> <span class="t-lines"><span>remove</span></span></a></div></div>
+</td>
+<td>   删除文件  <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/rename.html" title="cpp/io/c/rename"> <span class="t-lines"><span>rename</span></span></a></div></div>
+</td>
+<td>   重命名文件 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/tmpfile.html" title="cpp/io/c/tmpfile"> <span class="t-lines"><span>tmpfile</span></span></a></div></div>
+</td>
+<td>   创建并打开一个临时、自动移除的文件 <br> <span class="t-mark">(函数)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="c/tmpnam.html" title="cpp/io/c/tmpnam"> <span class="t-lines"><span>tmpnam</span></span></a></div></div>
+</td>
+<td>  返回一个唯一独有的文件名 <br> <span class="t-mark">(函数)</span> </td></tr>
+</table>
+<h3><span class="mw-headline" id=".E7.B1.BB.E5.9E.8B">类型</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;cstdio&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-sep">
+<td colspan="2">  
+</td></tr>
+<tr class="t-dsc-hitem">
+<td> 类型
+</td>
+<td> 定义
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">FILE</span></span>
+</td>
+<td> 对象类型，足以保有控制 C I/O 流所需的全部信息</td></tr>
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">fpos_t</span></span>
+</td>
+<td> 完整非数组对象类型，足以唯一指定文件中的位置，包含其多字节剖析状态</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../types/size_t.html" title="cpp/types/size t"> <span class="t-lines"><span>size_t</span></span></a></div></div>
+</td>
+<td>  <a href="../language/sizeof.html" title="cpp/language/sizeof"><tt>sizeof</tt></a> 运算符返回的无符号整数类型 <br> <span class="t-mark">(typedef)</span> </td></tr>
+</table>
+<h3><span class="mw-headline" id=".E5.AE.8F">宏</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>定义于头文件 <code>&lt;cstdio&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>stdin</span><span>stdout</span><span>stderr</span></span></div></div>
+</td>
+<td>  与输入流关联到 <span class="t-c"><span class="mw-geshi cpp source-cpp">FILE<span class="sy2">*</span></span></span> 类型表达式<br>与输出流关联的 <span class="t-c"><span class="mw-geshi cpp source-cpp">FILE<span class="sy2">*</span></span></span> 类型表达式<br>与错误输出流关联的 <span class="t-c"><span class="mw-geshi cpp source-cpp">FILE<span class="sy2">*</span></span></span> 类型表达式 <br> <span class="t-mark">(宏常量)</span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>EOF</span></span></div></div>
+</td>
+<td>  拥有 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> 类型和负值的整数常量表达式 <br> <span class="t-mark">(宏常量)</span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FOPEN_MAX</span></span></div></div>
+</td>
+<td>  能同时打开的文件数 <br> <span class="t-mark">(宏常量)</span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FILENAME_MAX</span></span></div></div>
+</td>
+<td>  要保有最长受支持文件名的 char 数组所需的长度 <br> <span class="t-mark">(宏常量)</span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>BUFSIZ</span></span></div></div>
+</td>
+<td>  <span class="t-lc"><a href="c/setbuf.html" title="cpp/io/c/setbuf">std::setbuf</a></span> 所用的缓冲区大小 <br> <span class="t-mark">(宏常量)</span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>_IOFBF</span><span>_IOLBF</span><span>_IONBF</span></span></div></div>
+</td>
+<td>  给 <span class="t-lc"><a href="c/setbuf.html" title="cpp/io/c/setbuf">std::setbuf</a></span> 的参数，指示全缓冲 I/O<br>给 <span class="t-lc"><a href="c/setbuf.html" title="cpp/io/c/setbuf">std::setbuf</a></span> 的参数，指示行缓冲 I/O<br>给 <span class="t-lc"><a href="c/setbuf.html" title="cpp/io/c/setbuf">std::setbuf</a></span> 的参数，指示无缓冲 I/O <br> <span class="t-mark">(宏常量)</span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>SEEK_SET</span><span>SEEK_CUR</span><span>SEEK_END</span></span></div></div>
+</td>
+<td>  给 <span class="t-lc"><a href="c/fseek.html" title="cpp/io/c/fseek">std::fseek</a></span> 的参数，指示从文件起始寻位<br>给 <span class="t-lc"><a href="c/fseek.html" title="cpp/io/c/fseek">std::fseek</a></span> 的参数，指示从当前文件位置寻位<br>给 <span class="t-lc"><a href="c/fseek.html" title="cpp/io/c/fseek">std::fseek</a></span> 的参数，指示从文件尾寻位 <br> <span class="t-mark">(宏常量)</span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>TMP_MAX</span></span></div></div>
+</td>
+<td>  <span class="t-lc"><a href="c/tmpnam.html" title="cpp/io/c/tmpnam">std::tmpnam</a></span> 所能生成的唯一文件名的最大数量 <br> <span class="t-mark">(宏常量)</span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>L_tmpnam</span></span></div></div>
+</td>
+<td>  保有 <span class="t-lc"><a href="c/tmpnam.html" title="cpp/io/c/tmpnam">std::tmpnam</a></span> 结果的 char 数组所需的大小 <br> <span class="t-mark">(宏常量)</span>
+</td></tr>
+</table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 11592/1000000
+Preprocessor generated node count: 10713/1000000
+Post‐expand include size: 343943/2097152 bytes
+Template argument size: 58126/2097152 bytes
+Highest expansion depth: 22/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:742-0!*!0!!zh!*!zh!* and timestamp 20190823001218 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/io/c&amp;oldid=59520">https://zh.cppreference.com/mwiki/index.php?title=cpp/io/c&amp;oldid=59520</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/io/c">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年3月3日 (星期日) 23:45。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过24,139次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.621 secs. -->
+	</body>
+<!-- Cached 20190823001219 -->
+</html>

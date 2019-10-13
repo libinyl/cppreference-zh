@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>类</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/classes","wgTitle":"cpp/language/classes","wgCurRevisionId":60227,"wgArticleId":8561,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed CWG DR marker"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/classes","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_classes skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">类</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><strong class="selflink">类</strong><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5">概述</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">综述</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"><code>class</code>/<code>struct</code> 类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"><code>union</code> 类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="injected-class-name.html" title="cpp/language/injected-class-name">注入类名</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5">成员</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html" title="cpp/language/data members">数据成员</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static.html" title="cpp/language/static">静态成员</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="this.html" title="cpp/language/this"><code>this</code> 指针</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nested_classes.html" title="cpp/language/nested types">嵌套类</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">成员模板</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bit_field.html" title="cpp/language/bit field">位域</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration"><code>using</code> 声明</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_functions.html" title="cpp/language/member functions">成员函数</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="access.html" title="cpp/language/access">成员访问指定符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constructor.html" title="cpp/language/initializer list">构造函数与成员初始化器列表</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html#.E6.88.90.E5.91.98.E5.88.9D.E5.A7.8B.E5.8C.96" title="cpp/language/data members">默认成员初始化器</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="friend.html" title="cpp/language/friend"><code>friend</code> 指定符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"><code>explicit</code> 指定符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="converting_constructor.html" title="cpp/language/converting constructor">转换构造函数</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5">特殊成员函数</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_constructor.html" title="cpp/language/default constructor">默认构造函数</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_constructor.html" title="cpp/language/copy constructor">复制构造函数</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_constructor.html" title="cpp/language/move constructor">移动构造函数</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_assignment.html" title="cpp/language/copy assignment">复制赋值运算符</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_assignment.html" title="cpp/language/move assignment">移动赋值运算符</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="destructor.html" title="cpp/language/destructor">析构函数</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5">继承</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="derived_class.html" title="cpp/language/derived class">基与派生类</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ebo.html" title="cpp/language/ebo">空基类优化</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual">虚成员函数</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="abstract_class.html" title="cpp/language/abstract class">纯虚函数与抽象类</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="override.html" title="cpp/language/override"><tt>override</tt></a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="final.html" title="cpp/language/final"><tt>final</tt></a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>类是一种用户定义类型。
+</p><p>类类型可由类说明符定义，它在<a href="declarations.html" title="cpp/language/declarations">声明</a>语法的 <span class="t-spar">声明说明符序列</span> 中出现。类说明符拥有下列语法：
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">类关键词</span> <span class="t-spar">attr</span> <span class="t-spar">类头名</span> <code><b>{ </b></code> <span class="t-spar">成员说明</span> <code><b>} </b></code>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">类关键词</span> <span class="t-spar">attr</span> <span class="t-spar">类头名</span> <code><b>:</b></code> <span class="t-spar">基类说明符序列</span> <code><b>{ </b></code> <span class="t-spar">成员说明</span> <code><b>} </b></code>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">类关键词</span>
+</td>
+<td> -
+</td>
+<td>  <a href="../keyword/class.html" title="cpp/keyword/class">class</a>、<a href="../keyword/struct.html" title="cpp/keyword/struct">struct</a>、<a href="../keyword/union.html" title="cpp/keyword/union">union</a> 之一
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td>  可选的任意数量的<a href="attributes.html" title="cpp/language/attributes">属性</a>序列
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">类头名</span>
+</td>
+<td> -
+</td>
+<td>  被定义的类名。可选地前接 <span class="t-spar">嵌套名说明符</span>（名字和作用域解析运算符的序列，以作用域解析运算符结尾），可选地后随关键词 <a href="../keyword/final.html" title="cpp/keyword/final">final</a>。可以忽略该名字，此情况下类是无名的（注意无名类不可为 final）
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">基类说明符序列</span>
+</td>
+<td> -
+</td>
+<td>  一或多个父类及其各自所用的继承模型的列表（见<a href="derived_class.html" title="cpp/language/derived class">派生类</a>）
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">成员说明</span>
+</td>
+<td> -
+</td>
+<td>  访问说明符、成员对象和成员函数的声明和定义的列表（见<a href="class.html" title="cpp/language/class">类定义</a>）
+</td></tr></table>
+<p>类关键词 <code>struct</code> 和 <code>class</code> 在 C++ 中不可分，除了默认<a href="access.html" title="cpp/language/access">访问模式</a>和默认<a href="derived_class.html" title="cpp/language/derived class">继承模式</a>，当类定义使用 <code>struct</code> 类关键词则为 <code>public</code>，若类定义使用 <code>class</code> 类关键词则为 <code>private</code>。<code>class</code> 和 <code>struct</code> 均可用于<a href="class.html" title="cpp/language/class">类定义</a>。
+</p><p>使用类关键词 <code>union</code> 所得的是<a href="union.html" title="cpp/language/union">联合体定义</a>，它定义在同一时刻只保有其一个数据成员的类。
+</p><p>类可拥有下列种类的成员
+</p>
+<div class="t-li1"><span class="t-li">1)</span> <a href="data_members.html" title="cpp/language/data members">数据成员</a></div>
+<div class="t-li2"><span class="t-li">a)</span> 非静态数据成员，包括<a href="bit_field.html" title="cpp/language/bit field">位域</a>。</div>
+<div class="t-li2"><span class="t-li">b)</span> <a href="static.html" title="cpp/language/static">静态</a>数据成员</div>
+<div class="t-li1"><span class="t-li">2)</span> 成员函数</div>
+<div class="t-li2"><span class="t-li">a)</span> <a href="member_functions.html" title="cpp/language/member functions">非静态成员函数</a></div>
+<div class="t-li2"><span class="t-li">b)</span> <a href="static.html" title="cpp/language/static">静态</a>成员函数</div>
+<div class="t-li1"><span class="t-li">3)</span> 嵌套类型</div>
+<div class="t-li2"><span class="t-li">a)</span> 定义于类定义之中的<a href="nested_classes.html" title="cpp/language/nested types">嵌套类</a>及<a href="enum.html" title="cpp/language/enum">枚举</a></div>
+<div class="t-li2"><span class="t-li">b)</span> 既存类型的别名，以 <a href="typedef.html" title="cpp/language/typedef">typedef</a> 或<a href="type_alias.html" title="cpp/language/type alias">类型别名</a>声明定义</div>
+<div class="t-li2"><span class="t-li">c)</span> 就<a href="unqualified_lookup.html#.E6.B3.A8.E5.85.A5.E7.B1.BB.E5.90.8D" title="cpp/language/unqualified lookup">查找</a>而言（除非在用作<a href="constructor.html" title="cpp/language/initializer list">构造函数</a>名时），类的名字在该类自身的定义中，表现为一个作为其自身的类型别名的公开成员：这被称作<i><a href="injected-class-name.html" title="cpp/language/injected-class-name">注入类名</a></i></div>
+<div class="t-li1"><span class="t-li">4)</span> 定义于类中的所有无作用域枚举的<a href="enum.html" title="cpp/language/enum">枚举项</a></div>
+<div class="t-li1"><span class="t-li">5)</span> <a href="member_template.html" title="cpp/language/member template">成员模板</a>（<span class="t-rev-inl t-since-cxx14"><span>变量模板、</span> <span><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></span></span>类模板或函数模板）可出现于任何非局部 class/struct/union 定义体内。</div>
+<p>所有成员都在类定义中一次性定义，不能向已定义的类添加成员（这不同于命名空间的成员）
+</p><p>类 <code>T</code> 的成员，若它是静态数据成员、成员函数、成员类型、成员模板、无作用域枚举的枚举项、匿名成员联合体的成员，则不能使用 <code>T</code> 作为其名字。然而，非静态数据成员可使用名称 <code>T</code> ，只要无用户声明的构造函数。
+</p><p>声明或继承了至少一个<a href="virtual.html" title="cpp/language/virtual">虚</a>成员函数的类是<i>多态</i>的。此类型的对象是<a href="object.html#.E5.A4.9A.E6.80.81.E5.AF.B9.E8.B1.A1" title="cpp/language/object">多态对象</a>，并拥有作为其对象表示一部分存储的运行时类型信息，可以由 <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a> 和 <a href="typeid.html" title="cpp/language/typeid">typeid</a> 查询之。虚成员函数参与动态绑定。
+</p><p>声明或继承了至少一个纯虚函数的类是<a href="abstract_class.html" title="cpp/language/abstract class">抽象类</a>。不能创建此类型的对象。
+</p><p>拥有 <a href="constexpr.html" title="cpp/language/constexpr">constexpr</a> 构造函数的类是<a href="../named_req/LiteralType.html" title="cpp/named req/LiteralType">字面类型</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LiteralType</span>) ：此类型的对象能用 <a href="constexpr.html" title="cpp/language/constexpr">constexpr</a> 函数在编译时进行操作。
+</p><p>一些成员函数是特殊的：某些条件下，即使用户不定义，编译器也会定义它们。它们是：
+</p>
+<ul><li> <a href="default_constructor.html" title="cpp/language/default constructor">默认构造函数</a>
+</li><li> <a href="copy_constructor.html" title="cpp/language/copy constructor">复制构造函数</a>
+</li><li> <a href="move_constructor.html" title="cpp/language/move constructor">移动构造函数</a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</li><li> <a href="copy_assignment.html" title="cpp/language/copy assignment">复制赋值运算符</a>
+</li><li> <a href="move_assignment.html" title="cpp/language/move assignment">移动赋值运算符</a> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</li><li> <a href="destructor.html" title="cpp/language/destructor">析构函数</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1734/1000000
+Preprocessor generated node count: 5107/1000000
+Post‐expand include size: 46442/2097152 bytes
+Template argument size: 7699/2097152 bytes
+Highest expansion depth: 14/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:8561-0!*!0!*!*!*!zh!* and timestamp 20190611193430 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/classes&amp;oldid=60227">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/classes&amp;oldid=60227</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/classes">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年5月5日 (星期日) 02:17。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过11,814次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.307 secs. -->
+	</body>
+<!-- Cached 20190611193430 -->
+</html>

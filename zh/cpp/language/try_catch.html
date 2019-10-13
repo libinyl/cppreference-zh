@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>try 块</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/try_catch","wgTitle":"cpp/language/try catch","wgCurRevisionId":60334,"wgArticleId":2760,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/try_catch","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_try_catch skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">try 块</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="exceptions.html" title="cpp/language/exceptions">异常</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="throw.html" title="cpp/language/throw">throw 表达式</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function-try-block.html" title="cpp/language/function-try-block">函数 try 块</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">try/catch 块</strong></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept_spec.html" title="cpp/language/noexcept spec">noexcept 说明符</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept">noexcept 运算符</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="except_spec.html" title="cpp/language/except spec">动态异常说明</a><span class="t-mark-rev t-until-cxx20">(C++20 前)</span></td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>将一或多个异常处理块（catch 子句）与复合语句关联。
+</p>
+<h3><span class="mw-headline" id=".E8.AF.AD.E6.B3.95">语法</span></h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td class="t-sdsc-nopad"> <code><b>try</b></code> <span class="t-spar">复合语句</span> <span class="t-spar">处理块序列</span>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<p>其中 <span class="t-spar">处理块序列</span> 是一或多个 <span class="t-spar">处理块</span> 的序列，它有下列语法：
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>catch</b></code> <code><b>(</b></code> <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <span class="t-spar">类型说明符序列</span> <span class="t-spar">声明符</span> <code><b>)</b></code> <span class="t-spar">复合语句</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>catch</b></code> <code><b>(</b></code> <span class="t-spar">attr</span><span class="t-mark">(可选)</span> <span class="t-spar">类型说明符序列</span> <span class="t-spar">抽象声明符</span><span class="t-mark">(可选)</span> <code><b>)</b></code> <span class="t-spar">复合语句</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>catch</b></code> <code><b>(</b></code> <code><b>...</b></code> <code><b>)</b></code> <span class="t-spar">复合语句</span>
+</td>
+<td> (3)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">复合语句</span>
+</td>
+<td> -
+</td>
+<td>  花括号环绕的<a href="statements.html#.E5.A4.8D.E5.90.88.E8.AF.AD.E5.8F.A5" title="cpp/language/statements">语句序列</a>
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td>  可选的<a href="attributes.html" title="cpp/language/attributes">属性列表</a>，应用于形参
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">类型说明符序列</span>
+</td>
+<td> -
+</td>
+<td>  形参声明的一部分，与在<a href="function.html" title="cpp/language/function">函数</a>形参列表中相同
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">声明符</span>
+</td>
+<td> -
+</td>
+<td>  形参声明的一部分，与在<a href="function.html" title="cpp/language/function">函数</a>形参列表中相同
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">抽象声明符</span>
+</td>
+<td> -
+</td>
+<td>  无名形参声明的一部分，与在<a href="function.html" title="cpp/language/function">函数</a>形参列表中相同
+</td></tr></table>
+<div class="t-li1"><span class="t-li">1)</span> 声明一个具名形参的 catch 子句
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">try</span> <span class="br0">{</span> <span class="coMULTI">/* */</span> <span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">const</span> <a href="../error/exception.html"><span class="kw764">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span> <span class="coMULTI">/* */</span> <span class="br0">}</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">2)</span> 声明一个无名形参的 catch 子句
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">try</span> <span class="br0">{</span> <span class="coMULTI">/* */</span> <span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">const</span> <a href="../error/exception.html"><span class="kw764">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span><span class="br0">)</span> <span class="br0">{</span> <span class="coMULTI">/* */</span> <span class="br0">}</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">3)</span> catch-all 处理块，可被任何异常激活
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">try</span> <span class="br0">{</span> <span class="coMULTI">/* */</span> <span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span>...<span class="br0">)</span> <span class="br0">{</span> <span class="coMULTI">/* */</span> <span class="br0">}</span></pre></div></div></div>
+<h3><span class="mw-headline" id=".E8.A7.A3.E9.87.8A">解释</span></h3>
+<dl><dd><span style="font-size:0.7em; line-height:130%">更多关于 throw 表达式的信息见<a href="throw.html" title="cpp/language/throw">抛出异常</a></span>
+</dd></dl>
+<p>try 块是一条<a href="statements.html" title="cpp/language/statements">语句</a>，从而能出现于任何语句所能出现处（即作为复合语句中的语句之一，包含函数体复合语句）。有关围绕函数体的 try 块，见<a href="function-try-block.html" title="cpp/language/function-try-block">函数 try 块</a>。下列描述同时适用于 try 块和<a href="function-try-block.html" title="cpp/language/function-try-block">函数 try 块</a>。
+</p><p>catch 子句的形参（<span class="t-spar">类型说明符序列</span> 与 <span class="t-spar">声明符</span>，或者 <span class="t-spar">类型说明符序列</span> 与 <span class="t-spar">抽象声明符</span>）决定何种类型的异常导致进入此 catch 子句。它不能是<a href="reference.html" title="cpp/language/reference">右值引用类型</a>、<a href="abstract_class.html" title="cpp/language/abstract class">抽象类</a>、<a href="incomplete_type.html#.E4.B8.8D.E5.AE.8C.E6.95.B4.E7.B1.BB.E5.9E.8B" title="cpp/language/type">不完整类型</a>或指向不完整类型的指针（但允许指向（可有 <a href="cv.html" title="cpp/language/cv">cv</a> 限定的）<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> 的指针）。若形参的类型是数组类型或函数类型，则它被处理成对应的指针类型（类似于<a href="function.html" title="cpp/language/function">函数声明</a>）。
+</p><p>当 <span class="t-spar">复合语句</span> 中的任何语句抛出了类型 <code>E</code> 的异常时，以之对 <span class="t-spar">处理块序列</span> 中的每个 catch 子句的形参类型 <code>T</code>，按 catch 子句的列出顺序进行匹配。若下列任一为真则异常得到匹配：
+</p>
+<ul><li> <code>E</code> 与 <code>T</code> 是同一类型（忽略 <code>T</code> 上的顶层 cv 限定符）
+</li><li> <code>T</code> 是到（可为 cv 限定的）<code>E</code> 的左值引用
+</li><li> <code>T</code> 是 <code>E</code> 的无歧义公开基类
+</li><li> <code>T</code> 是到 <code>E</code> 的无歧义公开基类的引用
+</li><li> <code>T</code> 是（可为 cv 限定的）<code>U</code> <span class="t-rev-inl t-since-cxx14"><span>或 <code>const U&amp;</code></span> <span><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></span></span>，且 <code>U</code> 是指针<span class="t-rev-inl t-since-cxx17"><span>或成员指针</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>类型，且 <code>E</code> 亦为能通过下列转换中的一或多个转换成 <code>U</code> 的指针<span class="t-rev-inl t-since-cxx17"><span>或成员指针</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>类型
+</li></ul>
+<dl><dd><ul><li> 并非到指向私有、受保护或有歧义基类指针的<a href="implicit_cast.html#.E6.8C.87.E9.92.88.E8.BD.AC.E6.8D.A2" title="cpp/language/implicit conversion">指针转换</a>
+</li><li> <a href="implicit_cast.html#.E9.99.90.E5.AE.9A.E6.80.A7.E8.BD.AC.E6.8D.A2" title="cpp/language/implicit conversion">限定性转换</a>
+</li></ul>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<dl><dd><ul><li> <a href="implicit_cast.html#.E5.87.BD.E6.95.B0.E6.8C.87.E9.92.88.E8.BD.AC.E6.8D.A2" title="cpp/language/implicit conversion">函数指针转换</a>
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<ul><li> <code>T</code> 是指针或成员指针<span class="t-rev-inl t-since-cxx14"><span>，或 const 指针的引用</span> <span><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></span></span>，而 <code>E</code> 是 <span class="t-lc"><a href="../types/nullptr_t.html" title="cpp/types/nullptr t">std::nullptr_t</a></span>.
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">try</span> <span class="br0">{</span>
+    f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">const</span> <a href="../error/overflow_error.html"><span class="kw772">std::<span class="me2">overflow_error</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// 若 f() 抛出 std::overflow_error 则执行之（“相同类型”规则）</span>
+<span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">const</span> <a href="../error/runtime_error.html"><span class="kw770">std::<span class="me2">runtime_error</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// 若 f() 抛出 std::underflow_error 则执行之（“基类”规则）</span>
+<span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">const</span> <a href="../error/exception.html"><span class="kw764">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// 若 f() 抛出 std::logic_error 则执行之（“基类”规则）</span>
+<span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span>...<span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// 若 f() 抛出 std::string 或 int 或任何其他无关类型则执行之</span>
+<span class="br0">}</span></pre></div></div>
+<p>全捕获（catch-all）子句 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">catch</span> <span class="br0">(</span>...<span class="br0">)</span></span></span> 匹配任何类型的异常。若存在，则它必须是 <span class="t-spar">处理块序列</span> 中的最后一个 catch 子句。Catch-all 块可用于确保不可能有未捕获异常从提供<a href="exceptions.html" title="cpp/language/exceptions">不抛出异常保证</a>的函数逃逸。
+</p><p>若检测所有 catch 子句后仍无匹配，则到外围的 try 块继续异常的传播，如 <a href="throw.html" title="cpp/language/throw">throw 表达式</a>中所述。若没有剩下的外围 try 块，则执行 <span class="t-lc"><a href="../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span>（此情况下，由实现定义是否完全进行栈回溯：容许抛出未捕获异常导致程序终止而不调用任何析构函数）。
+</p><p>当进入一个 catch 子句时，若其形参是异常类型的基类，则它从异常对象的基类子对象进行<a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a>。否则，它从异常对象复制初始化（这个复制服从<a href="copy_elision.html" title="cpp/language/copy elision">复制消除</a>规则）。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">try</span> <span class="br0">{</span>
+   <a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a><span class="br0">(</span><span class="st0">"abc"</span><span class="br0">)</span>.<span class="me1">substr</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 抛出 std::length_error</span>
+<span class="co1">// } catch (std::exception e) { // 从 std::exception 基类复制初始化</span>
+<span class="co1">//     std::cout &lt;&lt; e.what(); // 丢失来自 length_error 的信息</span>
+<span class="co1">// }</span>
+<span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">const</span> <a href="../error/exception.html"><span class="kw764">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// 多态对象基类的引用</span>
+     <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> e.<span class="me1">what</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 打印来自 length_error 的信息</span>
+<span class="br0">}</span></pre></div></div>
+<p>若 catch 子句的形参是引用类型，则对它所做的任何更改都会反映到异常对象之中，且若以 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">throw</span><span class="sy4">;</span></span></span> 重抛这个异常，则可为另一处理块所观测到。若形参不是引用，则任何对它的更改都是局域的，且其生存期在处理块退出时结束。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<p>在 catch 子句内，可以使用 <span class="t-lc"><a href="../error/current_exception.html" title="cpp/error/current exception">std::current_exception</a></span> 把异常捕获到一个 <span class="t-lc"><a href="../error/exception_ptr.html" title="cpp/error/exception ptr">std::exception_ptr</a></span> 之中，而且可以使用 <span class="t-lc"><a href="../error/throw_with_nested.html" title="cpp/error/throw with nested">std::throw_with_nested</a></span> 来构建嵌套的异常。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<p>除了抛出或重抛异常以外，普通的 try 块（非<a href="function-try-block.html" title="cpp/language/function-try-block">函数 try 块</a>）之后的 catch 子句还可以通过 <a href="return.html" title="cpp/language/return">return</a>、<a href="continue.html" title="cpp/language/continue">continue</a>、<a href="break.html" title="cpp/language/break">break</a>、<a href="goto.html" title="cpp/language/goto">goto</a>，或通过抵达其 <span class="t-spar">复合语句</span> 尾而退出。任何这些情况，都会销毁异常对象（除非存在指代它的 <span class="t-lc"><a href="../error/exception_ptr.html" title="cpp/error/exception ptr">std::exception_ptr</a></span> 实例）。
+</p>
+<h3><span class="mw-headline" id=".E6.B3.A8.E8.A7.A3">注解</span></h3>
+<p>不保证捕捉指针的 catch 子句能够匹配 throw 表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">throw</span> <a href="../types/NULL.html"><span class="kw103">NULL</span></a><span class="sy4">;</span></span></span>，因为异常对象类型可以是整数类型，但可以确保任何指针或成员指针的 catch 子句能够匹配 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">throw</span> nullptr<span class="sy4">;</span></span></span>。
+</p><p>若派生类的 catch 子句被置于基类的 catch 子句后，则永远不会执行派生类 catch 子句。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">try</span> <span class="br0">{</span>
+    f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">const</span> <a href="../error/exception.html"><span class="kw764">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// 若 f() 抛 std::runtime_error 则执行</span>
+<span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">const</span> <a href="../error/runtime_error.html"><span class="kw770">std::<span class="me2">runtime_error</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// 死代码！</span>
+<span class="br0">}</span></pre></div></div>
+<p>若用 <a href="goto.html" title="cpp/language/goto">goto</a> 退出 try 块，且若这个 <code>goto</code> 所执行的任何块作用域自动变量的析构函数由于抛异常而退出，则那些异常被该变量定义于其中的 try 块所捕捉：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">label<span class="sy4">:</span>
+    <span class="kw1">try</span> <span class="br0">{</span>
+        T1 t1<span class="sy4">;</span>
+        <span class="kw1">try</span> <span class="br0">{</span>
+            T2 t2<span class="sy4">;</span>
+            <span class="kw1">if</span><span class="br0">(</span>condition<span class="br0">)</span>
+                <span class="kw1">goto</span> label<span class="sy4">;</span> <span class="co1">// 销毁 t2，然后销毁 t1，再跳到 label</span>
+        <span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span>...<span class="br0">)</span> <span class="br0">{</span>  <span class="br0">}</span> <span class="co1">// 捕捉来自 t2 析构函数的异常</span>
+    <span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span>...<span class="br0">)</span> <span class="br0">{</span>  <span class="br0">}</span> <span class="co1">// 捕捉来自 t1 析构函数的异常</span></pre></div></div>
+<h3><span class="mw-headline" id=".E5.85.B3.E9.94.AE.E8.AF.8D">关键词</span></h3>
+<p><a href="../keyword/try.html" title="cpp/keyword/try"><tt>try</tt></a>,
+<a href="../keyword/catch.html" title="cpp/keyword/catch"><tt>catch</tt></a>,
+<a href="../keyword/throw.html" title="cpp/keyword/throw"><tt>throw</tt></a>
+</p>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><p>下列代码演示 <code>try-catch</code> 块的数种用法</p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">try</span> <span class="br0">{</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Throwing an integer exception...<span class="es1">\n</span>"</span><span class="sy4">;</span>
+        <span class="kw1">throw</span> <span class="nu0">42</span><span class="sy4">;</span>
+    <span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span> <span class="br0">{</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">" the integer exception was caught, with value: "</span> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="kw1">try</span> <span class="br0">{</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Creating a vector of size 5... <span class="es1">\n</span>"</span><span class="sy4">;</span>
+        <a href="../container/vector.html"><span class="kw1269">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v<span class="br0">(</span><span class="nu0">5</span><span class="br0">)</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Accessing the 11th element of the vector...<span class="es1">\n</span>"</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> v.<span class="me1">at</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// vector::at() 抛出 std::out_of_range</span>
+    <span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw4">const</span> <a href="../error/exception.html"><span class="kw764">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// 按基类的引用捕获</span>
+        <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">" a standard exception was caught, with message '"</span>
+                  <span class="sy1">&lt;&lt;</span> e.<span class="me1">what</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"'<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<p>可能的输出：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Throwing an integer exception...
+ the integer exception was caught, with value: 42
+Creating a vector of size 5...
+Accessing the 11th element of the vector...
+ a standard exception was caught, with message 'out_of_range'</pre></div></div> 
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2404/1000000
+Preprocessor generated node count: 6112/1000000
+Post‐expand include size: 38568/2097152 bytes
+Template argument size: 12479/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2760-0!*!0!!zh!*!zh!* and timestamp 20190517163429 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/try_catch&amp;oldid=60334">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/try_catch&amp;oldid=60334</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/try_catch">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年5月17日 (星期五) 04:58。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过7,993次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.075 secs. -->
+	</body>
+<!-- Cached 20190517212428 -->
+</html>

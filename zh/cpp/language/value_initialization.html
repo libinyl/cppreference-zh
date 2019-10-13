@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>值初始化(C++03 起)</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/value_initialization","wgTitle":"cpp/language/value initialization","wgCurRevisionId":61562,"wgArticleId":2767,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/value_initialization","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_value_initialization skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">值初始化<span class="t-mark-rev t-since-cxx03">(C++03 起)</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="initialization.html" title="cpp/language/initialization">初始化</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"><a href="initialization.html" title="cpp/language/initialization">初始化器</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="default_initialization.html" title="cpp/language/default initialization">默认初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><strong class="selflink">值初始化</strong></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="direct_initialization.html" title="cpp/language/direct initialization">直接初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="aggregate_initialization.html" title="cpp/language/aggregate initialization">聚合初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="reference_initialization.html" title="cpp/language/reference initialization">引用初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="copy_elision.html" title="cpp/language/copy elision">复制消除</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="initialization.html#.E9.9D.9E.E5.B1.80.E9.83.A8.E5.8F.98.E9.87.8F" title="cpp/language/initialization">静态初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="zero_initialization.html" title="cpp/language/zero initialization">零初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="constant_initialization.html" title="cpp/language/constant initialization">常量初始化</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="initialization.html#.E9.9D.9E.E5.B1.80.E9.83.A8.E5.8F.98.E9.87.8F" title="cpp/language/initialization">动态非局部初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="initialization.html#.E9.9D.9E.E5.B1.80.E9.83.A8.E5.8F.98.E9.87.8F" title="cpp/language/initialization">有序动态初始化</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="initialization.html#.E9.9D.9E.E5.B1.80.E9.83.A8.E5.8F.98.E9.87.8F" title="cpp/language/initialization">无序动态初始化</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5">类成员初始化</td></tr>
+<tr class="t-nv"><td colspan="5"><a href="constructor.html" title="cpp/language/initializer list">成员初始化器列表</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="data_members.html#.E6.88.90.E5.91.98.E5.88.9D.E5.A7.8B.E5.8C.96" title="cpp/language/data members">类内<i>花括号或等号</i>初始化器</a></td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>这是在变量以空初始化器构造时进行的初始化。
+</p>
+<h3><span class="mw-headline" id=".E8.AF.AD.E6.B3.95">语法</span></h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">T</span><code><b>();</b></code>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>new</b></code> <span class="t-spar">T</span> <code><b>();</b></code>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">Class</span><code><b>::</b></code><span class="t-spar">Class</span><code><b>(</b></code><span class="t-spar">...</span><code><b>)</b></code> <code><b>:</b></code> <span class="t-spar">member</span><code><b>()</b></code> <code><b>{</b></code> <span class="t-spar">...</span> <code><b>}</b></code>
+</td>
+<td> (3)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">T</span> <span class="t-spar">object</span> <code><b>{};</b></code>
+</td>
+<td> (4)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">T</span><code><b>{};</b></code>
+</td>
+<td> (5)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <code><b>new</b></code> <span class="t-spar">T</span> <code><b>{};</b></code>
+</td>
+<td> (6)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">Class</span><code><b>::</b></code><span class="t-spar">Class</span><code><b>(</b></code><span class="t-spar">...</span><code><b>)</b></code> <code><b>:</b></code> <span class="t-spar">member</span><code><b>{} </b></code> <code><b>{</b></code> <span class="t-spar">...</span> <code><b>}</b></code>
+</td>
+<td> (7)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<h3><span class="mw-headline" id=".E8.A7.A3.E9.87.8A">解释</span></h3>
+<p>以下场合进行值初始化：
+</p>
+<div class="t-li1"><span class="t-li">1,5)</span> 当以空的括号<span class="t-rev-inl t-since-cxx11"><span>或花括号</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>对组成的初始化器创建无名临时对象时；</div>
+<div class="t-li1"><span class="t-li">2,6)</span> 当 <a href="new.html" title="cpp/language/new">new 表达式</a>以空的括号<span class="t-rev-inl t-since-cxx11"><span>或花括号</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>对组成的初始化器创建具有动态存储期的对象时；</div>
+<div class="t-li1"><span class="t-li">3,7)</span> 当使用以空的括号<span class="t-rev-inl t-since-cxx11"><span>或花括号</span> <span><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></span></span>对组成的<a href="constructor.html" title="cpp/language/initializer list">成员初始化器</a>初始化非静态数据成员或基类时；</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11"><td>
+<div class="t-li1"><span class="t-li">4)</span> 当以由空花括号对组成的初始化器声明具名变量（自动、静态或线程局部）时。</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<p>所有情况下，若使用空花括号对 <code>{} </code> 且 <code>T</code> 是<i>聚合类型</i>，则进行<a href="aggregate_initialization.html" title="cpp/language/aggregate initialization">聚合初始化</a>而非值初始化。
+</p><p>若 <code>T</code> 是没有默认构造函数但带有接受 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a></span></span> 的构造函数的类类型，则进行<a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a>。
+</p><p><br>
+值初始化的效果是：
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx11"><td>
+<div class="t-li1"><span class="t-li">1)</span> 若 <code>T</code> 是有至少一个用户提供的任意种类的构造函数的类类型，则调用<a href="default_constructor.html" title="cpp/language/default constructor">默认构造函数</a>；</div>
+<div class="t-li1"><span class="t-li">2)</span> 若 <code>T</code> 是没有任何用户提供的构造函数的非联合体类类型，则值初始化 T 的每个非静态数据成员与基类组分；
+</div></td>
+<td><span class="t-mark-rev t-until-cxx11">(C++11 前)</span></td></tr>
+<tr class="t-rev t-since-cxx11"><td>
+<div class="t-li1"><span class="t-li">1)</span> 若 <code>T</code> 是没有默认构造函数，或拥有用户提供的或被删除的默认构造函数的类类型，则<a href="default_initialization.html" title="cpp/language/default initialization">默认初始化</a>对象；</div>
+<div class="t-li1"><span class="t-li">2)</span> 若 <code>T</code> 是拥有默认构造函数的类类型，而默认构造函数既非用户提供亦未被删除（即它可以是拥有隐式定义的或默认化的默认构造函数的类），则<a href="zero_initialization.html" title="cpp/language/zero initialization">零初始化</a>对象，然后若其拥有非平凡的默认构造函数，则<a href="default_initialization.html" title="cpp/language/default initialization">默认初始化</a>它；
+</div></td>
+<td><span class="t-mark-rev t-since-cxx11">(C++11 起)</span></td></tr>
+</table>
+<div class="t-li1"><span class="t-li">3)</span> 若 <code>T</code> 是数组类型，则值初始化数组的每个元素；</div>
+<div class="t-li1"><span class="t-li">4)</span> 否则，零初始化对象。</div>
+<h3><span class="mw-headline" id=".E6.B3.A8.E8.A7.A3">注解</span></h3>
+<p>若构造函数是用户声明的，且未在其首个声明上显式默认化，则它是<i>用户提供</i>的。
+</p><p>语法 <span class="t-c"><span class="mw-geshi cpp source-cpp">T object<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></span> 不初始化对象；它声明一个不接受参数并返回 <code>T</code> 的函数。在 C++11 前值初始化一个具名变量的方式是 <span class="t-c"><span class="mw-geshi cpp source-cpp">T object <span class="sy1">=</span> T<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></span>，它值初始化一个临时量然后复制初始化该对象：多数编译器在此情况下能<a href="copy_elision.html" title="cpp/language/copy elision">优化掉复制</a>。
+</p><p>在 C++03（引入了值初始化）之前的 C++98 中，表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">new T<span class="br0">(</span><span class="br0">)</span></span></span> 被归类为默认初始化并指定进行零初始化。
+</p><p>引用不能被值初始化。
+</p><p>如<a href="explicit_cast.html" title="cpp/language/explicit cast">函数式转型</a>中所述，语法 <span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="br0">(</span><span class="br0">)</span></span></span> <span class="t-v">(1)</span> 对于数组禁止，但允许 <span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="br0">{</span><span class="br0">}</span></span></span> <span class="t-v">(5)</span>。
+</p><p>所有标准容器（<span class="t-lc"><a href="../container/vector.html" title="cpp/container/vector">std::vector</a></span>、<span class="t-lc"><a href="../container/list.html" title="cpp/container/list">std::list</a></span> 等），在以单个 <code>size_type</code> 实参进行构造或由对 <span class="t-c"><span class="mw-geshi cpp source-cpp">resize<span class="br0">(</span><span class="br0">)</span></span></span> 的调用而增长时，值初始化其各个元素。
+</p><p>从 C++11 起，对没有用户提供的构造函数而拥有类类型成员的类进行值初始化，其中成员的类拥有用户提供的构造函数，会在调用成员的构造函数前对成员清零：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A
+<span class="br0">{</span>
+    <span class="kw4">int</span> i<span class="sy4">;</span>
+    A<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span> <span class="co1">// 用户提供的默认构造函数，不初始化 i</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> B <span class="br0">{</span> A a<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 隐式定义的默认构造函数</span>
+ 
+<a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> B<span class="br0">(</span><span class="br0">)</span>.<span class="me1">a</span>.<span class="me1">i</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// 值初始化 B 临时量</span>
+                              <span class="co1">// C++03 中令 b.a.i 为未初始化</span>
+                              <span class="co1">// C++11 中设 b.a.i 为零</span>
+<span class="co1">// （注意 C++11 中 B{}.a.i 保留 b.a.i 为未初始化，但因为不同原因：</span>
+<span class="co1">// 在 DR1301 后的 C++11 中，B{} 是聚合初始化，它值初始化拥有用户提供构造函数的 A）</span></pre></div></div>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+ 
+<span class="kw1">struct</span> T1
+<span class="br0">{</span>
+    <span class="kw4">int</span> mem1<span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a> mem2<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 隐式默认构造函数</span>
+ 
+<span class="kw1">struct</span> T2
+<span class="br0">{</span>
+    <span class="kw4">int</span> mem1<span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a> mem2<span class="sy4">;</span>
+    T2<span class="br0">(</span><span class="kw4">const</span> T2<span class="sy3">&amp;</span><span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span> <span class="co1">// 用户提供的复制构造函数</span>
+<span class="br0">}</span><span class="sy4">;</span>                    <span class="co1">// 无默认构造函数</span>
+ 
+<span class="kw1">struct</span> T3
+<span class="br0">{</span>
+    <span class="kw4">int</span> mem1<span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a> mem2<span class="sy4">;</span>
+    T3<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span> <span class="co1">// 用户提供的默认构造函数</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<a href="../string/basic_string.html"><span class="kw1230">std::<span class="me2">string</span></span></a> s<span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 类 =&gt; 默认初始化，值为 ""</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> n<span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>                <span class="co1">// 标量 =&gt; 零初始化，值为 0</span>
+    <span class="kw4">double</span> f <span class="sy1">=</span> <span class="kw4">double</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// 标量 =&gt; 零初始化，值为 0.0</span>
+    <span class="kw4">int</span><span class="sy2">*</span> a <span class="sy1">=</span> new <span class="kw4">int</span><span class="br0">[</span><span class="nu0">10</span><span class="br0">]</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// 数组 =&gt; 每个元素的值初始化</span>
+                            <span class="co1">//          每个元素的值为 0</span>
+    T1 t1<span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>                <span class="co1">// 有隐式默认构造函数的类 =&gt;</span>
+                            <span class="co1">//     t1.mem1 被零初始化，值为 0</span>
+                            <span class="co1">//     t1.mem2 被默认初始化，值为 ""</span>
+<span class="co1">//  T2 t2{};                // 错误：类无默认构造函数</span>
+    T3 t3<span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>                <span class="co1">// 有用户提供默认构造函数的类 =&gt;</span>
+                            <span class="co1">//     t3.mem1 被默认初始化为不确定值</span>
+                            <span class="co1">//     t3.mem2 被默认初始化，值为 ""</span>
+    <a href="../container/vector.html"><span class="kw1269">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// 值初始化每个元素</span>
+                            <span class="co1">// 每个元素的值为 0</span>
+    <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> f <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> a<span class="br0">[</span><span class="nu0">9</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> v<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1758">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> t1.<span class="me1">mem1</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> t3.<span class="me1">mem1</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    delete<span class="br0">[</span><span class="br0">]</span> a<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>可能的输出：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">0 0 0 0 0
+0 4199376</pre></div></div> 
+</div>
+<h3><span class="mw-headline" id=".E7.BC.BA.E9.99.B7.E6.8A.A5.E5.91.8A">缺陷报告</span></h3>
+<p>下列更改行为的缺陷报告追溯地应用于以前出版的 C++ 标准。
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tr>
+<th> DR
+</th>
+<th> 应用于
+</th>
+<th> 出版时的行为
+</th>
+<th> 正确行为
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#1301">CWG 1301</a>
+</td>
+<td> C++11
+</td>
+<td> 默认化的默认构造函数跳过构造前的零初始化
+</td>
+<td> 进行零初始化
+</td></tr></table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<ul><li> <a href="default_initialization.html" title="cpp/language/default initialization">默认初始化</a>
+</li><li> <a href="direct_initialization.html" title="cpp/language/direct initialization">直接初始化</a>
+</li><li> <a href="copy_initialization.html" title="cpp/language/copy initialization">复制初始化</a>
+</li><li> <a href="list_initialization.html" title="cpp/language/list initialization">列表初始化</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2041/1000000
+Preprocessor generated node count: 6656/1000000
+Post‐expand include size: 44589/2097152 bytes
+Template argument size: 14422/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2767-0!*!0!!zh!*!zh!* and timestamp 20190818120202 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/value_initialization&amp;oldid=61562">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/value_initialization&amp;oldid=61562</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/value_initialization">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年6月13日 (星期四) 07:28。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过19,658次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.964 secs. -->
+	</body>
+<!-- Cached 20190818120202 -->
+</html>

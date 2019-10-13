@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>实验性 C++ 特性</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../common/favicon.ico">
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/experimental","wgTitle":"cpp/experimental","wgCurRevisionId":61696,"wgArticleId":9456,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/experimental","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_experimental skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">实验性 C++ 特性</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">技术规范</strong> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><strong class="selflink">技术规范</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="experimental/fs.html" title="cpp/experimental/fs">文件系统库</a> <span class="t-mark-rev t-since-fs-ts t-mark-ts">(文件系统 TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/lib_extensions.html" title="cpp/experimental/lib extensions">库基础</a> <span class="t-mark-rev t-since-libfund-ts t-mark-ts">(库基础 TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/lib_extensions_2.html" title="cpp/experimental/lib extensions 2">库基础 2</a> <span class="t-mark-rev t-since-libfund-ts-2 t-mark-ts">(库基础 TS v2)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/parallelism.html" title="cpp/experimental/parallelism">并行扩展</a> <span class="t-mark-rev t-since-parallelism-ts t-mark-ts">(并行 TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/parallelism_2.html" title="cpp/experimental/parallelism 2">并行扩展 2</a> <span class="t-mark-rev t-since-parallelism-ts-2 t-mark-ts">(并行 TS v2)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/concurrency.html" title="cpp/experimental/concurrency">并发扩展</a> <span class="t-mark-rev t-since-concurrency-ts t-mark-ts">(并发 TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/constraints.html" title="cpp/experimental/constraints">概念</a> <span class="t-mark-rev t-since-concepts-ts t-mark-ts">(概念 TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/ranges.html" title="cpp/experimental/ranges">范围</a> <span class="t-mark-rev t-since-ranges-ts t-mark-ts">(范围 TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/special_math.html" title="cpp/experimental/special math">数学特殊函数</a> <span class="t-mark-rev t-since-special-math-tr t-mark-ts">(数学特殊 TR)</span></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>C++ 标准委员会为未来的标准化出版实验性 C++ 语言与库扩展。
+</p><p>注意： 2012 之前，这些出版使用 TR （技术报告）格式。从 2012 起， ISO 手续改为使用 TS （技术规范）格式。
+</p>
+<table class="wikitable">
+
+<tr>
+<th>ISO 编号</th>
+<th>名称</th>
+<th>状态</th>
+<th>链接
+</th></tr>
+<tr>
+<td> ISO/IEC TR 18015:2006
+</td>
+<td> C++ 性能上的技术报告
+</td>
+<td> 出版于 2006 （ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=43351">ISO 商店</a>）<br>方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/TR18015.pdf">TR18015</a> (2006-02-15) 。
+</td>
+<td> <code>std::hardware</code>
+</td></tr>
+<tr>
+<td> ISO/IEC TR 19768:2007
+</td>
+<td> C++ 库扩展上的技术报告
+</td>
+<td> 出版于 2007-11-15 （ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=43289">ISO 商店</a>）<br>方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1745.pdf">n1745</a> (2005-01-17) 。<br>
+<p>分离到 ISO 29124 ，剩下的并入 C++11 。
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ISO/IEC 29124:2010
+</td>
+<td> 对 C++ 库的支持数学特殊函数的扩展
+</td>
+<td> 出版于 2010-09-03 （ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=50511">ISO 商店</a>）<br>最终方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3060.pdf">n3060</a> (2010-03-06) 。<br>
+<p>并入 C++17 。
+</p>
+</td>
+<td> <a href="experimental/special_math.html" title="cpp/experimental/special math"><tt>special math</tt></a>
+</td></tr>
+<tr>
+<td> ISO/IEC TR 24733:2011
+</td>
+<td> 对编程语言 C++ 的支持十进制浮点算术的扩展
+</td>
+<td> 出版于 2011-10-25 （ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=38843">ISO 商店</a>）方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2849.pdf">n2849</a> (2009-03-06) 。<br>
+<p>可能会为将来的 TS 所取代或并入未来的 C++ 修订版（最近的合并提案为 <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3871.html">n3871</a> ）
+</p>
+</td>
+<td> <code>decimal32</code><br><code>decimal64</code><br><code>decimal128</code>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 18822:2015
+</td>
+<td> C++ 文件系统技术规范
+</td>
+<td> 出版于 2015-06-18 。（ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=63483">ISO 商店</a>）。最终方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4100.pdf">n4100</a> (2014-07-04) 。<br>
+<p>并入 C++17 。
+</p>
+</td>
+<td> <a href="experimental/fs.html" title="cpp/experimental/fs"><tt>filesystem</tt></a>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 19570:2015
+</td>
+<td> 并行的 C++ 扩展
+</td>
+<td> 出版于 2015-06-24 。（ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=65241">ISO 商店</a>）。最终方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4507.pdf">n4507</a> (2015-05-05) 。<br>
+<p>并入 C++17 。
+</p>
+</td>
+<td> <a href="experimental/parallelism.html" title="cpp/experimental/parallelism"><tt>parallelism</tt></a>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 19841:2015
+</td>
+<td> 事务性内存 TS
+</td>
+<td> 出版于 2015-09-16 ，（ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=66343">ISO 商店</a>）最终方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4514.pdf">n4514</a> (2015-05-08) 。
+</td>
+<td> <a href="language/transactional_memory.html" title="cpp/language/transactional memory">transactional memory</a>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 19568:2015
+</td>
+<td> 库基础的 C++ 扩展
+</td>
+<td> 出版于 2015-09-30 ，（ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=65238">ISO 商店</a>）最终方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4480.html">n4480</a> (2015-04-07) 。<br>
+<p>并入 C++17 ，除了调用特性。
+</p>
+</td>
+<td><a href="experimental/lib_extensions.html" title="cpp/experimental/lib extensions"><tt>library extensions</tt></a>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 19217:2015
+</td>
+<td> 概念的 C++ 扩展
+</td>
+<td> 出版于 2015-11-13 。（ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=64031">ISO 商店</a>）最终方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4553.pdf">n4553</a> (2015-10-02) 当前方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0734r0.pdf">p0734r0</a> (2017-07-14) 。<br>
+<p>并入 C++20 （有修改）。
+</p>
+</td>
+<td><a href="experimental/constraints.html" title="cpp/experimental/constraints">constraints and concepts</a>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 19571:2016
+</td>
+<td> 并发的 C++扩展
+</td>
+<td> 出版于 2016-01-19 。（ <a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=65242">ISO 商店</a>）最终方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0159r0.html">p0159r0</a> (2015-10-22)
+</td>
+<td> <a href="experimental/concurrency.html" title="cpp/experimental/concurrency"><tt>concurrency</tt></a>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 19568:2017
+</td>
+<td> 库基础的 C++ 扩展，版本 2
+</td>
+<td> 出版于 2017-03-30 。（ <a rel="nofollow" class="external text" href="https://www.iso.org/standard/70587.html">ISO 商店</a>）方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/n4617.pdf">n4617</a> (2016-11-28) 。
+</td>
+<td> <a href="experimental/lib_extensions_2.html" title="cpp/experimental/lib extensions 2"><tt>library extensions 2</tt></a>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 21425:2017
+</td>
+<td> 范围 TS
+</td>
+<td> 出版于 2017-12-05 。（ <a rel="nofollow" class="external text" href="https://www.iso.org/standard/70910.html">ISO 商店</a>）方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4685.pdf">n4685</a> (2017-07-31)<br>
+<p>并入 C++20 。
+</p>
+</td>
+<td> <a href="experimental/ranges.html" title="cpp/experimental/ranges"><tt>ranges</tt></a>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 22277:2017
+</td>
+<td> 协程 TS
+</td>
+<td> 出版于 2017-12-05 。（ <a rel="nofollow" class="external text" href="https://www.iso.org/standard/73008.html">ISO 商店</a>）方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/n4736.pdf">n4736</a> (2018-03-31) 最新方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/n4775.pdf">n4775</a> (2018-10-07)<br>
+<p>并入 C++20 。
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 19216:2018
+</td>
+<td> 网络 TS
+</td>
+<td> 出版于 2018-04-24 。（ <a rel="nofollow" class="external text" href="https://www.iso.org/standard/64030.html">ISO 商店</a>）方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/n4734.pdf">n4734</a> (2017-04-04) 。最终方案 <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/n4771.pdf">n4771</a> (2018-10-08)
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ISO/IEC TS 21544:2018
+</td>
+<td> 模块 TS
+</td>
+<td> 出版于 2018-05-16 。（ <a rel="nofollow" class="external text" href="https://www.iso.org/standard/71051.html">ISO 商店</a>）最终方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/n4720.pdf">n4720</a> (2018-01-29)<br>
+<p>并入 C++20 （有修改）。
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ISO/IEC DTS 19570:2018
+</td>
+<td> 并行 TS 部分 2
+</td>
+<td> 出版于 2018-11-15 。（ <a rel="nofollow" class="external text" href="https://www.iso.org/standard/70588.html">ISO 商店</a>）。最终方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/n4793.pdf">n4793</a> (2018-11-26)
+</td>
+<td> <a href="experimental/parallelism_2.html" title="cpp/experimental/parallelism 2"><tt>parallelism 2</tt></a>
+</td></tr>
+<tr>
+<td> ISO/IEC PDTS 23619:xxxx
+</td>
+<td> 反射 TS
+</td>
+<td> 开发。方案 <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/n4818.pdf">n4818</a> (2019-06-17) 。
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td> 数值 TS
+</td>
+<td> 早期开发。方案 <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0101r0.html">p0101</a> (2015-09-27) 。
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ISO/IEC DTS 19571:xxxx
+</td>
+<td> 并发 TS 部分 2
+</td>
+<td> 早期开发
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ISO/IEC DTS 19568:xxxx
+</td>
+<td> 库基础的 C++ 扩展，版本 3
+</td>
+<td> 早期开发： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/n4786.html">n4786</a> (2018-11-13)
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ISO/IEC DTS 19841:xxxx
+</td>
+<td> 事务性内存 TS 部分 2
+</td>
+<td> 早期开发
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td> 图形 TS
+</td>
+<td> 早期开发。方案 <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0267r9.pdf">p0267r9</a> (2019-06-17) 。
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ISO/IEC DTS 19569:xxxx
+</td>
+<td> 数组扩展 TS
+</td>
+<td> 撤销。废弃方案： <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3820.html">n3820</a> (2013-10-10) 。
+</td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 880/1000000
+Preprocessor generated node count: 2945/1000000
+Post‐expand include size: 30006/2097152 bytes
+Template argument size: 4346/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:9456-0!*!0!*!*!*!zh!* and timestamp 20190822225259 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/experimental&amp;oldid=61696">https://zh.cppreference.com/mwiki/index.php?title=cpp/experimental&amp;oldid=61696</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/experimental">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年6月24日 (星期一) 08:46。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过9,504次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.384 secs. -->
+	</body>
+<!-- Cached 20190822225259 -->
+</html>

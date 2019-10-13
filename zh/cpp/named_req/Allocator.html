@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>C++ 具名要求： Allocator</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/named_req/Allocator","wgTitle":"cpp/named req/Allocator","wgCurRevisionId":61522,"wgArticleId":1570,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed LWG DR marker"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/named_req/Allocator","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_named_req_Allocator skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">C++ 具名要求：</span> <span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../named_req.html" title="cpp/named req">named req</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../named_req.html" title="cpp/named req">C++ 具名要求</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> 基础</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="DefaultConstructible.html" title="cpp/named req/DefaultConstructible"><span class="t-lines"><span>DefaultConstructible</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="CopyAssignable.html" title="cpp/named req/CopyAssignable"><span class="t-lines"><span>CopyAssignable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="CopyConstructible.html" title="cpp/named req/CopyConstructible"><span class="t-lines"><span>CopyConstructible</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="MoveAssignable.html" title="cpp/named req/MoveAssignable"><span class="t-lines"><span>MoveAssignable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="MoveConstructible.html" title="cpp/named req/MoveConstructible"><span class="t-lines"><span>MoveConstructible</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Destructible.html" title="cpp/named req/Destructible"><span class="t-lines"><span>Destructible</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 布局</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="TrivialType.html" title="cpp/named req/TrivialType"><span class="t-lines"><span>TrivialType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="TriviallyCopyable.html" title="cpp/named req/TriviallyCopyable"><span class="t-lines"><span>TriviallyCopyable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="StandardLayoutType.html" title="cpp/named req/StandardLayoutType"><span class="t-lines"><span>StandardLayoutType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="PODType.html" title="cpp/named req/PODType"><span class="t-lines"><span>PODType</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 库所属</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="EqualityComparable.html" title="cpp/named req/EqualityComparable"><span class="t-lines"><span>EqualityComparable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="LessThanComparable.html" title="cpp/named req/LessThanComparable"><span class="t-lines"><span>LessThanComparable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Swappable.html" title="cpp/named req/Swappable"><span class="t-lines"><span>Swappable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="ValueSwappable.html" title="cpp/named req/ValueSwappable"><span class="t-lines"><span>ValueSwappable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="NullablePointer.html" title="cpp/named req/NullablePointer"><span class="t-lines"><span>NullablePointer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Hash.html" title="cpp/named req/Hash"><span class="t-lines"><span>Hash</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><strong class="selflink"><span class="t-lines"><span>Allocator</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="FunctionObject.html" title="cpp/named req/FunctionObject"><span class="t-lines"><span>FunctionObject</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Callable.html" title="cpp/named req/Callable"><span class="t-lines"><span>Callable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Predicate.html" title="cpp/named req/Predicate"><span class="t-lines"><span>Predicate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="BinaryPredicate.html" title="cpp/named req/BinaryPredicate"><span class="t-lines"><span>BinaryPredicate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Compare.html" title="cpp/named req/Compare"><span class="t-lines"><span>Compare</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 容器</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Container.html" title="cpp/named req/Container"><span class="t-lines"><span>Container</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="SequenceContainer.html" title="cpp/named req/SequenceContainer"><span class="t-lines"><span>SequenceContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="ContiguousContainer.html" title="cpp/named req/ContiguousContainer"><span class="t-lines"><span>ContiguousContainer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="ReversibleContainer.html" title="cpp/named req/ReversibleContainer"><span class="t-lines"><span>ReversibleContainer</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="AssociativeContainer.html" title="cpp/named req/AssociativeContainer"><span class="t-lines"><span>AssociativeContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="AllocatorAwareContainer.html" title="cpp/named req/AllocatorAwareContainer"><span class="t-lines"><span>AllocatorAwareContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="UnorderedAssociativeContainer.html" title="cpp/named req/UnorderedAssociativeContainer"><span class="t-lines"><span>UnorderedAssociativeContainer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 容器元素</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="DefaultInsertable.html" title="cpp/named req/DefaultInsertable"><span class="t-lines"><span>DefaultInsertable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="CopyInsertable.html" title="cpp/named req/CopyInsertable"><span class="t-lines"><span>CopyInsertable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="MoveInsertable.html" title="cpp/named req/MoveInsertable"><span class="t-lines"><span>MoveInsertable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="EmplaceConstructible.html" title="cpp/named req/EmplaceConstructible"><span class="t-lines"><span>EmplaceConstructible</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Erasable.html" title="cpp/named req/Erasable"><span class="t-lines"><span>Erasable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 迭代器</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Iterator.html" title="cpp/named req/Iterator"><span class="t-lines"><span>LegacyIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="OutputIterator.html" title="cpp/named req/OutputIterator"><span class="t-lines"><span>LegacyOutputIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="InputIterator.html" title="cpp/named req/InputIterator"><span class="t-lines"><span>LegacyInputIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="ForwardIterator.html" title="cpp/named req/ForwardIterator"><span class="t-lines"><span>LegacyForwardIterator</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="BidirectionalIterator.html" title="cpp/named req/BidirectionalIterator"><span class="t-lines"><span>LegacyBidirectionalIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span class="t-lines"><span>LegacyRandomAccessIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="ContiguousIterator.html" title="cpp/named req/ContiguousIterator"><span class="t-lines"><span>LegacyContiguousIterator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="ConstexprIterator.html" title="cpp/named req/ConstexprIterator"><span class="t-lines"><span>ConstexprIterator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 流 I/O</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="FormattedInputFunction.html" title="cpp/named req/FormattedInputFunction"><span class="t-lines"><span>FormattedInputFunction</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="UnformattedInputFunction.html" title="cpp/named req/UnformattedInputFunction"><span class="t-lines"><span>UnformattedInputFunction</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="FormattedOutputFunction.html" title="cpp/named req/FormattedOutputFunction"><span class="t-lines"><span>FormattedOutputFunction</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="UnformattedOutputFunction.html" title="cpp/named req/UnformattedOutputFunction"><span class="t-lines"><span>UnformattedOutputFunction</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 随机数</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="SeedSequence.html" title="cpp/named req/SeedSequence"><span class="t-lines"><span>SeedSequence</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="RandomNumberEngine.html" title="cpp/named req/RandomNumberEngine"><span class="t-lines"><span>RandomNumberEngine</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="RandomNumberDistribution.html" title="cpp/named req/RandomNumberDistribution"><span class="t-lines"><span>RandomNumberDistribution</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="UniformRandomBitGenerator.html" title="cpp/named req/UniformRandomBitGenerator"><span class="t-lines"><span>UniformRandomBitGenerator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="RandomNumberEngineAdaptor.html" title="cpp/named req/RandomNumberEngineAdaptor"><span class="t-lines"><span>RandomNumberEngineAdaptor</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 并发</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="BasicLockable.html" title="cpp/named req/BasicLockable"><span class="t-lines"><span>BasicLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Lockable.html" title="cpp/named req/Lockable"><span class="t-lines"><span>Lockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="TimedLockable.html" title="cpp/named req/TimedLockable"><span class="t-lines"><span>TimedLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Mutex.html" title="cpp/named req/Mutex"><span class="t-lines"><span>Mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="TimedMutex.html" title="cpp/named req/TimedMutex"><span class="t-lines"><span>TimedMutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="SharedMutex.html" title="cpp/named req/SharedMutex"><span class="t-lines"><span>SharedMutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="SharedTimedMutex.html" title="cpp/named req/SharedTimedMutex"><span class="t-lines"><span>SharedTimedMutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark">(C++14)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> 其他</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="CharTraits.html" title="cpp/named req/CharTraits"><span class="t-lines"><span>CharTraits</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="RegexTraits.html" title="cpp/named req/RegexTraits"><span class="t-lines"><span>RegexTraits</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="BitmaskType.html" title="cpp/named req/BitmaskType"><span class="t-lines"><span>BitmaskType</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="NumericType.html" title="cpp/named req/NumericType"><span class="t-lines"><span>NumericType</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="LiteralType.html" title="cpp/named req/LiteralType"><span class="t-lines"><span>LiteralType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="UnaryTypeTrait.html" title="cpp/named req/UnaryTypeTrait"><span class="t-lines"><span>UnaryTypeTrait</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="BinaryTypeTrait.html" title="cpp/named req/BinaryTypeTrait"><span class="t-lines"><span>BinaryTypeTrait</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="TransformationTrait.html" title="cpp/named req/TransformationTrait"><span class="t-lines"><span>TransformationTrait</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="Clock.html" title="cpp/named req/Clock"><span class="t-lines"><span>Clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="TrivialClock.html" title="cpp/named req/TrivialClock"><span class="t-lines"><span>TrivialClock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>封装访问/寻址，分配/解分配，以及对象的构造/析构的策略。
+</p><p>可能需要分配或释放内存的每个标准库组件，从 <code>std::string</code>、<code>std::vector</code> 和 <code>std::array</code> 以外的所有容器，到 <code>std::shared_ptr</code> 和 <code>std::function</code>，都通过<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/named_req/Allocator%E5%88%86%E9%85%8D%E5%99%A8&amp;action=edit&amp;redlink=1" class="new" title="cpp/named req/Allocator分配器（页面不存在）"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator分配器</span></a>进行这些操作：分配器是满足下列要求的类类型对象。
+</p><p>某些要求是可选的：模板 <span class="t-lc"><a href="../memory/allocator_traits.html" title="cpp/memory/allocator traits">std::allocator_traits</a></span> 为所有可选要求提供默认实现，且所有标准库容器和其他具分配器类，都是通过 <code>std::allocator_traits</code> 访问分配器，而并不直接访问。
+</p>
+<h3><span class="mw-headline" id=".E8.A6.81.E6.B1.82">要求</span></h3>
+<p>给定
+</p>
+<ul><li> 无 cv 限定的对象类型 <code>T</code>
+</li><li> 针对类型 <code>T</code> 的<strong class="selflink">分配器</strong> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator</span>) 类型 <code>A</code>
+</li><li> <code>A</code> 类型的对象 <code>a</code>
+</li><li> <code>B</code>，为针对某个无 cv 限定的对象类型 <code>U</code> 的对应<strong class="selflink">分配器</strong> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator</span>) 类型（重绑定 <code>A</code> 所得）
+</li><li> <code>B</code> 类型的对象 <code>b</code>
+</li><li> <code>allocator_traits&lt;A&gt;::pointer</code> 类型的值 <code>ptr</code>，由调用 <span class="t-c"><span class="mw-geshi cpp source-cpp">allocator_traits<span class="sy1">&lt;</span>A<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">allocate</span><span class="br0">(</span><span class="br0">)</span></span></span> 所获得
+</li><li> <code>allocator_traits&lt;A&gt;::const_pointer</code> 类型的值 <code>cptr</code>，从 <code>ptr</code> 转换而获得
+</li><li> <code>allocator_traits&lt;A&gt;::void_pointer</code> 类型的值 <code>vptr</code>，从 <code>ptr</code> 转换而获得
+</li><li> <code>allocator_traits&lt;A&gt;::const_void_pointer</code> 类型的值 <code>cvptr</code>，从 <code>cptr</code> 或 <code>vptr</code> 转换而获得
+</li><li> <code>xptr</code>，为针对某各无 cv 限定对象类型 <code>X</code> 的可解引用指针
+</li><li> <code>r</code>，为从表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>ptr</span></span> 获得的 <code>T</code> 类型的左值
+</li><li> <code>allocator_traits&lt;A&gt;::size_type</code> 类型的值 <code>n</code>
+</li></ul>
+<table class="wikitable">
+
+<tr>
+<th>表达式</th>
+<th>要求</th>
+<th>返回类型
+</th></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">pointer</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> 满足<a href="NullablePointer.html" title="cpp/named req/NullablePointer">可空指针</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">NullablePointer</span>) 、<a href="RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator">旧式随机访问迭代器</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span>) 及<a href="ContiguousIterator.html" title="cpp/named req/ContiguousIterator">旧式连续迭代器</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyContiguousIterator</span>) （见下文<a href="Allocator.html#.E7.BC.80.E9.A5.B0.E6.8C.87.E9.92.88">缀饰指针</a>）
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">const_pointer</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> <code>A::pointer</code> 可转换为 <code>A::const_pointer</code>。<a href="NullablePointer.html" title="cpp/named req/NullablePointer">可空指针</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">NullablePointer</span>) 、<a href="RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator">旧式随机访问迭代器</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span>) 及<a href="ContiguousIterator.html" title="cpp/named req/ContiguousIterator">旧式连续迭代器</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyContiguousIterator</span>) 
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">void_pointer</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> <code>A::pointer</code> 可转换为 <code>A::void_pointer</code>
+<p><code>B::void_pointer</code> 与 <code>A::void_pointer</code> 是同一类型。满足<a href="NullablePointer.html" title="cpp/named req/NullablePointer">可空指针</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">NullablePointer</span>) 
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">const_void_pointer</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> <code>A::pointer</code>、<code>A::const_pointer</code> 及 <code>A::void_pointer</code> 可转换到 <code>A::const_void_pointer</code>
+<p><code>B::const_void_pointer</code> 与 <code>A::const_void_pointer</code> 是同一类型。满足<a href="NullablePointer.html" title="cpp/named req/NullablePointer">可空指针</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">NullablePointer</span>) 
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">value_type</span></span></span>
+</td>
+<td>
+</td>
+<td> 类型 <code>T</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">size_type</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> <code>A::size_type</code> 能表示 <code>A</code> 所能分配的最大对象的大小
+</td>
+<td> 无符号整数类型
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">difference_type</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> <code>A::difference_type</code> 能表示任意两个指向 <code>A</code> 所分配对象的指针之间的差
+</td>
+<td> 有符号整数类型
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="kw1">template</span> rebind<span class="sy1">&lt;</span>U<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">other</span></span></span> <span class="t-mark">(可选)</span><sup id="cite_ref-1" class="reference"><a href="Allocator.html#cite_note-1">[1]</a></sup>
+</td>
+<td> 对于任何 <code>U</code>，<code>B::template rebind&lt;T&gt;::other</code> 为 <code>A</code>
+</td>
+<td> 类型 <code>B</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>ptr</span></span>
+</td>
+<td>
+</td>
+<td> <code>T&amp;</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>cptr</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>cptr</span></span> 与 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>ptr</span></span> 标识同一对象
+</td>
+<td> <code>const T&amp;</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">ptr<span class="sy2">-</span><span class="sy1">&gt;</span>m</span></span>
+</td>
+<td> 若 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="sy2">*</span>ptr<span class="br0">)</span>.<span class="me1">m</span></span></span> 良构，则与 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="sy2">*</span>ptr<span class="br0">)</span>.<span class="me1">m</span></span></span> 相同
+</td>
+<td> <code>T::m</code> 的类型
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">cptr<span class="sy2">-</span><span class="sy1">&gt;</span>m</span></span>
+</td>
+<td> 若 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="sy2">*</span>cptr<span class="br0">)</span>.<span class="me1">m</span></span></span> 良构，则与 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="sy2">*</span>cptr<span class="br0">)</span>.<span class="me1">m</span></span></span> 相同
+</td>
+<td> <code>T::m</code> 的类型
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">static_cast</span><span class="sy1">&lt;</span>A<span class="sy4">::</span><span class="me2">pointer</span><span class="sy1">&gt;</span><span class="br0">(</span>vptr<span class="br0">)</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">static_cast</span><span class="sy1">&lt;</span>A<span class="sy4">::</span><span class="me2">pointer</span><span class="sy1">&gt;</span><span class="br0">(</span>vptr<span class="br0">)</span> <span class="sy1">==</span> ptr</span></span>
+</td>
+<td> <code>A::pointer</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">static_cast</span><span class="sy1">&lt;</span>A<span class="sy4">::</span><span class="me2">const_pointer</span><span class="sy1">&gt;</span><span class="br0">(</span>cvptr<span class="br0">)</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">static_cast</span><span class="sy1">&lt;</span>A<span class="sy4">::</span><span class="me2">const_pointer</span><span class="sy1">&gt;</span><span class="br0">(</span>cvptr<span class="br0">)</span> <span class="sy1">==</span> cptr</span></span>
+</td>
+<td> <code>A::const_pointer</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/pointer_traits.html"><span class="kw756">std::<span class="me2">pointer_traits</span></span></a><span class="sy1">&lt;</span>A<span class="sy4">::</span><span class="me2">pointer</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">pointer_to</span><span class="br0">(</span>r<span class="br0">)</span></span></span>
+</td>
+<td>
+</td>
+<td> <code>A::pointer</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">a.<span class="me1">allocate</span><span class="br0">(</span>n<span class="br0">)</span></span></span>
+</td>
+<td> 分配适合 <code>n</code> 个 <code>T</code> 类型对象的存储，但不构造它们。可以抛异常。
+</td>
+<td> <code>A::pointer</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">a.<span class="me1">allocate</span><span class="br0">(</span>n, cvptr<span class="br0">)</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> 与 <code>a.allocate(n)</code> 相同，但可以以未指明的方式使用 <code>cvptr</code>（从 <code>a.allocate()</code> 获得的指针或 <code>nullptr_t</code>）以协助局部性
+</td>
+<td> <code>A::pointer</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">a.<span class="me1">deallocate</span><span class="br0">(</span>ptr, n<span class="br0">)</span></span></span>
+</td>
+<td> 解分配 <code>ptr</code> 所指向的存储，该指针必须是先前从对 <span class="t-c"><span class="mw-geshi cpp source-cpp">allocate</span></span> 的调用获得的指针，且未因中间对 <code>deallocate</code> 的调用而失效。<code>n</code> 必须匹配先前传递给 <code>allocate</code> 的值。不抛异常。
+</td>
+<td> （不使用）
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">a.<span class="me1">max_size</span><span class="br0">(</span><span class="br0">)</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> 能传递给 <code>A::allocate()</code> 的最大值
+</td>
+<td> <code>A::size_type</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">a1 <span class="sy1">==</span> a2</span></span>
+</td>
+<td> 仅若分配器 <code>a1</code> 分配的存储能通过 <code>a2</code> 解分配才返回 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>。建立自反、对称和可传递关系。不抛异常。
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">a1 <span class="sy3">!</span><span class="sy1">=</span> a2</span></span>
+</td>
+<td> 与 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">!</span><span class="br0">(</span>a1<span class="sy1">==</span>a2<span class="br0">)</span></span></span> 相同
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A a1<span class="br0">(</span>a<span class="br0">)</span></span></span>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp">A a1 <span class="sy1">=</span> a</span></span>
+</p>
+</td>
+<td> 复制构造 <code>a1</code> 以满足 <span class="t-c"><span class="mw-geshi cpp source-cpp">a1 <span class="sy1">==</span> a</span></span>。不抛异常。（注意：所有<strong class="selflink">分配器</strong> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator</span>) 也都满足<a href="CopyConstructible.html" title="cpp/named req/CopyConstructible">可复制构造</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">CopyConstructible</span>) ）
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A a<span class="br0">(</span>b<span class="br0">)</span></span></span>
+</td>
+<td> 构造满足 <span class="t-c"><span class="mw-geshi cpp source-cpp">B<span class="br0">(</span>a<span class="br0">)</span><span class="sy1">==</span>b</span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="br0">(</span>b<span class="br0">)</span><span class="sy1">==</span>a</span></span> 的 <code>a</code>。不抛异常。（注意，这意味着所有因 rebind 相关联的分配器都彼此维护资源，例如内存池）
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A a1<span class="br0">(</span>std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>a<span class="br0">)</span><span class="br0">)</span></span></span>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp">A a1 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>a<span class="br0">)</span></span></span>
+</p>
+</td>
+<td> 构造 <code>a1</code> 使之等于 <code>a</code> 之前的值。不抛异常。<span class="t-rev-inl t-since-cxx17"><span> <code>a</code> 的值不变且 <span class="t-c"><span class="mw-geshi cpp source-cpp">a1 <span class="sy1">==</span> a</span></span>。</span> <span><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></span></span>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A a<span class="br0">(</span>std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>b<span class="br0">)</span><span class="br0">)</span></span></span>
+</td>
+<td> 构造 <code>a</code> 使之等于 <code>A(b)</code> 之前的值。不抛异常。
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">a.<span class="me1">construct</span><span class="br0">(</span>xptr, args<span class="br0">)</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> 在先前分配的存储中由 <code>xptr</code> 所指向的地址上，以 args 为构造函数实参构造一个 <code>X</code> 类型的对象
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">a.<span class="me1">destroy</span><span class="br0">(</span>xptr<span class="br0">)</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> 析构 <code>xptr</code> 所指向的 <code>X</code> 类型的对象，但不解分配任何存储。
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">a.<span class="me1">select_on_container_copy_construction</span><span class="br0">(</span><span class="br0">)</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> 提供一个 <code>A</code> 实例，以被从当前正使用 <code>a</code> 的容器所复制构造的容器使用。通常要么返回 <code>a</code> 的副本，要么为默认构造的 <code>A()</code>。
+</td>
+<td> <code>A</code>
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">propagate_on_container_copy_assignment</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> 若在使用 <code>A</code> 类型的分配器的容器被复制赋值时需要复制该分配器，则为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>。注意，若源和目标容器的分配器比较不相等，则复制赋值时必须用旧分配器解分配目标的内存，再在进行各元素（和分配器）的复制之前用新分配器分配内存
+</td>
+<td> <span class="t-lc"><a href="../types/integral_constant.html" title="cpp/types/integral constant">std::true_type</a></span> 或 <span class="t-lc"><a href="../types/integral_constant.html" title="cpp/types/integral constant">std::false_type</a></span> 或从它派生的类型
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">propagate_on_container_move_assignment</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> 若在使用 <code>A</code> 类型的分配器的容器被移动赋值时需要移动该分配器，则为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>。若此成员是 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> 且源和目标容器的分配器比较不相等，则移动赋值不能夺取源内存的所有权，而必须逐个进行元素的移动赋值或移动构造，按需调整其自身内存的大小。
+</td>
+<td> <span class="t-lc"><a href="../types/integral_constant.html" title="cpp/types/integral constant">std::true_type</a></span> 或 <span class="t-lc"><a href="../types/integral_constant.html" title="cpp/types/integral constant">std::false_type</a></span> 或从它派生的类型
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">propagate_on_container_swap</span></span></span> <span class="t-mark">(可选)</span>
+</td>
+<td> 若在使用 <code>A</code> 类型的分配器的两个容器进行交换时需要交换分配器，则为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>。若此成员是 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> 且两个容器的分配器比较不相等，则容器交换的行为未定义。
+</td>
+<td> <span class="t-lc"><a href="../types/integral_constant.html" title="cpp/types/integral constant">std::true_type</a></span> 或 <span class="t-lc"><a href="../types/integral_constant.html" title="cpp/types/integral constant">std::false_type</a></span> 或从它派生的类型
+</td></tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy4">::</span><span class="me2">is_always_equal</span></span></span> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span> <span class="t-mark">(可选)</span>
+</td>
+<td> 若两个 <code>A</code> 类型的分配器始终比较相等则为 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>。若不提供，则 <span class="t-lc"><a href="../memory/allocator_traits.html" title="cpp/memory/allocator traits">std::allocator_traits</a></span> 默认它等于 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../types/is_empty.html"><span class="kw508">std::<span class="me2">is_empty</span></span></a><span class="sy1">&lt;</span>A<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span></span></span>
+</td>
+<td> <span class="t-lc"><a href="../types/integral_constant.html" title="cpp/types/integral constant">std::true_type</a></span> 或 <span class="t-lc"><a href="../types/integral_constant.html" title="cpp/types/integral constant">std::false_type</a></span> 或从它派生的类型
+</td></tr></table>
+<p>注：
+</p>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="Allocator.html#cite_ref-1">↑</a></span> <span class="reference-text">仅当此分配器是 <span class="t-c"><span class="mw-geshi cpp source-cpp">SomeAllocator<span class="sy1">&lt;</span>T, Args<span class="sy1">&gt;</span></span></span> 形式的模板（其中 <code>Args</code> 是零或更多额外的模板类型形参）时，rebind 才是可选的（由 <span class="t-lc"><a href="../memory/allocator_traits.html" title="cpp/memory/allocator traits">std::allocator_traits</a></span> 提供）。</span>
+</li>
+</ol>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<p>另外，为使类型 <code>A</code> 满足<strong class="selflink">分配器</strong> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator</span>) 
+</p>
+<ul><li> 若 <code>A::propagate_on_container_copy_assignment::value</code> 为 <code>true</code>，则 <code>A</code> 必须满足<a href="CopyAssignable.html" title="cpp/named req/CopyAssignable">可复制赋值</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">CopyAssignable</span>) 且复制操作必须不抛异常
+</li><li> 若 <code>A::propagate_on_container_move_assignment::value</code> 为 <code>true</code>，则 <code>A</code> 必须满足<a href="MoveAssignable.html" title="cpp/named req/MoveAssignable">可移动赋值</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">MoveAssignable</span>) 且移动操作必须不抛异常。
+</li><li> 若 <code>A::propagate_on_container_swap::value</code> 为 <code>true</code>，则 <code>A</code> 的左值必须<a href="Swappable.html" title="cpp/named req/Swappable">可交换</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Swappable</span>) 且交换操作必须不抛异常
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14"><td>
+<p>给定
+</p>
+<ul><li> <code>X::void_pointer</code>、<code>X::const_void_pointer</code>、<code>X::pointer</code> 或 <code>X::const_pointer</code> 类型的对象 <code>x1</code> 和 <code>x2</code>，类型可以不同
+</li></ul>
+<p>则，当且仅当 <code>x1</code> 和 <code>x2</code> 分别都能用只使用这四种类型的 <code>static_casts</code> 的序列显式转换为 <code>X::const_pointer</code> 类型的对象 <code>px1</code> 和 <code>px2</code>，且表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">px1 <span class="sy1">==</span> px2</span></span> 求值为 true，则 <code>x1</code> 和 <code>x2</code> 是<i>值等价</i>的指针值
+</p><p>给定
+</p>
+<ul><li> <code>X::void_pointer</code> 类型的对象 <code>w1</code> 与 <code>w2</code>。
+</li></ul>
+<p>则对于表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">w1 <span class="sy1">==</span> w2</span></span> 与 <span class="t-c"><span class="mw-geshi cpp source-cpp">w1 <span class="sy3">!</span><span class="sy1">=</span> w2</span></span>，任一或两个对象都可由<i>值等价</i>的 <code>X::const_void_pointer</code> 类型的对象所替换，而语义没有变化。
+</p><p>给定
+</p>
+<ul><li> <code>X::pointer</code> 类型的对象 <code>p1</code> 与 <code>p2</code>
+</li></ul>
+<p>则，对于表达式 <span class="t-c"><span class="mw-geshi cpp source-cpp">p1 <span class="sy1">==</span> p2</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">p1 <span class="sy3">!</span><span class="sy1">=</span> p2</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">p1 <span class="sy1">&lt;</span> p2</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">p1 <span class="sy1">&lt;=</span> p2</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">p1 <span class="sy1">&gt;=</span> p2</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">p1 <span class="sy1">&gt;</span> p2</span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp">p1 <span class="sy2">-</span> p2</span></span>}，任一或两个对象都可由<i>值等价</i>的 <code>X::const_pointer</code> 类型的对象所替换，而语义没有变化。
+</p><p>上述要求使得比较<a href="Container.html" title="cpp/named req/Container">容器</a> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Container</span>) 的 iterator 和 const_iterator 成为可能。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></td></tr>
+</table>
+<p><br>
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<h3> <span class="mw-headline" id=".E5.88.86.E9.85.8D.E5.99.A8.E5.AE.8C.E6.95.B4.E6.80.A7.E8.A6.81.E6.B1.82">分配器完整性要求</span></h3>
+<p>若无论 <code>T</code> 是否为完整类型下列二者皆为真，则针对类型 <code>T</code> 的分配器类型 <code>X</code> 还额外满足<i>分配器完整性要求</i>：
+</p>
+<ul><li> <code>X</code> 是完整类型
+</li><li> 除 <code>value_type</code> 之外，所有 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/allocator_traits.html"><span class="kw701">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>X<span class="sy1">&gt;</span></span></span> 的成员都是完整类型。
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E7.BC.80.E9.A5.B0.E6.8C.87.E9.92.88">缀饰指针</span></h3>
+<p>当成员类型 <code>pointer</code> 不是原生指针时，它通常被称为“缀饰指针（fancy pointer）”。这种指针曾为支持分段内存架构而引入，并在当今用于访问在某些不同于原生指针所访问的同质虚拟地址空间的地址空间中所分配的对象。缀饰指针的一个实例是映射的不依赖地址指针 <a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/release/doc/html/interprocess/offset_ptr.html">boost::interprocess::offset_ptr</a>，它使得在共享内存和在每个进程中映射到不同地址的映射到内存文件中，分配 <span class="t-lc"><a href="../container/set.html" title="cpp/container/set">std::set</a></span> 一类的基于结点的数据结构可行。通过类模板 <span class="t-lc"><a href="../memory/pointer_traits.html" title="cpp/memory/pointer traits">std::pointer_traits</a></span>，缀饰指针可以独立于提供它们的分配器而使用。
+</p>
+<h3><span class="mw-headline" id=".E6.A0.87.E5.87.86.E5.BA.93">标准库</span></h3>
+<p>下列标准库组件满足<strong class="selflink">分配器</strong> (<span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator</span>) 要求：
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../memory/allocator.html" title="cpp/memory/allocator"> <span class="t-lines"><span>allocator</span></span></a></div></div>
+</td>
+<td>   默认的分配器  <br> <span class="t-mark">(类模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../memory/scoped_allocator_adaptor.html" title="cpp/memory/scoped allocator adaptor"> <span class="t-lines"><span>scoped_allocator_adaptor</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>   为多级容器实现的多级分配器  <br> <span class="t-mark">(类模板)</span> </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../memory/polymorphic_allocator.html" title="cpp/memory/polymorphic allocator"> <span class="t-lines"><span>polymorphic_allocator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   以 <span class="t-lc">std::memory_resource</span> 构造，支持基于它的运行时多态的分配器 <br> <span class="t-mark">(类模板)</span> </td></tr>
+</table>
+<h3><span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><p>一个 C++11 分配器，但添加了 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">[</span><span class="br0">[</span>nodiscard<span class="br0">]</span><span class="br0">]</span></span></span> 以符合 C++20 风格。</p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">运行此代码</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cstdlib&gt;</span>
+<span class="co2">#include &lt;new&gt;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> Mallocator <span class="br0">{</span>
+  <span class="kw1">typedef</span> T value_type<span class="sy4">;</span>
+  Mallocator<span class="br0">(</span><span class="br0">)</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span>
+  <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> U<span class="sy1">&gt;</span> <span class="kw4">constexpr</span> Mallocator<span class="br0">(</span><span class="kw4">const</span> Mallocator<span class="sy1">&lt;</span>U<span class="sy1">&gt;</span><span class="sy3">&amp;</span><span class="br0">)</span> <span class="kw1">noexcept</span> <span class="br0">{</span><span class="br0">}</span>
+  <span class="br0">[</span><span class="br0">[</span>nodiscard<span class="br0">]</span><span class="br0">]</span> T<span class="sy2">*</span> allocate<span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> n<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">if</span><span class="br0">(</span>n <span class="sy1">&gt;</span> <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="br0">(</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">)</span> <span class="sy2">/</span> sizeof<span class="br0">(</span>T<span class="br0">)</span><span class="br0">)</span> <span class="kw1">throw</span> <a href="../memory/new/bad_alloc.html"><span class="kw693">std::<span class="me2">bad_alloc</span></span></a><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="kw4">auto</span> p <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span>T<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span><a href="../memory/c/malloc.html"><span class="kw759">std::<span class="me2">malloc</span></span></a><span class="br0">(</span>n<span class="sy2">*</span>sizeof<span class="br0">(</span>T<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span> <span class="kw1">return</span> p<span class="sy4">;</span>
+    <span class="kw1">throw</span> <a href="../memory/new/bad_alloc.html"><span class="kw693">std::<span class="me2">bad_alloc</span></span></a><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="kw4">void</span> deallocate<span class="br0">(</span>T<span class="sy2">*</span> p, <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="br0">)</span> <span class="kw1">noexcept</span> <span class="br0">{</span> <a href="../memory/c/free.html"><span class="kw763">std::<span class="me2">free</span></span></a><span class="br0">(</span>p<span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T, <span class="kw1">class</span> U<span class="sy1">&gt;</span>
+<span class="kw4">bool</span> operator<span class="sy1">==</span><span class="br0">(</span><span class="kw4">const</span> Mallocator<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span>, <span class="kw4">const</span> Mallocator<span class="sy1">&lt;</span>U<span class="sy1">&gt;</span><span class="sy3">&amp;</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span> <span class="br0">}</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T, <span class="kw1">class</span> U<span class="sy1">&gt;</span>
+<span class="kw4">bool</span> operator<span class="sy3">!</span><span class="sy1">=</span><span class="br0">(</span><span class="kw4">const</span> Mallocator<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span>, <span class="kw4">const</span> Mallocator<span class="sy1">&lt;</span>U<span class="sy1">&gt;</span><span class="sy3">&amp;</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span> <span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 9739/1000000
+Preprocessor generated node count: 12336/1000000
+Post‐expand include size: 222332/2097152 bytes
+Template argument size: 46553/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:1570-0!*!0!!zh!*!zh!* and timestamp 20190823001416 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/named_req/Allocator&amp;oldid=61522">https://zh.cppreference.com/mwiki/index.php?title=cpp/named_req/Allocator&amp;oldid=61522</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/named_req/Allocator">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年6月8日 (星期六) 20:00。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过8,594次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 4.755 secs. -->
+	</body>
+<!-- Cached 20190823001416 -->
+</html>

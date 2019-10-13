@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>C++ 标准库头文件</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../common/favicon.ico">
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/header","wgTitle":"cpp/header","wgCurRevisionId":62198,"wgArticleId":685,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed LWG DR marker"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/header","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_header skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">C++ 标准库头文件</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">标准库头文件</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><strong class="selflink"> 标准库头文件</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> 语言支持</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cstddef.html" title="cpp/header/cstddef"><tt>&lt;cstddef&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/limits.html" title="cpp/header/limits"><tt>&lt;limits&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/climits.html" title="cpp/header/climits"><tt>&lt;climits&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/coroutine&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/coroutine（页面不存在）"><tt>&lt;coroutine&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cfloat.html" title="cpp/header/cfloat"><tt>&lt;cfloat&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/cstdint.html" title="cpp/header/cstdint"><tt>&lt;cstdint&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/new.html" title="cpp/header/new"><tt>&lt;new&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/source_location&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/source location（页面不存在）"><tt>&lt;source_location&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/typeinfo.html" title="cpp/header/typeinfo"><tt>&lt;typeinfo&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/exception.html" title="cpp/header/exception"><tt>&lt;exception&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/initializer_list.html" title="cpp/header/initializer list"><tt>&lt;initializer_list&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/version.html" title="cpp/header/version"><tt>&lt;version&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/csignal.html" title="cpp/header/csignal"><tt>&lt;csignal&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/csetjmp.html" title="cpp/header/csetjmp"><tt>&lt;csetjmp&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/cstdarg.html" title="cpp/header/cstdarg"><tt>&lt;cstdarg&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 概念</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/concepts.html" title="cpp/header/concepts"><tt>&lt;concepts&gt;</tt></a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 诊断</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/stdexcept.html" title="cpp/header/stdexcept"><tt>&lt;stdexcept&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cassert.html" title="cpp/header/cassert"><tt>&lt;cassert&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cerrno.html" title="cpp/header/cerrno"><tt>&lt;cerrno&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/system_error.html" title="cpp/header/system error"><tt>&lt;system_error&gt;</tt></a></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 通用工具</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/utility.html" title="cpp/header/utility"><tt>&lt;utility&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/memory.html" title="cpp/header/memory"><tt>&lt;memory&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/memory_resource.html" title="cpp/header/memory resource"><tt>&lt;memory_resource&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/scoped_allocator.html" title="cpp/header/scoped allocator"><tt>&lt;scoped_allocator&gt;</tt></a>    </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/compare.html" title="cpp/header/compare"><tt>&lt;compare&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/bitset.html" title="cpp/header/bitset"><tt>&lt;bitset&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/tuple.html" title="cpp/header/tuple"><tt>&lt;tuple&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/optional.html" title="cpp/header/optional"><tt>&lt;optional&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/any.html" title="cpp/header/any"><tt>&lt;any&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/variant.html" title="cpp/header/variant"><tt>&lt;variant&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/type_traits.html" title="cpp/header/type traits"><tt>&lt;type_traits&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/ratio.html" title="cpp/header/ratio"><tt>&lt;ratio&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/chrono.html" title="cpp/header/chrono"><tt>&lt;chrono&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/typeindex.html" title="cpp/header/typeindex"><tt>&lt;typeindex&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/functional.html" title="cpp/header/functional"><tt>&lt;functional&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 字符串</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/string.html" title="cpp/header/string"><tt>&lt;string&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/string_view.html" title="cpp/header/string view"><tt>&lt;string_view&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cctype.html" title="cpp/header/cctype"><tt>&lt;cctype&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/cwctype.html" title="cpp/header/cwctype"><tt>&lt;cwctype&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cwchar.html" title="cpp/header/cwchar"><tt>&lt;cwchar&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/cuchar.html" title="cpp/header/cuchar"><tt>&lt;cuchar&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/charconv.html" title="cpp/header/charconv"><tt>&lt;charconv&gt;</tt></a></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 本地化</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 容器</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/span.html" title="cpp/header/span"><tt>&lt;span&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/array.html" title="cpp/header/array"><tt>&lt;array&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/vector.html" title="cpp/header/vector"><tt>&lt;vector&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/deque.html" title="cpp/header/deque"><tt>&lt;deque&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/forward_list.html" title="cpp/header/forward list"><tt>&lt;forward_list&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/list.html" title="cpp/header/list"><tt>&lt;list&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/map.html" title="cpp/header/map"><tt>&lt;map&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/set.html" title="cpp/header/set"><tt>&lt;set&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/queue.html" title="cpp/header/queue"><tt>&lt;queue&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/unordered_map.html" title="cpp/header/unordered map"><tt>&lt;unordered_map&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/unordered_set.html" title="cpp/header/unordered set"><tt>&lt;unordered_set&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/stack.html" title="cpp/header/stack"><tt>&lt;stack&gt;</tt></a></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 迭代器</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/iterator.html" title="cpp/header/iterator"><tt>&lt;iterator&gt;</tt></a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 范围</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/ranges.html" title="cpp/header/ranges"><tt>&lt;ranges&gt;</tt></a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 算法</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/algorithm.html" title="cpp/header/algorithm"><tt>&lt;algorithm&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/execution.html" title="cpp/header/execution"><tt>&lt;execution&gt;</tt></a></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 数值</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/random.html" title="cpp/header/random"><tt>&lt;random&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/valarray.html" title="cpp/header/valarray"><tt>&lt;valarray&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/numeric.html" title="cpp/header/numeric"><tt>&lt;numeric&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/bit.html" title="cpp/header/bit"><tt>&lt;bit&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/numbers.html" title="cpp/header/numbers"><tt>&lt;numbers&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cfenv.html" title="cpp/header/cfenv"><tt>&lt;cfenv&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 输入/输出</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/iosfwd.html" title="cpp/header/iosfwd"><tt>&lt;iosfwd&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/ios.html" title="cpp/header/ios"><tt>&lt;ios&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/iomanip.html" title="cpp/header/iomanip"><tt>&lt;iomanip&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/streambuf.html" title="cpp/header/streambuf"><tt>&lt;streambuf&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/istream.html" title="cpp/header/istream"><tt>&lt;istream&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/ostream.html" title="cpp/header/ostream"><tt>&lt;ostream&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/iostream.html" title="cpp/header/iostream"><tt>&lt;iostream&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/sstream.html" title="cpp/header/sstream"><tt>&lt;sstream&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/fstream.html" title="cpp/header/fstream"><tt>&lt;fstream&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/syncstream.html" title="cpp/header/syncstream"><tt>&lt;syncstream&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cstdio.html" title="cpp/header/cstdio"><tt>&lt;cstdio&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/cinttypes.html" title="cpp/header/cinttypes"><tt>&lt;cinttypes&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/strstream.html" title="cpp/header/strstream"><tt>&lt;strstream&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 正则表达式</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/regex.html" title="cpp/header/regex"><tt>&lt;regex&gt;</tt></a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 文件系统</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/filesystem.html" title="cpp/header/filesystem"><tt>&lt;filesystem&gt;</tt></a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> 线程支持</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/thread.html" title="cpp/header/thread"><tt>&lt;thread&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/atomic.html" title="cpp/header/atomic"><tt>&lt;atomic&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/mutex.html" title="cpp/header/mutex"><tt>&lt;mutex&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/shared_mutex.html" title="cpp/header/shared mutex"><tt>&lt;shared_mutex&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/condition_variable.html" title="cpp/header/condition variable"><tt>&lt;condition_variable&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/future.html" title="cpp/header/future"><tt>&lt;future&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/stop_token&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/stop token（页面不存在）"><tt>&lt;stop_token&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/semaphore&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/semaphore（页面不存在）"><tt>&lt;semaphore&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/latch&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/latch（页面不存在）"><tt>&lt;latch&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/barrier&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/barrier（页面不存在）"><tt>&lt;barrier&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> C 兼容</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/ciso646.html" title="cpp/header/ciso646"><tt>&lt;ciso646&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/cstdalign.html" title="cpp/header/cstdalign"><tt>&lt;cstdalign&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/cstdbool.html" title="cpp/header/cstdbool"><tt>&lt;cstdbool&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header/ccomplex.html" title="cpp/header/ccomplex"><tt>&lt;ccomplex&gt;</tt></a></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="header/ctgmath.html" title="cpp/header/ctgmath"><tt>&lt;ctgmath&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <br>
+</td></tr>
+</table></div></td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>C++ 标准库的接口由下列头文件的汇集定义。
+</p>
+<table class="t-dsc-begin">
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E6.A6.82.E5.BF.B5.E5.BA.93">概念库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/concepts.html" title="cpp/header/concepts"><tt>&lt;concepts&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td>  <a href="concepts.html" title="cpp/concepts">基础库概念</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E5.8D.8F.E7.A8.8B.E5.BA.93">协程库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/coroutine&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/coroutine（页面不存在）"><tt>&lt;coroutine&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td>  <a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/coroutine&amp;action=edit&amp;redlink=1" class="new" title="cpp/coroutine（页面不存在）">协程支持库</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E5.B7.A5.E5.85.B7.E5.BA.93">工具库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a></b></code>
+</td>
+<td> 通用工具：<a href="utility/program.html" title="cpp/utility/program">程序控制</a>、<a href="memory/c.html" title="cpp/memory/c">动态内存分配</a>、<a href="numeric/random.html" title="cpp/numeric/random">随机数</a>、<a href="algorithm.html" title="cpp/algorithm">排序与搜索</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/csignal.html" title="cpp/header/csignal"><tt>&lt;csignal&gt;</tt></a></b></code>
+</td>
+<td> <a href="utility/program.html" title="cpp/utility/program">信号管理的函数与宏常量</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/csetjmp.html" title="cpp/header/csetjmp"><tt>&lt;csetjmp&gt;</tt></a></b></code>
+</td>
+<td> <a href="utility/program/setjmp.html" title="cpp/utility/program/setjmp">保存执行语境的宏，及跳转到某个执行语境的函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cstdarg.html" title="cpp/header/cstdarg"><tt>&lt;cstdarg&gt;</tt></a></b></code>
+</td>
+<td> <a href="utility/variadic.html" title="cpp/utility/variadic">变长实参列表的处理</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/typeinfo.html" title="cpp/header/typeinfo"><tt>&lt;typeinfo&gt;</tt></a></b></code>
+</td>
+<td> <a href="types.html" title="cpp/types">运行时类型信息工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/typeindex.html" title="cpp/header/typeindex"><tt>&lt;typeindex&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <span class="t-lc"><a href="types/type_index.html" title="cpp/types/type index">std::type_index</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/type_traits.html" title="cpp/header/type traits"><tt>&lt;type_traits&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="types.html" title="cpp/types">编译时类型信息</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/bitset.html" title="cpp/header/bitset"><tt>&lt;bitset&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="utility/bitset.html" title="cpp/utility/bitset">std::bitset</a></span> 类模板
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/functional.html" title="cpp/header/functional"><tt>&lt;functional&gt;</tt></a></b></code>
+</td>
+<td> <a href="utility/functional.html" title="cpp/utility/functional">函数对象、函数调用、绑定操作、引用包装</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/utility.html" title="cpp/header/utility"><tt>&lt;utility&gt;</tt></a></b></code>
+</td>
+<td> 多种<a href="utility.html" title="cpp/utility">工具组件</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a></b></code>
+</td>
+<td> <a href="chrono/c.html" title="cpp/chrono/c">C 风格的时间/日期工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/chrono.html" title="cpp/header/chrono"><tt>&lt;chrono&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="chrono.html" title="cpp/chrono">C++ 时间工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cstddef.html" title="cpp/header/cstddef"><tt>&lt;cstddef&gt;</tt></a></b></code>
+</td>
+<td> <a href="types.html" title="cpp/types">标准宏和 typedef</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/initializer_list.html" title="cpp/header/initializer list"><tt>&lt;initializer_list&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <span class="t-lc"><a href="utility/initializer_list.html" title="cpp/utility/initializer list">std::initializer_list</a></span> 类模板
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/tuple.html" title="cpp/header/tuple"><tt>&lt;tuple&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <span class="t-lc"><a href="utility/tuple.html" title="cpp/utility/tuple">std::tuple</a></span> 类模板
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/any.html" title="cpp/header/any"><tt>&lt;any&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span>
+</td>
+<td> <span class="t-lc"><a href="utility/any.html" title="cpp/utility/any">std::any</a></span> 类
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/optional.html" title="cpp/header/optional"><tt>&lt;optional&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span>
+</td>
+<td> <span class="t-lc"><a href="utility/optional.html" title="cpp/utility/optional">std::optional</a></span> 类模板
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/variant.html" title="cpp/header/variant"><tt>&lt;variant&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span>
+</td>
+<td> <span class="t-lc"><a href="utility/variant.html" title="cpp/utility/variant">std::variant</a></span> 类模板
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/compare.html" title="cpp/header/compare"><tt>&lt;compare&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> <a href="language/operator_comparison.html#.E4.B8.89.E8.B7.AF.E6.AF.94.E8.BE.83" title="cpp/language/operator comparison">三路比较</a>运算符支持
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/version.html" title="cpp/header/version"><tt>&lt;version&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> 提供依赖于实现的库信息
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/source_location&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/source location（页面不存在）"><tt>&lt;source_location&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> 提供获得<a href="utility/source_location.html" title="cpp/utility/source location">源码位置</a>的手段
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E5.8A.A8.E6.80.81.E5.86.85.E5.AD.98.E7.AE.A1.E7.90.86"> 动态内存管理 </span></h5>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/new.html" title="cpp/header/new"><tt>&lt;new&gt;</tt></a></b></code>
+</td>
+<td> <a href="memory/new.html" title="cpp/memory/new">低层内存管理工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/memory.html" title="cpp/header/memory"><tt>&lt;memory&gt;</tt></a></b></code>
+</td>
+<td> <a href="memory.html" title="cpp/memory">高层内存管理工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/scoped_allocator.html" title="cpp/header/scoped allocator"><tt>&lt;scoped_allocator&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="memory/scoped_allocator_adaptor.html" title="cpp/memory/scoped allocator adaptor">嵌套分配器类</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/memory_resource.html" title="cpp/header/memory resource"><tt>&lt;memory_resource&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span>
+</td>
+<td> <a href="memory/memory_resource.html" title="cpp/memory/memory resource">多态分配器及内存资源</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E6.95.B0.E5.80.BC.E7.95.8C.E9.99.90"> 数值界限 </span></h5>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/climits.html" title="cpp/header/climits"><tt>&lt;climits&gt;</tt></a></b></code>
+</td>
+<td> <a href="types/climits.html" title="cpp/types/climits">整型类型的界限</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cfloat.html" title="cpp/header/cfloat"><tt>&lt;cfloat&gt;</tt></a></b></code>
+</td>
+<td> <a href="types/climits.html" title="cpp/types/climits">浮点类型的界限</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cstdint.html" title="cpp/header/cstdint"><tt>&lt;cstdint&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="types/integer.html" title="cpp/types/integer">定长整数</a>及<a href="types/climits.html" title="cpp/types/climits">其他类型的界限</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cinttypes.html" title="cpp/header/cinttypes"><tt>&lt;cinttypes&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td>  <a href="types/integer.html" title="cpp/types/integer">格式化宏</a>、  <code>intmax_t</code> 及 <code>uintmax_t</code>，数学工具及转换
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/limits.html" title="cpp/header/limits"><tt>&lt;limits&gt;</tt></a></b></code>
+</td>
+<td> <a href="types/numeric_limits.html" title="cpp/types/numeric limits">查询算术类型属性的标准化方式</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id=".E9.94.99.E8.AF.AF.E5.A4.84.E7.90.86"> 错误处理 </span></h5>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/exception.html" title="cpp/header/exception"><tt>&lt;exception&gt;</tt></a></b></code>
+</td>
+<td> <a href="error.html" title="cpp/error">异常处理工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/stdexcept.html" title="cpp/header/stdexcept"><tt>&lt;stdexcept&gt;</tt></a></b></code>
+</td>
+<td> <a href="error.html" title="cpp/error">标准异常对象</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cassert.html" title="cpp/header/cassert"><tt>&lt;cassert&gt;</tt></a></b></code>
+</td>
+<td> <a href="error/assert.html" title="cpp/error/assert">将其实参与零比较的条件性编译宏</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/system_error.html" title="cpp/header/system error"><tt>&lt;system_error&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="error/error_code.html" title="cpp/error/error code">定义 <code>std::error_code</code>，依赖于平台的错误码</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cerrno.html" title="cpp/header/cerrno"><tt>&lt;cerrno&gt;</tt></a></b></code>
+</td>
+<td> <a href="error.html" title="cpp/error">含有最近一次错误号的宏</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E5.AD.97.E7.AC.A6.E4.B8.B2.E5.BA.93">字符串库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cctype.html" title="cpp/header/cctype"><tt>&lt;cctype&gt;</tt></a></b></code>
+</td>
+<td> <a href="string/byte.html" title="cpp/string/byte">确定字符数据中所含类型的函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cwctype.html" title="cpp/header/cwctype"><tt>&lt;cwctype&gt;</tt></a></b></code>
+</td>
+<td> <a href="string/wide.html" title="cpp/string/wide">确定宽字符数据中所含类型的函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a></b></code>
+</td>
+<td> 多种<a href="string/byte.html" title="cpp/string/byte">窄字符串处理函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cwchar.html" title="cpp/header/cwchar"><tt>&lt;cwchar&gt;</tt></a></b></code>
+</td>
+<td> 多种<a href="string/wide.html" title="cpp/string/wide">宽</a>及<a href="string/multibyte.html" title="cpp/string/multibyte">多字节</a>字符串处理函数
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cuchar.html" title="cpp/header/cuchar"><tt>&lt;cuchar&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> C 风格 <a href="string/multibyte.html" title="cpp/string/multibyte">Unicode 字符转换函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/string.html" title="cpp/header/string"><tt>&lt;string&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="string/basic_string.html" title="cpp/string/basic string">std::basic_string</a></span> 类模板
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/string_view.html" title="cpp/header/string view"><tt>&lt;string_view&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span>
+</td>
+<td> <span class="t-lc"><a href="string/basic_string_view.html" title="cpp/string/basic string view">std::basic_string_view</a></span> 类模板
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/charconv.html" title="cpp/header/charconv"><tt>&lt;charconv&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span>
+</td>
+<td> <span class="t-lc">std::to_chars</span> 与 <span class="t-lc">std::from_chars</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E5.AE.B9.E5.99.A8.E5.BA.93">容器库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/array.html" title="cpp/header/array"><tt>&lt;array&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <span class="t-lc"><a href="container/array.html" title="cpp/container/array">std::array</a></span> 容器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/vector.html" title="cpp/header/vector"><tt>&lt;vector&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="container/vector.html" title="cpp/container/vector">std::vector</a></span> 容器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/deque.html" title="cpp/header/deque"><tt>&lt;deque&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="container/deque.html" title="cpp/container/deque">std::deque</a></span> 容器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/list.html" title="cpp/header/list"><tt>&lt;list&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="container/list.html" title="cpp/container/list">std::list</a></span> 容器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/forward_list.html" title="cpp/header/forward list"><tt>&lt;forward_list&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <span class="t-lc"><a href="container/forward_list.html" title="cpp/container/forward list">std::forward_list</a></span> 容器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/set.html" title="cpp/header/set"><tt>&lt;set&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="container/set.html" title="cpp/container/set">std::set</a></span> 及 <span class="t-lc"><a href="container/multiset.html" title="cpp/container/multiset">std::multiset</a></span> 关联容器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/map.html" title="cpp/header/map"><tt>&lt;map&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="container/map.html" title="cpp/container/map">std::map</a></span> 及 <span class="t-lc"><a href="container/multimap.html" title="cpp/container/multimap">std::multimap</a></span> 关联容器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/unordered_set.html" title="cpp/header/unordered set"><tt>&lt;unordered_set&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <span class="t-lc"><a href="container/unordered_set.html" title="cpp/container/unordered set">std::unordered_set</a></span> 及 <span class="t-lc"><a href="container/unordered_multiset.html" title="cpp/container/unordered multiset">std::unordered_multiset</a></span> 无序关联容器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/unordered_map.html" title="cpp/header/unordered map"><tt>&lt;unordered_map&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <span class="t-lc"><a href="container/unordered_map.html" title="cpp/container/unordered map">std::unordered_map</a></span> 及 <span class="t-lc"><a href="container/unordered_multimap.html" title="cpp/container/unordered multimap">std::unordered_multimap</a></span> 无序关联容器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/stack.html" title="cpp/header/stack"><tt>&lt;stack&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="container/stack.html" title="cpp/container/stack">std::stack</a></span> 容器适配器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/queue.html" title="cpp/header/queue"><tt>&lt;queue&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="container/queue.html" title="cpp/container/queue">std::queue</a></span> 及 <span class="t-lc"><a href="container/priority_queue.html" title="cpp/container/priority queue">std::priority_queue</a></span> 容器适配器
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/span.html" title="cpp/header/span"><tt>&lt;span&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> <span class="t-lc">std::span</span> 视图
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E8.BF.AD.E4.BB.A3.E5.99.A8.E5.BA.93">迭代器库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/iterator.html" title="cpp/header/iterator"><tt>&lt;iterator&gt;</tt></a></b></code>
+</td>
+<td> <a href="iterator.html" title="cpp/iterator">范围迭代器</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E8.8C.83.E5.9B.B4.E5.BA.93">范围库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/ranges.html" title="cpp/header/ranges"><tt>&lt;ranges&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> <a href="ranges.html" title="cpp/ranges">范围访问、原语、要求、工具及适配器</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E5.BA.93">算法库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/algorithm.html" title="cpp/header/algorithm"><tt>&lt;algorithm&gt;</tt></a></b></code>
+</td>
+<td> <a href="algorithm.html" title="cpp/algorithm">对范围操作的算法</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/execution.html" title="cpp/header/execution"><tt>&lt;execution&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span>
+</td>
+<td> 针对算法的并行版本的预定义执行策略
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E6.95.B0.E5.80.BC.E5.BA.93">数值库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a></b></code>
+</td>
+<td> <a href="numeric/math.html" title="cpp/numeric/math">常用数学函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a></b></code>
+</td>
+<td> <a href="numeric/complex.html" title="cpp/numeric/complex">复数类型</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/valarray.html" title="cpp/header/valarray"><tt>&lt;valarray&gt;</tt></a></b></code>
+</td>
+<td> <a href="numeric/valarray.html" title="cpp/numeric/valarray">表示和操作值的数组的类</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/random.html" title="cpp/header/random"><tt>&lt;random&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="numeric/random.html" title="cpp/numeric/random">随机数生成器及分布</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/numeric.html" title="cpp/header/numeric"><tt>&lt;numeric&gt;</tt></a></b></code>
+</td>
+<td> <a href="numeric.html" title="cpp/numeric">容器中值的数值运算</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/ratio.html" title="cpp/header/ratio"><tt>&lt;ratio&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="numeric/ratio.html" title="cpp/numeric/ratio">编译时有理数算术</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cfenv.html" title="cpp/header/cfenv"><tt>&lt;cfenv&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="numeric/fenv.html" title="cpp/numeric/fenv">浮点环境</a>访问函数
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/bit.html" title="cpp/header/bit"><tt>&lt;bit&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> <a href="numeric.html#.E4.BD.8D.E6.93.8D.E7.BA.B5_.28C.2B.2B20_.E8.B5.B7.29" title="cpp/numeric">位操纵</a>函数
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E8.BE.93.E5.85.A5.2F.E8.BE.93.E5.87.BA.E5.BA.93">输入/输出库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/iosfwd.html" title="cpp/header/iosfwd"><tt>&lt;iosfwd&gt;</tt></a></b></code>
+</td>
+<td> 所有输入/输出库中的类的前置声明
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/ios.html" title="cpp/header/ios"><tt>&lt;ios&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="io/ios_base.html" title="cpp/io/ios base">std::ios_base</a></span> 类、<span class="t-lc"><a href="io/basic_ios.html" title="cpp/io/basic ios">std::basic_ios</a></span> 类模板及数个 typedef
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/istream.html" title="cpp/header/istream"><tt>&lt;istream&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="io/basic_istream.html" title="cpp/io/basic istream">std::basic_istream</a></span> 类模板及数个 typedef
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/ostream.html" title="cpp/header/ostream"><tt>&lt;ostream&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="io/basic_ostream.html" title="cpp/io/basic ostream">std::basic_ostream</a></span>、<span class="t-lc"><a href="io/basic_iostream.html" title="cpp/io/basic iostream">std::basic_iostream</a></span> 类模板及数个 typedef
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/iostream.html" title="cpp/header/iostream"><tt>&lt;iostream&gt;</tt></a></b></code>
+</td>
+<td> 数个标准流对象
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/fstream.html" title="cpp/header/fstream"><tt>&lt;fstream&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="io/basic_fstream.html" title="cpp/io/basic fstream">std::basic_fstream</a></span>、<span class="t-lc"><a href="io/basic_ifstream.html" title="cpp/io/basic ifstream">std::basic_ifstream</a></span>、<span class="t-lc"><a href="io/basic_ofstream.html" title="cpp/io/basic ofstream">std::basic_ofstream</a></span> 类模板及数个typedef
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/sstream.html" title="cpp/header/sstream"><tt>&lt;sstream&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="io/basic_stringstream.html" title="cpp/io/basic stringstream">std::basic_stringstream</a></span>、<span class="t-lc"><a href="io/basic_istringstream.html" title="cpp/io/basic istringstream">std::basic_istringstream</a></span>、<span class="t-lc"><a href="io/basic_ostringstream.html" title="cpp/io/basic ostringstream">std::basic_ostringstream</a></span> 类模板及数个 typedef
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/syncstream.html" title="cpp/header/syncstream"><tt>&lt;syncstream&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> <span class="t-lc">std::basic_osyncstream</span>、<span class="t-lc">std::basic_syncbuf</span> 及 typedef
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/strstream.html" title="cpp/header/strstream"><tt>&lt;strstream&gt;</tt></a></b></code> <span class="t-mark-rev t-deprecated-cxx98">(C++98 中弃用)</span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="io/strstream.html"><span class="kw1755">std::<span class="me2">strstream</span></span></a></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="io/istrstream.html"><span class="kw1753">std::<span class="me2">istrstream</span></span></a></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="io/ostrstream.html"><span class="kw1754">std::<span class="me2">ostrstream</span></span></a></span></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/iomanip.html" title="cpp/header/iomanip"><tt>&lt;iomanip&gt;</tt></a></b></code>
+</td>
+<td> <a href="io/manip.html" title="cpp/io/manip">控制输入输出格式的辅助函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/streambuf.html" title="cpp/header/streambuf"><tt>&lt;streambuf&gt;</tt></a></b></code>
+</td>
+<td> <span class="t-lc"><a href="io/basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> 类模板
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cstdio.html" title="cpp/header/cstdio"><tt>&lt;cstdio&gt;</tt></a></b></code>
+</td>
+<td> <a href="io/c.html" title="cpp/io/c">C 风格输入输出函数</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E6.9C.AC.E5.9C.B0.E5.8C.96.E5.BA.93">本地化库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a></b></code>
+</td>
+<td> <a href="locale.html" title="cpp/locale">本地化工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a></b></code>
+</td>
+<td> <a href="locale.html" title="cpp/locale"> C 本地化工具</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span><span class="t-mark-rev t-deprecated-cxx17">(C++17 中弃用)</span>
+</td>
+<td> <a href="locale.html" title="cpp/locale">Unicode 转换设施</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E6.AD.A3.E5.88.99.E8.A1.A8.E8.BE.BE.E5.BC.8F.E5.BA.93">正则表达式库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/regex.html" title="cpp/header/regex"><tt>&lt;regex&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="regex.html" title="cpp/regex">支持正则表达式处理的类、算法及迭代器</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E5.8E.9F.E5.AD.90.E6.93.8D.E4.BD.9C.E5.BA.93">原子操作库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/atomic.html" title="cpp/header/atomic"><tt>&lt;atomic&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="atomic.html" title="cpp/atomic">原子操作库</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E7.BA.BF.E7.A8.8B.E6.94.AF.E6.8C.81.E5.BA.93">线程支持库</span></h3>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/thread.html" title="cpp/header/thread"><tt>&lt;thread&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <span class="t-lc"><a href="thread/thread.html" title="cpp/thread/thread">std::thread</a></span> 类及<a href="thread.html" title="cpp/thread">支持函数</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/stop_token&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/stop token（页面不存在）"><tt>&lt;stop_token&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> <span class="t-lc">std::jthread</span> 的停止记号
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/mutex.html" title="cpp/header/mutex"><tt>&lt;mutex&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="thread.html" title="cpp/thread">互斥原语</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/shared_mutex.html" title="cpp/header/shared mutex"><tt>&lt;shared_mutex&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx14">(C++14 起)</span>
+</td>
+<td> <a href="thread.html" title="cpp/thread">共享的互斥原语</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/future.html" title="cpp/header/future"><tt>&lt;future&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="thread.html" title="cpp/thread">异步计算的原语</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/condition_variable.html" title="cpp/header/condition variable"><tt>&lt;condition_variable&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span>
+</td>
+<td> <a href="thread.html" title="cpp/thread">线程等待条件</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/semaphore&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/semaphore（页面不存在）"><tt>&lt;semaphore&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> <a href="thread.html" title="cpp/thread">信号量</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/latch&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/latch（页面不存在）"><tt>&lt;latch&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> <a href="thread.html" title="cpp/thread">闩</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header/barrier&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/barrier（页面不存在）"><tt>&lt;barrier&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx20">(C++20 起)</span>
+</td>
+<td> <a href="thread.html" title="cpp/thread">屏障</a>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id=".E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E5.BA.93">文件系统库</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/filesystem.html" title="cpp/header/filesystem"><tt>&lt;filesystem&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx17">(C++17 起)</span>
+</td>
+<td> <span class="t-lc">std::path</span> 类及 <a href="filesystem.html" title="cpp/filesystem">支持函数</a>
+</td></tr>
+
+</table>
+<h3><span class="mw-headline" id="C_.E5.85.BC.E5.AE.B9.E5.A4.B4.E6.96.87.E4.BB.B6">C 兼容头文件</span></h3>
+<p>对于一些拥有 <span class="t-c"><span class="mw-geshi cpp source-cpp">xxx.<span class="me1">h</span></span></span> 形式的 C 标准库头文件，C++ 标准库同时包含同名的头文件和拥有形式<span class="t-c"><span class="mw-geshi cpp source-cpp">cxxx</span></span>的头文件（所有有意义的 <span class="t-c"><span class="mw-geshi cpp source-cpp">cxxx</span></span> 头文件列于上方）。
+</p><p>除了 <span class="t-c"><span class="mw-geshi cpp source-cpp">complex.<span class="me1">h</span></span></span> 这一例外，C++ 标准库中包含的每个 <span class="t-c"><span class="mw-geshi cpp source-cpp">xxx.<span class="me1">h</span></span></span> 头文件都将其对应的 <span class="t-c"><span class="mw-geshi cpp source-cpp">cxxx</span></span> 中本应置于 <span class="t-c"><span class="mw-geshi cpp source-cpp">std</span></span> 命名空间中的每个名字放在全局命名空间中。
+</p><p>允许这些头文件也在 <span class="t-c"><span class="mw-geshi cpp source-cpp">std</span></span> 命名空间中声明同样的名字，而且允许对应的 <span class="t-c"><span class="mw-geshi cpp source-cpp">cxxx</span></span> 头文件也在全局命名空间中声明同样的名字：包含 &lt;cstdlib&gt; 肯定会提供 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="memory/c/malloc.html"><span class="kw759">std::<span class="me2">malloc</span></span></a></span></span>，亦可提供 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">::</span><span class="me2">malloc</span></span></span>。包含 &lt;stdlib.h&gt; 肯定会提供 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">::</span><span class="me2">malloc</span></span></span>，亦可提供 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="memory/c/malloc.html"><span class="kw759">std::<span class="me2">malloc</span></span></a></span></span>。这甚至适用于并非 C 标准库一部分的函数和函数重载。
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td> <code><b>&lt;assert.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cassert.html" title="cpp/header/cassert"><tt>&lt;cassert&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;ctype.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cctype.html" title="cpp/header/cctype"><tt>&lt;cctype&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;errno.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cerrno.html" title="cpp/header/cerrno"><tt>&lt;cerrno&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;fenv.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cfenv.html" title="cpp/header/cfenv"><tt>&lt;cfenv&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;float.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cfloat.html" title="cpp/header/cfloat"><tt>&lt;cfloat&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;inttypes.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cinttypes.html" title="cpp/header/cinttypes"><tt>&lt;cinttypes&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;limits.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/climits.html" title="cpp/header/climits"><tt>&lt;climits&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;locale.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;math.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a> 的名字被放入全局命名空间，<br>除了<a href="numeric/special_math.html" title="cpp/numeric/special math">数学特殊函数</a>的名字
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;setjmp.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/csetjmp.html" title="cpp/header/csetjmp"><tt>&lt;csetjmp&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;signal.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/csignal.html" title="cpp/header/csignal"><tt>&lt;csignal&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdarg.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cstdarg.html" title="cpp/header/cstdarg"><tt>&lt;cstdarg&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stddef.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cstddef.html" title="cpp/header/cstddef"><tt>&lt;cstddef&gt;</tt></a> 的名字被放入全局命名空间，<br>除了 <a href="types/byte.html" title="cpp/types/byte"><code>std::byte</code> 及其相关函数</a>的名字
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdint.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cstdint.html" title="cpp/header/cstdint"><tt>&lt;cstdint&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdio.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cstdio.html" title="cpp/header/cstdio"><tt>&lt;cstdio&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdlib.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;string.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;time.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;uchar.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cuchar.html" title="cpp/header/cuchar"><tt>&lt;cuchar&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;wchar.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cwchar.html" title="cpp/header/cwchar"><tt>&lt;cwchar&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;wctype.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 表现如同每个来自 <a href="header/cwctype.html" title="cpp/header/cwctype"><tt>&lt;cwctype&gt;</tt></a> 的名字被放入全局命名空间
+</td></tr>
+</table>
+<h4><span class="mw-headline" id=".E7.A9.BA_C_.E5.A4.B4.E6.96.87.E4.BB.B6">空 C 头文件</span></h4>
+<p>头文件 <code>&lt;complex.h&gt;</code>、<code>&lt;ccomplex&gt;</code>、<code>&lt;tgmath.h&gt;</code> 及 <code>&lt;ctgmath&gt;</code> 不含有任何来自 C 标准库的内容，而且不过是包含其他来自 C++ 标准库的头文件。C++ 中这些头文件的使用均已被弃用。
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/ccomplex.html" title="cpp/header/ccomplex"><tt>&lt;ccomplex&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span><span class="t-mark-rev t-deprecated-cxx17">(C++17 中弃用)</span><span class="t-mark-rev t-until-cxx20">(C++20 中移除)</span>
+</td>
+<td> 简单地包含 <a href="header/complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;complex.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 简单地包含头文件 <a href="header/complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/ctgmath.html" title="cpp/header/ctgmath"><tt>&lt;ctgmath&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span><span class="t-mark-rev t-deprecated-cxx17">(C++17 中弃用)</span><span class="t-mark-rev t-until-cxx20">(C++20 中移除)</span>
+</td>
+<td> 简单地包含 <a href="header/complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a> 及 <a href="header/cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a> ：等价于 C 头文件 <code>tgmath.h</code> 内容的重载已经在这些头文件中提供
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;tgmath.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 简单地包含头文件 <a href="header/complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a> 和 <a href="header/cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a>
+</td></tr>
+</table>
+<h4><span class="mw-headline" id=".E6.97.A0.E6.84.8F.E4.B9.89.E7.9A.84_C_.E5.A4.B4.E6.96.87.E4.BB.B6">无意义的 C 头文件</span></h4>
+<p>头文件 <code>&lt;ciso646&gt;</code>、<code>&lt;cstdalign&gt;</code> 及 <code>&lt;cstdbool&gt;</code> 在 C++ 中无意义，因为它们在 C 中提供的宏是 C++ 的关键词。
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/ciso646.html" title="cpp/header/ciso646"><tt>&lt;ciso646&gt;</tt></a></b></code> <span class="t-mark-rev t-until-cxx20">(C++20 中移除)</span>
+</td>
+<td> 空头文件。C 中出现于 <code>iso646.h</code> 的宏是 C++ 的关键词
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;iso646.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 无效果
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cstdalign.html" title="cpp/header/cstdalign"><tt>&lt;cstdalign&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span><span class="t-mark-rev t-deprecated-cxx17">(C++17 中弃用)</span><span class="t-mark-rev t-until-cxx20">(C++20 中移除)</span>
+</td>
+<td> 定义一个<a href="types.html" title="cpp/types">兼容性宏常量</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdalign.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 定义一个<a href="types.html" title="cpp/types">兼容性宏常量</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b><a href="header/cstdbool.html" title="cpp/header/cstdbool"><tt>&lt;cstdbool&gt;</tt></a></b></code> <span class="t-mark-rev t-since-cxx11">(C++11 起)</span><span class="t-mark-rev t-deprecated-cxx17">(C++17 中弃用)</span><span class="t-mark-rev t-until-cxx20">(C++20 中移除)</span>
+</td>
+<td> 定义一个<a href="types.html" title="cpp/types">兼容性宏常量</a>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <code><b>&lt;stdbool.h&gt;</b></code> <span class="t-mark">(弃用)</span>
+</td>
+<td> 定义一个<a href="types.html" title="cpp/types">兼容性宏常量</a>
+</td></tr>
+</table>
+<h4><span class="mw-headline" id=".E4.B8.8D.E5.8F.97.E6.94.AF.E6.8C.81.E7.9A.84_C_.E5.A4.B4.E6.96.87.E4.BB.B6">不受支持的 C 头文件</span></h4>
+<p>C++ 不包含 C 头文件 <code>&lt;stdatomic.h&gt;</code>、<code>&lt;stdnoreturn.h&gt;</code> 及 <code>&lt;threads.h&gt;</code> 而且它们无 <span class="t-c"><span class="mw-geshi cpp source-cpp">cxxx</span></span> 等价版本。
+</p>
+<h3><span class="mw-headline" id=".E5.AE.9E.E9.AA.8C.E6.80.A7.E5.BA.93"><a href="header/experimental.html" title="cpp/header/experimental">实验性库</a></span></h3>
+<p><a href="experimental.html" title="cpp/experimental">C++ TR/TS</a> 亦定义数个头文件的汇集。
+</p>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 16387/1000000
+Preprocessor generated node count: 17419/1000000
+Post‐expand include size: 239122/2097152 bytes
+Template argument size: 76895/2097152 bytes
+Highest expansion depth: 18/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:685-0!*!0!!zh!*!zh!* and timestamp 20190823160108 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/header&amp;oldid=62198">https://zh.cppreference.com/mwiki/index.php?title=cpp/header&amp;oldid=62198</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/header">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年8月22日 (星期四) 06:59。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过87,911次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 3.723 secs. -->
+	</body>
+<!-- Cached 20190823160108 -->
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>内存模型</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="../../../common/favicon.ico">
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/memory_model","wgTitle":"cpp/language/memory model","wgCurRevisionId":59698,"wgArticleId":8091,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/language/memory_model","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-MathJax":1,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:258d7cd6aa9aa67dee25e01fb6a9e505 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_memory_model skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <!-- /header -->
+        <!-- content -->
+<div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">内存模型</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language">语言</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header">标准库头文件</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../freestanding.html" title="cpp/freestanding"> 自立与有宿主实现</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../named_req.html" title="cpp/named req">具名要求</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html#.E8.AF.AD.E8.A8.80.E6.94.AF.E6.8C.81" title="cpp/utility">语言支持库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concepts.html" title="cpp/concepts">概念库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error">诊断库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility">工具库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string">字符串库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container">容器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator">迭代器库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/ranges"> 范围库</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm">算法库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric">数值库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io">输入/输出库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale">本地化库</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread">线程支持库</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem">文件系统库</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental">技术规范</a> </td></tr>
+</table></div><div></div></div></div></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ 语言</a></div><div class="t-navbar-sep"> </div><div class="t-navbar-head"><a href="basic_concepts.html" title="cpp/language/basic concepts">基本概念</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> 语言关键词</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> 翻译阶段</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> 注释</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> <code>main()</code> 函数</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> 名字和标识符</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="incomplete_type.html" title="cpp/language/type"> 类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> 基础类型</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="object.html" title="cpp/language/object"> 对象</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scope.html" title="cpp/language/scope"> 作用域</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> 对象生存期</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> 存储期与连接</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="definition.html" title="cpp/language/definition"> 定义和单一定义规则（ODR）</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> 名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup"> 有限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup"> 无限定名字查找</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_if.html" title="cpp/language/as if"> “如同”规则</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ub.html" title="cpp/language/ub"> 未定义行为</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 内存模型</strong> </td></tr>
+</table></div>
+</div><div></div></div></div></div><div class="t-navbar-sep"> </div></div>
+<p>为 C++ 抽象机的目的定义了计算机内存存储的语义。
+</p><p>可为 C++ 程序所用的内存是一或多个<i>字节</i>的连续序列。内存中的每个字节拥有唯一的<i>地址</i>。
+</p>
+<h3><span class="mw-headline" id=".E5.AD.97.E8.8A.82">字节</span></h3>
+<p><i>字节（byte）</i>是最小的可寻址内存单元。它被定义为相接的位序列，其大到足以保有<span class="t-rev-inl t-since-cxx14"><span>任何 <code>UTF-8</code> 编码单元（256 个相异值）和</span> <span><span class="t-mark-rev t-since-cxx14">(C++14 起)</span></span></span><i>基本执行字符集</i>（<a href="translation_phases.html" title="cpp/language/translation phases">96 个字符</a>，要求必为单字节）的任何成员。与 C 相似，C++ 也支持 8 位或更大的字节。
+</p><p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>、<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span> 和 <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span> <a href="types.html" title="cpp/language/types">类型</a>把一个字节用于存储和<a href="object.html" title="cpp/language/object">值表示</a>。字节中的位数可作为 <span class="t-lc"><a href="../types/climits.html" title="cpp/types/climits">CHAR_BIT</a></span> 或 <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../types/numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">digits</span></span></span> 访问。
+</p>
+<h3><span class="mw-headline" id=".E5.86.85.E5.AD.98.E4.BD.8D.E7.BD.AE">内存位置</span></h3>
+<p><i>内存位置</i>是
+</p>
+<ul><li> 一个<a href="incomplete_type.html" title="cpp/language/type">标量类型</a>（算术类型、指针类型、枚举类型或 std::nullptr_t）对象
+</li><li> 或非零长<a href="bit_field.html" title="cpp/language/bit field">位域</a>的最大相接序列
+</li></ul>
+<p>注意：语言的各种功能特性，例如<a href="reference.html" title="cpp/language/reference">引用</a>和<a href="virtual.html" title="cpp/language/virtual">虚函数</a>，可能涉及到程序不可访问，但为实现所管理的额外内存位置。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">char</span> a<span class="sy4">;</span>     <span class="co1">// 内存位置 #1</span>
+    <span class="kw4">int</span> b <span class="sy4">:</span> <span class="nu0">5</span><span class="sy4">;</span>  <span class="co1">// 内存位置 #2</span>
+    <span class="kw4">int</span> c <span class="sy4">:</span> <span class="nu0">11</span>, <span class="co1">// 内存位置 #2 （延续）</span>
+          <span class="sy4">:</span> <span class="nu0">0</span>,
+        d <span class="sy4">:</span> <span class="nu0">8</span><span class="sy4">;</span>  <span class="co1">// 内存位置 #3</span>
+    <span class="kw1">struct</span> <span class="br0">{</span>
+        <span class="kw4">int</span> ee <span class="sy4">:</span> <span class="nu0">8</span><span class="sy4">;</span> <span class="co1">// 内存位置 #4</span>
+    <span class="br0">}</span> e<span class="sy4">;</span>
+<span class="br0">}</span> obj<span class="sy4">;</span> <span class="co1">// 对象 'obj' 由 4 个分离的内存位置组成</span></pre></div></div>
+<h3><span class="mw-headline" id=".E7.BA.BF.E7.A8.8B.E4.B8.8E.E6.95.B0.E6.8D.AE.E7.AB.9E.E4.BA.89">线程与数据竞争</span></h3>
+<p>执行线程是程序中的控制流，它始于 <span class="t-lc"><a href="../thread/thread/thread.html" title="cpp/thread/thread/thread">std::thread::thread</a></span>、<span class="t-lc"><a href="../thread/async.html" title="cpp/thread/async">std::async</a></span> 或以其他方式所进行的顶层函数调用。
+</p><p>任何线程都能潜在地访问程序中的任何对象（拥有自动或线程局部<a href="storage_duration.html" title="cpp/language/storage duration">存储期</a>的对象仍可为另一线程通过指针或引用访问）。
+</p><p>始终允许不同的执行线程同时访问（读和写）不同的<i>内存位置</i>，而无干涉或同步的任何要求。
+</p><p>当某个表达式的<a href="eval_order.html" title="cpp/language/eval order">求值</a>写入某个内存位置，而另一求值读或修改同一内存位置时，称这些表达式<i>冲突</i>。拥有两个冲突的求值的程序就有<i>数据竞争</i>，除非
+</p>
+<ul><li> 两个求值都在同一线程上，或同一<a href="../utility/program/signal.html#.E4.BF.A1.E5.8F.B7.E5.A4.84.E7.90.86.E5.87.BD.E6.95.B0" title="cpp/utility/program/signal">信号处理函数</a>中执行，或
+</li><li> 两个冲突的求值都是原子操作（见 <span class="t-lc"><a href="../atomic/atomic.html" title="cpp/atomic/atomic">std::atomic</a></span> ），或
+</li><li> 一个冲突的求值<i>发生早于（happens-before）</i>另一个（见 <span class="t-lc"><a href="../atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order</a></span>）
+</li></ul>
+<p>若出现数据竞争，则程序的行为未定义。
+</p><p>（特别是，<span class="t-lc"><a href="../thread/mutex.html" title="cpp/thread/mutex">std::mutex</a></span> 的释放<i>同步于</i>，从而<i>发生早于</i>另一线程对同一 mutex 的获取，这使得可以用互斥锁来防止数据竞争）
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> cnt <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">auto</span> f <span class="sy1">=</span> <span class="br0">[</span><span class="sy3">&amp;</span><span class="br0">]</span><span class="br0">{</span>cnt<span class="sy2">++</span><span class="sy4">;</span><span class="br0">}</span><span class="sy4">;</span>
+<a href="../thread/thread.html"><span class="kw2146">std::<span class="me2">thread</span></span></a> t1<span class="br0">{</span>f<span class="br0">}</span>, t2<span class="br0">{</span>f<span class="br0">}</span>, t3<span class="br0">{</span>f<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// 未定义行为</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../atomic/atomic.html"><span class="kw2066">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> cnt<span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">auto</span> f <span class="sy1">=</span> <span class="br0">[</span><span class="sy3">&amp;</span><span class="br0">]</span><span class="br0">{</span>cnt<span class="sy2">++</span><span class="sy4">;</span><span class="br0">}</span><span class="sy4">;</span>
+<a href="../thread/thread.html"><span class="kw2146">std::<span class="me2">thread</span></span></a> t1<span class="br0">{</span>f<span class="br0">}</span>, t2<span class="br0">{</span>f<span class="br0">}</span>, t3<span class="br0">{</span>f<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// OK</span></pre></div></div>
+<h3><span class="mw-headline" id=".E5.86.85.E5.AD.98.E9.A1.BA.E5.BA.8F">内存顺序</span></h3>
+<p>当线程从某个内存位置读取值时，它可能看到初值，同一线程所写入的值，或另一线程所写入的值。有关线程所作的写入操作对其他线程变为可见的顺序上的细节，见 <span class="t-lc"><a href="../atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order</a></span>。
+</p>
+<h3><span class="mw-headline" id=".E5.90.91.E5.89.8D.E8.BF.9B.E5.B1.95">向前进展</span></h3>
+<h4><span class="mw-headline" id=".E5.85.8D.E5.A6.A8.E7.A2.8D">免妨碍</span></h4>
+<p>当只有一个未在标准库函数中阻塞的线程执行某个免锁的<a href="../atomic.html" title="cpp/atomic">原子函数</a>时，保证该执行将会完成（所有标准库免锁操作均为<a href="https://en.wikipedia.org/wiki/Non-blocking_algorithm#Obstruction-freedom" class="extiw" title="enwiki:Non-blocking algorithm">免妨碍</a>的）。
+</p>
+<h4><span class="mw-headline" id=".E5.85.8D.E9.94.81">免锁</span></h4>
+<p>当一或多个免锁原子函数同时运行时，保证其中至少一个将会完成（所有标准库免锁操作均为<a href="https://en.wikipedia.org/wiki/Non-blocking_algorithm#Lock-freedom" class="extiw" title="enwiki:Non-blocking algorithm">免锁</a>的——确保其他线程不能不确定地活锁它们（例如以连续窃取缓存线的方式），是实现的工作）。
+</p>
+<h4><span class="mw-headline" id=".E8.BF.9B.E5.B1.95.E4.BF.9D.E8.AF.81">进展保证</span></h4>
+<p>合法的 C++ 程序中，每个线程最终要做下列之一：
+</p>
+<ul><li> 终止
+</li><li> 调用 I/O 库函数
+</li><li> 通过 <a href="cv.html" title="cpp/language/cv">volatile</a> 泛左值进行访问
+</li><li> 进行原子操作或同步操作
+</li></ul>
+<p>没有线程能永远执行，而不做任何这些可观察行为。
+</p><p>注意，这意味着包含无限递归或无限循环（无论是实现为 <a href="for.html" title="cpp/language/for">for 语句</a> 或是用 <a href="goto.html" title="cpp/language/goto">goto</a> 循环还是其他方式）的程序具有<a href="ub.html" title="cpp/language/ub">未定义行为</a>。这允许编译器移除所有无可观察行为的循环，而不必证明他们终将终止。
+</p><p>若线程执行了上述步骤之一（I/O、volatile、原子或同步操作），阻塞于标准库函数中，或调用由于某个未阻塞的并发线程而未能完成的原子免锁函数，则称它<i>取得进展（make progress）</i>。
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<h4> <span class="mw-headline" id=".E5.B9.B6.E5.8F.91.E5.90.91.E5.89.8D.E8.BF.9B.E5.B1.95">并发向前进展</span></h4>
+<p>若线程提供<i>并发向前进展保证（concurrent forward progress guarantee）</i>，则只要它尚未终止，就将在有限量的时间内<i>取得进展</i>（定义如上），无关乎其他线程（若存在）是否取得进展。
+</p><p>标准鼓励但不要求主线程和 <span class="t-lc"><a href="../thread/thread.html" title="cpp/thread/thread">std::thread</a></span> 所启动的线程提供并发向前进展保证。
+</p>
+<h4> <span class="mw-headline" id=".E5.B9.B6.E8.A1.8C.E5.90.91.E5.89.8D.E8.BF.9B.E5.B1.95">并行向前进展</span></h4>
+<p>若线程提供<i>并行向前进展保证（parallel forward progress guarantee）</i>，则若线程尚未执行任何执行步骤（I/O、volatile、原子或同步操作），就不要求实现保证该线程终将取得进展，但一旦此线程开始执行步骤，则它提供<i>并发向前进展</i>保证（此规则描述线程池中以任意顺序执行任务的线程）。
+</p>
+<h4> <span class="mw-headline" id=".E5.BC.B1.E5.B9.B6.E8.A1.8C.E5.90.91.E5.89.8D.E8.BF.9B.E5.B1.95">弱并行向前进展</span></h4>
+<p>若线程提供<i>弱并行向前进展保证（weakly parallel forward progress guarantee）</i>，则不保证它终将取得进展，无关乎其他线程是否取得进展。
+</p><p>仍然能通过以向前进展保证委托进行阻塞来保证这种线程取得进展：若线程 P 以此方式阻塞于线程集合 S 的完成，则 S 中至少有一个线程将提供等于或强于 P 的向前进展保证。一旦该线程完成，则类似地强化 S 中的另一线程。一旦集合为空，则将解除 P 的阻塞。
+</p><p>来自 C++ 标准库的<a href="../algorithm.html" title="cpp/algorithm">并行算法</a>，均以向前保证委托阻塞于某个标准库所管理的线程的未指明集合的完成上。
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(C++17 起)</span></td></tr>
+</table>
+<h3><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h3>
+<table class="t-dsc-begin">
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1201/1000000
+Preprocessor generated node count: 4037/1000000
+Post‐expand include size: 34811/2097152 bytes
+Template argument size: 6968/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:8091-0!*!0!!zh!*!zh!* and timestamp 20190823011845 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="https://zh.cppreference.com/mwiki/index.php?title=cpp/language/memory_model&amp;oldid=59698">https://zh.cppreference.com/mwiki/index.php?title=cpp/language/memory_model&amp;oldid=59698</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul><li><a href="https://zh.cppreference.com/w/cpp/language/memory_model">Online version</a></li><li>Offline version retrieved 2019-08-25 10:54.</li></ul></div>
+                        <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2019年3月19日 (星期二) 04:51。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过9,097次。</li>
+                            </ul>
+                    </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.MathJax","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.749 secs. -->
+	</body>
+<!-- Cached 20190823011846 -->
+</html>
